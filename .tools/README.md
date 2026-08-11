@@ -36,6 +36,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\.tools\wordstat.ps1 -Actio
 | PDF | `universal/pdf/pdf-preview.py` | PNG-превью локального PDF |
 | Reporting | `universal/reporting/dashboard-telegram.py` | Утренняя сводка из живых `projects/**/_dashboard.md`; опциональная отправка через Telegram-бота |
 | Automation | `universal/telegram-vault/bot.py` + `setup.py` | Приватный Telegram-шлюз к локальному Codex и vault; `/report` + будничная автосводка |
+| Vault | `universal/vault/check-links.py` | Проверка целостности внутренних ссылок; замороженные разделы пропускаются, `--all` включает их, `--by-file` даёт сводку по файлам |
 
 ## Проектные
 

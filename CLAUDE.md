@@ -187,7 +187,7 @@ Apply when working on projects' marketing tasks:
 On phrases «давай прибрёмся / ревью системы / гигиена» — go through the checklist:
 1. Analytics: find pairs `*-YYYY-MM-DD.md` of different dates with the same prefix → mark older ones in the header `> Outdated, current version → [...]` or move to `_archive/`.
 2. Memory: go through `memory/MEMORY.md`, check each card is still valid; merge duplicates (`*_v2.md` after `*.md` becomes outdated).
-3. Project `_index.md`: check for broken links (`grep "](.*\.md" | check exists`). Group by status: active / in progress / archive / reference.
+3. Broken links: `.tools/venv/Scripts/python.exe .tools/universal/vault/check-links.py --by-file` (frozen sections are skipped; `--all` includes them). Fix what it reports, then group project `_index.md` entries by status: active / in progress / archive / reference.
 4. `.tools/`: check scripts are documented — otherwise in 3 months you won't remember yourself.
 
 ---
