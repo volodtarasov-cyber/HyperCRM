@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8">
+<title>YT thumbnails — @lazyhim</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Manrope', -apple-system, sans-serif; }
+
+.thumb {
+  width: 1280px;
+  height: 720px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 64px 72px;
+  margin-bottom: 24px;
+}
+
+.thumb.light { background: #F7F5FA; color: #1F2937; }
+.thumb.dark, .thumb.split {
+  background:
+    radial-gradient(circle at 88% 10%, rgba(255,186,36,0.20), transparent 42%),
+    #2B223A;
+  color: #fff;
+}
+
+/* split — правые 42% под фото лица */
+.thumb.split .inner { width: 58%; }
+.thumb.split::after {
+  content: "";
+  position: absolute; right: 0; top: 0; bottom: 0; width: 42%;
+  border-left: 2px dashed rgba(255,255,255,0.18);
+  background: repeating-linear-gradient(
+    45deg, rgba(255,255,255,0.03) 0 12px, transparent 12px 24px
+  );
+}
+.thumb.split .face-hint {
+  position: absolute; right: 21%; top: 50%;
+  transform: translate(50%, -50%);
+  font-size: 22px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; opacity: 0.35; white-space: nowrap;
+}
+
+.inner { position: relative; z-index: 2; }
+
+.eyebrow {
+  color: #FFBA24; font-size: 26px; font-weight: 800;
+  letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 22px;
+}
+
+.main {
+  font-size: 104px; font-weight: 800; line-height: 0.98;
+  letter-spacing: -0.035em; color: #FFBA24;
+  text-transform: uppercase;
+}
+.thumb.light .main { color: #2B223A; }
+
+.sub {
+  font-size: 46px; font-weight: 700; line-height: 1.15;
+  margin-top: 20px; opacity: 0.92;
+}
+
+.badge {
+  display: inline-block; margin-top: 32px;
+  background: #FFBA24; color: #2B223A;
+  font-size: 28px; font-weight: 800; letter-spacing: 0.02em;
+  padding: 14px 26px; border-radius: 10px;
+}
+
+.handle {
+  position: absolute; left: 72px; bottom: 44px;
+  font-size: 24px; font-weight: 800; opacity: 0.55; z-index: 2;
+}
+
+.label {
+  font: 700 20px/1 'Manrope', sans-serif; color: #888;
+  margin: 32px 0 10px; letter-spacing: 0.08em; text-transform: uppercase;
+}
+</style></head><body><div class="label">вариант 1 · split</div><div class="thumb split"><div class="inner"><div class="eyebrow">Claude Code + Obsidian</div><div class="main">Второй мозг</div><div class="sub">Показываю, как я веду бизнес через ИИ</div><div class="badge">5 проектов · 1 человек</div></div><div class="face-hint">фото сюда</div><div class="handle">@lazyhim</div></div><div class="label">вариант 2 · dark</div><div class="thumb dark"><div class="inner"><div class="eyebrow">Показываю изнутри</div><div class="main">1 человек = отдел</div><div class="sub">Второй мозг на Claude Code</div></div><div class="handle">@lazyhim</div></div><div class="label">вариант 3 · split</div><div class="thumb split"><div class="inner"><div class="eyebrow">Метод одного продукта</div><div class="main">Заявки идут случайно?</div><div class="sub">Вот система, которая это чинит</div></div><div class="face-hint">фото сюда</div><div class="handle">@lazyhim</div></div></body></html>

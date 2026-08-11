@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Manrope', -apple-system, sans-serif; }
+
+.slide {
+  width: 1080px;
+  height: 1350px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 96px 88px 84px;
+}
+
+/* ── фоны ── */
+.slide.light { background: #F7F5FA; color: #1F2937; }
+.slide.dark  {
+  background:
+    radial-gradient(circle at 90% 4%, rgba(255,186,36,0.22), transparent 38%),
+    #2B223A;
+  color: #fff;
+}
+
+/* ── верхняя плашка бренда ── */
+.brand {
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 26px; font-weight: 800; letter-spacing: 0.02em;
+}
+.brand .handle { color: inherit; }
+.brand .tag { font-size: 20px; font-weight: 600; opacity: 0.6; }
+.slide.dark .brand .dot, .slide.light .brand .dot { color: #FFBA24; }
+
+/* ── контент-зона ── */
+.body { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+
+.eyebrow {
+  color: #FFBA24; font-size: 24px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 28px;
+}
+
+/* обложка */
+.cover-title { font-size: 92px; font-weight: 800; line-height: 1.04; letter-spacing: -0.03em; }
+.cover-sub { font-size: 38px; font-weight: 500; line-height: 1.35; margin-top: 32px; opacity: 0.85; }
+
+/* заголовок контент-слайда */
+h2, .body h2 {
+  font-size: 60px; font-weight: 800; line-height: 1.1; letter-spacing: -0.02em;
+  padding-left: 30px; border-left: 12px solid #FFBA24; margin-bottom: 40px;
+}
+h3 { font-size: 40px; font-weight: 700; margin: 24px 0 14px; }
+
+/* текст и списки */
+.body p { font-size: 38px; line-height: 1.45; margin-bottom: 22px; }
+.body ul, .body ol { list-style: none; }
+.body li {
+  font-size: 38px; line-height: 1.4; margin-bottom: 28px;
+  padding-left: 52px; position: relative;
+}
+.body li::before {
+  content: "→"; position: absolute; left: 0; top: 0;
+  color: #FFBA24; font-weight: 800;
+}
+.body strong { font-weight: 800; }
+.slide.light .body strong { color: #2B223A; }
+.slide.dark .body strong { color: #FFBA24; }
+.body em { font-style: normal; color: #FFBA24; font-weight: 700; }
+
+/* CTA */
+.cta-title { font-size: 76px; font-weight: 800; line-height: 1.08; letter-spacing: -0.02em; }
+.cta-sub { font-size: 38px; font-weight: 500; line-height: 1.4; margin-top: 28px; opacity: 0.85; }
+.cta-handle { font-size: 48px; font-weight: 800; color: #FFBA24; margin-top: 56px; }
+
+/* ── нижняя плашка ── */
+.foot {
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 24px; font-weight: 600; opacity: 0.7;
+}
+.foot .swipe { color: #FFBA24; opacity: 1; }
+.num {
+  font-weight: 800; font-size: 26px;
+  width: 56px; height: 56px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.slide.light .num { background: #2B223A; color: #fff; }
+.slide.dark .num { background: #FFBA24; color: #2B223A; }
+</style></head><body><div class="slide dark"><div class="body"><div class="eyebrow">Володя · маркетинг × ИИ</div><div class="cover-title">4 слоя данных, чтобы развалить любого конкурента</div><div class="cover-sub">идеальный маркетинговый анализ с ИИ — за 30-40 минут</div></div><div class="foot"><span class="swipe">листай →</span><span></span></div></div><div class="slide light"><div class="brand"><span class="handle">@lazyhim</span><span class="tag">маркетинг × ИИ</span></div><div class="body"><h2>Сначала про аквариум</h2>
+<p>Думал, все уже вовсю гоняют ИИ-агентов.</p>
+<p>Собрал свою десятку в Самаре — а там базовые вопросы ещё не закрыты.</p>
+<p>Ну что ж, будем закрывать)</p></div><div class="foot"><span>@lazyhim</span><span class="num">2</span></div></div><div class="slide light"><div class="brand"><span class="handle">@lazyhim</span><span class="tag">маркетинг × ИИ</span></div><div class="body"><h2>Слой 1. Рынок</h2>
+<p>Где мы вообще будем барахтаться:</p>
+<ul>
+<li>гео и тип спроса</li>
+<li>зрелость рынка</li>
+<li>сезонность</li>
+<li>как продукт реально покупают</li>
+</ul></div><div class="foot"><span>@lazyhim</span><span class="num">3</span></div></div><div class="slide light"><div class="brand"><span class="handle">@lazyhim</span><span class="tag">маркетинг × ИИ</span></div><div class="body"><h2>Слой 2. Как нас видит ИИ</h2>
+<p>Глазами потребителя, по внешним данным:</p>
+<ul>
+<li>какие смыслы зашиты в тексты</li>
+<li>что люди о нас говорят</li>
+<li>какие офферы и <strong>УТП</strong></li>
+</ul></div><div class="foot"><span>@lazyhim</span><span class="num">4</span></div></div><div class="slide light"><div class="brand"><span class="handle">@lazyhim</span><span class="tag">маркетинг × ИИ</span></div><div class="body"><h2>Слой 3. Код страницы</h2>
+<p>Секрет: просишь ИИ глянуть конкурентов — он читает <strong>код</strong>. Дескрипшены, SEO-описания.</p>
+<p>Оттуда и берёт, что услуга «премиум» — хотя на сайте про это <em>ни слова</em>.</p>
+<p>Проси сканировать смысл и картинку — как видит человек.</p></div><div class="foot"><span>@lazyhim</span><span class="num">5</span></div></div><div class="slide light"><div class="brand"><span class="handle">@lazyhim</span><span class="tag">маркетинг × ИИ</span></div><div class="body"><h2>Слой 4. Что бизнес сам про себя</h2>
+<p>Данные изнутри, которые не вытащить снаружи.</p>
+<p>Например — нормально заполненный <strong>бриф</strong>.</p></div><div class="foot"><span>@lazyhim</span><span class="num">6</span></div></div><div class="slide light"><div class="brand"><span class="handle">@lazyhim</span><span class="tag">маркетинг × ИИ</span></div><div class="body"><h2>Что на выходе</h2>
+<p>Стратегия, которая:</p>
+<ul>
+<li><strong>реальна</strong> и выполнима</li>
+<li>бьёт 9 из 10 конкурентов, где маркетолог 20 лет на окладе рилсики листал</li>
+</ul>
+<p>И всё это — <em>30-40 минут</em> в выстроенной системе.</p></div><div class="foot"><span>@lazyhim</span><span class="num">7</span></div></div><div class="slide dark"><div class="brand"><span class="handle">@lazyhim</span><span class="tag">маркетинг × ИИ</span></div><div class="body"><div class="cta-title">Как собрать такую систему</div><div class="cta-sub">разложу по шагам на ютубе — текстом это долго</div><div class="cta-handle">@lazyhim</div></div><div class="foot"><span></span><span class="num">8</span></div></div></body></html>

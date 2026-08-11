@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>ТЗ верстальщику · Кейс Lamborghini Urus — смена цвета</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Canonical brand tokens */
+  --am-dark: #2B223A;
+  --am-deep: #11141B;
+  --am-yellow: #FFBA24;
+  --am-lemon: #FFF705;
+  --am-orange: #F36B00;
+  --am-brown: #582A06;
+  --am-text: #1F2937;
+  --am-muted: #626B87;
+  --am-neutral: #B9B9B9;
+  --am-bg: #FFFFFF;
+  --am-surface: #F7F5FA;
+  --am-light: #F1F1F1;
+  --am-line: #E7E3EC;
+  --am-good: #2F9E5B;
+  --am-attention: #D99000;
+  --am-risk: #D94B4B;
+  --am-unknown: #A5A0AE;
+
+  /* Backward-compatible aliases used by existing PDF templates */
+  --c-dark: var(--am-dark);
+  --c-deep: var(--am-deep);
+  --c-yellow: var(--am-yellow);
+  --c-lemon: var(--am-lemon);
+  --c-orange: var(--am-orange);
+  --c-text: var(--am-text);
+  --c-muted: var(--am-muted);
+  --c-bg: var(--am-bg);
+  --c-light: var(--am-light);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  color: var(--am-text);
+  background: var(--am-bg);
+}
+
+.am-brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.28em;
+  font-weight: 800;
+  letter-spacing: 0.035em;
+  line-height: 1;
+}
+
+.am-brand__accent {
+  color: var(--am-yellow);
+}
+
+.am-eyebrow {
+  color: var(--am-yellow);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.am-card {
+  background: var(--am-bg);
+  border: 1px solid var(--am-line);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(43, 34, 58, 0.06);
+}
+
+.am-card--dark {
+  color: #FFFFFF;
+  background:
+    radial-gradient(circle at 88% 0%, rgba(255, 186, 36, 0.18), transparent 34%),
+    var(--am-dark);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.am-section-title {
+  margin: 0;
+  color: var(--am-dark);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.am-section-title::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 18px;
+  margin-right: 9px;
+  border-radius: 99px;
+  vertical-align: -2px;
+  background: var(--am-yellow);
+}
+
+.am-muted {
+  color: var(--am-muted);
+}
+
+.am-status--good {
+  color: var(--am-good);
+}
+
+.am-status--attention {
+  color: var(--am-attention);
+}
+
+.am-status--risk {
+  color: var(--am-risk);
+}
+
+.am-status--unknown {
+  color: var(--am-unknown);
+}
+
+.am-callout {
+  padding: 14px 16px;
+  color: var(--am-brown);
+  background: #FFF8E5;
+  border-left: 5px solid var(--am-yellow);
+  border-radius: 8px;
+}
+
+:root {
+  --c-dark: #2B223A;
+  --c-yellow: #FFBA24;
+  --c-orange: #F26B1F;
+  --c-text: #2A2A2A;
+  --c-muted: #6B6B6B;
+  --c-light: #F1F1F1;
+}
+
+@page {
+  size: A4;
+  margin: 18mm 16mm 22mm 16mm;
+  @bottom-center {
+    content: counter(page) " / " counter(pages);
+    font-family: 'Manrope', sans-serif;
+    font-size: 9pt;
+    color: #999;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.55;
+  color: var(--c-text);
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+
+/* ========== Шапка документа ========== */
+.doc-header {
+  border-bottom: 3px solid var(--c-yellow);
+  padding-bottom: 10pt;
+  margin-bottom: 18pt;
+}
+.doc-header .brand {
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+.doc-header .brand .accent { color: var(--c-orange); }
+.doc-header .title {
+  font-size: 22pt;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--c-dark);
+  margin: 6pt 0 0;
+  line-height: 1.15;
+  background: none;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}
+
+/* ========== Контент ========== */
+
+h1 {
+  font-size: 18pt;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--c-dark);
+  margin: 0 0 10pt;
+  padding: 10pt 14pt;
+  background: var(--c-dark);
+  color: #fff;
+  border-radius: 6pt;
+  border-left: 6pt solid var(--c-yellow);
+  page-break-after: avoid;
+}
+
+h2 {
+  font-size: 14pt;
+  font-weight: 800;
+  color: var(--c-dark);
+  margin: 18pt 0 8pt;
+  padding-left: 10pt;
+  border-left: 4pt solid var(--c-yellow);
+  page-break-after: avoid;
+}
+
+h3 {
+  font-size: 12pt;
+  font-weight: 700;
+  color: var(--c-dark);
+  margin: 14pt 0 5pt;
+  page-break-after: avoid;
+}
+h3::before {
+  content: "■";
+  color: var(--c-yellow);
+  margin-right: 5pt;
+}
+
+h4 {
+  font-size: 11pt;
+  font-weight: 700;
+  color: var(--c-dark);
+  margin: 10pt 0 4pt;
+}
+
+p { margin: 0 0 7pt; }
+ul, ol { margin: 0 0 7pt; padding-left: 18pt; }
+li { margin-bottom: 2pt; }
+li::marker { color: var(--c-yellow); }
+
+strong { color: var(--c-dark); font-weight: 700; }
+em { color: var(--c-muted); }
+
+a { color: var(--c-orange); text-decoration: none; font-weight: 500; }
+
+hr {
+  border: none;
+  border-top: 2px solid var(--c-light);
+  margin: 14pt 0;
+}
+
+code {
+  font-family: "SF Mono", Monaco, "Courier New", monospace;
+  font-size: 9pt;
+  background: var(--c-light);
+  padding: 1pt 4pt;
+  border-radius: 3pt;
+}
+
+blockquote {
+  margin: 8pt 0;
+  padding: 10pt 14pt;
+  background: #FFF8E5;
+  border-left: 4px solid var(--c-yellow);
+  border-radius: 4pt;
+  color: #582A06;
+  font-size: 10pt;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8pt 0 12pt;
+  font-size: 9.5pt;
+  page-break-inside: avoid;
+  border-radius: 6pt;
+  overflow: hidden;
+  border: 1px solid var(--c-light);
+}
+th {
+  text-align: left;
+  font-weight: 700;
+  background: var(--c-dark);
+  color: #fff;
+  padding: 6pt 9pt;
+  font-size: 9.5pt;
+}
+td {
+  padding: 5pt 9pt;
+  border-bottom: 1px solid var(--c-light);
+  vertical-align: top;
+}
+table tr:last-child td { border-bottom: none; }
+table tr:nth-child(even) td { background: #FAFAFA; }
+</style>
+</head>
+<body>
+<div class="doc-header">
+  <div class="brand">Детейлинг-центр «ЛЕВША» · ТЗ для сайта</div>
+  <h1 class="title">ТЗ верстальщику · Кейс Lamborghini Urus — смена цвета</h1>
+</div>
+<p><strong>Дата:</strong> 2026-07-02<br />
+<strong>URL:</strong> <code>/projects/okleyka-avto-plenkoy/lamborghini-urus-smena-cveta-golden-green/</code><br />
+<strong>Раздел:</strong> Проекты → Оклейка авто плёнкой (отдельной категории под цветную/смену цвета на сайте нет, все плёночные работы здесь)<br />
+<strong>Тип:</strong> кейс-работа (SEO-органика по запросам «смена цвета авто плёнкой Самара» + доказательство для заявки на расчёт)</p>
+<blockquote>
+<p>Разделы <strong>1–5</strong> — служебные (мета, schema, перелинковка, alt, тех.заметки). Раздел <strong>6. Контент страницы</strong> — то, что выводим на странице (H1/H2/H3 + текст). Текст в блоке 6 — финальный, от себя не дописывать. Для перелинковки в разделе 3 нужно уточнить 2 URL услуг (снятие плёнки, защита полиуретаном).</p>
+</blockquote>
+<hr />
+<h2>1. SEO-мета</h2>
+<table>
+<thead>
+<tr>
+<th>Поле</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Title</strong> (до 60 зн.)</td>
+<td>Смена цвета Lamborghini Urus плёнкой — кейс Левша, Самара</td>
+</tr>
+<tr>
+<td><strong>Description</strong> (до 160 зн.)</td>
+<td>Как мы сменили цвет Lamborghini Urus: сняли старую плёнку, оклеили в «живой» оттенок Golden Green от OVERSALL, доработали детали. Кейс детейлинг-центра «Левша», Самара.</td>
+</tr>
+<tr>
+<td><strong>H1</strong></td>
+<td>Смена цвета Lamborghini Urus: из оранжевого в Golden Green</td>
+</tr>
+<tr>
+<td><strong>Slug</strong></td>
+<td><code>lamborghini-urus-smena-cveta-golden-green</code></td>
+</tr>
+<tr>
+<td><strong>Главные ключи</strong></td>
+<td>смена цвета авто плёнкой Самара, оклейка авто цветной плёнкой, перекрас автомобиля плёнкой, смена цвета Lamborghini, цветная плёнка Самара</td>
+</tr>
+<tr>
+<td><strong>LSI/доп.</strong></td>
+<td>Golden Green OVERSALL, оклейка кузова плёнкой, матовый винил проёмы, глянцевая плёнка Quantum, оклейка премиум-авто Самара, «живой» цвет плёнки</td>
+</tr>
+<tr>
+<td><strong>OG-title / OG-image</strong></td>
+<td>= Title / обложка кейса (img-01, авто после в Golden Green)</td>
+</tr>
+</tbody>
+</table>
+<p>Плотность ключей — естественная. «Самара» — 1–2 раза в теле + title/description.</p>
+<hr />
+<h2>2. Schema (JSON-LD в <code>&lt;head&gt;</code>)</h2>
+<p>Два блока: <code>Article</code> + <code>BreadcrumbList</code> (оба дают результат в выдаче; Breadcrumb — активные хлебные крошки).</p>
+<pre><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Article&quot;,
+  &quot;headline&quot;: &quot;Смена цвета Lamborghini Urus: из оранжевого в Golden Green&quot;,
+  &quot;author&quot;: {&quot;@type&quot;: &quot;Organization&quot;, &quot;name&quot;: &quot;Детейлинг-центр Левша&quot;},
+  &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;Левша&quot;,
+    &quot;logo&quot;: {&quot;@type&quot;: &quot;ImageObject&quot;, &quot;url&quot;: &quot;https://levsha-group.ru/&lt;путь-к-лого&gt;&quot;}
+  },
+  &quot;datePublished&quot;: &quot;2026-07-02&quot;,
+  &quot;dateModified&quot;: &quot;2026-07-02&quot;,
+  &quot;image&quot;: &quot;https://levsha-group.ru/&lt;обложка&gt;&quot;,
+  &quot;mainEntityOfPage&quot;: &quot;https://levsha-group.ru/projects/okleyka-avto-plenkoy/lamborghini-urus-smena-cveta-golden-green/&quot;
+}
+</code></pre>
+<pre><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;BreadcrumbList&quot;,
+  &quot;itemListElement&quot;: [
+    {&quot;@type&quot;:&quot;ListItem&quot;,&quot;position&quot;:1,&quot;name&quot;:&quot;Главная&quot;,&quot;item&quot;:&quot;https://levsha-group.ru/&quot;},
+    {&quot;@type&quot;:&quot;ListItem&quot;,&quot;position&quot;:2,&quot;name&quot;:&quot;Проекты&quot;,&quot;item&quot;:&quot;https://levsha-group.ru/projects/&quot;},
+    {&quot;@type&quot;:&quot;ListItem&quot;,&quot;position&quot;:3,&quot;name&quot;:&quot;Оклейка авто плёнкой&quot;,&quot;item&quot;:&quot;https://levsha-group.ru/projects/okleyka-avto-plenkoy/&quot;},
+    {&quot;@type&quot;:&quot;ListItem&quot;,&quot;position&quot;:4,&quot;name&quot;:&quot;Смена цвета Lamborghini Urus&quot;,&quot;item&quot;:&quot;https://levsha-group.ru/projects/okleyka-avto-plenkoy/lamborghini-urus-smena-cveta-golden-green/&quot;}
+  ]
+}
+</code></pre>
+<hr />
+<h2>3. Перелинковка (внутренние ссылки)</h2>
+<p>Анкоры в контенте помечены <code>→ссылка</code>:<br />
+- «смена цвета плёнкой» / «цветная оклейка» → <code>/services/okleyka-plyenkoy/okleyka-tsvetnoy-plenkoy/</code><br />
+- «сняли старую плёнку» / «снятие плёнки» → услуга снятия плёнки (уточнить URL)<br />
+- «защита кузова» / «антигравийная плёнка» → услуга оклейки полиуретаном (уточнить URL)<br />
+- «полировка» → <code>/projects/polirovka/</code> или страница услуги полировки<br />
+- «защитные покрытия / керамика» → <code>/projects/pokrytie-zashchitnym-sostavom/</code> или страница услуги<br />
+- CTA «рассчитать смену цвета» / «записаться» → форма записи / контакты</p>
+<p>Хлебные крошки: Главная → Проекты → Оклейка авто плёнкой → Смена цвета Lamborghini Urus.</p>
+<hr />
+<h2>4. Картинки / alt</h2>
+<p><strong>По факту есть 8 пар «до/после» кузова.</strong> Выводим их галереей до→после в теле кейса; обложка — сильный кадр «после». Текст — нативным HTML, фото с alt (не зашивать текст в картинки).</p>
+<p>alt задаём по паттерну (N = 1…8):<br />
+- «до»: <code>Lamborghini Urus в старой оранжевой плёнке — до смены цвета (ракурс N)</code><br />
+- «после»: <code>Lamborghini Urus после смены цвета в Golden Green — детейлинг-центр Левша, Самара (ракурс N)</code></p>
+<p>Обложка (лучший кадр «после»): <code>Lamborghini Urus после смены цвета в оттенок Golden Green от OVERSALL — Левша, Самара</code></p>
+<blockquote>
+<p>Если среди 8 пар есть кадры проёмов, крыши (Quantum) или крупный план игры цвета — уточнить alt под смысл кадра (матовый винил проёмов / глянцевая плёнка Quantum на крыше / оттенок Golden Green на свету).</p>
+</blockquote>
+<hr />
+<h2>5. Технические заметки</h2>
+<ul>
+<li><strong>Текст — нативным HTML</strong> (<code>h1/h2/h3/p/ul</code>), фото с alt как иллюстрации — не зашивать текст в картинки.</li>
+<li>Блок «Коротко» (первый экран) — выделенной плашкой/карточкой.</li>
+<li><strong>Галерея до/после ×8</strong> — блок-слайдер или сетка пар «до → после» (по возможности со сравнением-«шторкой»); ключевые кадры продублировать как <code>&lt;img&gt;</code> с alt.</li>
+<li>Mobile-first: проверить читаемость на телефоне, крупные фото не должны рвать вёрстку.</li>
+<li>Дату публикации/обновления — выводить.</li>
+<li>CTA-блоки — кнопки на форму записи.</li>
+</ul>
+<hr />
+<h2>6. Контент страницы</h2>
+<h3>H1: Смена цвета Lamborghini Urus: из оранжевого в Golden Green</h3>
+<p><em>Лид (под H1):</em></p>
+<p>Это тот случай, когда после работы машина выглядит как новая. Владелец Lamborghini Urus захотел уйти от прежнего оранжевого образа — мы →сменили цвет плёнкой на редкий «живой» оттенок и попутно закрыли кузов защитой. Показываем, что и как делали.</p>
+<hr />
+<h3>H2: Коротко</h3>
+<ul>
+<li><strong>Автомобиль:</strong> Lamborghini Urus</li>
+<li><strong>Задача:</strong> сменить цвет и полностью обновить образ, уйти от старой оранжевой плёнки</li>
+<li><strong>Что сделали:</strong> сняли старую плёнку, подготовили кузов, оклеили в оттенок Golden Green от OVERSALL; проёмы — чёрный матовый винил; крыша — чёрная глянцевая плёнка Quantum; доработали детали (спойлер, ручки, плавник)</li>
+<li><strong>Срок работы:</strong> 7 дней</li>
+<li><strong>Гарантия:</strong> 7 лет</li>
+<li><strong>Результат:</strong> полностью обновлённый образ Urus + защита кузова от сколов, царапин и следов эксплуатации</li>
+</ul>
+<hr />
+<h3>H2: Задача клиента</h3>
+<p>Автомобиль уже был в цветной плёнке — в оранжевом. Владелец захотел сменить образ на более глубокий и статусный, но с характером: чтобы цвет не был «плоским», а играл на свету. Отсюда выбор в пользу оттенка, который меняется при разном освещении.</p>
+<hr />
+<h3>H2: Что было до работы</h3>
+<p>На кузове — старая оранжевая плёнка. Перед новой оклейкой её нужно было аккуратно →снять, а кузов подготовить: очистить, обезжирить, проверить поверхность. От качества подготовки напрямую зависит, как ляжет новая плёнка и как долго продержится.</p>
+<hr />
+<h3>H2: Решение и почему так</h3>
+<p>Мы предложили сменить цвет →цветной плёнкой в оттенок <strong>Golden Green от OVERSALL</strong>. Цвет получился «живой»: при разном освещении он меняется и уходит в глубокий тёмный отлив — ровно тот эффект, который искал владелец.</p>
+<p>Отдельное решение — <strong>проёмы в чёрном матовом виниле</strong>. Это практичнее и выгоднее: если владелец позже снова захочет сменить цвет авто, перетягивать проёмы не придётся — работа с кузовом упрощается и удешевляется.</p>
+<hr />
+<h3>H2: Что сделали по зонам</h3>
+<p><strong>Кузов:</strong><br />
+- сняли старую оранжевую плёнку;<br />
+- подготовили кузов под оклейку;<br />
+- оклеили в оттенок Golden Green (OVERSALL).</p>
+<p><strong>Проёмы:</strong><br />
+- чёрный матовый винил — практичный задел под будущую смену цвета.</p>
+<p><strong>Крыша и детали:</strong><br />
+- крыша — чёрная глянцевая плёнка <strong>Quantum</strong>;<br />
+- задний спойлер, ручки и плавник на крыше — доработали в цвет образа.</p>
+<hr />
+<h3>H2: Материалы, срок и гарантия</h3>
+<ul>
+<li><strong>Плёнка кузова:</strong> Golden Green от <strong>OVERSALL</strong> — цветная плёнка с «живым» оттенком.</li>
+<li><strong>Проёмы:</strong> чёрный матовый винил.</li>
+<li><strong>Крыша:</strong> чёрная глянцевая плёнка <strong>Quantum</strong>.</li>
+<li><strong>Срок работы:</strong> 7 дней «под ключ» — со снятием старой плёнки, подготовкой кузова и доработкой деталей.</li>
+<li><strong>Гарантия:</strong> 7 лет.</li>
+</ul>
+<hr />
+<h3>H2: Результат</h3>
+<p>Полностью обновлённый образ Lamborghini Urus. Цвет живой, меняется на свету и уходит в глубокий тёмный отлив — машина смотрится как новая. Плюс к внешнему виду кузов получил <strong>дополнительную защиту от сколов, царапин и следов эксплуатации</strong>: плёнка работает не только на образ, но и на сохранность ЛКП.</p>
+<hr />
+<h3>H2: Что логично добавить к такой работе</h3>
+<p>К смене цвета часто добавляют:<br />
+- →бронирование антигравийной плёнкой зон риска (капот, бампер, фары);<br />
+- →защитные покрытия / керамику поверх;<br />
+- →полировку и уход по регламенту;<br />
+- сезонный осмотр плёнки.</p>
+<hr />
+<h3>H2: Хотите так же обновить свой автомобиль?</h3>
+<p>В детейлинг-центре «Левша» в Самаре меняем цвет авто плёнкой — от премиум-моделей до повседневных. Подберём оттенок под ваш образ, аккуратно снимем старое покрытие и оклеим кузов заново.</p>
+<p><em>CTA-блок:</em><br />
+- <strong>Рассчитать смену цвета</strong> →форма записи<br />
+- Пришлите фото автомобиля и желаемый цвет — подготовим варианты плёнки и расчёт<br />
+- Telegram / MAX / телефон: +7 (846) 211-63-11</p>
+</body>
+</html>

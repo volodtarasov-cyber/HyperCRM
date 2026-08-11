@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>screening-sample</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Canonical brand tokens */
+  --am-dark: #2B223A;
+  --am-deep: #11141B;
+  --am-yellow: #FFBA24;
+  --am-lemon: #FFF705;
+  --am-orange: #F36B00;
+  --am-brown: #582A06;
+  --am-text: #1F2937;
+  --am-muted: #626B87;
+  --am-neutral: #B9B9B9;
+  --am-bg: #FFFFFF;
+  --am-surface: #F7F5FA;
+  --am-light: #F1F1F1;
+  --am-line: #E7E3EC;
+  --am-good: #2F9E5B;
+  --am-attention: #D99000;
+  --am-risk: #D94B4B;
+  --am-unknown: #A5A0AE;
+
+  /* Backward-compatible aliases used by existing PDF templates */
+  --c-dark: var(--am-dark);
+  --c-deep: var(--am-deep);
+  --c-yellow: var(--am-yellow);
+  --c-lemon: var(--am-lemon);
+  --c-orange: var(--am-orange);
+  --c-text: var(--am-text);
+  --c-muted: var(--am-muted);
+  --c-bg: var(--am-bg);
+  --c-light: var(--am-light);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  color: var(--am-text);
+  background: var(--am-bg);
+}
+
+.am-brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.28em;
+  font-weight: 800;
+  letter-spacing: 0.035em;
+  line-height: 1;
+}
+
+.am-brand__accent {
+  color: var(--am-yellow);
+}
+
+.am-eyebrow {
+  color: var(--am-yellow);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.am-card {
+  background: var(--am-bg);
+  border: 1px solid var(--am-line);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(43, 34, 58, 0.06);
+}
+
+.am-card--dark {
+  color: #FFFFFF;
+  background:
+    radial-gradient(circle at 88% 0%, rgba(255, 186, 36, 0.18), transparent 34%),
+    var(--am-dark);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.am-section-title {
+  margin: 0;
+  color: var(--am-dark);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.am-section-title::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 18px;
+  margin-right: 9px;
+  border-radius: 99px;
+  vertical-align: -2px;
+  background: var(--am-yellow);
+}
+
+.am-muted {
+  color: var(--am-muted);
+}
+
+.am-status--good {
+  color: var(--am-good);
+}
+
+.am-status--attention {
+  color: var(--am-attention);
+}
+
+.am-status--risk {
+  color: var(--am-risk);
+}
+
+.am-status--unknown {
+  color: var(--am-unknown);
+}
+
+.am-callout {
+  padding: 14px 16px;
+  color: var(--am-brown);
+  background: #FFF8E5;
+  border-left: 5px solid var(--am-yellow);
+  border-radius: 8px;
+}
+
+@page {
+  size: A4;
+  margin: 18mm 16mm 18mm 16mm;
+}
+@page :first {
+  margin: 0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-size: 11pt;
+  line-height: 1.6;
+  color: var(--c-text);
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+
+/* ========== ОБЛОЖКА ========== */
+.cover {
+  page-break-after: always;
+  width: 210mm;
+  height: 297mm;
+  background: var(--c-dark);
+  color: #fff;
+  padding: 30mm 22mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.cover::before {
+  content: "";
+  position: absolute;
+  top: -80mm;
+  right: -80mm;
+  width: 180mm;
+  height: 180mm;
+  background: radial-gradient(circle, rgba(255,186,36,0.25) 0%, rgba(255,186,36,0) 60%);
+  pointer-events: none;
+}
+
+.cover-logo {
+  font-family: 'Manrope', sans-serif;
+  font-size: 18pt;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #fff;
+  display: inline-block;
+}
+.cover-logo .accent {
+  color: var(--c-yellow);
+  font-weight: 800;
+}
+.cover-logo-sub {
+  font-size: 9pt;
+  font-weight: 500;
+  color: rgba(255,255,255,0.65);
+  margin-top: 4pt;
+  letter-spacing: 0.02em;
+}
+
+.cover-eyebrow {
+  font-size: 10pt;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-yellow);
+  margin-bottom: 14pt;
+}
+
+.cover-title {
+  font-size: 38pt;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0 0 16pt;
+}
+
+.cover-subtitle {
+  font-size: 14pt;
+  font-weight: 500;
+  line-height: 1.4;
+  color: rgba(255,255,255,0.85);
+  max-width: 140mm;
+  margin: 0 0 24pt;
+}
+
+.cover-stages {
+  display: flex;
+  gap: 6pt;
+  margin-top: 12pt;
+  flex-wrap: wrap;
+}
+.cover-stage {
+  display: inline-flex;
+  align-items: center;
+  gap: 8pt;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,186,36,0.4);
+  border-radius: 100px;
+  padding: 6pt 14pt;
+  font-size: 10pt;
+  font-weight: 600;
+  color: #fff;
+}
+.cover-stage .dot {
+  width: 6pt;
+  height: 6pt;
+  border-radius: 50%;
+  background: var(--c-yellow);
+}
+
+.cover-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 10pt;
+  color: rgba(255,255,255,0.7);
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: 14pt;
+}
+.cover-footer strong { color: #fff; font-weight: 700; }
+
+/* ========== ОСНОВНОЙ КОНТЕНТ ========== */
+
+h1 {
+  font-size: 22pt;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--c-dark);
+  margin: 0 0 10pt;
+  padding: 14pt 16pt;
+  background: var(--c-dark);
+  color: #fff;
+  border-radius: 6pt;
+  border-left: 6pt solid var(--c-yellow);
+  page-break-after: avoid;
+}
+
+h2 {
+  font-size: 16pt;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--c-dark);
+  margin: 22pt 0 10pt;
+  padding-left: 12pt;
+  border-left: 5pt solid var(--c-yellow);
+  page-break-after: avoid;
+}
+
+h3 {
+  font-size: 13pt;
+  font-weight: 700;
+  color: var(--c-dark);
+  margin: 16pt 0 6pt;
+  page-break-after: avoid;
+}
+h3::before {
+  content: "■";
+  color: var(--c-yellow);
+  margin-right: 6pt;
+}
+
+h4 {
+  font-size: 11.5pt;
+  font-weight: 700;
+  color: var(--c-dark);
+  margin: 12pt 0 4pt;
+}
+
+p { margin: 0 0 8pt; }
+ul, ol { margin: 0 0 8pt; padding-left: 20pt; }
+li { margin-bottom: 3pt; }
+li::marker { color: var(--c-yellow); }
+
+strong { color: var(--c-dark); font-weight: 700; }
+em { color: var(--c-muted); }
+
+a { color: var(--c-orange); text-decoration: none; font-weight: 500; }
+
+hr {
+  border: none;
+  border-top: 2px solid var(--c-light);
+  margin: 18pt 0;
+}
+
+code {
+  font-family: "SF Mono", Monaco, "Courier New", monospace;
+  font-size: 9.5pt;
+  background: var(--c-light);
+  padding: 1pt 4pt;
+  border-radius: 3pt;
+}
+
+blockquote {
+  margin: 8pt 0;
+  padding: 12pt 16pt;
+  background: #FFF8E5;
+  border-left: 4px solid var(--c-yellow);
+  border-radius: 4pt;
+  color: #582A06;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10pt 0 14pt;
+  font-size: 10pt;
+  page-break-inside: avoid;
+  border-radius: 6pt;
+  overflow: hidden;
+  border: 1px solid var(--c-light);
+}
+th {
+  text-align: left;
+  font-weight: 700;
+  background: var(--c-dark);
+  color: #fff;
+  padding: 7pt 10pt;
+  font-size: 10pt;
+}
+td {
+  padding: 6pt 10pt;
+  border-bottom: 1px solid var(--c-light);
+  vertical-align: top;
+}
+table tr:last-child td { border-bottom: none; }
+table tr:nth-child(even) td { background: #FAFAFA; }
+
+/* Подсветка строки «Итого» в таблицах цен */
+table tr:has(td strong:first-child:nth-of-type(1)) td { /* fallback */ }
+
+/* Эмодзи и иконки в заголовках */
+h1 em, h2 em, h3 em { font-style: normal; color: var(--c-yellow); }
+</style>
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div>
+    <div class="cover-logo">
+      <span class="accent">АНАНАС</span> МАРКЕТИНГ
+      <div class="cover-logo-sub">Системный маркетинг для сервисного бизнеса</div>
+    </div>
+  </div>
+
+  <div>
+    <div class="cover-eyebrow">Демонстрация услуги · Образец отчёта</div>
+    <h1 class="cover-title">Скрининг бизнеса<br>и рынка</h1>
+    <p class="cover-subtitle">Что вы получаете до того, как потратите первый рубль на рекламу: главное ограничение бизнеса, карта клиентов, путь к покупке с точкой перелома и план действий по приоритету.</p>
+    <div class="cover-stages">
+      <span class="cover-stage"><span class="dot"></span> Главное ограничение</span>
+      <span class="cover-stage"><span class="dot"></span> Карта клиентов и пути</span>
+      <span class="cover-stage"><span class="dot"></span> План по приоритету</span>
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <div>
+      <strong>Владимир Тарасов</strong><br>
+      Стратегия и ведение проекта<br>
+      <span style="color:rgba(255,255,255,0.55)">@volodtarasov · volodtarasov@gmail.com</span>
+    </div>
+    <div style="text-align:right">
+      <strong>Первый шаг проекта</strong><br>
+      <span style="color:rgba(255,255,255,0.55)">До вложений в рекламу и сайт</span><br>
+      <span style="color:#FFBA24; font-weight:700; font-size:14pt">Что вы получите →</span>
+    </div>
+  </div>
+</div>
+
+<h2>Образец отчёта</h2>
+<p>Это пример того, что вы получаете на руки после скрининга — до того, как потратите первый рубль на рекламу, сайт или CRM. Здесь разобран детейлинг-центр (услуга «шумоизоляция») — на месте вашей ниши будет ваша.</p>
+<p>Скрининг отвечает на один вопрос: <strong>где у бизнеса главное узкое место и за что браться первым, чтобы деньги в рекламу не сгорели.</strong></p>
+<hr />
+<h2>1. Главный вывод: где вы теряете деньги</h2>
+<p>Прежде чем советовать «настроить Директ» или «переделать сайт», мы находим настоящее ограничение. В этом примере оно такое:</p>
+<blockquote>
+<p>Мастер по шумоизоляции загружен меньше чем наполовину — руки есть, а заказов мало. При этом 7 из 10 клиентов делают шумку один раз и больше не возвращаются. Гнать рекламу в таком виде — значит покупать разовые сделки и сливать половину бюджета.</p>
+</blockquote>
+<p>Это и есть смысл скрининга: <strong>сначала видно, что чинить, потом тратятся деньги.</strong> Здесь главный рычаг — не реклама сама по себе, а две вещи: чем доказывать результат клиенту и как вернуть его на второй визит.</p>
+<hr />
+<h2>2. Рынок и конкуренты: где вы стоите</h2>
+<p>Коротко и по делу — с кем и за что вы конкурируете в голове клиента.</p>
+<ul>
+<li><strong>Спрос есть, но спящий.</strong> Часть клиентов уже ищет услугу прямым запросом, часть даже не знает, что их проблему можно решить.</li>
+<li><strong>Три типа конкурентов:</strong> узкие профильные центры (сильны брендом материала), гаражи (дёшево, но «поедет по швам») и универсальные студии.</li>
+<li><strong>Где вы выигрываете:</strong> не ценой и не материалом (тут профильные сильнее), а <strong>сервисом и гарантией</strong> — «соберём без скрипов, под договор». Именно этого боятся после гаражей.</li>
+</ul>
+<p>Вывод для рекламы: давить не на «у нас материал X», а на снятие страха «после разборки машина заскрипит».</p>
+<hr />
+<h2>3. Кто на самом деле покупает</h2>
+<p>Мы раскладываем клиентов не по полу и возрасту, а по тому, <strong>какую задачу человек решает.</strong> В этом примере вышло четыре группы, и одна из них — ядро:</p>
+<p><strong>Ядро — владелец новой машины.</strong> Купил новый автомобиль, выехал на трассу и понял: гудит, как в бочке. Машина новая, а тихой не ощущается. Он не «интересуется шумоизоляцией» — он хочет тишину, которой ждал от новой машины. Острый триггер, готовность платить, прямое попадание в вашу услугу.</p>
+<p>Остальные три группы (давно ездит и устал от гула; меломан; уже делал раньше и хочет повторить) — вторичны, но их тоже видно, и под каждую — своя зацепка.</p>
+<p>Под каждый сегмент в отчёте: что им важно, чего боятся, какими словами они сами описывают проблему (это потом идёт в рекламу и скрипты дословно).</p>
+<hr />
+<h2>4. Путь клиента: где именно вы его теряете</h2>
+<p>Мы проходим весь путь от «заметил проблему» до «оплатил» и находим <strong>точку перелома</strong> — момент, где сделка либо случается, либо нет.</p>
+<ol>
+<li>Купил машину → заметил гул</li>
+<li>Засомневался, лечится ли это вообще</li>
+<li>Начал искать, кому доверить</li>
+<li><strong>← Вот здесь спотыкается:</strong> цена кажется высокой, и страшно, что после разборки салон заскрипит</li>
+<li>Принял решение → ждёт → получает результат</li>
+</ol>
+<p><strong>Точка перелома — шаг 4.</strong> И ломается она не скидкой, а <strong>бесплатной диагностикой-прослушиванием:</strong> мастер слушает машину, показывает, откуда гудит, даёт послушать разницу «до/после» на другом авто и обещает под договор собрать без скрипов. После этого человек платит спокойно.</p>
+<p>Из этого же пути сам собирается контент-план: на каждом шаге клиент гуглит своё, и под каждый запрос — свой материал. Вам не нужно выдумывать темы для постов и страниц — они выпадают из пути клиента.</p>
+<hr />
+<h2>5. Балл зрелости: честная оценка по 7 направлениям</h2>
+<p>Чтобы вы видели не «всё плохо» или «всё хорошо», а конкретно — где силён, где провал. Оценка в процентах по каждому направлению:</p>
+<table>
+<thead>
+<tr>
+<th>Направление</th>
+<th>Оценка</th>
+<th>Что за этим</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Привлечение лидов</td>
+<td>30%</td>
+<td>Канал не запущен под эту услугу</td>
+</tr>
+<tr>
+<td>Оффер и упаковка</td>
+<td>50%</td>
+<td>Пакеты есть, но доказательств нет</td>
+</tr>
+<tr>
+<td>Продажи</td>
+<td>40%</td>
+<td>Сильный продавец есть, но техника не перенесена на команду</td>
+</tr>
+<tr>
+<td>Удержание / повторные</td>
+<td>30%</td>
+<td>7 из 10 клиентов не возвращаются</td>
+</tr>
+<tr>
+<td>Измерение</td>
+<td>35%</td>
+<td>Нет сквозной аналитики откуда лид</td>
+</tr>
+<tr>
+<td>Контент и доказательства</td>
+<td>20%</td>
+<td>Нет своих фото и видео «до/после» — корневая дыра</td>
+</tr>
+<tr>
+<td>Репутация</td>
+<td>60%</td>
+<td>Отзывы и карты в порядке</td>
+</tr>
+<tr>
+<td><strong>Итого зрелость</strong></td>
+<td><strong>≈38%</strong></td>
+<td>Сильный продукт, но не упакован и не внедрён</td>
+</tr>
+</tbody>
+</table>
+<p>Балл — это не оценка ради оценки. Через квартал замеряем повторно и видим, сдвинулась ли стрелка. Это ваша приборная панель прогресса.</p>
+<hr />
+<h2>6. Что делать — по приоритету</h2>
+<p>Не список из 30 задач, а порядок, в котором за них браться. Сначала то, что разблокирует остальное.</p>
+<ol>
+<li><strong>Снять 3-5 своих видео «до/после»</strong> (звук двери, слои материала). Дёшево, и без этого ни реклама, ни продажа не работают вслепую. Это разблокирует всё остальное.</li>
+<li><strong>Внедрить диагностику-прослушивание и скрипт продажи</strong> — чинит ту самую точку, где теряем сделки.</li>
+<li><strong>Запустить маршрут второго визита</strong> (контрольный осмотр, допродажа, рекомендация) — против тех самых 70% невозврата.</li>
+<li><strong>Только теперь — реклама</strong>, и осторожно, в пределах того, что потянет один мастер.</li>
+</ol>
+<hr />
+<h2>7. Чего НЕ делать (чтобы не сжечь деньги)</h2>
+<p>Половина ценности скрининга — отговорить от дорогих ошибок:</p>
+<ul>
+<li><strong>Не лить рекламу, пока нет «до/после».</strong> Деньги уйдут, а доказать результат нечем — конверсия будет низкой на любом бюджете.</li>
+<li><strong>Не раздувать поток заявок,</strong> пока один мастер недозагружен лишь наполовину — сначала проверить, потянет ли он рост.</li>
+<li><strong>Не продавать дорогой комплекс в лоб</strong> — начинать с бесплатной диагностики, она и есть точка перелома.</li>
+</ul>
+<hr />
+<h2>Что вы получаете на руки</h2>
+<p>После скрининга у вас на столе:</p>
+<ul>
+<li><strong>Вердикт по главному ограничению</strong> — за что браться первым и почему.</li>
+<li><strong>Карта клиентов</strong> — кто покупает, что им важно, их словами.</li>
+<li><strong>Карта пути клиента</strong> с отмеченной точкой, где вы теряете сделки.</li>
+<li><strong>Балл зрелости по 7 направлениям</strong> — приборная панель прогресса.</li>
+<li><strong>План действий по приоритету</strong> + список того, чего делать НЕ нужно.</li>
+</ul>
+<p>Это занимает несколько дней и стоит дешевле одной недели слитого рекламного бюджета. И главное — после него понятно, <strong>куда вообще имеет смысл вкладывать деньги.</strong></p>
+</body>
+</html>

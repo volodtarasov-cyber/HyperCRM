@@ -1,0 +1,26 @@
+# Secrets & credentials — никогда не коммитим
+system/secrets/
+projects/**/access.md
+*.key
+*.pem
+.env
+.env.local
+
+# OS / IDE
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Claude local overrides (содержит разрешения на конкретной машине)
+.claude/settings.local.json
+
+# Окружения и зависимости — пересобираются, не версионируются
+.tools/venv/
+node_modules/
+.pnpm-store/
+__pycache__/
+*.pyc
+
+# Временное
+tmp/

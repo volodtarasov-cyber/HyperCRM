@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Контур роста — прототип</title>
+<link rel="stylesheet" href="../../../team/assets/ananas-marketing-brand.css">
+<style>
+:root {
+  --board-bg: #F2F0F5;
+  --board-panel: #FFFFFF;
+  --board-dark: #231B30;
+  --board-soft-dark: #342941;
+  --board-yellow-soft: #FFF5D6;
+  --board-good-soft: #EAF7EF;
+  --board-risk-soft: #FFF0F0;
+  --board-blue: #5066C5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 1180px;
+  min-height: 100vh;
+  color: var(--am-text);
+  background: var(--board-bg);
+}
+
+button {
+  font: inherit;
+}
+
+.app-shell {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 226px 1fr;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  padding: 24px 18px 18px;
+  color: #FFFFFF;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(255, 186, 36, 0.14), transparent 32%),
+    var(--board-dark);
+}
+
+.sidebar-brand {
+  padding: 2px 10px 24px;
+}
+
+.sidebar-brand .am-brand {
+  font-size: 15px;
+}
+
+.product-name {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.nav-label {
+  margin: 12px 10px 7px;
+  color: rgba(255, 255, 255, 0.36);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.nav {
+  display: grid;
+  gap: 4px;
+}
+
+.nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 11px;
+  color: rgba(255, 255, 255, 0.67);
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.nav a.active {
+  box-shadow: inset 3px 0 0 var(--am-yellow);
+}
+
+.nav-icon {
+  display: grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  color: var(--am-yellow);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 7px;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.sidebar-health {
+  margin-top: auto;
+  padding: 13px;
+  color: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.045);
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.health-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.health-row strong {
+  color: #FFFFFF;
+  font-size: 11px;
+}
+
+.health-bar {
+  height: 5px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.health-bar span {
+  display: block;
+  width: 84%;
+  height: 100%;
+  background: var(--am-yellow);
+}
+
+.workspace {
+  padding: 0 26px 34px;
+}
+
+.topbar {
+  position: sticky;
+  z-index: 5;
+  top: 0;
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 0 -26px;
+  padding: 0 26px;
+  border-bottom: 1px solid var(--am-line);
+  background: rgba(242, 240, 245, 0.94);
+  backdrop-filter: blur(12px);
+}
+
+.company-title {
+  color: var(--am-dark);
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.company-subtitle {
+  margin-top: 3px;
+  color: var(--am-muted);
+  font-size: 10px;
+}
+
+.topbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.period-switch {
+  display: flex;
+  padding: 3px;
+  border: 1px solid var(--am-line);
+  border-radius: 10px;
+  background: #FFFFFF;
+}
+
+.period-switch button {
+  padding: 7px 10px;
+  color: var(--am-muted);
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.period-switch button.active {
+  color: var(--am-dark);
+  background: var(--board-yellow-soft);
+}
+
+.sync-badge {
+  padding: 8px 11px;
+  color: var(--am-good);
+  border: 1px solid #CDE9D7;
+  border-radius: 9px;
+  background: var(--board-good-soft);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.page-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 0 15px;
+}
+
+.page-heading h1 {
+  margin: 0;
+  color: var(--am-dark);
+  font-size: 25px;
+  letter-spacing: -0.04em;
+}
+
+.page-heading p {
+  max-width: 650px;
+  margin: 6px 0 0;
+  color: var(--am-muted);
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.review-button {
+  padding: 10px 14px;
+  color: var(--board-dark);
+  border: 0;
+  border-radius: 10px;
+  background: var(--am-yellow);
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1.25fr 0.9fr 1fr;
+  gap: 12px;
+}
+
+.card {
+  background: var(--board-panel);
+  border: 1px solid var(--am-line);
+  border-radius: 14px;
+  box-shadow: 0 7px 24px rgba(43, 34, 58, 0.045);
+}
+
+.summary-card {
+  min-height: 142px;
+  padding: 15px 16px;
+}
+
+.card-kicker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--am-muted);
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--am-good);
+}
+
+.status-dot.attention {
+  background: var(--am-attention);
+}
+
+.status-dot.risk {
+  background: var(--am-risk);
+}
+
+.metric-row {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  margin-top: 11px;
+}
+
+.metric-main {
+  color: var(--am-dark);
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+.metric-target {
+  color: var(--am-muted);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.metric-label {
+  margin-top: 3px;
+  color: var(--am-text);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.metric-note {
+  margin-top: 7px;
+  color: var(--am-muted);
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+.progress {
+  height: 6px;
+  margin-top: 11px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: var(--am-line);
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--am-yellow);
+}
+
+.constraint-card {
+  color: #FFFFFF;
+  background:
+    radial-gradient(circle at 94% 5%, rgba(255, 186, 36, 0.19), transparent 38%),
+    var(--board-dark);
+  border-color: var(--board-dark);
+}
+
+.constraint-card .card-kicker,
+.constraint-card .metric-note {
+  color: rgba(255, 255, 255, 0.56);
+}
+
+.constraint-card .metric-main,
+.constraint-card .metric-label {
+  color: #FFFFFF;
+}
+
+.confidence {
+  color: var(--am-yellow);
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.section {
+  margin-top: 14px;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  margin: 0;
+  color: var(--am-dark);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.section-note {
+  color: var(--am-muted);
+  font-size: 9px;
+}
+
+.journey-card {
+  padding: 16px;
+}
+
+.journey {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 7px;
+}
+
+.stage {
+  position: relative;
+  min-height: 86px;
+  padding: 10px;
+  border: 1px solid var(--am-line);
+  border-radius: 10px;
+  background: #FAF9FB;
+}
+
+.stage:not(:last-child)::after {
+  position: absolute;
+  z-index: 2;
+  top: 40px;
+  right: -10px;
+  width: 12px;
+  height: 2px;
+  background: var(--am-line);
+  content: "";
+}
+
+.stage.bottleneck {
+  border-color: #F0B4B4;
+  background: var(--board-risk-soft);
+  box-shadow: inset 0 0 0 1px rgba(217, 75, 75, 0.08);
+}
+
+.stage-name {
+  color: var(--am-muted);
+  font-size: 8px;
+  font-weight: 750;
+  text-transform: uppercase;
+}
+
+.stage-value {
+  margin-top: 8px;
+  color: var(--am-dark);
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.stage-meta {
+  margin-top: 4px;
+  color: var(--am-muted);
+  font-size: 8px;
+}
+
+.stage-change {
+  position: absolute;
+  right: 9px;
+  bottom: 8px;
+  color: var(--am-good);
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.stage-change.down {
+  color: var(--am-risk);
+}
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1.55fr;
+  gap: 12px;
+}
+
+.initiatives-card,
+.tasks-card,
+.results-card {
+  padding: 15px;
+}
+
+.initiative {
+  padding: 12px;
+  border: 1px solid var(--am-line);
+  border-radius: 11px;
+  background: #FFFFFF;
+}
+
+.initiative + .initiative {
+  margin-top: 8px;
+}
+
+.initiative.primary {
+  border-color: #E6C35B;
+  background: #FFFDF5;
+}
+
+.initiative-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.initiative-tag {
+  display: inline-flex;
+  padding: 4px 7px;
+  color: #765300;
+  border-radius: 6px;
+  background: #FFF0B8;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.initiative-tag.secondary {
+  color: #4C5576;
+  background: #EEF0F8;
+}
+
+.initiative-title {
+  margin-top: 7px;
+  color: var(--am-dark);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.initiative-owner {
+  color: var(--am-muted);
+  font-size: 8px;
+  text-align: right;
+}
+
+.initiative-owner strong {
+  display: block;
+  margin-top: 2px;
+  color: var(--am-text);
+  font-size: 9px;
+}
+
+.initiative-metric {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: end;
+  margin-top: 10px;
+}
+
+.mini-progress {
+  height: 5px;
+  margin-top: 5px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: var(--am-line);
+}
+
+.mini-progress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--am-yellow);
+}
+
+.initiative-metric-label {
+  color: var(--am-muted);
+  font-size: 8px;
+}
+
+.initiative-metric-value {
+  margin-top: 2px;
+  color: var(--am-dark);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.checkpoint {
+  color: var(--am-muted);
+  font-size: 8px;
+  text-align: right;
+}
+
+.checkpoint strong {
+  display: block;
+  margin-top: 2px;
+  color: var(--am-text);
+  font-size: 9px;
+}
+
+.task-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.task-column {
+  min-height: 247px;
+  padding: 9px;
+  border-radius: 10px;
+  background: #F8F7FA;
+}
+
+.task-column-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  color: var(--am-muted);
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.count {
+  display: grid;
+  width: 18px;
+  height: 18px;
+  place-items: center;
+  border-radius: 50%;
+  background: #ECE9F1;
+}
+
+.task {
+  padding: 9px;
+  border: 1px solid var(--am-line);
+  border-radius: 9px;
+  background: #FFFFFF;
+}
+
+.task + .task {
+  margin-top: 7px;
+}
+
+.task.blocked {
+  border-left: 3px solid var(--am-risk);
+}
+
+.task.done {
+  opacity: 0.72;
+}
+
+.task-link {
+  color: #8A680F;
+  font-size: 7px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.task-title {
+  margin-top: 5px;
+  color: var(--am-text);
+  font-size: 9px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.task-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px;
+  margin-top: 8px;
+  color: var(--am-muted);
+  font-size: 7px;
+}
+
+.avatar {
+  display: grid;
+  width: 20px;
+  height: 20px;
+  place-items: center;
+  color: #FFFFFF;
+  border-radius: 50%;
+  background: var(--board-blue);
+  font-size: 7px;
+  font-weight: 800;
+}
+
+.avatar.gold {
+  color: var(--board-dark);
+  background: var(--am-yellow);
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.results-table th {
+  padding: 0 10px 9px;
+  color: var(--am-muted);
+  border-bottom: 1px solid var(--am-line);
+  font-size: 8px;
+  font-weight: 800;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.results-table td {
+  padding: 11px 10px;
+  color: var(--am-text);
+  border-bottom: 1px solid #F0EDF3;
+  font-size: 9px;
+}
+
+.results-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.result-name {
+  color: var(--am-dark);
+  font-weight: 800;
+}
+
+.delta {
+  color: var(--am-good);
+  font-weight: 800;
+}
+
+.effect {
+  color: var(--am-dark);
+  font-weight: 800;
+}
+
+.decision {
+  display: inline-flex;
+  padding: 5px 8px;
+  color: #176A38;
+  border-radius: 7px;
+  background: var(--board-good-soft);
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.decision.improve {
+  color: #7A5700;
+  background: var(--board-yellow-soft);
+}
+
+.footer-note {
+  margin-top: 13px;
+  color: var(--am-muted);
+  font-size: 8px;
+  text-align: right;
+}
+
+@media (max-width: 1280px) {
+  .workspace {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .topbar {
+    margin-right: -18px;
+    margin-left: -18px;
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+}
+</style>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="am-brand">
+        <span class="am-brand__accent">АНАНАС</span>
+        <span>МАРКЕТИНГ</span>
+      </div>
+      <div class="product-name">Commercial OS<br>Контур роста</div>
+    </div>
+
+    <div class="nav-label">Управление</div>
+    <nav class="nav" aria-label="Основная навигация">
+      <a class="active" href="#overview"><span class="nav-icon">01</span>Контур роста</a>
+      <a href="#diagnostic"><span class="nav-icon">02</span>Диагностика</a>
+      <a href="#funnel"><span class="nav-icon">03</span>Воронка</a>
+      <a href="#initiatives"><span class="nav-icon">04</span>Инициативы</a>
+      <a href="#tasks"><span class="nav-icon">05</span>Задачи недели</a>
+      <a href="#results"><span class="nav-icon">06</span>Результаты</a>
+    </nav>
+
+    <div class="nav-label">Система</div>
+    <nav class="nav" aria-label="Системная навигация">
+      <a href="#initiatives"><span class="nav-icon">07</span>Playbooks</a>
+      <a href="#overview"><span class="nav-icon">08</span>Данные</a>
+    </nav>
+
+    <div class="sidebar-health">
+      <div class="health-row">
+        <span>Здоровье системы</span>
+        <strong>84%</strong>
+      </div>
+      <div class="health-bar"><span></span></div>
+      <div style="margin-top: 9px;">Данные обновлены. Две задачи требуют владельца снятия блокера.</div>
+    </div>
+  </aside>
+
+  <main class="workspace" id="overview">
+    <header class="topbar">
+      <div>
+        <div class="company-title">Демо-компания · Высокочековая услуга</div>
+        <div class="company-subtitle">Самара · Владелец системы: Александр · Цикл 01.06–31.08.2026</div>
+      </div>
+      <div class="topbar-controls">
+        <div class="period-switch" aria-label="Период">
+          <button type="button">Неделя</button>
+          <button class="active" type="button">30 дней</button>
+          <button type="button">90 дней</button>
+        </div>
+        <div class="sync-badge">Данные свежие · 10 июня, 08:40</div>
+      </div>
+    </header>
+
+    <section class="page-heading">
+      <div>
+        <h1>Контур роста</h1>
+        <p>Одна цель, одно текущее ограничение и обязательства команды до следующего разбора. Все задачи связаны с инициативой и измеряемым результатом.</p>
+      </div>
+      <button class="review-button" type="button">Начать недельный разбор</button>
+    </section>
+
+    <section class="summary-grid" id="diagnostic" aria-label="Экономический контракт">
+      <article class="card summary-card">
+        <div class="card-kicker"><span>Цель на 90 дней</span><span class="status-dot"></span></div>
+        <div class="metric-row">
+          <div class="metric-main">2,46 млн</div>
+          <div class="metric-target">из 2,80 млн ₽</div>
+        </div>
+        <div class="metric-label">Валовая прибыль направления / месяц</div>
+        <div class="progress"><span style="width: 69%;"></span></div>
+        <div class="metric-note">Baseline 2,10 млн ₽ · прогноз 2,72 млн ₽</div>
+      </article>
+
+      <article class="card summary-card constraint-card">
+        <div class="card-kicker"><span>Главное ограничение</span><span class="confidence">Уверенность 82%</span></div>
+        <div class="metric-row">
+          <div class="metric-main">21%</div>
+          <div class="metric-target">цель 30%</div>
+        </div>
+        <div class="metric-label">Конверсия квалифицированного обращения в продажу</div>
+        <div class="metric-note">Потенциальная утечка: 780–920 тыс. ₽ выручки в месяц. Не масштабировать трафик без контроля обработки.</div>
+      </article>
+
+      <article class="card summary-card">
+        <div class="card-kicker"><span>Обязательства недели</span><span class="status-dot attention"></span></div>
+        <div class="metric-row">
+          <div class="metric-main">7 / 10</div>
+        </div>
+        <div class="metric-label">Завершено или готово к проверке</div>
+        <div class="progress"><span style="width: 70%;"></span></div>
+        <div class="metric-note">2 заблокировано · 1 просрочено</div>
+      </article>
+
+      <article class="card summary-card">
+        <div class="card-kicker"><span>Подтверждённый эффект</span><span class="status-dot"></span></div>
+        <div class="metric-row">
+          <div class="metric-main">+420 тыс.</div>
+        </div>
+        <div class="metric-label">Дополнительная валовая прибыль</div>
+        <div class="metric-note">За 30 дней · высокая уверенность по двум завершённым инициативам</div>
+      </article>
+    </section>
+
+    <section class="section" id="funnel">
+      <div class="section-head">
+        <h2 class="section-title">Путь клиента и текущее ограничение</h2>
+        <div class="section-note">Красным выделено подтверждённое ограничение, а не просто минимальная конверсия</div>
+      </div>
+      <article class="card journey-card">
+        <div class="journey">
+          <div class="stage">
+            <div class="stage-name">Обращения</div>
+            <div class="stage-value">184</div>
+            <div class="stage-meta">100% входа</div>
+            <div class="stage-change">+12%</div>
+          </div>
+          <div class="stage">
+            <div class="stage-name">Контакт</div>
+            <div class="stage-value">161</div>
+            <div class="stage-meta">87,5%</div>
+            <div class="stage-change">+4 п.п.</div>
+          </div>
+          <div class="stage">
+            <div class="stage-name">Квалификация</div>
+            <div class="stage-value">119</div>
+            <div class="stage-meta">73,9%</div>
+            <div class="stage-change">+1 п.п.</div>
+          </div>
+          <div class="stage bottleneck">
+            <div class="stage-name">Продажа</div>
+            <div class="stage-value">25</div>
+            <div class="stage-meta">21,0% от квалиф.</div>
+            <div class="stage-change down">−9 п.п. к цели</div>
+          </div>
+          <div class="stage">
+            <div class="stage-name">Оказание</div>
+            <div class="stage-value">23</div>
+            <div class="stage-meta">92,0% доезд</div>
+            <div class="stage-change">стабильно</div>
+          </div>
+          <div class="stage">
+            <div class="stage-name">NPS / отзыв</div>
+            <div class="stage-value">15</div>
+            <div class="stage-meta">65,2% охват</div>
+            <div class="stage-change">+18 п.п.</div>
+          </div>
+          <div class="stage">
+            <div class="stage-name">Следующий шаг</div>
+            <div class="stage-value">11</div>
+            <div class="stage-meta">47,8% назначено</div>
+            <div class="stage-change">+7 п.п.</div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section focus-grid">
+      <article class="card initiatives-card" id="initiatives">
+        <div class="section-head">
+          <h2 class="section-title">Фокус 90 дней</h2>
+          <div class="section-note">1 основная + 1 поддерживающая</div>
+        </div>
+
+        <div class="initiative primary">
+          <div class="initiative-top">
+            <div>
+              <span class="initiative-tag">Основная · active</span>
+              <div class="initiative-title">Стандарт продажи высокочековой услуги</div>
+            </div>
+            <div class="initiative-owner">Владелец<strong>Александр</strong></div>
+          </div>
+          <div class="initiative-metric">
+            <div>
+              <div class="initiative-metric-label">Конверсия квалифицированных лидов</div>
+              <div class="initiative-metric-value">21% → 30%</div>
+              <div class="mini-progress"><span style="width: 46%;"></span></div>
+            </div>
+            <div class="checkpoint">Проверка<strong>17 июня</strong></div>
+          </div>
+        </div>
+
+        <div class="initiative">
+          <div class="initiative-top">
+            <div>
+              <span class="initiative-tag secondary">Поддерживающая · measuring</span>
+              <div class="initiative-title">Контроль источников и записей звонков</div>
+            </div>
+            <div class="initiative-owner">Владелец<strong>Мария</strong></div>
+          </div>
+          <div class="initiative-metric">
+            <div>
+              <div class="initiative-metric-label">Лиды с источником и записью</div>
+              <div class="initiative-metric-value">58% → 90%</div>
+              <div class="mini-progress"><span style="width: 76%;"></span></div>
+            </div>
+            <div class="checkpoint">Проверка<strong>14 июня</strong></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card tasks-card" id="tasks">
+        <div class="section-head">
+          <h2 class="section-title">Обязательства до следующего разбора</h2>
+          <div class="section-note">Только действия, связанные с активными инициативами</div>
+        </div>
+        <div class="task-columns">
+          <div class="task-column">
+            <div class="task-column-head"><span>К выполнению</span><span class="count">2</span></div>
+            <div class="task">
+              <div class="task-link">Стандарт продажи</div>
+              <div class="task-title">Выделить пять приёмов сильнейшего продавца из 10 звонков</div>
+              <div class="task-meta"><span>до 12 июня</span><span class="avatar gold">ВТ</span></div>
+            </div>
+            <div class="task">
+              <div class="task-link">Контроль данных</div>
+              <div class="task-title">Утвердить единое определение квалифицированного лида</div>
+              <div class="task-meta"><span>до 13 июня</span><span class="avatar">МР</span></div>
+            </div>
+          </div>
+
+          <div class="task-column">
+            <div class="task-column-head"><span>В работе / блокер</span><span class="count">3</span></div>
+            <div class="task">
+              <div class="task-link">Стандарт продажи</div>
+              <div class="task-title">Провести тренинг и три ролевые продажи с каждым сотрудником</div>
+              <div class="task-meta"><span>готово 60%</span><span class="avatar">АЛ</span></div>
+            </div>
+            <div class="task blocked">
+              <div class="task-link">Блокер · нужен собственник</div>
+              <div class="task-title">Согласовать двухчасовое окно команды на практику</div>
+              <div class="task-meta"><span>просрочено 1 день</span><span class="avatar gold">ВТ</span></div>
+            </div>
+            <div class="task">
+              <div class="task-link">Контроль данных</div>
+              <div class="task-title">Проверить запись и источник у последних 50 обращений</div>
+              <div class="task-meta"><span>32 из 50</span><span class="avatar">МР</span></div>
+            </div>
+          </div>
+
+          <div class="task-column">
+            <div class="task-column-head"><span>Готово к проверке</span><span class="count">2</span></div>
+            <div class="task done">
+              <div class="task-link">Стандарт продажи</div>
+              <div class="task-title">Разместить боевую карточку первого касания у рабочих мест</div>
+              <div class="task-meta"><span>проверка 11 июня</span><span class="avatar">АЛ</span></div>
+            </div>
+            <div class="task done">
+              <div class="task-link">Контроль данных</div>
+              <div class="task-title">Настроить отчёт по конверсии в разрезе сотрудника и услуги</div>
+              <div class="task-meta"><span>проверка 11 июня</span><span class="avatar">МР</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section" id="results">
+      <div class="section-head">
+        <h2 class="section-title">Реестр результатов</h2>
+        <div class="section-note">Выполненная задача не считается результатом без изменения процесса или экономики</div>
+      </div>
+      <article class="card results-card">
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>Инициатива</th>
+              <th>Baseline</th>
+              <th>Сейчас</th>
+              <th>Process outcome</th>
+              <th>Economic outcome</th>
+              <th>Уверенность</th>
+              <th>Решение</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="result-name">Follow-up незакрытых обращений</td>
+              <td>6% возврата в диалог</td>
+              <td class="delta">18%</td>
+              <td>+9 повторных диалогов</td>
+              <td class="effect">+260 тыс. ₽ ВП</td>
+              <td>Высокая</td>
+              <td><span class="decision">Scale</span></td>
+            </tr>
+            <tr>
+              <td class="result-name">Реактивация базы приоритетных клиентов</td>
+              <td>0 контактов / мес</td>
+              <td class="delta">38 контактов</td>
+              <td>7 записей, 4 продажи</td>
+              <td class="effect">+160 тыс. ₽ ВП</td>
+              <td>Высокая</td>
+              <td><span class="decision">Scale</span></td>
+            </tr>
+            <tr>
+              <td class="result-name">Стандарт продажи высокочековой услуги</td>
+              <td>18% конверсия</td>
+              <td class="delta">21%</td>
+              <td>+3 п.п., выборка мала</td>
+              <td class="effect">Не подтверждён</td>
+              <td>Средняя</td>
+              <td><span class="decision improve">Improve</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+
+    <div class="footer-note">Прототип v0.1 · Все цифры демонстрационные · Главная единица ценности: ограничение → действие → измеренный outcome</div>
+  </main>
+</div>
+
+<script>
+const periodButtons = document.querySelectorAll('.period-switch button');
+periodButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    periodButtons.forEach((item) => item.classList.remove('active'));
+    button.classList.add('active');
+  });
+});
+
+const navLinks = document.querySelectorAll('.nav a');
+navLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    navLinks.forEach((item) => item.classList.remove('active'));
+    link.classList.add('active');
+  });
+});
+
+document.querySelector('.review-button').addEventListener('click', () => {
+  document.querySelector('#funnel').scrollIntoView({ behavior: 'smooth' });
+});
+</script>
+</body>
+</html>

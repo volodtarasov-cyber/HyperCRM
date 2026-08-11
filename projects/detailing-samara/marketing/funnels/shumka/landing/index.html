@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Шумоизоляция автомобиля в Самаре · Левша</title>
+  <meta name="description" content="Шумоизоляция авто в Самаре: тише, чем с завода. Материалы STP Aero, сборка без скрипов, гарантия 1 год, бесплатная диагностика. 751 оценка 5,0 на Яндекс.Картах.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="#" class="header__logo">
+      <span class="header__logo-mark">Л</span>
+      <span class="header__logo-text">Левша<small>детейлинг-центр</small></span>
+    </a>
+
+    <nav class="header__nav">
+      <a href="#process">Как делаем</a>
+      <a href="#price">Пакеты</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+
+    <div class="header__contacts">
+      <a href="tel:+78462116311" class="header__phone">+7 (846) 211-63-11</a>
+      <a href="#calc" class="btn btn--primary btn--sm">Диагностика 0 ₽</a>
+    </div>
+
+    <button class="header__burger" id="burger" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__grid">
+      <div class="hero__content">
+        <p class="hero__eyebrow">Самара · с 2015 года · 10 лет на рынке</p>
+        <h1 class="hero__title">
+          Шумоизоляция автомобиля —<br>
+          тише, чем с завода
+        </h1>
+
+        <div class="hero__price">
+          <span class="hero__price-label">от</span>
+          <span class="hero__price-value">5 000 ₽</span>
+          <span class="hero__price-desc">за зону<br><small>комплекс — от 94 500 ₽</small></span>
+        </div>
+
+        <p class="hero__subtitle">
+          Убираем гул трассы и дребезг арок за 1–3 дня. Материалы STP Aero,
+          сборка салона без скрипов, гарантия 1 год.
+        </p>
+
+        <ul class="hero__bullets">
+          <li>Не заскрипит — что сняли, ставим назад под точку</li>
+          <li>Всё по договору, с фиксацией работ</li>
+          <li>Бесплатная диагностика источника шума</li>
+        </ul>
+
+        <div class="hero__activity">
+          <span class="hero__activity-dot"></span>
+          Сегодня на диагностику записались <strong>3 человека</strong>
+        </div>
+
+        <div class="hero__cta">
+          <a href="#calc" class="btn btn--primary btn--lg">Записаться на диагностику</a>
+          <a href="#works" class="btn btn--ghost btn--lg">Посмотреть работы</a>
+        </div>
+
+        <div class="hero__trust">
+          <div class="trust">
+            <strong>★ 5,0</strong>
+            <span>751 оценка<br>на Яндекс.Картах</span>
+          </div>
+          <div class="trust">
+            <strong>10</strong>
+            <span>лет на рынке<br>с 2015 года</span>
+          </div>
+          <div class="trust">
+            <strong>STP</strong>
+            <span>Aero — заводская<br>линейка материалов</span>
+          </div>
+          <div class="trust">
+            <strong>6</strong>
+            <span>лет опыта<br>у мастера цеха</span>
+          </div>
+          <div class="trust">
+            <strong>№1</strong>
+            <span>в Самаре по числу<br>оценок Я.Карт</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__media">
+        <!-- сторис-бар -->
+        <div class="stories" id="stories">
+          <button class="story" data-story="reviews" aria-label="Открыть отзывы">
+            <span class="story__ring">
+              <span class="story__avatar">
+                <span class="story__avatar-icon">⭐</span>
+              </span>
+            </span>
+            <span class="story__label">Отзывы</span>
+          </button>
+
+          <button class="story" data-story="cases" aria-label="Открыть кейсы">
+            <span class="story__ring">
+              <span class="story__avatar">
+                <span class="story__avatar-icon">🚗</span>
+              </span>
+            </span>
+            <span class="story__label">Кейсы</span>
+          </button>
+
+          <button class="story" data-story="about" aria-label="Открыть знакомство">
+            <span class="story__ring">
+              <span class="story__avatar">
+                <span class="story__avatar-icon">👋</span>
+              </span>
+            </span>
+            <span class="story__label">Знакомство</span>
+          </button>
+
+          <button class="story" data-story="process" aria-label="Открыть процесс работы">
+            <span class="story__ring">
+              <span class="story__avatar">
+                <span class="story__avatar-icon">🔇</span>
+              </span>
+            </span>
+            <span class="story__label">Как делаем</span>
+          </button>
+        </div>
+
+        <!-- placeholder for hero photo -->
+        <div class="hero__photo placeholder placeholder--lg">
+          <span class="placeholder__icon">📸</span>
+          <p>Фото: салон премиум-кроссовера после шумоизоляции под рабочим светом,<br>или процесс в цеху. Своё фото до/после.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== STORIES VIEWER (оверлей) ========== -->
+<div class="story-viewer" id="storyViewer" aria-hidden="true">
+  <div class="story-viewer__inner">
+    <div class="story-viewer__progress" id="storyProgress"></div>
+    <button class="story-viewer__close" id="storyClose" aria-label="Закрыть">×</button>
+    <div class="story-viewer__title" id="storyTitle"></div>
+
+    <div class="story-viewer__slide" id="storySlide">
+      <!-- содержимое генерируется в script.js -->
+    </div>
+
+    <button class="story-viewer__nav story-viewer__nav--prev" id="storyPrev" aria-label="Назад"></button>
+    <button class="story-viewer__nav story-viewer__nav--next" id="storyNext" aria-label="Дальше"></button>
+  </div>
+</div>
+
+<!-- ========== USP — 3 КАРТОЧКИ ========== -->
+<section class="usp">
+  <div class="container">
+    <div class="usp__grid">
+      <div class="usp__card">
+        <div class="usp__icon">🔇</div>
+        <h3>Не заскрипит после разбора</h3>
+        <p>Главная боль рынка — наша зона ответственности. Что сняли при разборе, ставим назад под точку: клипсы, фиксаторы, разъёмы. Машина не начинает звучать как старая.</p>
+      </div>
+      <div class="usp__card">
+        <div class="usp__icon">📄</div>
+        <h3>Всё по договору, гарантия 1 год</h3>
+        <p>Фиксируем состояние, даём чек и гарантию. Заскрипело или отошло — бесплатно поправим. Гарантия на руки, не «на словах», как в гараже.</p>
+      </div>
+      <div class="usp__card">
+        <div class="usp__icon">🏭</div>
+        <h3>Материалы STP Aero</h3>
+        <p>Официальная заводская линейка, а не безымянное «что было на складе». Зимой работает ещё и как утеплитель. Цех ведёт профильный мастер с опытом 6 лет.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ПОРТФОЛИО / РАБОТЫ ========== -->
+<section class="works" id="works">
+  <div class="container">
+    <h2 class="section__title">Наши работы</h2>
+    <p class="section__subtitle">Реальные машины клиентов из Самары. Фото процесса и зон, спецификация материала.</p>
+
+    <div class="works__grid">
+      <article class="work-card">
+        <div class="placeholder placeholder--card">
+          <span class="placeholder__icon">📸</span>
+          <p>Фото: Haval Jolion, шумоизоляция дверей и пола,<br>ровные слои материала</p>
+        </div>
+        <h4>Haval Jolion · Комплекс · STP Aero</h4>
+        <p>Двери, пол, крыша, багажник. 3 дня.</p>
+      </article>
+
+      <article class="work-card">
+        <div class="placeholder placeholder--card">
+          <span class="placeholder__icon">📸</span>
+          <p>Фото: Chery Tiggo, шумоизоляция арок,<br>фокус на укладке слоёв</p>
+        </div>
+        <h4>Chery Tiggo · Двери + арки · STP Aero</h4>
+        <p>Убрали гул трассы и стук камешков. 1,5 дня.</p>
+      </article>
+
+      <article class="work-card">
+        <div class="placeholder placeholder--card">
+          <span class="placeholder__icon">📸</span>
+          <p>Фото: Kia / Hyundai, шумоизоляция пола,<br>салон в разборе</p>
+        </div>
+        <h4>Kia Sportage · Пол + двери · STP Aero</h4>
+        <p>Тише в дороге, лучше звук музыки. 1 день.</p>
+      </article>
+
+      <article class="work-card">
+        <div class="placeholder placeholder--card">
+          <span class="placeholder__icon">📸</span>
+          <p>Фото: Toyota, акустическая подготовка дверей,<br>под аудиосистему</p>
+        </div>
+        <h4>Toyota Camry · Акустика дверей · STP Aero</h4>
+        <p>Двери под аудиосистему. Басы встали на место.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== КАЛЬКУЛЯТОР-КВИЗ ========== -->
+<section class="calc" id="calc">
+  <div class="container">
+    <h2 class="section__title section__title--light">Запишитесь на бесплатную диагностику</h2>
+    <p class="section__subtitle section__subtitle--light">Ответьте на 4 вопроса — найдём источник шума и пришлём смету в 3 вариантах. Без звонков-роботов.</p>
+
+    <div class="quiz" id="quiz">
+      <div class="quiz__progress">
+        <div class="quiz__progress-bar" id="quizBar"></div>
+      </div>
+      <p class="quiz__step-counter">Шаг <span id="quizStep">1</span> из 4</p>
+
+      <!-- Шаг 1: марка машины -->
+      <div class="quiz__step quiz__step--active" data-step="1">
+        <h3>Марка, модель и год вашей машины?</h3>
+        <input type="text" class="quiz__input" placeholder="Например: Haval Jolion, 2024" data-field="car">
+        <button class="btn btn--primary quiz__next">Дальше →</button>
+      </div>
+
+      <!-- Шаг 2: что беспокоит -->
+      <div class="quiz__step" data-step="2">
+        <h3>Что беспокоит больше всего?</h3>
+        <div class="quiz__options">
+          <label class="quiz__option">
+            <input type="radio" name="noise" value="trassa">
+            <span class="quiz__option-box">
+              <strong>Гул на трассе</strong>
+              <small>Шум дороги, устаю в дальних поездках</small>
+            </span>
+          </label>
+          <label class="quiz__option">
+            <input type="radio" name="noise" value="arki">
+            <span class="quiz__option-box">
+              <strong>Стук в арках</strong>
+              <small>Камешки, грязь, дребезг колёс</small>
+            </span>
+          </label>
+          <label class="quiz__option">
+            <input type="radio" name="noise" value="skrip">
+            <span class="quiz__option-box">
+              <strong>Скрипы и дребезг пластика</strong>
+              <small>Машина звучит как старая</small>
+            </span>
+          </label>
+          <label class="quiz__option">
+            <input type="radio" name="noise" value="zvuk">
+            <span class="quiz__option-box">
+              <strong>Хочу звук аудиосистемы</strong>
+              <small>Двери «дышат», басы тонут</small>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Шаг 3: пакет -->
+      <div class="quiz__step" data-step="3">
+        <h3>Какой объём рассматриваете?</h3>
+        <div class="quiz__options">
+          <label class="quiz__option">
+            <input type="radio" name="package" value="tochka">
+            <span class="quiz__option-box">
+              <strong>Точка тишины</strong>
+              <small>Одна зона — двери или пол, без переплаты</small>
+            </span>
+          </label>
+          <label class="quiz__option">
+            <input type="radio" name="package" value="complex">
+            <span class="quiz__option-box">
+              <strong>Тише завода — комплекс</strong>
+              <small>Двери, пол, крыша, багажник, подкапотное</small>
+            </span>
+          </label>
+          <label class="quiz__option">
+            <input type="radio" name="package" value="capsula">
+            <span class="quiz__option-box">
+              <strong>Капсула тишины — максимум</strong>
+              <small>Комплекс + арки, полная тишина</small>
+            </span>
+          </label>
+          <label class="quiz__option">
+            <input type="radio" name="package" value="unknown">
+            <span class="quiz__option-box">
+              <strong>Не знаю, посоветуйте</strong>
+              <small>Определим на диагностике под задачу</small>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Шаг 4: контакты -->
+      <div class="quiz__step" data-step="4">
+        <h3>Куда прислать смету и записать на диагностику?</h3>
+        <input type="text" class="quiz__input" placeholder="Как к вам обращаться?" data-field="name">
+        <input type="tel" class="quiz__input" placeholder="+7 (___) ___-__-__" data-field="phone">
+        <p class="quiz__hint">Можем написать в Telegram или MAX — укажите ник в комментарии при звонке.</p>
+        <button class="btn btn--primary btn--lg quiz__submit">Записаться на диагностику</button>
+        <p class="quiz__legal">Нажимая, вы соглашаетесь с <a href="#">политикой обработки данных</a>.</p>
+      </div>
+
+      <!-- Финал -->
+      <div class="quiz__step quiz__done" data-step="done">
+        <div class="quiz__done-icon">✅</div>
+        <h3>Спасибо! Перезвоним в течение часа и подберём время.</h3>
+        <p>А пока — <a href="https://t.me/levshasamara">напишите нам в Telegram</a> или посмотрите <a href="#process">как мы работаем</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ПРОЦЕСС РАБОТЫ ========== -->
+<section class="process" id="process">
+  <div class="container">
+    <h2 class="section__title">Как мы делаем тишину</h2>
+    <p class="section__subtitle">Прозрачный процесс. Каждый этап зафиксирован, клиент видит, что и зачем делаем.</p>
+
+    <div class="process__steps">
+      <div class="process__step">
+        <button class="process__photo" data-video="step-1" aria-label="Открыть видео: диагностика источника шума">
+          <div class="placeholder placeholder--card">
+            <span class="placeholder__icon">📸</span>
+            <p>Фото: мастер слушает машину,<br>показывает на зоны-источники шума</p>
+          </div>
+          <span class="process__play">▶</span>
+        </button>
+        <div class="process__num">01</div>
+        <h4>Диагностика источника шума</h4>
+        <p>За 15–20 минут находим, откуда идёт основной гул. Часто хватает точечно — переплачивать за полный комплекс не дадим. Бесплатно.</p>
+      </div>
+      <div class="process__step">
+        <button class="process__photo" data-video="step-2" aria-label="Открыть видео: разбор салона">
+          <div class="placeholder placeholder--card">
+            <span class="placeholder__icon">📸</span>
+            <p>Фото: аккуратный разбор двери,<br>снятые клипсы разложены по местам</p>
+          </div>
+          <span class="process__play">▶</span>
+        </button>
+        <div class="process__num">02</div>
+        <h4>Разбор салона и фиксация</h4>
+        <p>Разбираем нужные зоны, фиксируем каждый этап. Что сняли — встанет на место. Страх «поедет по швам» закрыт уже здесь.</p>
+      </div>
+      <div class="process__step">
+        <button class="process__photo" data-video="step-3" aria-label="Открыть видео: шумоизоляция слоями">
+          <div class="placeholder placeholder--card">
+            <span class="placeholder__icon">📸</span>
+            <p>Фото: укладка виброизоляции<br>и шумопоглотителя STP Aero</p>
+          </div>
+          <span class="process__play">▶</span>
+        </button>
+        <div class="process__num">03</div>
+        <h4>Шумоизоляция слоями</h4>
+        <p>Виброизоляция + шумопоглотитель STP Aero под задачу зоны, а не «обмотать всё ради чека». Зимой работает как утеплитель.</p>
+      </div>
+      <div class="process__step">
+        <button class="process__photo" data-video="step-4" aria-label="Открыть видео: сборка без скрипов">
+          <div class="placeholder placeholder--card">
+            <span class="placeholder__icon">📸</span>
+            <p>Фото: сборка двери,<br>проверка на люфт и скрипы</p>
+          </div>
+          <span class="process__play">▶</span>
+        </button>
+        <div class="process__num">04</div>
+        <h4>Сборка без скрипов</h4>
+        <p>Собираем салон под точку, проверяем на скрипы и зазоры до выдачи. Если что-то «играет» — устраняем сразу.</p>
+      </div>
+      <div class="process__step">
+        <button class="process__photo" data-video="step-5" aria-label="Открыть видео: выдача и гарантия">
+          <div class="placeholder placeholder--card">
+            <span class="placeholder__icon">📸</span>
+            <p>Фото: клиент закрывает дверь,<br>в руках договор и гарантийный талон</p>
+          </div>
+          <span class="process__play">▶</span>
+        </button>
+        <div class="process__num">05</div>
+        <h4>Выдача, проверка тишины, гарантия</h4>
+        <p>Договор и гарантия 1 год. Через 7 дней звоним узнать, как тишина, через 30 — зовём на бесплатный контрольный осмотр.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ЦЕНЫ / ПАКЕТЫ ========== -->
+<section class="price" id="price">
+  <div class="container">
+    <h2 class="section__title">Три пакета — от задачи, не от объёма</h2>
+    <p class="section__subtitle">Точная цена зависит от модели и состояния машины. Считаем на бесплатной диагностике.</p>
+
+    <div class="price__grid">
+      <div class="price__card">
+        <h4>Точка тишины</h4>
+        <p class="price__desc">Одна зона-источник — двери или пол. Часто закрывает ~80% гула без переплаты за комплекс.</p>
+        <p class="price__amount">от <strong>25 000</strong> ₽</p>
+        <p class="price__time">1 день в работе</p>
+      </div>
+
+      <div class="price__card price__card--featured">
+        <p class="price__badge">Чаще всего берут</p>
+        <h4>Тише завода · Комплекс</h4>
+        <p class="price__desc">Двери, пол, крыша, багажник, подкапотное. Заметная тишина по всему салону.</p>
+        <p class="price__amount">от <strong>94 500</strong> ₽</p>
+        <p class="price__time">3 дня в работе</p>
+      </div>
+
+      <div class="price__card">
+        <h4>Капсула тишины</h4>
+        <p class="price__desc">Комплекс + арки + акустическая подготовка. Максимум тишины и звук аудиосистемы.</p>
+        <p class="price__amount">до <strong>146 500</strong> ₽</p>
+        <p class="price__time">3 дня в работе</p>
+      </div>
+    </div>
+
+    <div class="price__bonus">
+      <strong>🎁 Диагностика источника шума — бесплатно:</strong>
+      найдём, откуда звучит · покажем смету в 3 вариантах · без навязывания
+    </div>
+  </div>
+</section>
+
+<!-- ========== ЭКСКУРСИЯ ========== -->
+<section class="tour" id="tour">
+  <div class="container">
+    <div class="tour__grid">
+      <div class="tour__content">
+        <p class="tour__eyebrow">🎟 Бесплатно · без записи на услугу</p>
+        <h2>Приезжайте, посмотрите как мы работаем</h2>
+        <p class="tour__lead">
+          Не уверены, кому доверить машину? Приходите сами. Покажем цех,
+          где идёт шумоизоляция прямо сейчас, дадим потрогать материалы STP Aero,
+          ответим на любые вопросы. Решение примете спокойно дома.
+        </p>
+
+        <ul class="tour__bullets">
+          <li>
+            <span class="tour__bullet-icon">🏢</span>
+            <div>
+              <strong>Цех и зону разбора</strong>
+              <small>Увидите реальные машины в работе, оборудование, чистоту</small>
+            </div>
+          </li>
+          <li>
+            <span class="tour__bullet-icon">🧱</span>
+            <div>
+              <strong>Материалы STP Aero</strong>
+              <small>Потрогаете виброизоляцию и шумопоглотитель, увидите слои</small>
+            </div>
+          </li>
+          <li>
+            <span class="tour__bullet-icon">📋</span>
+            <div>
+              <strong>Договор и гарантию вживую</strong>
+              <small>Покажем, что фиксируем и как работает гарантия 1 год</small>
+            </div>
+          </li>
+          <li>
+            <span class="tour__bullet-icon">☕</span>
+            <div>
+              <strong>15–20 минут, чай-кофе бесплатно</strong>
+              <small>Никакой лекции, просто посмотрите и спросите всё, что хотите</small>
+            </div>
+          </li>
+        </ul>
+
+        <div class="tour__cta">
+          <a href="#final-cta" class="btn btn--primary btn--lg">Записаться на экскурсию</a>
+          <a href="https://t.me/levshasamara" class="btn btn--ghost btn--lg">Написать в Telegram</a>
+        </div>
+
+        <p class="tour__note">
+          Без записи — будни до 18:00 · По выходным — лучше предупредить ·
+          Можно с друзьями
+        </p>
+      </div>
+
+      <div class="tour__media">
+        <div class="placeholder placeholder--lg">
+          <span class="placeholder__icon">📸</span>
+          <p>Фото: цех Левши изнутри, машина в разборе под рабочим светом,<br>видны мастера за процессом. Тёплый свет, чистый пол.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ОТЗЫВЫ ========== -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <h2 class="section__title">Что говорят клиенты</h2>
+    <p class="section__subtitle">751 оценка 5,0 на Яндекс.Картах. Несколько живых цитат:</p>
+
+    <div class="reviews__grid">
+      <div class="review-card">
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__text">«Думал, в новой машине так и должно гудеть на трассе. Сделали шумку дверей и арок — будто другую машину забрал. Жалею, что не сделал раньше.»</p>
+        <div class="review-card__author">
+          <div class="placeholder placeholder--avatar">📸</div>
+          <div>
+            <strong>Денис К.</strong>
+            <small>Яндекс.Карты · 03.2026</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__text">«Боялся, что после разбора всё начнёт скрипеть, как у друга после гаража. Тут собрали идеально — за месяц ни одного звука. Всё по договору.»</p>
+        <div class="review-card__author">
+          <div class="placeholder placeholder--avatar">📸</div>
+          <div>
+            <strong>Сергей М.</strong>
+            <small>2ГИС · 02.2026</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__text">«Делал акустику дверей под аудиосистему. Мастер сразу сказал, где эффект будет, а где деньги на ветер. Басы встали на место. Без впаривания.»</p>
+        <div class="review-card__author">
+          <div class="placeholder placeholder--avatar">📸</div>
+          <div>
+            <strong>Виктор П.</strong>
+            <small>Яндекс.Карты · 01.2026</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="reviews__cta">
+      <a href="#" class="link">Читать все 751 отзыв на Яндекс.Картах →</a>
+    </p>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="faq" id="faq">
+  <div class="container">
+    <h2 class="section__title">Частые вопросы</h2>
+
+    <div class="faq__list">
+      <details class="faq__item">
+        <summary>Сколько стоит шумоизоляция на мою машину?</summary>
+        <p>Зависит от модели, состояния и пакета. На бесплатной диагностике за 15–20 минут найдём источник шума и посчитаем точно — покажем смету в 3 вариантах.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary>Будет ли скрипеть после?</summary>
+        <p>Что сняли при разборе — ставим назад под точку: клипсы, фиксаторы, разъёмы. Проверяем на скрипы до выдачи. Гарантия 1 год: если заскрипит — бесплатно поправим.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary>Сколько времени машина в работе?</summary>
+        <p>Одна зона — 1–1,5 часа. Точечный пакет — 1 день. Полный комплекс — 3 дня. Точное время называем после диагностики.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary>Какие материалы используете?</summary>
+        <p>Только STP Aero — официальную заводскую линейку (виброизоляция + шумопоглотитель). Не безымянное «что было на складе». На диагностике покажем материал.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary>Мне нужен комплекс или хватит точечно?</summary>
+        <p>Часто хватает точечно — одна-две зоны закрывают основную часть гула. На диагностике найдём, где у вашей модели «звучит» сильнее всего, и честно скажем, если комплекс не нужен.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary>Даёте гарантию?</summary>
+        <p>Да, 1 год — с договором и чеком. Гарантия на сборку и материалы: заскрипит или отойдёт — устраним бесплатно. Не на словах, как в гараже.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary>Как записаться?</summary>
+        <p>Оставьте заявку на этой странице, напишите в Telegram <a href="https://t.me/levshasamara">@levshasamara</a> или позвоните <a href="tel:+78462116311">+7 (846) 211-63-11</a>. Перезвоним в течение часа.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ФИНАЛЬНЫЙ CTA ========== -->
+<section class="final-cta" id="final-cta">
+  <div class="container">
+    <div class="final-cta__inner">
+      <h2>Узнайте, откуда шумит ваша машина — бесплатно</h2>
+      <p>15–20 минут, без обязательств. Найдём источник и покажем, во сколько обойдётся тишина именно вам.</p>
+
+      <form class="final-cta__form" id="finalForm">
+        <input type="text" placeholder="Как к вам обращаться?" required>
+        <input type="tel" placeholder="+7 (___) ___-__-__" required>
+        <button type="submit" class="btn btn--primary btn--lg">Записаться на диагностику</button>
+      </form>
+
+      <p class="final-cta__alt">
+        Или сразу в чат: <a href="https://t.me/levshasamara">Telegram</a> ·
+        <a href="tel:+78462116311">+7 (846) 211-63-11</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__col">
+      <a href="#" class="header__logo">
+        <span class="header__logo-mark">Л</span>
+        <span class="header__logo-text">Левша<small>детейлинг-центр</small></span>
+      </a>
+      <p class="footer__about">Детейлинг-центр в Самаре с 2015 года. №1 в городе по оценкам Яндекс.Карт.</p>
+    </div>
+
+    <div class="footer__col">
+      <h5>Адрес</h5>
+      <p>Самара, Ново-Садовая 162В</p>
+      <p>Ежедневно 09:00–22:00</p>
+    </div>
+
+    <div class="footer__col">
+      <h5>Контакты</h5>
+      <p><a href="tel:+78462116311">+7 (846) 211-63-11</a></p>
+      <p><a href="https://t.me/levshasamara">Telegram @levshasamara</a></p>
+    </div>
+
+    <div class="footer__col">
+      <h5>Документы</h5>
+      <p><a href="#">Политика конфиденциальности</a></p>
+      <p><a href="#">Согласие на обработку данных</a></p>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <small>© 2015–2026 Левша · детейлинг-центр в Самаре</small>
+  </div>
+</footer>
+
+<!-- ========== VIDEO MODAL (этапы работы) ========== -->
+<div class="video-modal" id="videoModal" aria-hidden="true">
+  <div class="video-modal__inner">
+    <button class="video-modal__close" id="videoClose" aria-label="Закрыть">×</button>
+    <div class="video-modal__media" id="videoMedia">
+      <!-- содержимое вставляется в script.js -->
+    </div>
+    <div class="video-modal__caption">
+      <h4 id="videoTitle"></h4>
+      <p id="videoDesc"></p>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

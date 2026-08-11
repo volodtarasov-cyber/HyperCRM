@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "google-sheets": {
+      "command": "D:/SecondBrain/HyperCRM/.tools/venv/Scripts/python.exe",
+      "args": [
+        "D:/SecondBrain/HyperCRM/system/scripts/mcp_google_sheets_clean.py"
+      ],
+      "env": {
+        "SERVICE_ACCOUNT_PATH": "D:/SecondBrain/HyperCRM/system/secrets/gsheets-key.json",
+        "GOOGLE_APPLICATION_CREDENTIALS": "D:/SecondBrain/HyperCRM/system/secrets/gsheets-key.json",
+        "PYTHONWARNINGS": "ignore::FutureWarning"
+      }
+    }
+  }
+}

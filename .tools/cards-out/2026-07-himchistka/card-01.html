@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Manrope', 'Segoe UI', Arial, sans-serif;
+  width: 1080px; height: 1350px; overflow: hidden;
+  color: #1F2937; background: #F7F5FA;
+}
+.card { width: 1080px; height: 1350px; display: flex; flex-direction: column; }
+
+/* ── тёмная шапка ── */
+.head {
+  background:
+    radial-gradient(circle at 92% 0%, rgba(255,186,36,0.20), transparent 42%),
+    #2B223A;
+  color: #fff; padding: 64px 72px 56px; position: relative;
+}
+.eyebrow {
+  color: #FFBA24; font-size: 24px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+}
+.niche {
+  font-size: 76px; font-weight: 800; line-height: 1.05; letter-spacing: -0.03em;
+  margin-top: 26px; padding-left: 28px; border-left: 12px solid #FFBA24;
+}
+.channels {
+  margin-top: 22px; padding-left: 40px;
+  font-size: 30px; font-weight: 600; color: rgba(255,255,255,0.72);
+}
+
+/* ── светлая аналитическая поверхность ── */
+.body { flex: 1; padding: 56px 72px 0; display: flex; flex-direction: column; }
+
+.kpi { display: flex; gap: 28px; }
+.kpi .box {
+  flex: 1; background: #fff; border: 1px solid #E7E3EC; border-radius: 22px;
+  padding: 40px 38px 36px; box-shadow: 0 10px 30px rgba(43,34,58,0.06);
+}
+.kpi .box.accent { border-top: 10px solid #FFBA24; }
+.kpi .val {
+  font-size: 96px; font-weight: 800; line-height: 1; letter-spacing: -0.04em; color: #2B223A;
+}
+.kpi .lab { font-size: 27px; font-weight: 600; color: #626B87; margin-top: 18px; line-height: 1.25; }
+
+table {
+  width: 100%; margin-top: 40px; border-collapse: collapse;
+  background: #fff; border-radius: 20px; overflow: hidden;
+  box-shadow: 0 10px 30px rgba(43,34,58,0.06);
+}
+th {
+  background: #2B223A; color: #fff; text-align: left;
+  font-size: 24px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 26px 34px;
+}
+th.num, td.num { text-align: right; }
+td { font-size: 36px; font-weight: 600; color: #1F2937; padding: 30px 34px; border-top: 1px solid #E7E3EC; }
+tr.total td { font-weight: 800; color: #2B223A; background: #FFF8E5; }
+tr.total td.num { color: #2B223A; }
+
+.note {
+  margin-top: 34px; padding: 24px 30px; border-left: 8px solid #FFBA24;
+  background: #FFF8E5; border-radius: 12px;
+  font-size: 27px; font-weight: 600; color: #582A06;
+}
+
+/* ── подвал ── */
+.foot {
+  margin-top: auto; display: flex; align-items: flex-end; justify-content: space-between;
+  padding: 44px 72px 48px; border-top: 1px solid #E7E3EC;
+}
+.logo { font-size: 34px; font-weight: 800; letter-spacing: 0.05em; color: #2B223A; }
+.logo span { color: #FFBA24; }
+.tagline { font-size: 22px; font-weight: 600; color: #626B87; margin-top: 10px; }
+.period { font-size: 24px; font-weight: 700; color: #626B87; letter-spacing: 0.08em; text-transform: uppercase; }
+</style></head><body><div class="card">
+  <div class="head">
+    <div class="eyebrow">результат месяца</div>
+    <div class="niche">Химчистка ковров</div>
+    <div class="channels">ВКонтакте + Авито</div>
+  </div>
+  <div class="body">
+    <div class="kpi">
+      <div class="box accent"><div class="val">1 280</div><div class="lab">заявок за месяц</div></div>
+      <div class="box accent"><div class="val">251 ₽</div><div class="lab">средняя цена заявки</div></div>
+    </div>
+    <table><tr><th>Канал</th><th class="num">Заявки</th><th class="num">Цена заявки</th></tr><tr><td>ВКонтакте</td><td class="num">588</td><td class="num">287 ₽</td></tr><tr><td>Авито</td><td class="num">692</td><td class="num">221 ₽</td></tr><tr class="total"><td>Итого</td><td class="num">1 280</td><td class="num">251 ₽</td></tr></table>
+    <div class="note">Рекламный бюджет за месяц — 322 000 ₽</div>
+  </div>
+  <div class="foot">
+    <div>
+      <div class="logo"><span>АНАНАС</span> МАРКЕТИНГ</div>
+      <div class="tagline">Системный маркетинг для сервисного бизнеса</div>
+    </div>
+    <div class="period">Июль 2026</div>
+  </div>
+</div></body></html>

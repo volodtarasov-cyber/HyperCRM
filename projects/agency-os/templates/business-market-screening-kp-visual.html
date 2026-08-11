@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Скрининг бизнес-параметров — шаблон для КП</title>
+<link rel="stylesheet" href="../../../team/assets/ananas-marketing-brand.css">
+<style>
+@page {
+  size: A4;
+  margin: 0;
+}
+
+body {
+  background: #ECE9F1;
+}
+
+.screening-page {
+  width: 210mm;
+  height: 297mm;
+  margin: 16px auto;
+  padding: 9mm 11mm;
+  overflow: hidden;
+  background: var(--am-surface);
+  box-shadow: 0 18px 60px rgba(43, 34, 58, 0.18);
+}
+
+.screening-header {
+  min-height: 40mm;
+  padding: 10mm 12mm 9mm;
+  color: #FFFFFF;
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 88% 0%, rgba(255, 186, 36, 0.22), transparent 34%),
+    radial-gradient(circle at 6% 100%, rgba(255, 255, 255, 0.06), transparent 38%),
+    var(--am-dark);
+}
+
+.header-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.brand-block {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.brand-block .am-brand {
+  font-size: 18px;
+}
+
+.brand-subtitle {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 9px;
+  font-weight: 500;
+}
+
+.client-meta {
+  max-width: 58mm;
+  padding-left: 12px;
+  color: rgba(255, 255, 255, 0.72);
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 9px;
+  line-height: 1.5;
+  text-align: right;
+}
+
+.client-meta strong {
+  display: block;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.screening-title {
+  max-width: 128mm;
+  margin: 12px 0 4px;
+  color: #FFFFFF;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.screening-subtitle {
+  max-width: 142mm;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 7px;
+}
+
+.summary-card {
+  min-height: 22mm;
+  padding: 9px 11px;
+}
+
+.summary-label {
+  color: var(--am-muted);
+  font-size: 8px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.summary-value {
+  margin-top: 3px;
+  color: var(--am-dark);
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.summary-value--accent {
+  color: var(--am-attention);
+}
+
+.summary-note {
+  margin-top: 3px;
+  color: var(--am-muted);
+  font-size: 7px;
+  line-height: 1.35;
+}
+
+.section {
+  margin-top: 8px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 5px;
+}
+
+.section-note {
+  max-width: 88mm;
+  color: var(--am-muted);
+  font-size: 7px;
+  line-height: 1.4;
+  text-align: right;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+}
+
+.profile-card {
+  min-height: 16mm;
+  padding: 8px 10px;
+}
+
+.profile-label {
+  color: var(--am-muted);
+  font-size: 7px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.profile-value {
+  margin-top: 4px;
+  color: var(--am-dark);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.profile-meaning {
+  margin-top: 3px;
+  color: var(--am-muted);
+  font-size: 7px;
+  line-height: 1.3;
+}
+
+.analysis-grid {
+  display: grid;
+  grid-template-columns: 0.82fr 1.75fr;
+  gap: 8px;
+}
+
+.readiness-card,
+.zones-card {
+  min-height: 60mm;
+  padding: 10px 11px;
+}
+
+.readiness-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.readiness-ring {
+  display: grid;
+  width: 35mm;
+  height: 35mm;
+  place-items: center;
+  border-radius: 50%;
+  background: conic-gradient(var(--am-attention) 0 44%, var(--am-line) 44% 100%);
+}
+
+.readiness-ring::before {
+  content: "";
+  grid-area: 1 / 1;
+  width: 26mm;
+  height: 26mm;
+  border-radius: 50%;
+  background: #FFFFFF;
+}
+
+.readiness-number {
+  z-index: 1;
+  grid-area: 1 / 1;
+  color: var(--am-dark);
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+.readiness-title {
+  margin-top: 5px;
+  color: var(--am-dark);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.readiness-copy {
+  max-width: 48mm;
+  margin-top: 3px;
+  color: var(--am-muted);
+  font-size: 7px;
+  line-height: 1.45;
+}
+
+.zone-row {
+  display: grid;
+  grid-template-columns: 45mm 1fr 10mm;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 6px;
+}
+
+.zone-row:last-child {
+  margin-bottom: 0;
+}
+
+.zone-name {
+  color: var(--am-text);
+  font-size: 8px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.zone-track {
+  height: 7px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: var(--am-line);
+}
+
+.zone-fill {
+  height: 100%;
+  border-radius: inherit;
+}
+
+.zone-fill--good {
+  background: var(--am-good);
+}
+
+.zone-fill--attention {
+  background: var(--am-attention);
+}
+
+.zone-fill--risk {
+  background: var(--am-risk);
+}
+
+.zone-score {
+  color: var(--am-dark);
+  font-size: 8px;
+  font-weight: 800;
+  text-align: right;
+}
+
+.zones-footnote {
+  margin-top: 6px;
+  padding-top: 6px;
+  color: var(--am-muted);
+  border-top: 1px solid var(--am-line);
+  font-size: 7px;
+  line-height: 1.45;
+}
+
+.diagnosis-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.diagnosis-card {
+  min-height: 35mm;
+  padding: 10px 11px;
+}
+
+.diagnosis-title {
+  margin: 0 0 6px;
+  color: var(--am-dark);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.diagnosis-list {
+  display: grid;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.diagnosis-list li {
+  position: relative;
+  padding-left: 11px;
+  color: var(--am-text);
+  font-size: 8px;
+  line-height: 1.4;
+}
+
+.diagnosis-list li::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.diagnosis-list--good li::before {
+  background: var(--am-good);
+}
+
+.diagnosis-list--risk li::before {
+  background: var(--am-risk);
+}
+
+.priority-card {
+  display: grid;
+  grid-template-columns: 31mm 1fr;
+  gap: 12px;
+  align-items: center;
+  min-height: 23mm;
+  margin-top: 6px;
+  padding: 10px 12px;
+  color: #FFFFFF;
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(255, 186, 36, 0.18), transparent 34%),
+    var(--am-dark);
+}
+
+.priority-label {
+  color: var(--am-yellow);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.priority-title {
+  margin: 0;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.priority-copy {
+  margin: 4px 0 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 8px;
+  line-height: 1.45;
+}
+
+.screening-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 6px;
+  padding-top: 5px;
+  color: var(--am-muted);
+  border-top: 1px solid var(--am-line);
+  font-size: 6.5px;
+  line-height: 1.4;
+}
+
+.screening-footer strong {
+  color: var(--am-dark);
+}
+
+@media print {
+  body {
+    background: #FFFFFF;
+  }
+
+  .screening-page {
+    margin: 0;
+    box-shadow: none;
+  }
+}
+</style>
+</head>
+<body>
+<!--
+  Рабочий пример на данных пилота Левши.
+  Перед использованием для клиента заменить название, диагноз, метрики, профиль,
+  индексы зон, сильные стороны, ограничения и первый приоритет.
+-->
+<main class="screening-page">
+  <header class="screening-header">
+    <div class="header-top">
+      <div class="brand-block">
+        <div class="am-brand">
+          <span class="am-brand__accent">АНАНАС</span>
+          <span>МАРКЕТИНГ</span>
+        </div>
+        <div class="brand-subtitle">Системный маркетинг для сервисного бизнеса</div>
+      </div>
+      <div class="client-meta">
+        <strong>Левша · Самара</strong>
+        Антигравийная плёнка / PPF<br>
+        Пилот скрининга · 03.06.2026
+      </div>
+    </div>
+
+    <div class="am-eyebrow" style="margin-top: 18px;">Клиентский слой для коммерческого предложения</div>
+    <h1 class="screening-title">Скрининг бизнес-параметров</h1>
+    <p class="screening-subtitle">
+      Рынок и продукт уже доказаны. Главный вопрос — не просто увеличить трафик,
+      а сделать аналитику, продажи и операционный контур готовыми к масштабированию.
+    </p>
+  </header>
+
+  <section class="summary-grid" aria-label="Ключевые показатели скрининга">
+    <article class="am-card summary-card">
+      <div class="summary-label">Индекс готовности к масштабированию</div>
+      <div class="summary-value summary-value--accent">44%</div>
+      <div class="summary-note">Визуальный индекс управляемых зон, не оценка бизнеса</div>
+    </article>
+    <article class="am-card summary-card">
+      <div class="summary-label">Заполненность скрининга</div>
+      <div class="summary-value">62%</div>
+      <div class="summary-note">36 из 58 факторов имеют выбранный ответ</div>
+    </article>
+    <article class="am-card summary-card">
+      <div class="summary-label">Подтверждено фактами</div>
+      <div class="summary-value am-status--good">22</div>
+      <div class="summary-note">Данные, документы, 1С, Б24 и публичные источники</div>
+    </article>
+    <article class="am-card summary-card">
+      <div class="summary-label">Пока неизвестно</div>
+      <div class="summary-value am-status--risk">22</div>
+      <div class="summary-note">Не заполняем догадками: это задачи диагностики</div>
+    </article>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <h2 class="am-section-title">Профиль направления</h2>
+      <div class="section-note">Условия стратегии, а не красно-зелёная оценка бизнеса</div>
+    </div>
+    <div class="profile-grid">
+      <article class="am-card profile-card">
+        <div class="profile-label">Спрос</div>
+        <div class="profile-value">Сформированный</div>
+        <div class="profile-meaning">Можно захватывать прямой горячий спрос</div>
+      </article>
+      <article class="am-card profile-card">
+        <div class="profile-label">Намерение клиента</div>
+        <div class="profile-value">Альтернативное</div>
+        <div class="profile-meaning">Плёнку сравнивают с другими способами защиты</div>
+      </article>
+      <article class="am-card profile-card">
+        <div class="profile-label">География покупки</div>
+        <div class="profile-value">Городская</div>
+        <div class="profile-meaning">Карты и локальная репутация особенно важны</div>
+      </article>
+      <article class="am-card profile-card">
+        <div class="profile-label">Средний чек</div>
+        <div class="profile-value">Высокий</div>
+        <div class="profile-meaning">Нужны доказательства, доверие и качественная продажа</div>
+      </article>
+      <article class="am-card profile-card">
+        <div class="profile-label">Частота покупки</div>
+        <div class="profile-value">Редкая</div>
+        <div class="profile-meaning">Важны новый поток и продуктовая воронка после сделки</div>
+      </article>
+      <article class="am-card profile-card">
+        <div class="profile-label">Цикл решения</div>
+        <div class="profile-value">Отложенный</div>
+        <div class="profile-meaning">Нужны follow-up, кейсы и дисциплина CRM</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <h2 class="am-section-title">Готовность коммерческой системы</h2>
+      <div class="section-note">Неизвестные данные снижают индекс зоны, чтобы не создавать ложную уверенность</div>
+    </div>
+    <div class="analysis-grid">
+      <article class="am-card readiness-card">
+        <div class="readiness-ring">
+          <div class="readiness-number">44%</div>
+        </div>
+        <div class="readiness-title">Готовность к масштабированию</div>
+        <div class="readiness-copy">
+          Сильная база уже есть, но увеличение бюджета без измерения звонков,
+          конверсии и мощности усилит текущие утечки.
+        </div>
+      </article>
+
+      <article class="am-card zones-card">
+        <div class="zone-row">
+          <div class="zone-name">Позиционирование и упаковка</div>
+          <div class="zone-track"><div class="zone-fill zone-fill--attention" style="width: 67%;"></div></div>
+          <div class="zone-score">67%</div>
+        </div>
+        <div class="zone-row">
+          <div class="zone-name">Трафик и каналы</div>
+          <div class="zone-track"><div class="zone-fill zone-fill--attention" style="width: 43%;"></div></div>
+          <div class="zone-score">43%</div>
+        </div>
+        <div class="zone-row">
+          <div class="zone-name">Продажи и обработка</div>
+          <div class="zone-track"><div class="zone-fill zone-fill--attention" style="width: 42%;"></div></div>
+          <div class="zone-score">42%</div>
+        </div>
+        <div class="zone-row">
+          <div class="zone-name">Аналитика и экономика</div>
+          <div class="zone-track"><div class="zone-fill zone-fill--attention" style="width: 40%;"></div></div>
+          <div class="zone-score">40%</div>
+        </div>
+        <div class="zone-row">
+          <div class="zone-name">Удержание и продуктовая воронка</div>
+          <div class="zone-track"><div class="zone-fill zone-fill--attention" style="width: 43%;"></div></div>
+          <div class="zone-score">43%</div>
+        </div>
+        <div class="zone-row">
+          <div class="zone-name">Операционная готовность</div>
+          <div class="zone-track"><div class="zone-fill zone-fill--risk" style="width: 29%;"></div></div>
+          <div class="zone-score">29%</div>
+        </div>
+        <div class="zones-footnote">
+          Индекс зоны = средний балл по заполненным управляемым факторам × доля заполненных факторов зоны.
+          Классификационные параметры рынка в индекс не входят.
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="diagnosis-grid">
+      <article class="am-card diagnosis-card">
+        <h3 class="diagnosis-title">Что уже работает</h3>
+        <ul class="diagnosis-list diagnosis-list--good">
+          <li>Сформированный спрос и доказанная выручка направления.</li>
+          <li>Сильная база доверия, позиционирования и конкурентного анализа.</li>
+          <li>Несколько каналов привлечения, Битрикс24 и глубокая аналитика 1С.</li>
+        </ul>
+      </article>
+
+      <article class="am-card diagnosis-card">
+        <h3 class="diagnosis-title">Что ограничивает рост</h3>
+        <ul class="diagnosis-list diagnosis-list--risk">
+          <li>Нет действующего колл-трекинга и чистой конверсии обращения в продажу.</li>
+          <li>Не подтверждены P&amp;L направления и допустимый CAC.</li>
+          <li>Не доказана готовность процессов и мощности к росту потока.</li>
+        </ul>
+      </article>
+    </div>
+
+    <article class="priority-card">
+      <div class="priority-label">Первый приоритет</div>
+      <div>
+        <h3 class="priority-title">Сделать трафик измеримым и продаваемым</h3>
+        <p class="priority-copy">
+          Запустить колл-трекинг, связать звонки с Битрикс24, считать этапы воронки
+          и закрепить обработку заявок до увеличения рекламного бюджета.
+        </p>
+      </div>
+    </article>
+  </section>
+
+  <footer class="screening-footer">
+    <div>
+      <strong>Ананас Маркетинг</strong> · Скрининг бизнеса и рынка
+    </div>
+    <div>
+      В КП показан только верхний уровень. Подробная факторная карта, доказательства
+      и план действий формируются в рамках диагностики / первого этапа работы.
+    </div>
+  </footer>
+</main>
+</body>
+</html>
