@@ -200,7 +200,10 @@ def task_sources():
             paths.append(path)
     practice = ROOT / "projects" / "practice"
     if practice.exists():
-        paths.extend(practice.rglob("*.md"))
+        # Шаблоны пропускаем: их пустые чекбоксы («- [ ] ________») доска
+        # считала задачами и показывала в прогоне как настоящую работу.
+        paths.extend(p for p in practice.rglob("*.md")
+                     if not p.stem.endswith("-template") and "templates" not in p.parts)
     return sorted(set(paths))
 
 
