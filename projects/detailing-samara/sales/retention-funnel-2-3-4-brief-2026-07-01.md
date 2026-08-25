@@ -2,8 +2,8 @@
 
 > Создано 2026-07-01. Рабочий каркас для проектирования удержания по визитам. Задача из [action-plan-q3-2026.md](../action-plan-q3-2026.md) (Слой 3). **Сам таск — в YouGile** (Володя заводит).
 > Опирается на находку ретро: 2-й визит вырос ~+9 п.п. YoY, а **3-4-й стоит** → узкое место в переходах 2→3→4. Разбор → [../analytics/cycle1-kpi-2026-07-01.md](../analytics/cycle1-kpi-2026-07-01.md).
-> Data-якоря: [../analytics/visit-intervals-atbv-2026-05-20.md](../analytics/visit-intervals-atbv-2026-05-20.md), [../analytics/client-habit-threshold-2026-05-20.md](../analytics/client-habit-threshold-2026-05-20.md), [../analytics/cross-sell-combos-2026-05-20.md](../analytics/cross-sell-combos-2026-05-20.md), [../analytics/film-return-patterns-2026-05-20.md](../analytics/film-return-patterns-2026-05-20.md).
-> Связано: HYP-006 (пилот возврата 1→2→3), HYP-009 (постплёнка), [warming-sequence-2026-06-22.md](warming-sequence-2026-06-22.md), [first-touch-regulation.md](first-touch-regulation.md).
+> Data-якоря: ../analytics/visit-intervals-atbv-2026-05-20.md, [../analytics/client-habit-threshold-2026-05-20.md](../analytics/client-habit-threshold-2026-05-20.md), [../analytics/cross-sell-combos-2026-05-20.md](../analytics/cross-sell-combos-2026-05-20.md), [../analytics/film-return-patterns-2026-05-20.md](../analytics/film-return-patterns-2026-05-20.md).
+> Связано: HYP-006 (пилот возврата 1→2→3), HYP-009 (постплёнка), warming-sequence-2026-06-22.md, [first-touch-regulation.md](first-touch-regulation.md).
 
 ## Зачем
 Постоянство = лестница визитов: 1 визит → 8,9% в постоянные; **2+ за 3 мес → 38%; 3+ за 4 мес → 79,5%**. Медиана до 4-го визита — 6,2 мес. Мы научились приводить на 2-й, но не двигаем в 3-4-й. Каждый переход нужно **спроектировать как воронку**: триггер → окно → канал → оффер → касание → владелец → метрика.
@@ -27,7 +27,7 @@
 ### Переход 1→2 (закрепить, тут уже растём)
 - **Окно:** после плёнки медиана след. визита **24 дня**, чаще мойка (48%) или повтор плёнки (26%). Общий — касание на 2-4 неделе.
 - **Оффер:** ближайшее из комбо (Плёнка+Мойка, Мойка+Химчистка).
-- Уже частично живёт: скрипт «запись на след. мойку» + [warming-sequence](warming-sequence-2026-06-22.md).
+- Уже частично живёт: скрипт «запись на след. мойку» + warming-sequence.
 
 ### Переход 2→3 (ГЛАВНОЕ узкое место)
 - **Окно:** у сегмента «2-3 визита» медиана интервала **92 дня** (P25=18, P75=210). Пассивно ждать 92 дня — терять; **касаться на дне 30-45**, пока тёплый; к P75 (210 дн) — уже реактивация.

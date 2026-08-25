@@ -2,7 +2,7 @@
 
 > Полная сегментация детейлинг-центра по работам (Jobs-to-be-Done). Перенесено и адаптировано из ИИ-разбора Ребдеу (стр.2, 16.06) + сверено с нашими данными.
 > **Метки:** без пометки = от Ребдеу / общая логика; **[факт]** = подтверждено 1С/VoC; **[Г]** = гипотеза к проверке.
-> Связано: [niche-icp-jtbd-research](../../../agency-os/modules/niche-icp-jtbd-research.md), [film system-pass](../funnels/film/system-pass-2026-06-15.md), [shumka system-pass](../funnels/shumka/system-pass-2026-06-15.md), [VoC](voc-research-2026-05-25.md), [позиционирование](positioning.md).
+> Связано: [niche-icp-jtbd-research](../../../marketing-os/engines/niche-icp-jtbd-research.md), [film system-pass](../funnels/film/system-pass-2026-06-15.md), [shumka system-pass](../funnels/shumka/system-pass-2026-06-15.md), [VoC](voc-research-2026-05-25.md), [позиционирование](positioning.md).
 
 ---
 

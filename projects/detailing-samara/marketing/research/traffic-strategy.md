@@ -348,7 +348,7 @@
 
 ## Ссылки
 
-- Данные: [`../analytics/film-conversion-by-entry-2026-05-05.md`](../analytics/film-conversion-by-entry-2026-05-05.md)
+- Данные: [`../analytics/film-conversion-by-entry-2026-05-05.md`](../../analytics/_archive/film-conversion-by-entry-2026-05-05.md)
 - Выводы: [`film-funnel/path-to-film-findings.md`](../funnels/film/path-to-film-findings.md)
 - Воронка плёнки (детально): [`film-funnel/_index.md`](../funnels/film/_index.md)
 - Стратегия Левши: [`../action-plan-90d.md`](../../action-plan-90d.md)

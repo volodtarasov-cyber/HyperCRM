@@ -2,7 +2,7 @@
 
 **Дата:** 2026-06-11  
 **Статус:** версия 1, до интервью и P&L  
-**Визуальная версия:** [00-ppf-market-product-map.md](00-ppf-market-product-map.md)
+**Визуальная версия:** 00-ppf-market-product-map.md
 
 ## Короткий Вывод
 

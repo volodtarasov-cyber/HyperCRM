@@ -100,7 +100,7 @@
 
 | Файл | Назначение | Ограничение |
 |---|---|---|
-| [check.svg](assets/ui/check.svg) | Фирменная иконка подтверждения: жёлтый знак с коричневым внутренним контрастом | Использовать для преимуществ, подтверждений и завершённых шагов, не как обычный bullet в каждой строке |
+| check.svg | Фирменная иконка подтверждения: жёлтый знак с коричневым внутренним контрастом | Использовать для преимуществ, подтверждений и завершённых шагов, не как обычный bullet в каждой строке |
 | [close.svg](assets/ui/close.svg) | Нейтральная кнопка закрытия | Использовать только в интерфейсах и модальных окнах |
 | [favicon.png](assets/ui/favicon.png) | Фирменный знак-ананас для favicon и небольших цифровых носителей | Размер `32×32`, не использовать как печатный логотип или крупную иллюстрацию |
 
@@ -126,7 +126,7 @@
 4. Главный визуальный вывод — не «оценка бизнеса», а готовность системы к следующему шагу.
 5. На одной странице должно быть не больше трёх ограничений и одного главного приоритета.
 
-HTML-шаблон → [business-market-screening-kp-visual.html](../projects/agency-os/templates/business-market-screening-kp-visual.html).
+HTML-шаблон → [business-market-screening-kp-visual.html](../projects/marketing-os/templates/business-market-screening-kp-visual.html).
 
 ## Что Не Делать
 
@@ -141,5 +141,5 @@ HTML-шаблон → [business-market-screening-kp-visual.html](../projects/age
 
 - [Конвертер Markdown → PDF](../.tools/projects/ananas-marketing/documents/md-to-pdf.py)
 - [КП Карнелия — HTML](../projects/_archive/karneliya-saratov/КП_Карнелия_Саратов_2026-06-02.html)
-- [Скрининг бизнеса и рынка](../projects/agency-os/modules/business-market-screening.md)
-- [Шаблон клиентского one-pager](../projects/agency-os/templates/business-market-screening-kp-visual.md)
+- [Скрининг бизнеса и рынка](../projects/marketing-os/engines/business-market-screening.md)
+- [Шаблон клиентского one-pager](../projects/marketing-os/templates/business-market-screening-kp-visual.md)

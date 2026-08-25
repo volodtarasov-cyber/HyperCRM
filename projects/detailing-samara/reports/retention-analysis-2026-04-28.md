@@ -345,8 +345,8 @@ PDR за 2 года вырос на +34% (Q1), химчистка вышла и�
 ---
 
 ## Источники
-- Полный аналитический отчёт по базе: [analytics/clients-base-2026-04-28.md](../analytics/clients-base-2026-04-28.md)
-- Список 1 212 спящих клиентов с приоритетами: [analytics/sleeping-clients-2026-04-28.csv](../analytics/sleeping-clients-2026-04-28.csv)
+- Полный аналитический отчёт по базе: [analytics/clients-base-2026-04-28.md](../analytics/_archive/clients-base-2026-04-28.md)
+- Список 1 212 спящих клиентов с приоритетами: [analytics/sleeping-clients-2026-04-28.csv](../analytics/_archive/sleeping-clients-2026-04-28.csv)
 - Действующий план на 90 дней: [action-plan-90d.md](../action-plan-90d.md)
 
 ---

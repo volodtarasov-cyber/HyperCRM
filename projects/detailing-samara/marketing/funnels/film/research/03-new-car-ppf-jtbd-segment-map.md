@@ -327,7 +327,7 @@ markmap:
 ### Исходники
 
 - [Скрининг PPF](../../../../analytics/business-market-screening-ppf-2026-06-03.md)
-- [Рынок и продукт PPF](00-ppf-market-product-map.md)
+- Рынок и продукт PPF
 - [Доказательная записка](01-ppf-market-product-evidence.md)
 - [Путь к пленке](../path-to-film-findings.md)
 - [Мастер-оффер](../offer-master.md)

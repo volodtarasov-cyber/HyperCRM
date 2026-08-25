@@ -65,7 +65,7 @@
 ## Закрытие
 - Два слота на диагностику, не «когда удобно».
 - В [трекер](../marketing/funnels/film/first-funnel-tracker-template.csv): статус, пакет-интерес, источник (база/реактивация), причина если «подумаю».
-- «Подумаю» → follow-up по [warming-sequence](warming-sequence-2026-06-22.md), не давление.
+- «Подумаю» → follow-up по warming-sequence, не давление.
 
 ---
 
@@ -80,4 +80,4 @@
 8. Следующий шаг: слот записи / «подумайте, смета у вас» + follow-up.
 
 > ❌ Диагностика ≠ обычная продажа. Не давить на full body. Дал смету, проговорил где не надо — уехал думать. Это и есть доверие (приём Виктора).
-> Связано: [воронка](../marketing/funnels/film/_first-funnel-warm-base-2026-06-26.md) · [коробка](../marketing/funnels/film/shock-awe-box-newcar-2026-06-26.md) · [приёмы Виктора](victor-sales-technique-2026-06-15.md).
+> Связано: [воронка](../marketing/funnels/film/_first-funnel-warm-base-2026-06-26.md) · [коробка](../marketing/funnels/film/shock-awe-box-newcar-2026-06-26.md) · приёмы Виктора.

@@ -10,7 +10,7 @@ from openpyxl import load_workbook
 from openpyxl.styles import Font, Alignment, PatternFill
 
 ROOT = Path(__file__).resolve().parents[4]
-TEMPLATE_XLSX = ROOT / "projects/agency-os/templates/business-market-screening.xlsx"
+TEMPLATE_XLSX = ROOT / "projects/marketing-os/templates/business-market-screening.xlsx"
 REPORT_MD = ROOT / "projects/detailing-samara/analytics/business-market-screening-ppf-2026-06-03.md"
 OUT_XLSX = ROOT / "projects/detailing-samara/analytics/business-market-screening-ppf-2026-06-03.xlsx"
 
@@ -191,7 +191,7 @@ def add_passport_sheet(wb):
     note_row = 3 + len(PASSPORT) + 2
     ws.cell(row=note_row, column=1, value="Методология").font = Font(bold=True)
     ws.cell(row=note_row, column=2,
-            value="projects/agency-os/modules/business-market-screening.md")
+            value="projects/marketing-os/engines/business-market-screening.md")
     ws.cell(row=note_row + 1, column=1, value="Полный отчёт").font = Font(bold=True)
     ws.cell(row=note_row + 1, column=2,
             value="analytics/business-market-screening-ppf-2026-06-03.md")

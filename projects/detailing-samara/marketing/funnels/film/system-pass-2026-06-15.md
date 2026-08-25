@@ -1,6 +1,6 @@
-# Плёнка (PPF) Левша — прогон по системе Agency OS
+# Плёнка (PPF) Левша — прогон по системе Marketing OS
 
-> **Что это:** сквозной прогон услуги «оклейка плёнкой» через систему [Agency OS](../../../../agency-os/_index.md) с новыми модулями (оффер, диагностическая продажа) и свежими данными. Не дублирует штурм-папку [film-funnel/_index.md](_index.md) — собирает её в конвейер и накладывает то, чего система раньше не давала.
+> **Что это:** сквозной прогон услуги «оклейка плёнкой» через [Marketing OS](../../../../marketing-os/_index.md) с движками оффера и диагностической продажи. Не дублирует штурм-папку [film-funnel/_index.md](_index.md) — собирает её в конвейер и накладывает то, чего система раньше не давала.
 > **Дата:** 2026-06-15. **Парность:** см. аналогичный прогон шумки [marketing/funnels/shumka/system-pass-2026-06-15.md](../shumka/system-pass-2026-06-15.md).
 > **Метки:** без пометки = факт 1С/Б24/VoC; **[Г]** гипотеза; **[П]** предложение.
 
@@ -13,7 +13,7 @@
 ---
 
 ## Шаг 0 — Скрининг: где утечка
-**Модуль:** [business-market-screening](../../../../agency-os/modules/business-market-screening.md) `working`
+**Модуль:** [business-market-screening](../../../../marketing-os/engines/business-market-screening.md) `working`
 
 **Факты:**
 - Плёнка — **главная маржинальная линия**: 592 заказа, 40,5 млн ₽ выручки (1С, янв-25 — апр-26), средний чек ~68к, full body ~36 заказов по 314к.
@@ -33,7 +33,7 @@
 ---
 
 ## Шаг 1 — Конкурентное поле
-**Модуль:** [competitive-field-analysis](../../../../agency-os/modules/competitive-field-analysis.md) · есть [competitors.md](../../../competitors.md), [разбор GoodZone/Манго](../../research/competitors/competitor-deep-analysis-goodzone-mango-2026-05-29.md)
+**Модуль:** [competitive-field-analysis](../../../../marketing-os/engines/competitive-field-analysis.md) · есть [competitors.md](../../../competitors.md), [разбор GoodZone/Манго](../../research/competitors/competitor-deep-analysis-goodzone-mango-2026-05-29.md)
 
 **Свежий вывод (11.06):** полка «без лишней оклейки и переплаты» **занята** GoodZone и Лагом Авто. Конкурировать на ней — биться в чужом позиционировании.
 → Отстройка Левши: **ответственность за машину и результат** (фотофиксация, паспорт защиты, гарантия, сборка/контроль), а «без переплаты» оставить как механику подбора в квизе, не как ядро.
@@ -41,7 +41,7 @@
 ---
 
 ## Шаг 2 — JTBD / сегмент
-**Модуль:** [niche-icp-jtbd-research](../../../../agency-os/modules/niche-icp-jtbd-research.md) · есть [path-to-film-findings.md](path-to-film-findings.md) (1034 клиента), [VoC](../../research/voc-research-2026-05-25.md), [research/](research/README.md)
+**Модуль:** [niche-icp-jtbd-research](../../../../marketing-os/engines/niche-icp-jtbd-research.md) · есть [path-to-film-findings.md](path-to-film-findings.md) (1034 клиента), [VoC](../../research/voc-research-2026-05-25.md), [research/](research/README.md)
 
 А→Б: «боюсь сколов/царапин на новой/дорогой машине, ремонт дорогой и бесконечный» → «кузов защищён на годы, продам без потери вида, не дёргаюсь за каждый камень».
 **[П]** доказанный JTBD×сегмент после интервью 42 premium-заказов пока не собран ([research план](research/README.md)) — это следующий слой, особенно для full body.
@@ -49,7 +49,7 @@
 ---
 
 ## Шаг 3 — Дизайн оффера ⭐ новый модуль
-**Модуль:** [offer-packaging-design](../../../../agency-os/modules/offer-packaging-design.md) `draft` · есть [offer-master.md](offer-master.md), [offer-fullbody.md](offer-fullbody.md)
+**Модуль:** [offer-packaging-design](../../../../marketing-os/engines/offer-packaging-design.md) `draft` · есть [offer-master.md](offer-master.md), [offer-fullbody.md](offer-fullbody.md)
 
 3-tier уже собран — **Light / Optimal / Max** (исход квиза, не цель захода). Что добавляет модуль поверх:
 - **Три цены работают как якорь:** Max якорит, Optimal — основной, Light — вход. Rocket — честный ответ на «дорого» (не скрытая замена), Pro — премиум. ✅ уже так.
@@ -60,28 +60,28 @@
 ---
 
 ## Шаг 4 — Маркетинговая система
-**Модуль:** [marketing-system-design](../../../../agency-os/modules/marketing-system-design.md) · есть [aarrr-funnel.md](aarrr-funnel.md), [shock-awe-box.md](shock-awe-box.md), [vk-funnel.md](vk-funnel.md)
+**Модуль:** [marketing-system-design](../../../../marketing-os/engines/marketing-system-design.md) · есть [aarrr-funnel.md](aarrr-funnel.md), [shock-awe-box.md](shock-awe-box.md), [vk-funnel.md](vk-funnel.md)
 
 Воронка: квиз/расчёт по фото (вход) → диагностика 40 мин «3 варианта на руки» → пакет (core) → керамика/доп.зоны/вторая машина (profit max) → ТО плёнки/сезонный осмотр (return path). AARRR и коробка шок-трепет собраны. **Дыра — измерение** (шаг 0): без полей CRM воронку не посчитать по пакетам.
 
 ---
 
 ## Шаг 5 — Сообщение
-**Метод:** [messaging-direct-response](../../../../agency-os/methods/messaging-direct-response.md) + `/copywriter` · есть лендинг [film-landing/](landing/README.md), [audit-current-landing.md](audit-current-landing.md), Авито-инфографика
+**Метод:** [messaging-direct-response](../../../../marketing-os/core/messaging-direct-response.md) + `/copywriter` · есть лендинг [film-landing/](landing/README.md), [audit-current-landing.md](audit-current-landing.md), Авито-инфографика
 
 Лендинг запущен (MVP). Доработать по ядру «ответственность» (шаг 1), подставить реальные кейсы/цены. Тексты — через `/copywriter` + метод.
 
 ---
 
 ## Шаг 6 — Лидген
-**Модули:** [detailing-ppf-leadgen](../../../../agency-os/modules/detailing-ppf-leadgen.md) `pilot` + Авито
+**Playbook:** [лидген дорогой локальной услуги](../../../../marketing-os/playbooks/local-high-ticket-service-leadgen.md) `pilot`; PPF — первое применение
 
 Уже идёт: Авито под плёнку запущен, инфографика, базовый лендинг, июль — сезон. По вердикту шага 0 — **не наращивать, пока конверсия не замкнута**. Достаточно текущего потока, чтобы тестировать продажу.
 
 ---
 
 ## Шаг 7 — Диагностическая продажа ⭐ новый модуль · ГЛАВНЫЙ РЫЧАГ
-**Модуль:** [diagnostic-sale](../../../../agency-os/modules/diagnostic-sale.md) `draft`
+**Модуль:** [diagnostic-sale](../../../../marketing-os/engines/diagnostic-sale.md) `draft`
 
 Это **главный блокер плёнки** (слабая конверсия приёмщиков). Стандарт «40 мин / 3 варианта на руки» заявлен, но **скрипта нет** (`diagnostics-script.md` в планах папки, не собран).
 **[П] Собрать скрипт диагностической продажи плёнки** по модулю — как сделали для шумки ([shumka-diagnostic-sale-script-avito.md](../../../sales/shumka-diagnostic-sale-script-avito.md)): рамка → разрыв (сколы/ремонт) → маршрут (квиз→3 варианта) → прямой вопрос → пакет; цена-мост, анти-якорь, отработка «дорого/Rocket». **Связать с разбором техники Виктора** (он конвертит плёнку кратно лучше — перенести приёмы в скрипт). Это апгрейд чека всей команды без новых затрат.
@@ -89,21 +89,21 @@
 ---
 
 ## Шаг 8 — Дожим незакрытых
-**Модуль:** [follow-up-lost-leads](../../../../agency-os/modules/follow-up-lost-leads.md) `draft`
+**Модуль:** [follow-up-lost-leads](../../../../marketing-os/playbooks/follow-up-lost-leads.md) `draft`
 
 Плёнка — долгий дорогой цикл, «думающих» много. Серия 8-21 касание, фиксация причины в Б24. Сейчас follow-up системно не стоит — дыра.
 
 ---
 
 ## Шаг 9 — Удержание ⭐ ключ к −10,9 млн
-**Модуль:** [reactivation-old-base](../../../../agency-os/modules/reactivation-old-base.md) · есть [post-film-care-pilot-plan.md](../../../sales/post-film-care-pilot-plan.md) ✅
+**Модуль:** [reactivation-old-base](../../../../marketing-os/playbooks/reactivation-old-base.md) · есть [post-film-care-pilot-plan.md](../../../sales/post-film-care-pilot-plan.md) ✅
 
 Маршрут уже собран (две дорожки: профилактика новых + возврат 51 выпавшего A). Плёнка живёт 5-7 лет — сама не вернёт; за 6 мес перевести в мультисервис (керамика, ТО плёнки, новые зоны, вторая машина) пока доверие на пике. **Это лечит главную дыру удержания.** Ждёт запуска (имена приёмщиков, бонусы, Б24-триггер).
 
 ---
 
 ## Шаг 10 — Репутация
-**Модуль:** [reputation-review-responses](../../../../agency-os/modules/reputation-review-responses.md) `pilot`
+**Модуль:** [reputation-review-responses](../../../../marketing-os/playbooks/reputation-review-responses.md) `pilot`
 
 5,0/751 Я.Карты — сильнейший актив доверия (шаг 3, «вероятность»). Кейс-банк на 400 работ ([case-bank-system-400.md](../../content/case-bank/case-bank-system-400.md)) — система сбора доказательств. Осмотры +30 (шаг 9) = повод снимать до/после.
 

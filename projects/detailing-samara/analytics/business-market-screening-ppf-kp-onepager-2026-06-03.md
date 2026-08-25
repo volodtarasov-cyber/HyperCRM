@@ -1,6 +1,6 @@
 # Скрининг Бизнеса И Рынка — One-Pager · Антигравийная Плёнка Левши
 
-> Шаблон → [Agency OS / kp-visual](../../agency-os/templates/business-market-screening-kp-visual.md)
+> Шаблон → [Marketing OS / kp-visual](../../marketing-os/templates/business-market-screening-kp-visual.md)
 > Полный отчёт → [business-market-screening-ppf-2026-06-03.md](business-market-screening-ppf-2026-06-03.md)
 > Excel → [business-market-screening-ppf-2026-06-03.xlsx](business-market-screening-ppf-2026-06-03.xlsx)
 

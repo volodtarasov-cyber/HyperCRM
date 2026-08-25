@@ -13,13 +13,13 @@
 - **🆕 Ретро цикла 1 + план цикла 2 собраны** → [action-plan-q3-2026.md](action-plan-q3-2026.md); сдвиг: acquisition-инфраструктура → конверсия+удержание
 - **Кейс-фабрика запущена ✅ — 5 кейсов в работе, ритм 2/нед на публикацию.** Блокер «нет топлива воронки» снят. Фабрика на Google-таблице (НЕ YouGile): [case-production-system.md](marketing/content/case-bank/case-production-system.md), шаблон [case-bank-template.csv](marketing/content/case-bank/case-bank-template.csv)
 - **Колл-трекинг установлен ✅** (HYP-003 закрыта). Сквозную аналитику делаем **через ~2 мес**, как наладим Б24
-- **Редизайн воронки (HYP-010)** — прогрев через касания + кейсы, лид приходит тёплым; сценарий → [warming-sequence-2026-06-22.md](sales/warming-sequence-2026-06-22.md)
+- **Редизайн воронки (HYP-010)** — прогрев через касания + кейсы, лид приходит тёплым; сценарий → warming-sequence-2026-06-22.md
 - **Сборка первой готовой PPF-воронки** — один сегмент: владелец новой машины; путь: квалификация → расчёт → прогрев кейсами → диагностика → бронь → выдача → post-care. Карточка → [film-funnel/_dashboard.md](marketing/funnels/film/_dashboard.md), задачи → [yougile-task-export.md](marketing/funnels/film/yougile-task-export.md)
 - **Приёмщиков нет смысла «дрочить» без квал-лидов** — сначала качество лида на входе, тренинг вторичен
 - **Рекламный бюджет: 300 тыс ₽/мес** · **Сайт под SEO** — fix-first на Битриксе (HYP-008)
 - **SMM полностью на Левше** — контур контента запущен
 - **Я.Карты — услуги обновлены ✅**; **2ГИС — карточка в порядке ✅**
-- **Разбор техники Виктора готов** → 9 приёмов: [victor-sales-technique](sales/victor-sales-technique-2026-06-15.md); упрощённый скрипт приёмщика [manager-script-simple](sales/manager-script-simple-2026-06-18.md)
+- **Разбор техники Виктора готов** → 9 приёмов: victor-sales-technique; упрощённый скрипт приёмщика [manager-script-simple](sales/manager-script-simple-2026-06-18.md)
 - **Авито под плёнку + базовый лендинг плёнки запущены**
 - **Обзвон P1 идёт** — 20 из 113; **Настя** на broadcast P3/P4
 - **Первый NPS-кейс отработан**
@@ -144,13 +144,13 @@
 > **Фокус 24.06: собрать первую готовую воронку под плёнку.** Не распыляемся на 3 линии. Июль = пик плёнки, первый кейс уже плёночный → **плёнка = живая связка сейчас.** Логика: качество лида на входе → прогрев кейсами → тёплый доходит до приёмщика → конвертит. Тренинг приёмщиков — ПОСЛЕ того как пойдут квал-лиды, не до.
 
 ### 1. 🥇 Собрать первую готовую PPF-воронку под сегмент новой машины
-Берём сегмент «только купил авто» и один путь: квалификация → расчёт 3 вариантов → прогрев кейсами → диагностика → бронь → выдача → post-care. Всю воронку HYP-010 крутим на нём, не размазываем. Карточка подпроекта → [film-funnel/_dashboard.md](marketing/funnels/film/_dashboard.md). Список задач для переноса в YouGile → [yougile-task-export.md](marketing/funnels/film/yougile-task-export.md). Сценарий прогрева → [warming-sequence-2026-06-22.md](sales/warming-sequence-2026-06-22.md).
+Берём сегмент «только купил авто» и один путь: квалификация → расчёт 3 вариантов → прогрев кейсами → диагностика → бронь → выдача → post-care. Всю воронку HYP-010 крутим на нём, не размазываем. Карточка подпроекта → [film-funnel/_dashboard.md](marketing/funnels/film/_dashboard.md). Список задач для переноса в YouGile → [yougile-task-export.md](marketing/funnels/film/yougile-task-export.md). Сценарий прогрева → warming-sequence-2026-06-22.md.
 
 ### 2. 🥈 Кейс-фабрика → топливо воронки
 Таблица собрана, 1-й кейс (плёнка+проточка) готов. **Сделать:** опубликовать первый кейс на сайт + выйти на ритм 3-5 кейсов/нед. Без потока кейсов прогрев нечем кормить, лендинги — сток. Система → [case-production-system.md](marketing/content/case-bank/case-production-system.md).
 
 ### 3. 🥉 Квал-лиды приёмщикам (до тренинга)
-Сначала дать приёмщикам тёплый отобранный поток (квалификация + прогрев), потом тренировать. Тренинг по [упрощённому скрипту](sales/manager-script-simple-2026-06-18.md) + [приёмам Виктора](sales/victor-sales-technique-2026-06-15.md) — второй слой, когда лид-качество поднято.
+Сначала дать приёмщикам тёплый отобранный поток (квалификация + прогрев), потом тренировать. Тренинг по [упрощённому скрипту](sales/manager-script-simple-2026-06-18.md) + приёмам Виктора — второй слой, когда лид-качество поднято.
 
 ### 4. Постплёночный маршрут (HYP-009) — запустить
 Самая большая дыра удержания (−10,9 млн ₽). План есть → [post-film-care-pilot-plan.md](sales/post-film-care-pilot-plan.md). Особенно в тему на пике плёнки: оклеили → не теряем.
@@ -172,7 +172,7 @@
 ## Источники цифр
 
 - KPI выручки/клиентов → [_index.md](_index.md) (раздел KPI)
-- A-клиенты → [abc-a-clients-count](analytics/abc-a-clients-count-2026-05-26.md), [bridge](analytics/abc-a-client-bridge-2026-05-26.md), [patterns](analytics/abc-a-lost-patterns-2026-05-26.md)
+- A-клиенты → [abc-a-clients-count](analytics/abc-a-clients-count-2026-05-26.md), bridge, [patterns](analytics/abc-a-lost-patterns-2026-05-26.md)
 - Реактивация → [reactivation-priority-map](analytics/reactivation-priority-map-2026-05-20.md)
 - Конкуренты → [competitor-deep-analysis-goodzone-mango](marketing/research/competitors/competitor-deep-analysis-goodzone-mango-2026-05-29.md)
 - NPS-кейс 2026-05-31 → [client-intelligence.md](client-intelligence.md) (раздел «Кейсы NPS»)

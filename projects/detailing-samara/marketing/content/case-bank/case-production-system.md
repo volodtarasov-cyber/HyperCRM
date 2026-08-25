@@ -136,4 +136,4 @@
 машина на выдаче → строка в таблице → фото в папке → статус → светофор не даёт забыть
 ```
 
-> Связано: [case-bank-system-400.md](case-bank-system-400.md) (зачем/цель/уровни), [case-photo-video-structure.md](case-photo-video-structure.md) (что снимать), [case-structure-template.md](case-structure-template.md) (текст кейса), [warming-sequence-2026-06-22.md](../../../sales/warming-sequence-2026-06-22.md) (куда идут кейсы — топливо воронки), HYP-010 в [hypotheses.md](../../../hypotheses.md).
+> Связано: [case-bank-system-400.md](case-bank-system-400.md) (зачем/цель/уровни), [case-photo-video-structure.md](case-photo-video-structure.md) (что снимать), [case-structure-template.md](case-structure-template.md) (текст кейса), warming-sequence-2026-06-22.md (куда идут кейсы — топливо воронки), HYP-010 в [hypotheses.md](../../../hypotheses.md).

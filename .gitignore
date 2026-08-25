@@ -5,6 +5,7 @@ projects/**/access.md
 *.pem
 .env
 .env.local
+.mcp.json
 
 # OS / IDE
 .DS_Store
@@ -15,6 +16,10 @@ projects/**/access.md
 # Claude local overrides (содержит разрешения на конкретной машине)
 .claude/settings.local.json
 
+# Obsidian UI state is device-specific and causes sync conflicts
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
 # Окружения и зависимости — пересобираются, не версионируются
 .tools/venv/
 node_modules/
@@ -24,3 +29,11 @@ __pycache__/
 
 # Временное
 tmp/
+
+# Состояние прогонов разбора — вне волта, не версионируется
+.tools/review-state.json
+.tools/board.html
+
+# Local analytics databases are generated on each device and exceed GitHub limits
+projects/**/data/*.sqlite3
+projects/**/data/*.sqlite

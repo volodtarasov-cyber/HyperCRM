@@ -1,0 +1,216 @@
+id,brand,model,body,class_id,active
+lada-granta,LADA,Granta,Компактный седан,A,1
+lada-vesta,LADA,Vesta,Средний седан,B,1
+lada-niva-legend,LADA,Niva Legend,Компактный внедорожник,B,1
+lada-niva-travel,LADA,Niva Travel,Компактный внедорожник,B,1
+lada-largus,LADA,Largus,Универсал,B,1
+lada-iskra,LADA,Iskra,Компактный седан,A,1
+lada-aura,LADA,Aura,Большой седан,C,1
+lada-xray,LADA,XRAY,Компактный хэтчбек,A,1
+moskvich-3,Moskvich,3,Компактный кроссовер,B,1
+moskvich-6,Moskvich,6,Лифтбек,B,1
+moskvich-8,Moskvich,8,Среднеразмерный кроссовер,C,1
+haval-jolion,Haval,Jolion,Компактный кроссовер,B,1
+haval-m6,Haval,M6,Компактный кроссовер,B,1
+haval-f7,Haval,F7,Среднеразмерный кроссовер,C,1
+haval-f7x,Haval,F7x,Купе-кроссовер,C,1
+haval-dargo,Haval,Dargo,Среднеразмерный кроссовер,C,1
+haval-h9,Haval,H9,Большой внедорожник,D,1
+geely-coolray,Geely,Coolray,Компактный кроссовер,B,1
+geely-atlas,Geely,Atlas,Среднеразмерный кроссовер,C,1
+geely-monjaro,Geely,Monjaro,Среднеразмерный кроссовер,C,1
+geely-emgrand,Geely,Emgrand,Средний седан,B,1
+geely-cityray,Geely,Cityray,Компактный кроссовер,B,1
+geely-okavango,Geely,Okavango,Большой кроссовер,D,1
+geely-preface,Geely,Preface,Бизнес-седан,C,1
+chery-tiggo-4,Chery,Tiggo 4,Компактный кроссовер,B,1
+chery-tiggo-7-pro-max,Chery,Tiggo 7 Pro Max,Среднеразмерный кроссовер,C,1
+chery-tiggo-8-pro-max,Chery,Tiggo 8 Pro Max,Большой кроссовер,D,1
+chery-arrizo-8,Chery,Arrizo 8,Бизнес-седан,C,1
+changan-cs35-plus,Changan,CS35 Plus,Компактный кроссовер,B,1
+changan-cs55-plus,Changan,CS55 Plus,Среднеразмерный кроссовер,C,1
+changan-uni-k,Changan,UNI-K,Среднеразмерный кроссовер,C,1
+changan-uni-t,Changan,UNI-T,Компактный кроссовер,B,1
+changan-uni-v,Changan,UNI-V,Лифтбек,B,1
+changan-cs75-plus,Changan,CS75 Plus,Среднеразмерный кроссовер,C,1
+omoda-c5,Omoda,C5,Компактный кроссовер,B,1
+omoda-c7,Omoda,C7,Среднеразмерный кроссовер,C,1
+omoda-s5,Omoda,S5,Средний седан,B,1
+exeed-lx,Exeed,LX,Компактный кроссовер,B,1
+exeed-txl,Exeed,TXL,Среднеразмерный кроссовер,C,1
+exeed-rx,Exeed,RX,Купе-кроссовер,C,1
+exeed-vx,Exeed,VX,Большой кроссовер,D,1
+jetour-dashing,Jetour,Dashing,Компактный кроссовер,B,1
+jetour-x70-plus,Jetour,X70 Plus,Среднеразмерный кроссовер,C,1
+jetour-x90-plus,Jetour,X90 Plus,Большой кроссовер,D,1
+jetour-t1,Jetour,T1,Среднеразмерный внедорожник,C,1
+jetour-t2,Jetour,T2,Среднеразмерный внедорожник,C,1
+tank-300,Tank,300,Среднеразмерный внедорожник,C,1
+tank-400,Tank,400,Большой внедорожник,D,1
+tank-500,Tank,500,Большой внедорожник,D,1
+tank-700,Tank,700,Полноразмерный внедорожник,E,1
+gac-gs3,GAC,GS3,Компактный кроссовер,B,1
+gac-gs4,GAC,GS4,Среднеразмерный кроссовер,C,1
+gac-gs8,GAC,GS8,Большой кроссовер,D,1
+gac-empow,GAC,Empow,Средний седан,B,1
+jaecoo-j7,Jaecoo,J7,Среднеразмерный кроссовер,C,1
+jaecoo-j8,Jaecoo,J8,Большой кроссовер,D,1
+belgee-x50,Belgee,X50,Компактный кроссовер,B,1
+belgee-x70,Belgee,X70,Среднеразмерный кроссовер,C,1
+belgee-s50,Belgee,S50,Средний седан,B,1
+solaris-hc,Solaris,HC,Компактный кроссовер,B,1
+solaris-hs,Solaris,HS,Компактный седан,A,1
+solaris-krs,Solaris,KRS,Компактный седан,A,1
+solaris-krx,Solaris,KRX,Компактный хэтчбек,A,1
+baic-u5-plus,BAIC,U5 Plus,Средний седан,B,1
+baic-x35,BAIC,X35,Компактный кроссовер,B,1
+baic-x55,BAIC,X55,Компактный кроссовер,B,1
+baic-bj40,BAIC,BJ40,Среднеразмерный внедорожник,C,1
+baic-x75,BAIC,X75,Среднеразмерный кроссовер,C,1
+hongqi-h5,Hongqi,H5,Бизнес-седан,C,1
+hongqi-hs3,Hongqi,HS3,Компактный кроссовер,B,1
+hongqi-hs5,Hongqi,HS5,Среднеразмерный кроссовер,C,1
+hongqi-e-hs9,Hongqi,E-HS9,Полноразмерный кроссовер,E,1
+voyah-free,Voyah,Free,Среднеразмерный кроссовер,C,1
+voyah-dream,Voyah,Dream,Большой минивэн,E,1
+voyah-passion,Voyah,Passion,Большой седан,C,1
+li-auto-l6,Li Auto,L6,Среднеразмерный кроссовер,C,1
+li-auto-l7,Li Auto,L7,Большой кроссовер,D,1
+li-auto-l8,Li Auto,L8,Большой кроссовер,D,1
+li-auto-l9,Li Auto,L9,Полноразмерный кроссовер,E,1
+zeekr-001,Zeekr,001,Большой лифтбек,C,1
+zeekr-007,Zeekr,007,Средний седан,B,1
+zeekr-7x,Zeekr,7X,Среднеразмерный кроссовер,C,1
+zeekr-009,Zeekr,009,Большой минивэн,E,1
+xiaomi-su7,Xiaomi,SU7,Большой седан,C,1
+xiaomi-yu7,Xiaomi,YU7,Среднеразмерный кроссовер,C,1
+byd-song-plus,BYD,Song Plus,Среднеразмерный кроссовер,C,1
+byd-han,BYD,Han,Большой седан,C,1
+byd-tang,BYD,Tang,Большой кроссовер,D,1
+byd-seal,BYD,Seal,Средний седан,B,1
+byd-qin-plus,BYD,Qin Plus,Средний седан,B,1
+kia-rio,Kia,Rio,Компактный седан,A,1
+kia-k5,Kia,K5,Бизнес-седан,C,1
+kia-ceed,Kia,Ceed,Компактный хэтчбек,A,1
+kia-sportage,Kia,Sportage,Среднеразмерный кроссовер,C,1
+kia-sorento,Kia,Sorento,Большой кроссовер,D,1
+kia-carnival,Kia,Carnival,Большой минивэн,E,1
+kia-seltos,Kia,Seltos,Компактный кроссовер,B,1
+hyundai-solaris,Hyundai,Solaris,Компактный седан,A,1
+hyundai-elantra,Hyundai,Elantra,Средний седан,B,1
+hyundai-sonata,Hyundai,Sonata,Бизнес-седан,C,1
+hyundai-creta,Hyundai,Creta,Компактный кроссовер,B,1
+hyundai-tucson,Hyundai,Tucson,Среднеразмерный кроссовер,C,1
+hyundai-santa-fe,Hyundai,Santa Fe,Большой кроссовер,D,1
+hyundai-palisade,Hyundai,Palisade,Большой кроссовер,D,1
+toyota-camry,Toyota,Camry,Бизнес-седан,C,1
+toyota-corolla,Toyota,Corolla,Средний седан,B,1
+toyota-rav4,Toyota,RAV4,Среднеразмерный кроссовер,C,1
+toyota-land-cruiser-prado,Toyota,Land Cruiser Prado,Большой внедорожник,D,1
+toyota-land-cruiser-300,Toyota,Land Cruiser 300,Полноразмерный внедорожник,E,1
+toyota-highlander,Toyota,Highlander,Большой кроссовер,D,1
+toyota-fortuner,Toyota,Fortuner,Большой внедорожник,D,1
+lexus-es,Lexus,ES,Бизнес-седан,C,1
+lexus-rx,Lexus,RX,Среднеразмерный кроссовер,C,1
+lexus-nx,Lexus,NX,Компактный кроссовер,B,1
+lexus-gx,Lexus,GX,Большой внедорожник,D,1
+lexus-lx,Lexus,LX,Полноразмерный внедорожник,E,1
+bmw-3-series,BMW,3 Series,Средний седан,B,1
+bmw-5-series,BMW,5 Series,Бизнес-седан,C,1
+bmw-7-series,BMW,7 Series,Большой седан,D,1
+bmw-x1,BMW,X1,Компактный кроссовер,B,1
+bmw-x3,BMW,X3,Среднеразмерный кроссовер,C,1
+bmw-x5,BMW,X5,Большой кроссовер,D,1
+bmw-x6,BMW,X6,Большой купе-кроссовер,D,1
+bmw-x7,BMW,X7,Полноразмерный кроссовер,E,1
+mercedes-c-class,Mercedes-Benz,C-Class,Средний седан,B,1
+mercedes-e-class,Mercedes-Benz,E-Class,Бизнес-седан,C,1
+mercedes-s-class,Mercedes-Benz,S-Class,Большой седан,D,1
+mercedes-gla,Mercedes-Benz,GLA,Компактный кроссовер,B,1
+mercedes-glc,Mercedes-Benz,GLC,Среднеразмерный кроссовер,C,1
+mercedes-gle,Mercedes-Benz,GLE,Большой кроссовер,D,1
+mercedes-gls,Mercedes-Benz,GLS,Полноразмерный кроссовер,E,1
+mercedes-g-class,Mercedes-Benz,G-Class,Полноразмерный внедорожник,E,1
+audi-a4,Audi,A4,Средний седан,B,1
+audi-a6,Audi,A6,Бизнес-седан,C,1
+audi-a8,Audi,A8,Большой седан,D,1
+audi-q3,Audi,Q3,Компактный кроссовер,B,1
+audi-q5,Audi,Q5,Среднеразмерный кроссовер,C,1
+audi-q7,Audi,Q7,Большой кроссовер,D,1
+audi-q8,Audi,Q8,Большой кроссовер,D,1
+volkswagen-polo,Volkswagen,Polo,Компактный седан,A,1
+volkswagen-jetta,Volkswagen,Jetta,Средний седан,B,1
+volkswagen-passat,Volkswagen,Passat,Бизнес-седан,C,1
+volkswagen-tiguan,Volkswagen,Tiguan,Среднеразмерный кроссовер,C,1
+volkswagen-touareg,Volkswagen,Touareg,Большой кроссовер,D,1
+volkswagen-teramont,Volkswagen,Teramont,Большой кроссовер,D,1
+volkswagen-golf,Volkswagen,Golf,Компактный хэтчбек,A,1
+skoda-rapid,Skoda,Rapid,Компактный лифтбек,A,1
+skoda-octavia,Skoda,Octavia,Средний лифтбек,B,1
+skoda-karoq,Skoda,Karoq,Компактный кроссовер,B,1
+skoda-kodiaq,Skoda,Kodiaq,Большой кроссовер,D,1
+skoda-superb,Skoda,Superb,Бизнес-лифтбек,C,1
+mazda-3,Mazda,3,Компактный хэтчбек,A,1
+mazda-6,Mazda,6,Бизнес-седан,C,1
+mazda-cx-5,Mazda,CX-5,Среднеразмерный кроссовер,C,1
+mazda-cx-9,Mazda,CX-9,Большой кроссовер,D,1
+nissan-almera,Nissan,Almera,Компактный седан,A,1
+nissan-qashqai,Nissan,Qashqai,Компактный кроссовер,B,1
+nissan-x-trail,Nissan,X-Trail,Среднеразмерный кроссовер,C,1
+nissan-murano,Nissan,Murano,Среднеразмерный кроссовер,C,1
+nissan-patrol,Nissan,Patrol,Полноразмерный внедорожник,E,1
+mitsubishi-lancer,Mitsubishi,Lancer,Средний седан,B,1
+mitsubishi-asx,Mitsubishi,ASX,Компактный кроссовер,B,1
+mitsubishi-outlander,Mitsubishi,Outlander,Среднеразмерный кроссовер,C,1
+mitsubishi-pajero-sport,Mitsubishi,Pajero Sport,Большой внедорожник,D,1
+renault-logan,Renault,Logan,Компактный седан,A,1
+renault-sandero,Renault,Sandero,Компактный хэтчбек,A,1
+renault-duster,Renault,Duster,Компактный кроссовер,B,1
+renault-arkana,Renault,Arkana,Среднеразмерный кроссовер,C,1
+renault-kaptur,Renault,Kaptur,Компактный кроссовер,B,1
+ford-focus,Ford,Focus,Компактный хэтчбек,A,1
+ford-mondeo,Ford,Mondeo,Бизнес-седан,C,1
+ford-kuga,Ford,Kuga,Среднеразмерный кроссовер,C,1
+ford-explorer,Ford,Explorer,Большой кроссовер,D,1
+porsche-macan,Porsche,Macan,Среднеразмерный кроссовер,C,1
+porsche-cayenne,Porsche,Cayenne,Большой кроссовер,D,1
+porsche-panamera,Porsche,Panamera,Большой лифтбек,D,1
+porsche-taycan,Porsche,Taycan,Большой седан,C,1
+porsche-911,Porsche,911,Спорткар,B,1
+land-rover-range-rover-evoque,Land Rover,Range Rover Evoque,Компактный кроссовер,B,1
+land-rover-range-rover-velar,Land Rover,Range Rover Velar,Среднеразмерный кроссовер,C,1
+land-rover-range-rover-sport,Land Rover,Range Rover Sport,Большой кроссовер,D,1
+land-rover-range-rover,Land Rover,Range Rover,Полноразмерный внедорожник,E,1
+land-rover-defender,Land Rover,Defender,Большой внедорожник,D,1
+land-rover-discovery,Land Rover,Discovery,Большой внедорожник,D,1
+volvo-s60,Volvo,S60,Средний седан,B,1
+volvo-s90,Volvo,S90,Бизнес-седан,C,1
+volvo-xc40,Volvo,XC40,Компактный кроссовер,B,1
+volvo-xc60,Volvo,XC60,Среднеразмерный кроссовер,C,1
+volvo-xc90,Volvo,XC90,Большой кроссовер,D,1
+subaru-forester,Subaru,Forester,Среднеразмерный кроссовер,C,1
+subaru-outback,Subaru,Outback,Большой универсал,C,1
+subaru-legacy,Subaru,Legacy,Средний седан,B,1
+subaru-xv,Subaru,XV,Компактный кроссовер,B,1
+chevrolet-niva,Chevrolet,Niva,Компактный внедорожник,B,1
+chevrolet-cruze,Chevrolet,Cruze,Средний седан,B,1
+chevrolet-tahoe,Chevrolet,Tahoe,Полноразмерный внедорожник,E,1
+chevrolet-traverse,Chevrolet,Traverse,Большой кроссовер,D,1
+cadillac-xt4,Cadillac,XT4,Компактный кроссовер,B,1
+cadillac-xt5,Cadillac,XT5,Среднеразмерный кроссовер,C,1
+cadillac-escalade,Cadillac,Escalade,Полноразмерный внедорожник,E,1
+tesla-model-3,Tesla,Model 3,Средний седан,B,1
+tesla-model-y,Tesla,Model Y,Среднеразмерный кроссовер,C,1
+tesla-model-s,Tesla,Model S,Большой лифтбек,C,1
+tesla-model-x,Tesla,Model X,Большой кроссовер,D,1
+mini-cooper,MINI,Cooper,Компактный хэтчбек,A,1
+mini-countryman,MINI,Countryman,Компактный кроссовер,B,1
+jac-js3,JAC,JS3,Компактный кроссовер,B,1
+jac-js6,JAC,JS6,Среднеразмерный кроссовер,C,1
+jac-j7,JAC,J7,Лифтбек,B,1
+knewstar-001,Knewstar,001,Среднеразмерный кроссовер,C,1
+evolute-i-pro,Evolute,i-Pro,Средний седан,B,1
+evolute-i-joy,Evolute,i-Joy,Компактный кроссовер,B,1
+evolute-i-space,Evolute,i-Space,Среднеразмерный кроссовер,C,1
+wey-05,WEY,05,Среднеразмерный кроссовер,C,1
+wey-07,WEY,07,Большой кроссовер,D,1

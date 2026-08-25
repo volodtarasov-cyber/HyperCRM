@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Воронка и статусы по направлениям Левши" />
+    <title>Левша — воронка по направлениям</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Локальная аналитика</div>
+          <h1>Воронка по <span>направлениям</span></h1>
+          <p class="subtitle">Лиды, квалификация, сделки и распределение по текущим статусам Б24.</p>
+        </div>
+        <div class="freshness">
+          <span>Обновлено</span>
+          <strong id="generated-at">—</strong>
+          <small id="data-sources">Данные ещё не загружены</small>
+        </div>
+      </header>
+
+      <nav class="dashboard-nav" aria-label="Разделы аналитики">
+        <a href="index.html">Обзор</a>
+        <a href="funnels.html" class="active" aria-current="page">Воронка по направлениям</a>
+      </nav>
+
+      <section class="control-panel funnel-control-panel" aria-label="Фильтры воронки">
+        <div class="date-control">
+          <label for="date-from">Период A с</label>
+          <input id="date-from" type="date" />
+        </div>
+        <div class="date-control">
+          <label for="date-to">по</label>
+          <input id="date-to" type="date" />
+        </div>
+        <div class="preset-group" aria-label="Быстрый выбор периода A">
+          <button type="button" data-preset="week">Последние 7 дней</button>
+          <button type="button" data-preset="month" class="active">Текущий месяц</button>
+          <button type="button" data-preset="all">Весь период</button>
+        </div>
+        <div class="channel-segment-toggle" role="group" aria-label="Тип клиентов в воронке">
+          <button type="button" class="active" data-funnel-segment="all" aria-pressed="true">Все</button>
+          <button type="button" data-funnel-segment="new" aria-pressed="false">Только новые</button>
+          <button type="button" data-funnel-segment="repeat" aria-pressed="false">Только повторные</button>
+        </div>
+        <div class="funnel-source-filter">
+          <span>Платный источник</span>
+          <div class="channel-segment-toggle" role="group" aria-label="Платный источник воронки">
+            <button type="button" class="active" data-funnel-source="all" aria-pressed="true">Все</button>
+            <button type="button" data-funnel-source="Яндекс Директ" aria-pressed="false">Яндекс Директ</button>
+            <button type="button" data-funnel-source="VK" aria-pressed="false">VK</button>
+            <button type="button" data-funnel-source="Авито" aria-pressed="false">Авито</button>
+          </div>
+        </div>
+        <div class="period-caption" id="period-caption">—</div>
+      </section>
+
+      <section class="comparison-toolbar comparison-toolbar-standalone" aria-label="Настройки сравнения периодов">
+        <div class="comparison-period-card primary">
+          <span>Период A</span>
+          <strong id="direction-period-a">—</strong>
+          <small>основной фильтр страницы</small>
+        </div>
+        <label class="comparison-switch" for="compare-enabled">
+          <input id="compare-enabled" type="checkbox" />
+          <span>Сравнить с периодом B</span>
+        </label>
+        <div id="comparison-controls" class="comparison-controls" hidden>
+          <div class="date-control light">
+            <label for="compare-from">Период B с</label>
+            <input id="compare-from" type="date" />
+          </div>
+          <div class="date-control light">
+            <label for="compare-to">по</label>
+            <input id="compare-to" type="date" />
+          </div>
+          <div class="comparison-presets" aria-label="Быстрый выбор периода сравнения">
+            <button type="button" data-compare-preset="previous" class="active">Предыдущий такой же</button>
+            <button type="button" data-compare-preset="previous-month">Прошлый месяц</button>
+          </div>
+          <div class="comparison-period-card secondary">
+            <span>Период B</span>
+            <strong id="direction-period-b">—</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="funnel-overview" aria-label="Общая воронка за период">
+        <article class="funnel-stage funnel-stage-leads">
+          <span class="funnel-step">01</span>
+          <h2>Лиды</h2>
+          <div id="funnel-kpi-leads" class="funnel-stage-value">—</div>
+          <small>все обращения Б24</small>
+        </article>
+        <div class="funnel-connector funnel-connector-lq">
+          <span>Лид → квал</span>
+          <div id="funnel-kpi-lq">—</div>
+          <i aria-hidden="true">→</i>
+        </div>
+        <article class="funnel-stage funnel-stage-qualified">
+          <span class="funnel-step">02</span>
+          <h2>Квал</h2>
+          <div id="funnel-kpi-qualified" class="funnel-stage-value">—</div>
+          <small>обработанные целевые</small>
+        </article>
+        <div class="funnel-connector funnel-connector-qs">
+          <span>Квал → сделка</span>
+          <div id="funnel-kpi-qs">—</div>
+          <i aria-hidden="true">→</i>
+        </div>
+        <article class="funnel-stage funnel-stage-deals">
+          <span class="funnel-step">03</span>
+          <h2>Создана сделка</h2>
+          <div id="funnel-kpi-deals" class="funnel-stage-value">—</div>
+          <small>лид однозначно связан со сделкой Б24</small>
+        </article>
+        <div class="funnel-end-to-end">
+          <span>Сквозная конверсия · лид → создана сделка</span>
+          <div id="funnel-kpi-ls">—</div>
+        </div>
+      </section>
+
+      <section class="deal-outcome-overview" aria-label="Исходы созданных сделок">
+        <div class="deal-outcome-heading">
+          <span>Исход созданной сделки</span>
+          <small>три взаимоисключающие ветки, сумма равна количеству сделок</small>
+        </div>
+        <article class="deal-outcome-card won">
+          <span class="outcome-dot" aria-hidden="true"></span>
+          <div>
+            <h2>Успешные</h2>
+            <small>сделка успешна или автомобиль выдан</small>
+          </div>
+          <div id="funnel-kpi-won" class="deal-outcome-value">—</div>
+          <div class="deal-outcome-rate"><span>Доля от сделок</span><div id="funnel-kpi-dw">—</div></div>
+        </article>
+        <article class="deal-outcome-card open">
+          <span class="outcome-dot" aria-hidden="true"></span>
+          <div>
+            <h2>Открытые</h2>
+            <small>включая запись и работу</small>
+          </div>
+          <div id="funnel-kpi-open" class="deal-outcome-value">—</div>
+          <div class="deal-outcome-rate"><span>Доля от сделок</span><div id="funnel-kpi-do">—</div></div>
+        </article>
+        <article class="deal-outcome-card lost">
+          <span class="outcome-dot" aria-hidden="true"></span>
+          <div>
+            <h2>Неуспешные</h2>
+            <small>закрытые без успешного результата</small>
+          </div>
+          <div id="funnel-kpi-lost" class="deal-outcome-value">—</div>
+          <div class="deal-outcome-rate"><span>Доля от сделок</span><div id="funnel-kpi-dl">—</div></div>
+        </article>
+        <div class="deal-outcome-end-to-end">
+          <span>Лид → успешная сделка</span>
+          <div id="funnel-kpi-lw">—</div>
+        </div>
+        <div class="deal-outcome-end-to-end money">
+          <span>Средний чек связанных продаж 1С</span>
+          <div id="funnel-kpi-average-check">—</div>
+          <small>Заказов 1С: <span id="funnel-kpi-onec-orders">—</span></small>
+        </div>
+      </section>
+
+      <section class="panel direction-panel">
+        <div class="panel-heading direction-heading">
+          <div>
+            <span class="section-index">01</span>
+            <h2>Направления</h2>
+          </div>
+          <p id="qualification-note">Квал — прокси по текущей стадии Б24</p>
+        </div>
+
+        <div class="direction-board-wrap">
+          <div class="direction-board">
+            <div class="direction-board-header" aria-hidden="true">
+              <span>Направление</span>
+              <span class="stage-heading">Лиды</span>
+              <span class="conversion-heading">Лид → квал</span>
+              <span class="stage-heading">Квал</span>
+              <span class="conversion-heading">Квал → сделка</span>
+              <span class="stage-heading">Сделки</span>
+              <span class="outcome-heading won">Успешные<br><small>+ сумма Б24</small></span>
+              <span class="outcome-heading open">Открытые</span>
+              <span class="outcome-heading lost">Неуспешные</span>
+              <span class="money-heading">Средний чек 1С</span>
+              <span class="conversion-heading">Лид → успех</span>
+            </div>
+            <div id="direction-rows" class="direction-board-rows"></div>
+          </div>
+        </div>
+
+        <div class="status-heading">
+          <div>
+            <h3>Текущие стадии лидов</h3>
+            <p>Количество и доля стадии внутри выбранного направления и периода</p>
+          </div>
+          <label for="direction-status-filter">
+            Направление
+            <select id="direction-status-filter">
+              <option value="all">Все направления</option>
+            </select>
+          </label>
+        </div>
+        <div class="table-wrap">
+          <table class="status-table">
+            <thead id="status-head"></thead>
+            <tbody id="status-rows"></tbody>
+          </table>
+        </div>
+        <p class="panel-footnote">Периоды строятся по дате создания лида. Квал — фактическая стадия «Качественный лид». «Сделки» — все однозначно связанные сделки Б24. Успешные — стадии «Сделка успешна» и «Автомобиль выдан клиенту»; внутри этой колонки отдельно суммируется поле `Сумма` Б24, которое не является фактической выручкой. Остальные закрытые сделки считаются неуспешными, незакрытые показываются отдельно. Средний чек = фактическая выручка связанных заказов 1С / количество заказов с выручкой больше 0 ₽; нулевые заказы в расчёт не входят.</p>
+      </section>
+
+      <footer>
+        <span>Левша · воронка по направлениям</span>
+        <span id="footer-range">—</span>
+      </footer>
+    </main>
+
+    <noscript>Для работы фильтров дашборда нужен JavaScript.</noscript>
+    <script src="data.js"></script>
+    <script src="funnels.js"></script>
+  </body>
+</html>

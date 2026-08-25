@@ -2,7 +2,7 @@
 
 **Дата:** 2026-06-15
 **Статус:** черновик плана, ждёт встречи с Александром
-**Зачем в системе:** шаг 9 прогона шумки по Agency OS → [marketing/funnels/shumka/system-pass-2026-06-15.md](../marketing/funnels/shumka/system-pass-2026-06-15.md). Лидген на шумку без этого маршрута = слив (вердикт шага 0).
+**Зачем в системе:** шаг 9 прогона шумки по Marketing OS → [marketing/funnels/shumka/system-pass-2026-06-15.md](../marketing/funnels/shumka/system-pass-2026-06-15.md). Лидген на шумку без этого маршрута = слив (вердикт шага 0).
 **Шаблон:** зеркало [post-film-care-pilot-plan.md](post-film-care-pilot-plan.md) (плёнка), адаптировано под шумку.
 **Метки:** без пометки = факт 1С/Б24; **[Г]** гипотеза; **[П]** предложение.
 

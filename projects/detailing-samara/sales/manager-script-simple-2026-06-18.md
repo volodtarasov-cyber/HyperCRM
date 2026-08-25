@@ -84,4 +84,4 @@
 
 ---
 
-> Полная версия с разбором приёмов → [victor-sales-technique](victor-sales-technique-2026-06-15.md). Расширенная карточка → [first-touch-manager-card.md](first-touch-manager-card.md). Регламент целиком → [first-touch-regulation.md](first-touch-regulation.md).
+> Полная версия с разбором приёмов → victor-sales-technique. Расширенная карточка → [first-touch-manager-card.md](first-touch-manager-card.md). Регламент целиком → [first-touch-regulation.md](first-touch-regulation.md).

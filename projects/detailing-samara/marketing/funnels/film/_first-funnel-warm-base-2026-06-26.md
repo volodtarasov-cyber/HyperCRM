@@ -71,7 +71,7 @@ lookalike на плёнку-690   + Яндекс + lookalike   → фото-ра
 ## 5. Post-care + реферал — компаунд
 - Постплёночный маршрут 30/60/180 → [post-film-care-pilot-plan](../../../sales/post-film-care-pilot-plan.md) (HYP-009), вести в трекере.
 - Отзыв/кейс на выдаче (пик эмоции) → топливо кейс-банка + посев в сетях клиента.
-- **Реферальный оффер** → [referral-offer-2026-06-26](../../../sales/referral-offer-2026-06-26.md).
+- **Реферальный оффер** → referral-offer-2026-06-26.
 
 ## 6. Метрики пилота (в трекере)
 - воронка рекламы: показ → клик → квиз/заявка → расчёт → диагностика → продажа → чек;
@@ -83,4 +83,4 @@ lookalike на плёнку-690   + Яндекс + lookalike   → фото-ра
 🔴 **Кейсы** (2-3 до/после на похожие модели) — топливо коробки, из [кейс-фабрики](../../content/case-bank/case-production-system.md). Без них касание 3 пустое.
 🟢 Готово: скрипты, коробка-контент, трекер, post-care план — собраны (этот заход).
 
-> Связано: [обогащённый CJM](research/04-new-car-ppf-cjm-map.md) · [path-to-film-findings](path-to-film-findings.md) · [мастер-оффер](offer-master.md) · [warming-sequence](../../../sales/warming-sequence-2026-06-22.md) · HYP-010.
+> Связано: [обогащённый CJM](research/04-new-car-ppf-cjm-map.md) · [path-to-film-findings](path-to-film-findings.md) · [мастер-оффер](offer-master.md) · warming-sequence · HYP-010.

@@ -1,0 +1,81 @@
+{
+  "source_fields": [
+    "UTM Source",
+    "ДКТ: Источник",
+    "Источник",
+    "Канал обращения",
+    "Точка входа обращения",
+    "Дополнительно об источнике"
+  ],
+  "medium_fields": [
+    "UTM Medium",
+    "ДКТ: Канал"
+  ],
+  "rules": [
+    {
+      "target": "Авито",
+      "source_contains_any": ["78462115226"]
+    },
+    {
+      "target": "Яндекс Директ",
+      "source_equals_any": ["yandex", "ya"],
+      "medium_in": ["cpc", "ppc", "context", "контекст"]
+    },
+    {
+      "target": "Яндекс Директ",
+      "source_contains_any": ["яндекс директ", "yandex direct"]
+    },
+    {
+      "target": "Яндекс Органика",
+      "source_equals_any": ["yandex", "ya", "yandex.search"],
+      "medium_in": ["organic"]
+    },
+    {
+      "target": "Google Ads",
+      "source_equals_any": ["google"],
+      "medium_in": ["cpc", "ppc", "paid", "paidsearch"]
+    },
+    {
+      "target": "Google Органика",
+      "source_equals_any": ["google"],
+      "medium_in": ["organic"]
+    },
+    {
+      "target": "Прямой трафик",
+      "source_equals_any": ["(direct)", "direct"]
+    },
+    {
+      "target": "Яндекс Карты",
+      "source_equals_any": ["ya_maps"]
+    },
+    {
+      "target": "Яндекс Бизнес",
+      "source_equals_any": ["ya_biz"]
+    },
+    {
+      "target": "VK",
+      "source_contains_any": ["vk", "вконтакте", "vkontakte"]
+    },
+    {
+      "target": "Авито",
+      "source_contains_any": ["avito", "авито"]
+    },
+    {
+      "target": "Telegram",
+      "source_contains_any": ["telegram", "телеграм"]
+    },
+    {
+      "target": "Google",
+      "source_contains_any": ["google", "гугл"]
+    },
+    {
+      "target": "Яндекс",
+      "source_contains_any": ["yandex", "яндекс"]
+    },
+    {
+      "target": "Сайт",
+      "source_contains_any": ["levsha-group.ru", "promo.", "веб-сайт", "сайт", "website"]
+    }
+  ],
+  "default": "Источник не указан"
+}

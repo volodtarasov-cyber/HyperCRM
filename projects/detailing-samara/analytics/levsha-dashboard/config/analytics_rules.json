@@ -1,0 +1,4 @@
+{
+  "roi_margin": 0.3,
+  "exclude_zero_revenue_orders": true
+}

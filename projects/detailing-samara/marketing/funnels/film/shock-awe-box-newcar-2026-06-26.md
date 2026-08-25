@@ -81,4 +81,4 @@ Max        полная оклейка кузова                   Pro/Rocket
 - [ ] Образец паспорта защиты (скан/фото)
 - [ ] Утвердить вилки «от» по Light/Optimal/Max (внутренний прайс) — чтобы менеджер давал ориентир сразу
 
-> Связано: [воронка](_first-funnel-warm-base-2026-06-26.md) · [скрипт фото-расчёта](../../../sales/film-photo-calc-script-base-2026-06-26.md) · [приёмы Виктора](../../../sales/victor-sales-technique-2026-06-15.md) · [warming-sequence](../../../sales/warming-sequence-2026-06-22.md).
+> Связано: [воронка](_first-funnel-warm-base-2026-06-26.md) · [скрипт фото-расчёта](../../../sales/film-photo-calc-script-base-2026-06-26.md) · приёмы Виктора · warming-sequence.

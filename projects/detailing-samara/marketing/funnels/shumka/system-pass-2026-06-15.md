@@ -1,6 +1,6 @@
-# Шумоизоляция Левша — прогон по системе Agency OS
+# Шумоизоляция Левша — прогон по системе Marketing OS
 
-> **Что это:** сквозной прогон услуги «шумоизоляция» через все шаги системы [Agency OS](../../../../agency-os/_index.md) — от скрининга до удержания. Не план Авито (он в [avito-funnel/shumka/brief-2026-06-04.md](brief-2026-06-04.md)), а прогон продукта по конвейеру: какой модуль что даёт.
+> **Что это:** сквозной прогон услуги «шумоизоляция» через [Marketing OS](../../../../marketing-os/_index.md) — от скрининга до удержания. Не план Авито (он в [avito-funnel/shumka/brief-2026-06-04.md](brief-2026-06-04.md)), а прогон продукта по конвейеру: какой движок что даёт.
 > **Дата:** 2026-06-15. **Собрал:** Володя + Claude.
 > **Метки:** без пометки = факт из 1С / Б24 / VoC; **[Г]** — гипотеза; **[П]** — предложение к решению.
 > Главная ценность прогона — два новых модуля (оффер, диагностическая продажа), которых не было в брифе от 04.06, и честный скрининг-вердикт.
@@ -8,7 +8,7 @@
 ---
 
 ## Шаг 0 — Скрининг: а это вообще наше узкое место?
-**Модуль:** [business-market-screening](../../../../agency-os/modules/business-market-screening.md) `working`
+**Модуль:** [business-market-screening](../../../../marketing-os/engines/business-market-screening.md) `working`
 
 **Факты:**
 - Шумка = ~5 нарядов/мес, 148 нарядов / 6,3 млн ₽ за 28 мес, **≈3% выручки** центра.
@@ -32,7 +32,7 @@
 ---
 
 ## Шаг 1 — Конкурентное поле
-**Модуль:** [competitive-field-analysis](../../../../agency-os/modules/competitive-field-analysis.md) `draft`
+**Модуль:** [competitive-field-analysis](../../../../marketing-os/engines/competitive-field-analysis.md) `draft`
 
 Конкуренция **7/10**, два типа в голове клиента:
 - **Спец-шумоцентры** (СГМ, ПМР, STP-Install) — сильны брендом материалов (STP/Comfortmat), сертификат.
@@ -47,7 +47,7 @@
 ---
 
 ## Шаг 2 — JTBD / сегмент / А→Б / КФВ
-**Модуль:** [niche-icp-jtbd-research](../../../../agency-os/modules/niche-icp-jtbd-research.md) `draft`
+**Модуль:** [niche-icp-jtbd-research](../../../../marketing-os/engines/niche-icp-jtbd-research.md) `draft`
 
 **Работа, которую нанимают шумку сделать:** «верни мне тишину и ощущение премиума, чтобы машина не раздражала».
 
@@ -66,7 +66,7 @@
 ---
 
 ## Шаг 3 — Дизайн оффера и упаковки ⭐ новый модуль
-**Модуль:** [offer-packaging-design](../../../../agency-os/modules/offer-packaging-design.md) `draft` + [hormozi](../../../../../knowledge/frameworks/hormozi.md)
+**Модуль:** [offer-packaging-design](../../../../marketing-os/engines/offer-packaging-design.md) `draft` + [hormozi](../../../../../knowledge/frameworks/hormozi.md)
 
 Прайс по 5 классам — это прайс, а не оффер. Сворачиваю в **три пакета** (психомаркетинг: базовый→основной→премиум):
 
@@ -105,7 +105,7 @@
 ---
 
 ## Шаг 4 — Маркетинговая система
-**Модуль:** [marketing-system-design](../../../../agency-os/modules/marketing-system-design.md) `draft`
+**Модуль:** [marketing-system-design](../../../../marketing-os/engines/marketing-system-design.md) `draft`
 
 **Воронка:**
 ```text
@@ -121,7 +121,7 @@
 ---
 
 ## Шаг 5 — Сообщение (текст)
-**Метод:** [messaging-direct-response](../../../../agency-os/methods/messaging-direct-response.md) + скилл **`/copywriter`** + [49 формул заголовков](../../../../agency-os/course-notes/direct-response-copywriting-2021/49-headline-formulas.md)
+**Метод:** [messaging-direct-response](../../../../marketing-os/core/messaging-direct-response.md) + скилл **`/copywriter`** + [49 формул заголовков](../../../../marketing-os/sources/course-notes/direct-response-copywriting-2021/49-headline-formulas.md)
 
 Карточки/сторис по сегментам и моделям:
 - сегмент 1: «Тише, чем с завода — для Haval Jolion / Chery Tiggo / Kia»;
@@ -134,7 +134,7 @@
 ---
 
 ## Шаг 6 — Лидген по каналам
-**Модули:** [detailing-ppf-leadgen](../../../../agency-os/modules/detailing-ppf-leadgen.md) `pilot` (как механика) + [avito-service-business](../../../../agency-os/modules/avito-service-business.md)
+**Playbook'и:** [лидген дорогой локальной услуги](../../../../marketing-os/playbooks/local-high-ticket-service-leadgen.md) `pilot` + [Авито для сервисного бизнеса](../../../../marketing-os/playbooks/avito-service-business.md)
 
 - **Главный канал шумки — НЕ реклама, а стойка** (апсейл при плёнке/химчистке/тонировке) и комбо.
 - Авито — премиум-карточки по сегментам+моделям, тестовый бюджет, под низкий сезон.
@@ -144,7 +144,7 @@
 ---
 
 ## Шаг 7 — Диагностическая продажа ⭐ новый модуль
-**Модуль:** [diagnostic-sale](../../../../agency-os/modules/diagnostic-sale.md) `draft`
+**Модуль:** [diagnostic-sale](../../../../marketing-os/engines/diagnostic-sale.md) `draft`
 
 Бриф давал отработку возражений, но не **скрипт самой диагностики**. Вот он под шумку — это место, где течёт конверсия (вердикт шага 0):
 
@@ -165,14 +165,14 @@
 ---
 
 ## Шаг 8 — Дожим незакрытых
-**Модуль:** [follow-up-lost-leads](../../../../agency-os/modules/follow-up-lost-leads.md) `draft` (усилен: 8-21 касание)
+**Модуль:** [follow-up-lost-leads](../../../../marketing-os/playbooks/follow-up-lost-leads.md) `draft` (усилен: 8-21 касание)
 
 Спросил цену и пропал (а это премиум-сегмент с долгим циклом у «думающих») → серия касаний, не одно «надумали?». Фиксировать причину паузы в Б24. Считать потребление, не отправку.
 
 ---
 
 ## Шаг 9 — Повтор и своя база («железный забор»)
-**Модуль:** [reactivation-old-base](../../../../agency-os/modules/reactivation-old-base.md) `draft` (усилен)
+**Модуль:** [reactivation-old-base](../../../../marketing-os/playbooks/reactivation-old-base.md) `draft` (усилен)
 
 **Это лечит главную дыру (72,4% one-and-done).** Собран в отдельный артефакт → [sales/post-shumka-retention-plan.md](../../../sales/post-shumka-retention-plan.md) (зеркало постплёночного маршрута).
 
@@ -183,7 +183,7 @@
 ---
 
 ## Шаг 10 — Репутация → назад в шаг 1
-**Модуль:** [reputation-review-responses](../../../../agency-os/modules/reputation-review-responses.md) `pilot`
+**Модуль:** [reputation-review-responses](../../../../marketing-os/playbooks/reputation-review-responses.md) `pilot`
 
 Отзывы про тишину и «не скрипит» → ответы + контент → доказательства для шага 3 (банк «вероятности» в Value Equation) и кейсы для шага 5. Снять 3-5 до/после в цеху (открытый пункт брифа).
 

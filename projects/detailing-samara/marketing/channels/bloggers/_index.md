@@ -1,5 +1,8 @@
 # Канал: Блогеры / инфлюенсеры — Левша
 
+**Статус:** pilot — проверяется HYP-011
+**Владелец:** Володя
+
 > Создано 2026-07-01. Системная работа с блогерами: список → CRM → аутрич → сотрудничество → замер.
 > Гипотеза → [hypotheses.md](../../../hypotheses.md) HYP-011. План цикла → [action-plan-q3-2026.md](../../../action-plan-q3-2026.md).
 > CRM → [blogger-crm-template.csv](blogger-crm-template.csv) (залить в Google Sheets как рабочую базу). Аутрич → [outreach-templates.md](outreach-templates.md).

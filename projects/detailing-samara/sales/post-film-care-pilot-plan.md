@@ -3,7 +3,7 @@
 **Дата:** 2026-06-09
 **Статус:** черновик плана, ждёт встречи с Александром
 **Связанная гипотеза:** новая HYP-009 (завести в [hypotheses.md](../hypotheses.md))
-**Аналитика-основа:** [analytics/abc-a-lost-patterns-2026-05-26.md](../analytics/abc-a-lost-patterns-2026-05-26.md), [analytics/client-habit-threshold-2026-05-18.md](../analytics/client-habit-threshold-2026-05-18.md)
+**Аналитика-основа:** [analytics/abc-a-lost-patterns-2026-05-26.md](../analytics/abc-a-lost-patterns-2026-05-26.md), [analytics/client-habit-threshold-2026-05-18.md](../analytics/_archive/client-habit-threshold-2026-05-18.md)
 **Шаблон:** по аналогии с [return-pilot-1-2-3-plan-2026-05-28.md](return-pilot-1-2-3-plan-2026-05-28.md)
 
 ---

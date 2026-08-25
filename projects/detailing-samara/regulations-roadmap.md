@@ -86,7 +86,7 @@
 
 **Файлы:**
 - [sales/reactivation-pilot-6-12m-plan-2026-05-18.md](sales/reactivation-pilot-6-12m-plan-2026-05-18.md)
-- [sales/cohorts-reactivation.md](sales/cohorts-reactivation.md)
+- sales/cohorts-reactivation.md
 
 Что закрывает:
 - кого звать;
@@ -175,7 +175,7 @@
 Следующее действие:
 - создать папку `marketing/reputation/`;
 - перенести туда регламент отзывов, журнал, шаблоны и план карточек;
-- обновить ссылки из `_index.md`, `traffic-strategy.md`, `content-plan.md` и Agency OS.
+- обновить ссылки из `_index.md`, `traffic-strategy.md`, `content-plan.md` и Marketing OS.
 
 ---
 

@@ -6,7 +6,7 @@
 методология:
   - ПсихоМаркетинг Смирнова
   - Rebdeu MBA
-  - Agency OS
+  - Marketing OS
   - Дизайн оффера и упаковки
   - Direct-response copywriting
 ---

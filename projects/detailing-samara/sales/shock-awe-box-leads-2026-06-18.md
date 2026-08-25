@@ -115,4 +115,4 @@
 - [ ] Шаблон паспорта защиты (плёнка) и чек-листа ухода (полировка)
 - [ ] Утвердить вилки «от» по пакетам, чтобы менеджер давал ориентир сразу (цена-мост)
 
-> Связано: [manager-script-simple-2026-06-18.md](manager-script-simple-2026-06-18.md) (скрипт менеджера), [victor-sales-technique](victor-sales-technique-2026-06-15.md) (приёмы), [case-bank-system-400](../marketing/content/case-bank/case-bank-system-400.md) (источник кейсов). Шумка — отдельная коробка с аудио-демо до/после (главный недостающий элемент, см. [diagnostic шумки](../marketing/funnels/shumka/diagnostic-2026-06-17.md)).
+> Связано: [manager-script-simple-2026-06-18.md](manager-script-simple-2026-06-18.md) (скрипт менеджера), victor-sales-technique (приёмы), [case-bank-system-400](../marketing/content/case-bank/case-bank-system-400.md) (источник кейсов). Шумка — отдельная коробка с аудио-демо до/после (главный недостающий элемент, см. [diagnostic шумки](../marketing/funnels/shumka/diagnostic-2026-06-17.md)).

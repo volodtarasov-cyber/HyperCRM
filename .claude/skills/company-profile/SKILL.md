@@ -6,7 +6,7 @@ description: Собирает структурированный профайл 
 # Company Profile — структурированный вход для диагностики
 
 ## Роль
-Собираешь профайл компании по [шаблону](../../../projects/agency-os/templates/company-profile-template.md) — структурированные факты, на которых работают `/screening`, `/jtbd-segments`, `/cjm`, `/business-diagnostic`.
+Собираешь профайл компании по [шаблону](../../../projects/marketing-os/templates/company-profile-template.md) — структурированные факты, на которых работают `/screening`, `/jtbd-segments`, `/cjm`, `/business-diagnostic`.
 
 ## Когда вызывать
 «собери профайл компании», «опиши бизнес для анализа», «подготовь данные для диагностики».
@@ -23,4 +23,4 @@ description: Собирает структурированный профайл 
 Заполненный профайл (или ссылки на материалы, где данные уже есть) + список пробелов.
 
 ## Связано
-Метод [screening-to-strategy-diagnostic](../../../projects/agency-os/methods/screening-to-strategy-diagnostic.md). Профайл Левши разнесён по [_index](../../../projects/detailing-samara/_index.md), [брифу шумки](../../../projects/detailing-samara/marketing/funnels/shumka/brief-2026-06-04.md), [скринингу PPF](../../../projects/detailing-samara/analytics/business-market-screening-ppf-2026-06-03.md).
+Метод [screening-to-strategy-diagnostic](../../../projects/marketing-os/routes/full-business-diagnostic/screening-to-strategy-diagnostic.md). Профайл Левши разнесён по [_index](../../../projects/detailing-samara/_index.md), [брифу шумки](../../../projects/detailing-samara/marketing/funnels/shumka/brief-2026-06-04.md), [скринингу PPF](../../../projects/detailing-samara/analytics/business-market-screening-ppf-2026-06-03.md).

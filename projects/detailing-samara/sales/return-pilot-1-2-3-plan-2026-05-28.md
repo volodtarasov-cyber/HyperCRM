@@ -3,7 +3,7 @@
 **Дата:** 2026-05-28
 **Статус:** черновик плана, ждёт встречи с Александром
 **Связанная гипотеза:** HYP-006 в [hypotheses.md](../hypotheses.md)
-**Аналитика-основа:** [analytics/client-habit-threshold-2026-05-20.md](../analytics/client-habit-threshold-2026-05-20.md), [analytics/visit-intervals-atbv-2026-05-20.md](../analytics/visit-intervals-atbv-2026-05-20.md)
+**Аналитика-основа:** [analytics/client-habit-threshold-2026-05-20.md](../analytics/client-habit-threshold-2026-05-20.md), analytics/visit-intervals-atbv-2026-05-20.md
 
 ---
 
