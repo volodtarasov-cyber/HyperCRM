@@ -396,6 +396,36 @@ def routines_block(routines, interactive: bool) -> str:
               'Клик ставит сегодняшнюю дату.</p>' + "".join(rows) + "</section>")
 
 
+def external_block() -> str:
+    """Отдельная секция, а не строки среди ритмов.
+
+    Ритм — то, что делаешь сам и отмечаешь. Внешний факт — то, что происходит
+    без тебя и требует не выполнения, а сверки. Смешивать их в одном списке
+    нельзя: получается список дел, половина которого делами не является.
+    """
+    items = collect_external()
+    if not items:
+        return ""
+    rows = []
+    for item in items:
+        if item.age is None:
+            cls, note = "rt due", "не сверялось"
+        elif item.age >= EXTERNAL_STALE_DAYS:
+            cls, note = "rt due", f"сверяли {item.age} дн. назад"
+        else:
+            cls, note = "rt", f"сверяли {item.age} дн. назад"
+        rows.append(
+            '<div class="' + cls + '">'
+            + '<span class="when">СНАРУЖИ</span>'
+            + '<span class="txt">' + html.escape(item.text) + "</span>"
+            + '<span class="note">' + note + "</span></div>"
+        )
+    stale = sum(1 for item in items if item.age is None or item.age >= EXTERNAL_STALE_DAYS)
+    return ('<section class="routines"><h2>Живёт снаружи<span class="cnt">' + str(stale) + "</span></h2>"
+            + '<p class="colsub">Состояние меняется вне волта и внутрь само не возвращается. '
+              'Не задачи — вопросы, которые задаёт прогон.</p>' + "".join(rows) + "</section>")
+
+
 MAIN_LIMIT = 3
 
 
@@ -710,6 +740,7 @@ def render(projects, upcoming, interactive: bool = False) -> str:
     day_name, main, spill, small = split_focus(projects)
     focus = focus_block(day_name, main, spill, small, interactive)
     routines = routines_block(collect_routines(), interactive)
+    external = external_block()
     money = money_block()
     blockers = blockers_block()
     checkpoints = checkpoints_block()
@@ -834,7 +865,7 @@ h2 { font-size:17px; margin:0 0 12px; display:flex; align-items:center; gap:10px
         '<div class="stat"><b>' + str(total_open) + "</b><span>открытых задач</span></div>"
         '<div class="stat"><b>' + str(total_done) + "</b><span>закрыто</span></div>"
         '<div class="stat"><b>' + str(attention) + "</b><span>требует внимания</span></div>"
-        "</div>" + hint + money + blockers + checkpoints + routines + focus + warn
+        "</div>" + hint + money + blockers + checkpoints + routines + external + focus + warn
         + '<h2 class="allh">Всё по проектам</h2>' + "".join(blocks)
         + registry + "</div>" + script + "</body></html>"
     )

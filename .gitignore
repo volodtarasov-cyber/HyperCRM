@@ -37,3 +37,19 @@ tmp/
 # Local analytics databases are generated on each device and exceed GitHub limits
 projects/**/data/*.sqlite3
 projects/**/data/*.sqlite
+
+# Данные, а не выводы: сырьё и генерируемое остаётся на диске, но не версионируется
+# (правило «контракт данных» в CLAUDE.md)
+projects/**/levsha-dashboard/dashboard/data.js
+projects/**/levsha-dashboard/inbox/**/*.csv
+projects/**/levsha-dashboard/inbox/**/*.xlsx
+projects/**/levsha-dashboard/archive/
+projects/**/wordstat-leads-correlation-*/**/*_source.csv
+projects/**/wordstat-leads-correlation-*/**/*_source.xls
+projects/**/wordstat-leads-correlation-*/**/*_source.xlsx
+projects/**/wordstat-leads-correlation-*/**/*_leads.csv
+projects/**/wordstat-leads-correlation-*/leads_source.csv
+projects/**/wordstat-leads-correlation-*/wordstat_source.csv
+projects/**/wordstat-leads-correlation-*/wordstat_source.xlsx
+.tools/snapshots/lazyhim-*.png
+.tools/snapshots/yt-lazyhim-*.png

@@ -82,6 +82,7 @@
 - [action-plan-90d.md](action-plan-90d.md) — ориентир на 90 дней.
 - [marketing/ad-budget.md](marketing/ad-budget.md) — **распределение рекламного бюджета 300к/мес** по каналам, логика, история изменений.
 - [regulations-roadmap.md](regulations-roadmap.md) — дорожная карта регламентов: заявка → Б24 → SLA → запись → выдача → NPS/отзыв → повторный визит.
+- [daily-checklist.md](daily-checklist.md) — ежедневный регламент КД: пороги по продажам, маркетингу, сервису и команде. Пороги, а не галочки; задачи из него идут в YouGile.
 - [marketing/channels/maps/maps-regulation.md](marketing/channels/maps/maps-regulation.md) — регламент работы с Я.Картами и 2ГИС.
 - [marketing/reputation/reputation-reviews.md](marketing/reputation/reputation-reviews.md) — регламент публичных ответов на отзывы.
 
