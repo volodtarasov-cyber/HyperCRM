@@ -130,3 +130,131 @@ body {
   border-left: 5px solid var(--am-yellow);
   border-radius: 8px;
 }
+
+/* ============================================================
+   КНОПКИ — сняты пиксельно с дизайнерского экспорта
+   (team/assets/buttons/*.png — эталоны для сверки)
+   ============================================================ */
+
+.am-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  padding: 20px 34px;
+  border: 0;
+  border-radius: 20px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.am-btn--primary {
+  color: var(--am-brown);
+  background: linear-gradient(
+    180deg,
+    #FFC74D 0%,
+    var(--am-yellow) 30%,
+    var(--am-yellow) 70%,
+    #FFC74E 100%
+  );
+  box-shadow:
+    0 5px 0 #EEA724,
+    0 14px 28px rgba(255, 186, 36, 0.42);
+}
+
+.am-btn--secondary {
+  padding: 18px 32px;
+  color: var(--am-yellow);
+  background: transparent;
+  border: 2px solid var(--am-yellow);
+  box-shadow: none;
+}
+
+/* Составной CTA: белая «таблетка» с действием + подпись на жёлтом */
+.am-btn-stack {
+  display: inline-block;
+  padding: 8px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #FFC74D 0%, var(--am-yellow) 50%, #FFC74E 100%);
+  box-shadow: 0 5px 0 #EEA724, 0 14px 28px rgba(255, 186, 36, 0.42);
+  text-align: center;
+}
+
+.am-btn-stack__action {
+  display: block;
+  padding: 14px 28px;
+  color: var(--am-text);
+  background: var(--am-bg);
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.am-btn-stack__sub {
+  display: block;
+  padding: 9px 12px 4px;
+  color: var(--am-brown);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ============================================================
+   ЛОГОТИП И ИКОНКИ
+   ============================================================ */
+
+.am-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.am-logo__mark {
+  width: 32px;
+  height: 32px;
+}
+
+.am-logo__wordmark {
+  height: 20px;
+}
+
+.am-icon {
+  width: 24px;
+  height: 24px;
+  vertical-align: -5px;
+}
+
+.am-icon-3d {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+/* Список преимуществ с фирменной галочкой */
+.am-checklist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.am-checklist li {
+  position: relative;
+  padding-left: 34px;
+  margin-bottom: 12px;
+}
+
+.am-checklist li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 22px;
+  height: 22px;
+  /* check.svg вшит data-URI: CSS подключают и ссылкой, и строкой внутрь <style>
+     (md-to-pdf.py), где относительный путь не разрешается */
+  background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGVsbGlwc2UgY3g9IjE1Ljk5OTEiIGN5PSIxNi44MDAzIiByeD0iMTIuNDQ4MyIgcnk9IjEyLjQ0OCIgZmlsbD0iIzU4MkEwNiIvPgo8ZyBmaWx0ZXI9InVybCgjZmlsdGVyMF9pXzdfMzcpIj4KPHBhdGggZD0iTTMxLjIyMyAxNC4xMTQ1TDI5LjA0MDUgMTEuOTMyNEMyOC41MjI1IDExLjQxNDQgMjguMDk4IDEwLjM5MDggMjguMDk4IDkuNjU2NjlWNi41NzA2NEMyOC4wOTggNS4xMDI2MiAyNi44OTg3IDMuOTAzMzYgMjUuNDMxMSAzLjkwMjU4SDIyLjM0MzhDMjEuNjEwNiAzLjkwMjU4IDIwLjU4NTggMy40NzczMyAyMC4wNjc3IDIuOTU5NzNMMTcuODg1NiAwLjc3NzYyNUMxNi44NDg4IC0wLjI1OTIwOCAxNS4xNTExIC0wLjI1OTIwOCAxNC4xMTQzIDAuNzc3NjI1TDExLjkzMjIgMi45NjEzQzExLjQxMzcgMy40NzkyOCAxMC4zODc4IDMuOTAzMzYgOS42NTYxIDMuOTAzMzZINi41NzAwNkM1LjEwMzk5IDMuOTAzMzYgMy45MDMxNiA1LjEwMjYyIDMuOTAzMTYgNi41NzA2NFY5LjY1Njc2QzMuOTAzMTYgMTAuMzg4IDMuNDc4NzcgMTEuNDE0OCAyLjk2MDcxIDExLjkzMjVMMC43NzgyMTEgMTQuMTE0NkMtMC4yNTk0MDQgMTUuMTUxNCAtMC4yNTk0MDQgMTYuODQ5IDAuNzc4MjExIDE3Ljg4NzVMMi45NjA3MSAyMC4wNjk2QzMuNDc5MDkgMjAuNTg3NiAzLjkwMzE2IDIxLjYxNDEgMy45MDMxNiAyMi4zNDUzVjI1LjQzMTVDMy45MDMxNiAyNi44OTc5IDUuMTAzOTkgMjguMDk4NyA2LjU3MDA2IDI4LjA5ODdIOS42NTYxOEMxMC4zODk0IDI4LjA5ODcgMTEuNDE0MiAyOC41MjMxIDExLjkzMjMgMjkuMDQwOEwxNC4xMTQ0IDMxLjIyMzdDMTUuMTUxMiAzMi4yNTk3IDE2Ljg0ODkgMzIuMjU5NyAxNy44ODU3IDMxLjIyMzdMMjAuMDY3OCAyOS4wNDA4QzIwLjU4NjMgMjguNTIyOCAyMS42MTA3IDI4LjA5ODcgMjIuMzQzOSAyOC4wOTg3SDI1LjQzMTJDMjYuODk4OCAyOC4wOTg3IDI4LjA5ODEgMjYuODk3OSAyOC4wOTgxIDI1LjQzMTVWMjIuMzQ1M0MyOC4wOTgxIDIxLjYxMDkgMjguNTIyOSAyMC41ODczIDI5LjA0MDUgMjAuMDY5NkwzMS4yMjMgMTcuODg3NUMzMi4yNTkgMTYuODQ5IDMyLjI1OSAxNS4xNTEzIDMxLjIyMyAxNC4xMTQ1Wk0xMy44ODMxIDIyLjAwMDhMNy45OTkzMiAxNi4xMTYyTDkuODg1MDEgMTQuMjMwOUwxMy44ODM2IDE4LjIyOTVMMjIuMTE0NyAxMC4wMDA0TDIzLjk5OTkgMTEuODg1N0wxMy44ODMxIDIyLjAwMDhaIiBmaWxsPSIjRkZCQTI0Ii8+CjwvZz4KPGRlZnM+CjxmaWx0ZXIgaWQ9ImZpbHRlcjBfaV83XzM3IiB4PSIwIiB5PSIwIiB3aWR0aD0iMzIiIGhlaWdodD0iMzIuMDAwNyIgZmlsdGVyVW5pdHM9InVzZXJTcGFjZU9uVXNlIiBjb2xvci1pbnRlcnBvbGF0aW9uLWZpbHRlcnM9InNSR0IiPgo8ZmVGbG9vZCBmbG9vZC1vcGFjaXR5PSIwIiByZXN1bHQ9IkJhY2tncm91bmRJbWFnZUZpeCIvPgo8ZmVCbGVuZCBtb2RlPSJub3JtYWwiIGluPSJTb3VyY2VHcmFwaGljIiBpbjI9IkJhY2tncm91bmRJbWFnZUZpeCIgcmVzdWx0PSJzaGFwZSIvPgo8ZmVDb2xvck1hdHJpeCBpbj0iU291cmNlQWxwaGEiIHR5cGU9Im1hdHJpeCIgdmFsdWVzPSIwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAxMjcgMCIgcmVzdWx0PSJoYXJkQWxwaGEiLz4KPGZlT2Zmc2V0Lz4KPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMTciLz4KPGZlQ29tcG9zaXRlIGluMj0iaGFyZEFscGhhIiBvcGVyYXRvcj0iYXJpdGhtZXRpYyIgazI9Ii0xIiBrMz0iMSIvPgo8ZmVDb2xvck1hdHJpeCB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMCAwIDAgMCAxIDAgMCAwIDAgMSAwIDAgMCAwIDEgMCAwIDAgMC4yIDAiLz4KPGZlQmxlbmQgbW9kZT0ibm9ybWFsIiBpbjI9InNoYXBlIiByZXN1bHQ9ImVmZmVjdDFfaW5uZXJTaGFkb3dfN18zNyIvPgo8L2ZpbHRlcj4KPC9kZWZzPgo8L3N2Zz4K") no-repeat center / contain;
+}

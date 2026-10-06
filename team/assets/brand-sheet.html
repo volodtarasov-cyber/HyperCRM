@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ананас Маркетинг — лист ассетов</title>
+<link rel="icon" href="ui/favicon.png">
+<link rel="stylesheet" href="ananas-marketing-brand.css">
+<style>
+body { background: var(--am-surface); }
+.sheet { max-width: 1080px; margin: 0 auto; padding: 0 32px 72px; }
+.cover {
+  margin: 0 -32px 40px;
+  padding: 44px 32px 40px;
+  color: #FFFFFF;
+  background:
+    radial-gradient(circle at 88% 0%, rgba(255,186,36,.22), transparent 38%),
+    var(--am-dark);
+}
+.cover h1 { margin: 18px 0 6px; font-size: 34px; font-weight: 800; letter-spacing: -.02em; }
+.cover p  { margin: 0; color: rgba(255,255,255,.62); font-size: 14px; }
+section { margin-top: 40px; }
+.note { max-width: 62ch; margin: 10px 0 20px; color: var(--am-muted); font-size: 13px; line-height: 1.6; }
+.grid { display: flex; flex-wrap: wrap; gap: 16px; }
+.tile {
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+  gap: 10px; width: 152px; min-height: 148px; padding: 16px 12px;
+  background: var(--am-bg); border: 1px solid var(--am-line); border-radius: 14px;
+}
+.tile img { max-width: 88px; max-height: 78px; object-fit: contain; }
+.tile b { color: var(--am-muted); font-size: 10px; font-weight: 600; text-align: center; word-break: break-word; }
+.tile--wide { width: 232px; }
+.tile--dark { background: var(--am-dark); border-color: rgba(255,255,255,.14); }
+.tile--dark b { color: rgba(255,255,255,.55); }
+.swatches { display: flex; flex-wrap: wrap; gap: 10px; }
+.sw { width: 118px; padding: 46px 10px 10px; border: 1px solid var(--am-line); border-radius: 12px; }
+.sw span { display: block; color: rgba(255,255,255,.9); font-size: 10px; font-weight: 700; }
+.sw--light span { color: var(--am-muted); }
+.buttons { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 22px; }
+.photos { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 24px; }
+.photos img { max-height: 190px; }
+code { font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+<div class="cover">
+  <div class="am-brand" style="font-size:19px"><span class="am-brand__accent">АНАНАС</span><span>МАРКЕТИНГ</span></div>
+  <h1>Лист ассетов бренда</h1>
+  <p>Визуальный индекс к <b style="color:var(--am-yellow)">team/brand-style.md</b> — правила и ограничения там, файлы здесь.</p>
+</div>
+
+<section>
+  <h2 class="am-section-title">Палитра</h2>
+  <p class="note">Жёлтый — бренд, янтарный — состояние зоны. Не смешивать.</p>
+  <div class="swatches">
+    <div class="sw" style="background:#2B223A"><span>Баклажан #2B223A</span></div>
+    <div class="sw" style="background:#11141B"><span>Графит #11141B</span></div>
+    <div class="sw" style="background:#FFBA24"><span style="color:#582A06">Жёлтый #FFBA24</span></div>
+    <div class="sw" style="background:#F36B00"><span>Оранжевый #F36B00</span></div>
+    <div class="sw" style="background:#582A06"><span>Коричневый #582A06</span></div>
+    <div class="sw sw--light" style="background:#F7F5FA"><span>Поверхность #F7F5FA</span></div>
+    <div class="sw" style="background:#2F9E5B"><span>Сильная #2F9E5B</span></div>
+    <div class="sw" style="background:#D99000"><span>Внимание #D99000</span></div>
+    <div class="sw" style="background:#D94B4B"><span>Ограничение #D94B4B</span></div>
+    <div class="sw" style="background:#A5A0AE"><span>Неизвестно #A5A0AE</span></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="am-section-title">Логотип</h2>
+  <p class="note">Вектора нет. На светлом и в крупном размере логотип собираем текстом (класс <code>.am-brand</code>), растр — только на тёмном и в исходном размере.</p>
+  <div class="grid">
+    <div class="tile tile--dark tile--wide"><img src="logo/wordmark-white.png" alt="Логотип"><b>logo/wordmark-white.png</b></div>
+    <div class="tile"><img src="logo/mark.png" alt="Знак"><b>logo/mark.png</b></div>
+    <div class="tile"><img src="ui/favicon.png" alt="Favicon"><b>ui/favicon.png</b></div>
+    <div class="tile tile--dark tile--wide">
+      <div class="am-brand" style="font-size:17px;color:#fff"><span class="am-brand__accent">АНАНАС</span><span>МАРКЕТИНГ</span></div>
+      <b>текстом: .am-brand</b>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="am-section-title">Кнопки</h2>
+  <p class="note">Нижнюю 3D-кромку и жёлтую тень не отключаем — без них кнопка перестаёт читаться как фирменная.</p>
+  <div class="buttons">
+    <a class="am-btn am-btn--primary">Хочу такой же результат</a>
+    <a class="am-btn am-btn--primary">Посмотреть все кейсы &#10230;</a>
+    <a class="am-btn am-btn--secondary">Посмотреть все кейсы &#10230;</a>
+    <span class="am-btn-stack">
+      <span class="am-btn-stack__action">Записаться на диагностику</span>
+      <span class="am-btn-stack__sub">и забрать набор полезных материалов</span>
+    </span>
+  </div>
+</section>
+
+<section>
+  <h2 class="am-section-title">UI</h2>
+  <div class="grid">
+    <div class="tile"><img src="ui/check.svg" alt="Галочка"><b>ui/check.svg</b></div>
+    <div class="tile"><img src="ui/close.svg" alt="Закрыть"><b>ui/close.svg</b></div>
+    <div class="tile"><img src="ui/info.png" alt="Инфо"><b>ui/info.png</b></div>
+    <div class="tile"><img src="ui/accordion-open.png" alt="Раскрыть"><b>ui/accordion-open.png</b></div>
+    <div class="tile"><img src="ui/accordion-close.png" alt="Свернуть"><b>ui/accordion-close.png</b></div>
+    <div class="tile tile--wide"><img src="ui/social-messengers.png" alt="Мессенджеры"><b>ui/social-messengers.png</b></div>
+  </div>
+  <ul class="am-checklist" style="margin-top:22px">
+    <li>Класс <code>.am-checklist</code> — галочка вшита в CSS как data-URI</li>
+    <li>Работает и по ссылке на CSS, и при инлайне стилей в PDF-конвертере</li>
+  </ul>
+</section>
+
+<section>
+  <h2 class="am-section-title">Объёмные иконки</h2>
+  <p class="note">Две серии, в одном документе — только одна. Жёлтая: гарантии и «что вы получаете». Серебряная: смысловые метафоры для КП, скрининга и презентации.</p>
+  <div class="grid">
+    <div class="tile"><img src="icons-3d/yellow-shield.png" alt="Гарантия"><b>гарантия</b></div>
+    <div class="tile"><img src="icons-3d/yellow-folder.png" alt="Пакет материалов"><b>пакет материалов</b></div>
+  </div>
+  <div class="grid" style="margin-top:16px">
+    <div class="tile"><img src="icons-3d/silver-knight.png" alt="Стратегия"><b>стратегия</b></div>
+    <div class="tile"><img src="icons-3d/silver-shield-hand.png" alt="Снятие риска"><b>снятие риска</b></div>
+    <div class="tile"><img src="icons-3d/silver-gear-case.png" alt="Система"><b>система</b></div>
+    <div class="tile"><img src="icons-3d/silver-audit-magnifier.png" alt="Диагностика"><b>диагностика</b></div>
+    <div class="tile"><img src="icons-3d/silver-wallet.png" alt="Экономика"><b>экономика</b></div>
+    <div class="tile"><img src="icons-3d/silver-contact-cards.png" alt="Лиды"><b>лиды и база</b></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="am-section-title">Фото-ананасы</h2>
+  <p class="note">Один объект на полосу, только на светлой поверхности, без текста поверх и без отражения. Это метка бренда, а не иллюстрация к смыслу текста.</p>
+  <div class="photos">
+    <img src="photo/pineapple-hero.png" alt="Обложка">
+    <img src="photo/pineapple-ring.png" alt="Кольцо">
+    <img src="photo/pineapple-wedge.png" alt="Долька">
+    <img src="photo/pineapple-crown.png" alt="Султан">
+    <img src="photo/pineapple-triangle.png" alt="Треугольник">
+    <img src="photo/pineapple-chunk.png" alt="Кусочек">
+  </div>
+</section>
+
+</div>
+</body>
+</html>

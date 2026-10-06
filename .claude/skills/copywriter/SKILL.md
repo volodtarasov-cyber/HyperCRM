@@ -65,7 +65,7 @@ Hook → сцена/сетап → что выглядело нормально,
 - **Agora waterfall**: хук → напряжение → скрытый механизм → желание/вера → оффер.
 - **Hormozi**: результат / скорость / риск / уменьшение трения — собрать в человеческий язык.
 - **Ben Hunt**: глубина разбора зависит от осознанности (unaware → problem-aware → solution-aware → product-aware → most aware).
-- **JTBD**: давление текущей ситуации + притяжение результата + тревога перехода + инерция текущего способа. Определения → [словарь Marketing OS](../../../projects/marketing-os/core/glossary.md#term-push).
+- **JTBD**: давление текущей ситуации + притяжение результата + тревога перехода + инерция текущего способа. Определения → [словарь Marketing OS](../../../marketing-os/core/glossary.md).
 
 ## Приёмы убеждения
 - **Контраст**: до/после, иллюзия/реальность, симптом/корень.
@@ -123,5 +123,5 @@ Hook → сцена/сетап → что выглядело нормально,
 Идеи для контента живут в [projects/ai-infobiz/content-pipeline.md](../../../projects/ai-infobiz/content-pipeline.md). Перед написанием — свериться: возможно, тема уже заведена как сырая идея с контекстом.
 
 ## Метод и банк формул
-- Метод сообщения (каркас текста, структуры AIDA/Star-Story/PMPHS, ступени, ЯНУС, чек-лист публикации): [Marketing OS / messaging](../../../projects/marketing-os/core/messaging-direct-response.md).
-- Банк заголовков — [49 формул](../../../projects/marketing-os/sources/course-notes/direct-response-copywriting-2021/49-headline-formulas.md): для массовой генерации хедлайнов и хуков (норма 30-49 на итерацию, победителя выбирает тест).
+- Метод сообщения (каркас текста, структуры AIDA/Star-Story/PMPHS, ступени, ЯНУС, чек-лист публикации): [Marketing OS / messaging](../../../marketing-os/core/messaging-direct-response.md).
+- Банк заголовков — [49 формул](../../../marketing-os/sources/course-notes/direct-response-copywriting-2021/49-headline-formulas.md): для массовой генерации хедлайнов и хуков (норма 30-49 на итерацию, победителя выбирает тест).

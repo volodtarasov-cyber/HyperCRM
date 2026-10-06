@@ -1,6 +1,6 @@
 # Secrets & credentials — никогда не коммитим
 system/secrets/
-projects/**/access.md
+**/access.md
 *.key
 *.pem
 .env
@@ -35,21 +35,23 @@ tmp/
 .tools/board.html
 
 # Local analytics databases are generated on each device and exceed GitHub limits
-projects/**/data/*.sqlite3
-projects/**/data/*.sqlite
+**/data/*.sqlite3
+**/data/*.sqlite
 
 # Данные, а не выводы: сырьё и генерируемое остаётся на диске, но не версионируется
 # (правило «контракт данных» в CLAUDE.md)
-projects/**/levsha-dashboard/dashboard/data.js
-projects/**/levsha-dashboard/inbox/**/*.csv
-projects/**/levsha-dashboard/inbox/**/*.xlsx
-projects/**/levsha-dashboard/archive/
-projects/**/wordstat-leads-correlation-*/**/*_source.csv
-projects/**/wordstat-leads-correlation-*/**/*_source.xls
-projects/**/wordstat-leads-correlation-*/**/*_source.xlsx
-projects/**/wordstat-leads-correlation-*/**/*_leads.csv
-projects/**/wordstat-leads-correlation-*/leads_source.csv
-projects/**/wordstat-leads-correlation-*/wordstat_source.csv
-projects/**/wordstat-leads-correlation-*/wordstat_source.xlsx
-.tools/snapshots/lazyhim-*.png
-.tools/snapshots/yt-lazyhim-*.png
+**/inbox/**/*.csv
+**/inbox/**/*.xlsx
+**/dashboard/data.js
+**/*_source.csv
+**/*_source.xls
+**/*_source.xlsx
+**/*_leads.csv
+# Скриншоты пересоздаёт snapshot.py. Снимок, оставляемый как датированное
+# доказательство, добавляется явно: git add -f; уже закреплённые остаются в git
+.tools/snapshots/*
+# Картинки Unisec для Яндекс Карт собирает build-images-from-sources.py из source/;
+# v9 собрана вручную, исходника нет — остаётся в git
+clients/unisec-novosibirsk/assets/yandex-maps-services/*
+!clients/unisec-novosibirsk/assets/yandex-maps-services/source/
+!clients/unisec-novosibirsk/assets/yandex-maps-services/khimchistka-pukhovika-novosibirsk-unisec-v9.jpg

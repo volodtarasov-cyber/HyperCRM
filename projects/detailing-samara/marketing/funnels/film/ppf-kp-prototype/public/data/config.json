@@ -1,7 +1,0 @@
-{
-  "vehiclesUrl": "/data/vehicles.csv",
-  "classesUrl": "/data/price-classes.csv",
-  "casesUrl": "/data/cases.csv",
-  "sourceLabel": "локальная CSV-база",
-  "updatedAt": "21.07.2026"
-}

@@ -9,7 +9,7 @@
     .tools/venv/Scripts/python.exe .tools/projects/bingo-samara/analytics/zayavki-analysis.py <path.csv>
 
 Зачем: закрывает блоки 3 (удержание), 6.2 (воронка) и часть 6.6 (рынок)
-реестра неизвестных из projects/traffic-freelance/clients/bingo-samara/strategiya-b2c-2026-08-18.md
+реестра неизвестных из clients/bingo-samara/strategiya-b2c-2026-08-18.md
 """
 
 import csv

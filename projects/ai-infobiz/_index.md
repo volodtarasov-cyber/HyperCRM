@@ -21,7 +21,7 @@ AI-инфобиз, клуб, онлайн-школа и курсы со спик
 - контент создаётся из измеренной работы агентства и детейлинга;
 - публикация не является обязательным ритмом или отдельным бизнес-процессом;
 - CTA ведёт в агентский разбор или предложение, а не в клуб/курс;
-- продуктовые гипотезы агентства живут в [traffic-freelance/hypotheses.md](../traffic-freelance/hypotheses.md);
+- продуктовые гипотезы агентства живут в traffic-freelance/hypotheses.md;
 - задачи остаются в YouGile.
 
 ## Навигация
@@ -34,4 +34,4 @@ AI-инфобиз, клуб, онлайн-школа и курсы со спик
 | Агентское позиционирование | [product/positioning.md](product/positioning.md) |
 | Роль личного бренда | [product/personal-brand-strategy.md](product/personal-brand-strategy.md) |
 | Сырьё и опубликованные материалы | [content-pipeline.md](content-pipeline.md), [content/](content/) |
-| Модель агентства | [projects/practice/](../practice/_index.md) |
+| Модель агентства | [дашборд агентства](../../agency/_index.md) |

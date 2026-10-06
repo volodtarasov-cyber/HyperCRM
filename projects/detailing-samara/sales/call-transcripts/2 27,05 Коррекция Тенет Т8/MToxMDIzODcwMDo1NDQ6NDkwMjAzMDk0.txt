@@ -1,5 +1,0 @@
-# 2 27,05 Коррекция Тенет Т8/MToxMDIzODcwMDo1NDQ6NDkwMjAzMDk0.mp3
-# длительность: 0:59 · whisper.cpp large-v3 · ru
-
-[0:00–0:29] Виталий Леша
-[0:29–0:58] Виталий Леша

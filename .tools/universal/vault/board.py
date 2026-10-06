@@ -29,6 +29,9 @@ HEADING_RE = re.compile(r"(?m)^(#{2,4})\s+(.+)$")
 CHECKED_RE = re.compile(r"(?mi)^\*\*Проверено:\*\*\s*(20\d{2}-\d{2}-\d{2})")
 HYP_RE = re.compile(r"(?m)^###\s+(HYP-[^|\n]+)\s*\|\s*(20\d{2}-\d{2}-\d{2})\s*\|\s*Статус:\s*([^\n]+)")
 DATE_RE = re.compile(r"\b(20\d{2}-\d{2}-\d{2})\b")
+# Явный срок гипотезы. Без него доска брала ближайшую дату блока — дату заведения
+# или промежуточного шага — и показывала ложный чекпоинт.
+DEADLINE_RE = re.compile(r"(?m)^\*\*Срок проверки:\*\*\s*(20\d{2}-\d{2}-\d{2})")
 
 LINK_RE = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
 TRACE_MARK = "↳"  # ↳ — след закрытия: дописывается доской и ею же снимается
@@ -51,7 +54,13 @@ EXTERNAL_RE = re.compile(
 EXTERNAL_STALE_DAYS = 14
 
 STALE_DAYS = 45
+# Слои агентства после перестройки 2026-09: бизнес, клиенты, команда.
+# Раньше доска смотрела только в projects/ и life/ — и после переезда
+# перестала видеть почти все внешние метки, не подав ни одного сигнала.
+AGENCY_ROOTS = ("agency", "clients", "team")
+SKIP_PARTS = {"_archive", "_template"}
 PROJECT_TITLES = {
+    "agency": "Агентство",
     "practice": "Личная практика",
     "detailing-samara": "Детейлинг (Левша)",
     "traffic-freelance": "Трафик-портфель",
@@ -59,7 +68,7 @@ PROJECT_TITLES = {
     "marketing-os": "Marketing OS",
     "seo-sites": "SEO-сайты",
 }
-ORDER = ["practice", "detailing-samara", "traffic-freelance", "ai-infobiz", "seo-sites", "marketing-os"]
+ORDER = ["agency", "practice", "detailing-samara", "traffic-freelance", "ai-infobiz", "seo-sites", "marketing-os"]
 ACTIVE_HYP_MARKERS = ("\U0001f9ea", "провер", "тест")
 INACTIVE_HYP_MARKERS = ("⏸", "\U0001f4e6", "\U0001f4a1", "отлож", "пауза", "архив", "сыр")
 
@@ -193,11 +202,16 @@ def strip_md(value: str) -> str:
     return value.strip()
 
 
+def skipped(path: Path) -> bool:
+    return bool(SKIP_PARTS.intersection(path.parts))
+
+
 def task_sources():
     paths = []
-    for path in (ROOT / "projects").rglob("_index.md"):
-        if "_archive" not in path.parts:
-            paths.append(path)
+    for root in ("projects",) + AGENCY_ROOTS:
+        for path in (ROOT / root).rglob("_index.md"):
+            if not skipped(path):
+                paths.append(path)
     practice = ROOT / "projects" / "practice"
     if practice.exists():
         # Шаблоны пропускаем: их пустые чекбоксы («- [ ] ________») доска
@@ -253,8 +267,10 @@ def collect():
             if age > STALE_DAYS:
                 project.attention.append(f"{rel}: проверено {age} дн. назад")
 
-    for path in (ROOT / "projects").rglob("hypotheses.md"):
-        if "_archive" in path.parts:
+    hypothesis_files = [p for root in ("projects",) + AGENCY_ROOTS
+                        for p in (ROOT / root).rglob("hypotheses.md")]
+    for path in hypothesis_files:
+        if skipped(path):
             continue
         text = mask_noncontent(read(path))
         slug = project_of(path)
@@ -268,7 +284,9 @@ def collect():
                 continue
             if not any(marker in status for marker in ACTIVE_HYP_MARKERS):
                 continue
-            dates = sorted({dt.date.fromisoformat(d) for d in DATE_RE.findall(block)})
+            deadline = DEADLINE_RE.search(block)
+            found = [deadline.group(1)] if deadline else DATE_RE.findall(block)
+            dates = sorted({dt.date.fromisoformat(d) for d in found})
             future = [d for d in dates if d >= today]
             name = match.group(1).strip()
             if dates and not future:
@@ -295,9 +313,9 @@ def external_sources():
     та болезнь, от которой этот механизм лечит.
     """
     paths = []
-    for root in ("projects", "life"):
+    for root in ("projects", "life") + AGENCY_ROOTS:
         for path in (ROOT / root).rglob("*.md"):
-            if "_archive" not in path.parts:
+            if not skipped(path):
                 paths.append(path)
     return sorted(set(paths))
 

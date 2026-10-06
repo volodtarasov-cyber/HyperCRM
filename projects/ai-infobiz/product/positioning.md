@@ -7,7 +7,7 @@
 
 # Позиционирование: от вложенного рубля до денег
 
-> Стратегия бизнеса → [life/decisions.md](../../../life/decisions.md). Продуктовый состав → [projects/practice/product/boxes.md](../../practice/product/boxes.md).
+> Стратегия бизнеса → [life/decisions.md](../../../life/decisions.md). Продуктовый состав → [agency/product/boxes.md](../../../agency/product/boxes.md).
 
 ## Для кого
 

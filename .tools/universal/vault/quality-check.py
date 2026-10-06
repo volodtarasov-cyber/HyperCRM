@@ -61,7 +61,7 @@ EMPTY_MARKERS = ("заполнить", "позже", "—", "-", "нет дан�
 ACTIVE_STATUS_MARKERS = ("🧪", "тест", "провер", "pilot", "active")
 CLOSED_STATUS_MARKERS = ("✅", "❌", "сработ", "не сработ", "закрыт", "заверш")
 INACTIVE_STATUS_MARKERS = ("⏸", "📦", "💡", "archiv", "отлож", "пауза", "сырая идея")
-GLOSSARY_PATH = ROOT / "projects" / "marketing-os" / "core" / "glossary.md"
+GLOSSARY_PATH = ROOT / "marketing-os" / "core" / "glossary.md"
 GLOSSARY_CARD_RE = re.compile(
     r'(?ms)^<a id="(term-[a-z0-9-]+)"></a>\s*\n###\s+([^\n]+)\n(.*?)(?=^<a id="term-|\Z)'
 )
@@ -274,7 +274,7 @@ def metadata_value(text: str, name: str) -> str | None:
 
 
 def governed_documents() -> list[Path]:
-    marketing_os = ROOT / "projects" / "marketing-os"
+    marketing_os = ROOT / "marketing-os"
     paths = []
     for folder in ("engines", "playbooks"):
         paths.extend((marketing_os / folder).glob("*.md"))
@@ -316,7 +316,7 @@ def check_governed_documents() -> list[Issue]:
 
 def check_module_evidence() -> list[Issue]:
     issues: list[Issue] = []
-    marketing_os = ROOT / "projects" / "marketing-os"
+    marketing_os = ROOT / "marketing-os"
     documents = []
     for folder in ("engines", "playbooks"):
         documents.extend((marketing_os / folder).glob("*.md"))
@@ -356,7 +356,7 @@ def glossary_field(block: str, name: str) -> str | None:
 
 
 def terminology_documents() -> list[Path]:
-    marketing_os = ROOT / "projects" / "marketing-os"
+    marketing_os = ROOT / "marketing-os"
     paths = [marketing_os / "_index.md"]
     for folder in ("engines", "routes", "playbooks", "templates", "maps", "product", "systems"):
         base = marketing_os / folder
@@ -449,7 +449,7 @@ def check_terminology() -> list[Issue]:
             f"навигация ссылается на отсутствующую карточку {anchor}",
         ))
 
-    references = (ROOT / "CLAUDE.md", ROOT / "projects" / "marketing-os" / "_index.md")
+    references = (ROOT / "CLAUDE.md", ROOT / "marketing-os" / "_index.md")
     for path in references:
         if path.exists() and "core/glossary.md" not in read(path):
             issues.append(Issue(
@@ -670,7 +670,7 @@ def exportable_files() -> list[Path]:
     for base in (ROOT / "system" / "templates", ROOT / "knowledge"):
         if base.exists():
             paths.extend(base.rglob("*.md"))
-    marketing_os = ROOT / "projects" / "marketing-os"
+    marketing_os = ROOT / "marketing-os"
     for folder in ("core", "engines", "routes", "playbooks", "templates", "maps", "product", "systems"):
         base = marketing_os / folder
         if base.exists():

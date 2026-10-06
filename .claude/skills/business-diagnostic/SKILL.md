@@ -12,7 +12,7 @@ description: Полный диагностический прогон компа
 /screening  →  /company-profile  →  /jtbd-segments  →  /cjm  →  скоркард  →  рекомендации
 ```
 
-Канонический метод — [screening-to-strategy-diagnostic](../../../projects/marketing-os/routes/full-business-diagnostic/screening-to-strategy-diagnostic.md).
+Канонический метод — [screening-to-strategy-diagnostic](../../../marketing-os/routes/full-business-diagnostic/screening-to-strategy-diagnostic.md).
 
 > ⚠️ **Скоуп — на продукт/юнит, не на компанию.** Цепочка прогоняется под один продукт (плёнка / шумка / полировка…): у каждого свой клиент, спрос, конкуренты, путь. Несколько продуктов = несколько прогонов. Компания (бренд, команда, бюджет, CRM, репутация) — общий контекст сверху.
 
@@ -21,11 +21,11 @@ description: Полный диагностический прогон компа
 - Если нужен **только один** анализ — вызывать соответствующий скилл напрямую: `/screening`, `/company-profile`, `/jtbd-segments`, `/cjm`.
 
 ## Цепочка (что запускаю по шагам)
-1. **`/company-profile`** — собрать вход (услуги, экономика, команда, каналы, репутация, цели). [Шаблон](../../../projects/marketing-os/templates/company-profile-template.md).
-2. **`/screening`** — 58 факторов → главное ограничение. [Модуль](../../../projects/marketing-os/engines/business-market-screening.md).
-3. **`/jtbd-segments`** — 5–7 сегментов по работам + приоритизация «с чего начать». [Модуль](../../../projects/marketing-os/engines/niche-icp-jtbd-research.md).
-4. **`/cjm`** — карта пути по приоритетным сегментам (эмоции, барьеры, точка перелома). [Модуль](../../../projects/marketing-os/engines/customer-journey-map.md).
-5. **Скоркард зрелости** — 7 осей + общий балл. [Шаблон](../../../projects/marketing-os/templates/maturity-scorecard-template.md).
+1. **`/company-profile`** — собрать вход (услуги, экономика, команда, каналы, репутация, цели). [Шаблон](../../../marketing-os/templates/company-profile-template.md).
+2. **`/screening`** — 58 факторов → главное ограничение. [Модуль](../../../marketing-os/engines/business-market-screening.md).
+3. **`/jtbd-segments`** — 5–7 сегментов по работам + приоритизация «с чего начать». [Модуль](../../../marketing-os/engines/niche-icp-jtbd-research.md).
+4. **`/cjm`** — карта пути по приоритетным сегментам (эмоции, барьеры, точка перелома). [Модуль](../../../marketing-os/engines/customer-journey-map.md).
+5. **Скоркард зрелости** — 7 осей + общий балл. [Шаблон](../../../marketing-os/templates/maturity-scorecard-template.md).
 6. **Узкие места, противоречия, рекомендации** — на наши модули (оффер, диагностич. продажа, удержание, измерение, контент), ранжир по урону/усилию.
 
 ## Структура вывода (полный пакет)
@@ -48,6 +48,6 @@ description: Полный диагностический прогон компа
 
 ## Связанные
 Скиллы-звенья: `/screening` · `/company-profile` · `/jtbd-segments` · `/cjm`.
-Метод: [screening-to-strategy-diagnostic](../../../projects/marketing-os/routes/full-business-diagnostic/screening-to-strategy-diagnostic.md).
+Метод: [screening-to-strategy-diagnostic](../../../marketing-os/routes/full-business-diagnostic/screening-to-strategy-diagnostic.md).
 Модули: business-market-screening · niche-icp-jtbd-research · customer-journey-map · offer-packaging-design · marketing-system-design · diagnostic-sale.
-Шаблоны: [maturity-scorecard](../../../projects/marketing-os/templates/maturity-scorecard-template.md), [company-profile](../../../projects/marketing-os/templates/company-profile-template.md).
+Шаблоны: [maturity-scorecard](../../../marketing-os/templates/maturity-scorecard-template.md), [company-profile](../../../marketing-os/templates/company-profile-template.md).

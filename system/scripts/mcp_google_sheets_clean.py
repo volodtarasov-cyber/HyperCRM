@@ -69,7 +69,63 @@ def _print_to_stderr(*args, **kwargs):
 builtins.print = _print_to_stderr
 
 
+# Upstream builds one googleapiclient service at startup and reuses its httplib2
+# keep-alive connection for the whole session. After a few idle minutes Google,
+# an antivirus or the router drops that TCP connection; on Windows the next send
+# fails with WinError 10053. httplib2 re-raises that error without closing the
+# dead socket, so every following call fails the same way until the MCP server
+# is restarted.
+IDLE_SECONDS = 30
+GET_RETRIES = 3
+
+
+def _harden_google_http() -> None:
+    import threading
+    import time
+
+    import httplib2
+    from googleapiclient import http as gapi_http
+
+    original_request = httplib2.Http.request
+    lock = threading.Lock()
+
+    def _close_connections(client) -> None:
+        for conn in list(client.connections.values()):
+            try:
+                conn.close()
+            except Exception:
+                pass
+
+    def request(self, *args, **kwargs):
+        with lock:
+            last = getattr(self, "_hypercrm_last_request", None)
+            if last is not None and time.monotonic() - last > IDLE_SECONDS:
+                # Never send on a socket that sat idle: reconnect instead.
+                _close_connections(self)
+            try:
+                return original_request(self, *args, **kwargs)
+            except (ConnectionError, OSError):
+                # Drop the dead socket so the retry or the next call reconnects.
+                _close_connections(self)
+                raise
+            finally:
+                self._hypercrm_last_request = time.monotonic()
+
+    httplib2.Http.request = request
+
+    original_execute = gapi_http.HttpRequest.execute
+
+    def execute(self, http=None, num_retries=0):
+        # Reads are safe to repeat; writes are not retried to avoid duplicates.
+        if num_retries == 0 and self.method == "GET":
+            num_retries = GET_RETRIES
+        return original_execute(self, http=http, num_retries=num_retries)
+
+    gapi_http.HttpRequest.execute = execute
+
+
 def main() -> None:
+    _harden_google_http()
     from mcp_google_sheets import server
 
     if "--self-test" in sys.argv:

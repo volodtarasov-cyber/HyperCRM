@@ -97,7 +97,7 @@ description: Собирает "коробку шока и трепета" для
 
 #### Анти-страхи
 
-Снижают [тревогу перехода](../../../projects/marketing-os/core/glossary.md#term-anxiety).
+Снижают [тревогу перехода](../../../marketing-os/core/glossary.md).
 
 Примеры:
 

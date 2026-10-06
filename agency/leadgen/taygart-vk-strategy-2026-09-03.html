@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ТАЙГАРТ — стратегия продвижения ВКонтакте</title>
+<link rel="icon" href="../../team/assets/ui/favicon.png">
+<link rel="stylesheet" href="../../team/assets/ananas-marketing-brand.css">
+<style>
+@page { size: A4; margin: 0; }
+
+body { background: #ECE9F1; }
+
+.page {
+  position: relative;
+  width: 210mm;
+  height: 297mm;
+  margin: 14px auto;
+  padding: 16mm 16mm 14mm;
+  overflow: hidden;
+  background: var(--am-bg);
+  box-shadow: 0 18px 60px rgba(43, 34, 58, .18);
+  page-break-after: always;
+}
+.page:last-child { page-break-after: auto; }
+.page--cover { display: flex; flex-direction: column; padding: 0; }
+.cover-dark {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 22mm 18mm 20mm;
+  color: #FFFFFF;
+  background:
+    radial-gradient(circle at 88% 8%, rgba(255,186,36,.14), transparent 32%),
+    radial-gradient(circle at 2% 94%, rgba(255,255,255,.04), transparent 36%),
+    var(--am-dark);
+}
+.cover-light {
+  position: relative;
+  flex: none;
+  height: 88mm;
+  padding: 17mm 18mm 0;
+  overflow: hidden;
+  background: var(--am-surface);
+}
+.cover-light h3 { margin: 0 0 15px; color: var(--am-dark); font-size: 12px; font-weight: 800; letter-spacing: .12em; }
+.cover-pineapple { position: absolute; right: -8mm; bottom: -16mm; width: 44mm; }
+.cover-stat { display: flex; align-items: baseline; gap: 12px; margin-top: 26px; }
+.cover-stat b { color: var(--am-yellow); font-size: 30px; font-weight: 800; letter-spacing: -.02em; }
+.cover-stat span { color: rgba(255,255,255,.6); font-size: 12px; }
+
+.mtable { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.mtable th {
+  padding: 11px 14px; color: #FFFFFF; background: var(--am-dark);
+  font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-align: left;
+}
+.mtable th:first-child { border-radius: 9px 0 0 0; }
+.mtable th:last-child  { border-radius: 0 9px 0 0; }
+.mtable td { padding: 12px 14px; color: var(--am-text); border-bottom: 1px solid var(--am-line); }
+.mtable tr:nth-child(even) td { background: var(--am-surface); }
+.mtable td:last-child { color: var(--am-muted); }
+.mtable td b { color: var(--am-dark); }
+.mtable .q { color: var(--am-attention); font-weight: 700; }
+
+/* ---------- обложка ---------- */
+.cover-top { display: flex; align-items: flex-start; justify-content: space-between; }
+.cover-sub { color: rgba(255,255,255,.55); font-size: 9.5px; font-weight: 500; margin-top: 7px; }
+.cover-date { color: rgba(255,255,255,.55); font-size: 9.5px; text-align: right; line-height: 1.7; }
+.cover-mid { padding-left: 22px; border-left: 4px solid var(--am-yellow); }
+.cover-mid h1 { margin: 0; font-size: 62px; font-weight: 800; letter-spacing: -.03em; line-height: .96; }
+.cover-mid .lead { max-width: 132mm; margin: 16px 0 0; color: rgba(255,255,255,.82); font-size: 16px; line-height: 1.5; }
+.cover-tag { display: inline-block; margin-bottom: 20px; padding: 7px 14px; color: var(--am-yellow);
+  border: 1px solid rgba(255,186,36,.4); border-radius: 99px; font-size: 10px; font-weight: 700; letter-spacing: .14em; }
+.cover-route { display: flex; gap: 10px; max-width: 148mm; }
+.cover-route div {
+  flex: 1; padding: 12px 0 0; border-top: 2px solid var(--am-yellow);
+  color: var(--am-muted); font-size: 11px; line-height: 1.45;
+}
+.cover-route b { display: block; margin-bottom: 6px; color: var(--am-dark); font-size: 11px; font-weight: 800; }
+
+/* ---------- шапка светлой полосы ---------- */
+.head { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; margin-bottom: 22px; }
+.head-num { color: var(--am-yellow); font-size: 11px; font-weight: 800; letter-spacing: .16em; }
+.head h2 { margin: 6px 0 0; color: var(--am-dark); font-size: 33px; font-weight: 800; letter-spacing: -.025em; line-height: 1.1; }
+.head p  { max-width: 112mm; margin: 10px 0 0; color: var(--am-muted); font-size: 13.5px; line-height: 1.55; }
+.head img { width: 72px; height: 72px; object-fit: contain; flex: none; }
+
+/* ---------- контент ---------- */
+.steps { display: flex; flex-direction: column; gap: 14px; }
+.step {
+  display: flex; gap: 17px; padding: 19px 22px;
+  background: var(--am-bg); border: 1px solid var(--am-line); border-radius: 13px;
+  box-shadow: 0 6px 18px rgba(43,34,58,.05);
+}
+.step span {
+  flex: none; width: 27px; height: 27px; border-radius: 8px;
+  background: var(--am-yellow); color: var(--am-brown);
+  font-size: 13px; font-weight: 800; line-height: 27px; text-align: center;
+}
+.step b { display: block; margin-bottom: 5px; color: var(--am-dark); font-size: 16px; font-weight: 700; }
+.step p { margin: 0; color: var(--am-muted); font-size: 13.5px; line-height: 1.55; }
+.step em { color: var(--am-text); font-style: normal; font-weight: 600; }
+
+.tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; }
+.tile { padding: 18px 18px 20px; background: var(--am-surface); border-radius: 12px; }
+.tile i { display: block; width: 22px; height: 3px; margin-bottom: 11px; border-radius: 99px; background: var(--am-yellow); }
+.tile b { display: block; margin-bottom: 6px; color: var(--am-dark); font-size: 14px; font-weight: 700; line-height: 1.35; }
+.tile p { margin: 0; color: var(--am-muted); font-size: 12.5px; line-height: 1.5; }
+.tile em { display: block; margin-bottom: 8px; color: var(--am-muted);
+  font-size: 9.5px; font-style: normal; font-weight: 700; letter-spacing: .1em; }
+
+.claim { padding: 26px 28px; margin-bottom: 22px; border-radius: 14px; background: var(--am-surface); text-align: center; }
+.claim b { display: block; color: var(--am-dark); font-size: 19px; font-weight: 800; line-height: 1.3; }
+.claim p { max-width: 134mm; margin: 11px auto 0; color: var(--am-muted); font-size: 12.5px; line-height: 1.55; }
+
+.am-checklist li { color: var(--am-text); font-size: 13.5px; line-height: 1.55; }
+.am-checklist li b { color: var(--am-dark); }
+.am-checklist li::before { width: 21px; height: 21px; top: 0; }
+.am-checklist li { padding-left: 32px; margin-bottom: 13px; }
+
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.box { padding: 20px 22px; border: 1px solid var(--am-line); border-radius: 13px; }
+.box--accent { background: #FFF8E5; border-color: rgba(255,186,36,.45); }
+.box h3 { margin: 0 0 10px; color: var(--am-dark); font-size: 15.5px; font-weight: 800; }
+.box p, .box li { color: var(--am-muted); font-size: 12.5px; line-height: 1.55; }
+.box p { margin: 0 0 8px; }
+.box ul { margin: 0; padding-left: 17px; }
+.box ul.two-col { columns: 2; column-gap: 26px; }
+.box li { margin-bottom: 5px; }
+.box strong { color: var(--am-text); }
+
+.tag { display: inline-block; margin-bottom: 11px; padding: 5px 11px; border-radius: 99px;
+  background: var(--am-dark); color: #FFFFFF; font-size: 9.5px; font-weight: 700; letter-spacing: .1em; }
+.tag--soft { background: var(--am-surface); color: var(--am-muted); }
+
+.flow { display: flex; align-items: stretch; gap: 8px; margin: 14px 0 0; }
+.flow div { flex: 1; padding: 12px 12px 13px; border-radius: 11px; background: var(--am-surface); }
+.flow b { display: block; margin-bottom: 5px; color: var(--am-dark); font-size: 12px; font-weight: 800; }
+.flow p { margin: 0; color: var(--am-muted); font-size: 11.5px; line-height: 1.45; }
+.flow span { align-self: center; color: var(--am-yellow); font-size: 15px; font-weight: 800; }
+
+.note { margin-top: 18px; padding: 16px 19px; border-left: 4px solid var(--am-yellow);
+  border-radius: 8px; background: #FFF8E5; color: var(--am-brown); font-size: 12.5px; line-height: 1.6; }
+.note b { font-weight: 800; }
+
+.foot {
+  position: absolute; left: 16mm; right: 16mm; bottom: 9mm;
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 8px; border-top: 1px solid var(--am-line);
+  color: var(--am-muted); font-size: 9px;
+}
+.foot .am-brand { font-size: 9px; color: var(--am-dark); }
+
+.pineapple { position: absolute; right: -10mm; bottom: 16mm; width: 44mm; }
+.crown { position: absolute; right: -14mm; bottom: 24mm; height: 62mm; opacity: .5; }
+/* печать: перекрывает экранные .page — должно идти последним */
+@media print {
+  body { background: #FFFFFF; }
+  .page {
+    height: 296mm;
+    margin: 0;
+    box-shadow: none;
+    break-after: page;
+    page-break-after: always;
+  }
+  .page:last-child { break-after: auto; page-break-after: auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 1. ОБЛОЖКА ============ -->
+<div class="page page--cover">
+ <div class="cover-dark">
+  <div class="cover-top">
+    <div>
+      <div class="am-brand" style="font-size:17px"><span class="am-brand__accent">АНАНАС</span><span>МАРКЕТИНГ</span></div>
+      <div class="cover-sub">Системный маркетинг для сервисного бизнеса</div>
+    </div>
+    <div class="cover-date">Стратегия продвижения<br>3 сентября 2026</div>
+  </div>
+
+  <div class="cover-mid">
+    <div class="cover-tag">ВКОНТАКТЕ · ТАРГЕТ</div>
+    <h1>ТАЙГАРТ</h1>
+    <p class="lead">Строительство домов для круглогодичного проживания.<br>Москва и Московская область.</p>
+    <div class="cover-stat"><b>150 000 ₽</b><span>тестовый бюджет</span></div>
+  </div>
+ </div>
+
+ <div class="cover-light">
+  <h3>ЧТО ВНУТРИ</h3>
+  <div class="cover-route">
+    <div><b>01</b> Сообщество — готовим точку приёма</div>
+    <div><b>02</b> Офферы и УТП — что говорим</div>
+    <div><b>03</b> Аудитории — кому показываем</div>
+    <div><b>04</b> Посадочные — куда ведём</div>
+    <div><b>05</b> Креативы — чем цепляем</div>
+    <div><b>06</b> Бюджет — что считаем</div>
+  </div>
+  <img class="cover-pineapple" src="../../team/assets/photo/pineapple-wedge.png" alt="">
+ </div>
+</div>
+
+<!-- ============ 2. СООБЩЕСТВО ============ -->
+<div class="page">
+  <div class="head">
+    <div>
+      <div class="head-num">01 · ПОДГОТОВКА</div>
+      <h2>Сообщество</h2>
+      <p>Трафик упирается в посадочную страницу. Пять правок в группе делаем до запуска.</p>
+    </div>
+    <img src="../../team/assets/icons-3d/silver-contact-cards.png" alt="">
+  </div>
+
+  <div class="steps">
+    <div class="step"><span>1</span><div>
+      <b>Добавить отзывы</b>
+      <p>Социальное доказательство в чеке на дом — обязательный элемент, а не украшение.</p>
+    </div></div>
+
+    <div class="step"><span>2</span><div>
+      <b>Починить форму расчёта стоимости</b>
+      <p>Форма <em>«Сколько стоит дом?»</em> сейчас выдаёт ошибку. Пока она не работает, часть тёплого трафика теряется молча.</p>
+    </div></div>
+
+    <div class="step"><span>3</span><div>
+      <b>Улучшить приветственное сообщение</b>
+      <p>Добавить конкретный призыв к действию — формулировка зависит от оффера. Например: <em>«напиши “+” и получи подборку самых популярных домов до 10 млн»</em>.</p>
+    </div></div>
+
+    <div class="step"><span>4</span><div>
+      <b>Усилить пост-закреп</b>
+      <p>Добавить призыв к действию и написать текстом преимущества технологии по пунктам — блок на следующей полосе.</p>
+    </div></div>
+
+    <div class="step"><span>5</span><div>
+      <b>Добавить большие виджеты</b>
+      <p>Три точки касания прямо из группы: <em>посмотреть готовые дома</em>, <em>рассчитать стоимость</em>, <em>получить консультацию</em>.</p>
+    </div></div>
+  </div>
+
+  <div class="note">
+    <b>Порядок важен.</b> Правки 2 и 3 закрывают потерю уже существующего трафика, поэтому идут первыми — до того, как в группу пойдёт платный.
+  </div>
+
+  <img class="crown" src="../../team/assets/photo/pineapple-crown.png" alt="">
+
+  <div class="foot">
+    <span class="am-brand"><span class="am-brand__accent">АНАНАС</span><span>МАРКЕТИНГ</span></span>
+    <span>ТАЙГАРТ · Стратегия ВКонтакте · 2</span>
+  </div>
+</div>
+
+<!-- ============ 3. ТЕХНОЛОГИЯ ============ -->
+<div class="page">
+  <div class="head">
+    <div>
+      <div class="head-num">01 · КОНТЕНТ ПОСТ-ЗАКРЕПА</div>
+      <h2>Преимущества технологии</h2>
+      <p>Девять пунктов, которые пишем текстом в закреплённый пост. Это ответ на главное сомнение покупателя: «каркасник — это несерьёзно».</p>
+    </div>
+    <img src="../../team/assets/icons-3d/silver-gear-case.png" alt="">
+  </div>
+
+  <div class="claim">
+    <b>Почему каркасно-панельная технология — наилучшая для частного домостроения</b>
+    <p>Каркасно-панельное строительство популярно не только в России, но и во многих развитых странах. Например, сегодня каждый четвёртый дом в Германии строится именно по такой технологии.</p>
+  </div>
+
+  <div class="tiles">
+    <div class="tile"><i></i><b>Меньше толщина стены</b><p>Больше полезного пространства в доме.</p></div>
+    <div class="tile"><i></i><b>Быстрая сборка дома</b><p>На участке.</p></div>
+    <div class="tile"><i></i><b>Теплосопротивление в 3 раза выше</b><p>Чем у газобетона.</p></div>
+    <div class="tile"><i></i><b>Хорошая звукоизоляция стен</b></div>
+    <div class="tile"><i></i><b>Стены не требуют выравнивания</b><p>И готовы для чистовой отделки.</p></div>
+    <div class="tile"><i></i><b>Более экологичные материалы</b></div>
+    <div class="tile"><i></i><b>Цельный монолитный каркас</b><p>Каркасная стена не даст трещину при возможных подвижках земли.</p></div>
+    <div class="tile"><i></i><b>Меньше затраты на фундамент</b><p>Благодаря меньшему весу дома.</p></div>
+    <div class="tile"><i></i><b>Круглогодичная «сухая» сборка</b><p>На участке без применения строительных смесей.</p></div>
+  </div>
+
+  <div class="foot">
+    <span class="am-brand"><span class="am-brand__accent">АНАНАС</span><span>МАРКЕТИНГ</span></span>
+    <span>ТАЙГАРТ · Стратегия ВКонтакте · 3</span>
+  </div>
+</div>
+
+<!-- ============ 4. ОФФЕРЫ И УТП ============ -->
+<div class="page">
+  <div class="head">
+    <div>
+      <div class="head-num">02 · ЧТО ГОВОРИМ</div>
+      <h2>Офферы и УТП</h2>
+      <p>Оффер — то, что тестируем и меняем. УТП — сильные стороны компании.</p>
+    </div>
+    <img src="../../team/assets/icons-3d/silver-shield-hand.png" alt="">
+  </div>
+
+  <div class="split" style="margin-bottom:20px">
+    <div class="box box--accent">
+      <div class="tag">ОФФЕР 1</div>
+      <h3>Подборка популярных домов</h3>
+      <p>До 10 млн ₽ / до 100 кв. м. Отдаём за подписку или кодовое слово в сообщения группы.</p>
+    </div>
+    <div class="box box--accent">
+      <div class="tag">ОФФЕР 2</div>
+      <h3>Акция с ограничением по времени</h3>
+      <p>«Скоро повышение цены». Даёт причину решать сейчас, а не через полгода.</p>
+    </div>
+  </div>
+
+  <h3 class="am-section-title" style="margin-bottom:14px">УТП — девять причин выбрать ТАЙГАРТ</h3>
+
+  <ul class="am-checklist">
+    <li><b>Строим под ключ за 6 месяцев с чистовой отделкой</b> — от пустого участка до сдачи дома. Не нужно искать, кто сделает отопление, водопровод, электрику; останется только расставить мебель.</li>
+    <li><b>Строим по PREFAB-технологии</b> — добиваемся высокого качества дома и сокращения общего времени строительства.</li>
+    <li><b>Собственное производство</b> — 99% элементов домов (стены, крышу, перекрытия, элементы террасы и даже ограждения) производим на своём производстве с европейским оборудованием.</li>
+    <li><b>Открытый процесс строительства</b> — можно посетить производство и приезжать на стройплощадку: главный инженер и прораб подробно ответят на все вопросы и покажут, как производится и собирается ваш дом.</li>
+    <li><b>Свои бригады сборщиков</b>, в которых мы уверены.</li>
+    <li><b>Стены внутри дома утеплены</b> и обшиты гипсостружечной плитой — полностью готовы под чистовую отделку и не нуждаются в дорогостоящем выравнивании.</li>
+    <li><b>Быстрая сборка на участке за 2–3 недели.</b></li>
+    <li><b>Перед сдачей проверяем герметичность дома</b> Аэродверью.</li>
+    <li><b>Гарантия до 20 лет</b> — фиксируется в договоре.</li>
+  </ul>
+
+  <div class="foot">
+    <span class="am-brand"><span class="am-brand__accent">АНАНАС</span><span>МАРКЕТИНГ</span></span>
+    <span>ТАЙГАРТ · Стратегия ВКонтакте · 4</span>
+  </div>
+</div>
+
+<!-- ============ 5. АУДИТОРИИ И ПОСАДОЧНЫЕ ============ -->
+<div class="page">
+  <div class="head">
+    <div>
+      <div class="head-num">03–04 · КОМУ И КУДА</div>
+      <h2>Аудитории и посадочные</h2>
+      <p>Две аудитории на старте и два варианта посадочной.</p>
+    </div>
+    <img src="../../team/assets/icons-3d/silver-audit-magnifier.png" alt="">
+  </div>
+
+  <div class="split" style="margin-bottom:18px">
+    <div class="box">
+      <div class="tag tag--soft">АУДИТОРИЯ 1</div>
+      <h3>Ключевые запросы</h3>
+      <p>По гео Москва и МО: <strong>строительство домов под ключ</strong>, <strong>каркасный дом под ключ</strong> и смежные.</p>
+    </div>
+    <div class="box">
+      <div class="tag tag--soft">АУДИТОРИЯ 2</div>
+      <h3>Подписчики групп конкурентов</h3>
+      <p>Парсинг активных участников: кто лайкает, пишет комментарии к постам, интересуется, недавно подписался.</p>
+    </div>
+  </div>
+
+  <h3 class="am-section-title" style="margin-bottom:12px">Посадочные страницы для тестирования</h3>
+
+  <div class="box" style="margin-bottom:12px">
+    <div class="tag">ВАРИАНТ 1 · СТАРТУЕМ ЗДЕСЬ</div>
+    <h3>Сообщения / Сенлер</h3>
+    <p>Призыв получить каталог домов или рассчитать стоимость — по кодовому слову либо написав «+» в сообщения группы.</p>
+    <p>Чат-бот по кодовому слову выдаёт ссылку на каталог (подборка товаров внутри ВК) и задаёт первичные вопросы для расчёта: <strong>какой дом хочет, бюджет, площадь, сроки</strong> — далее переводим на менеджера.</p>
+
+    <div class="flow">
+      <div><b>Кодовое слово</b><p>«+» в сообщения группы</p></div>
+      <span>→</span>
+      <div><b>Каталог</b><p>Подборка домов внутри ВК</p></div>
+      <span>→</span>
+      <div><b>Квалификация</b><p>Дом, бюджет, площадь, сроки</p></div>
+      <span>→</span>
+      <div><b>Менеджер</b><p>Расчёт и продажа</p></div>
+    </div>
+
+    <p style="margin:13px 0 6px"><strong>Дальше бот прогревает рассылками:</strong></p>
+    <ul class="two-col">
+      <li>обзоры готовых домов;</li>
+      <li>процесс стройки;</li>
+      <li>поэтапно про технологию и её преимущества;</li>
+      <li>закрываем возражения;</li>
+      <li>делимся отзывами.</li>
+    </ul>
+    <p style="margin:10px 0 0">Начинаем тестировать с <strong>Сообщений</strong>. Если не устроит качество лидов — тестируем на Сенлер.</p>
+  </div>
+
+  <div class="box">
+    <div class="tag tag--soft">ВАРИАНТ 2</div>
+    <h3>Лид-форма</h3>
+    <p>Призыв оставить заявку с номером телефона, чтобы получить расчёт стоимости и консультацию по телефону. Тестируем одновременно с Сенлером и Сообщениями.</p>
+    <p style="margin:0"><strong>Условие запуска:</strong> тестируем только при наличии отдела продаж, который быстро обрабатывает заявки. Лид-форма без скорости ответа даёт дешёвый контакт и дорогую потерю.</p>
+  </div>
+
+  <div class="foot">
+    <span class="am-brand"><span class="am-brand__accent">АНАНАС</span><span>МАРКЕТИНГ</span></span>
+    <span>ТАЙГАРТ · Стратегия ВКонтакте · 5</span>
+  </div>
+</div>
+
+<!-- ============ 6. КРЕАТИВЫ И ИЗМЕРЕНИЕ ============ -->
+<div class="page">
+  <div class="head">
+    <div>
+      <div class="head-num">05 · ЧЕМ ЦЕПЛЯЕМ</div>
+      <h2>Креативы</h2>
+      <p>Видео первично: дом за 10 млн не продаётся картинкой. Цена в креативе — инструмент отсева, а не отпугивания.</p>
+    </div>
+    <img src="../../team/assets/icons-3d/silver-knight.png" alt="">
+  </div>
+
+  <div class="steps" style="margin-bottom:20px">
+    <div class="step"><span>1</span><div>
+      <b>Преимущественно видео</b>
+      <p>Процесс стройки · обзор готового дома · отзыв покупателей.</p>
+    </div></div>
+    <div class="step"><span>2</span><div>
+      <b>Второстепенно фото-креативы</b>
+      <p>Коллаж с процессом стройки и готовым домом · карусель-подборка домов.</p>
+    </div></div>
+    <div class="step"><span>3</span><div>
+      <b>Указываем стоимость домов в креативах</b>
+      <p>Чтобы отсеять тех, кто ищет подешевле. Упоминаем про возможность ипотеки.</p>
+    </div></div>
+  </div>
+
+  <h3 class="am-section-title" style="margin:24px 0 14px">Что снимаем</h3>
+
+  <div class="tiles">
+    <div class="tile"><i></i><em>ВИДЕО</em><b>Процесс стройки</b></div>
+    <div class="tile"><i></i><em>ВИДЕО</em><b>Обзор готового дома</b></div>
+    <div class="tile"><i></i><em>ВИДЕО</em><b>Отзыв покупателей</b></div>
+    <div class="tile"><i></i><em>ФОТО</em><b>Коллаж</b><p>Процесс стройки и готовый дом.</p></div>
+    <div class="tile"><i></i><em>ФОТО</em><b>Карусель-подборка домов</b></div>
+  </div>
+
+  <div class="note">
+    Снимаем не «для рекламы», а из того, что уже происходит: смена на производстве, сборка на участке, сдача дома. Тот же материал наполняет прогрев бота — один съёмочный день закрывает и креативы, и рассылку.
+  </div>
+
+  <img class="pineapple" src="../../team/assets/photo/pineapple-ring.png" alt="">
+
+  <div class="foot">
+    <span class="am-brand"><span class="am-brand__accent">АНАНАС</span><span>МАРКЕТИНГ</span></span>
+    <span>ТАЙГАРТ · Стратегия ВКонтакте · 6</span>
+  </div>
+</div>
+
+<!-- ============ 7. БЮДЖЕТ И ИЗМЕРЕНИЕ ============ -->
+<div class="page">
+  <div class="head">
+    <div>
+      <div class="head-num">06 · ЧТО СЧИТАЕМ</div>
+      <h2>Бюджет и измерение</h2>
+      <p>Тест на 150 000 ₽. Целевые значения — ставим по факту первого месяца.</p>
+    </div>
+    <img src="../../team/assets/icons-3d/silver-wallet.png" alt="">
+  </div>
+
+  <div class="split" style="margin-bottom:20px">
+    <div class="box box--accent">
+      <div class="tag">БЮДЖЕТ ТЕСТА</div>
+      <h3 style="font-size:26px">150 000 ₽</h3>
+      <p style="margin:0">Распределяем между двумя аудиториями и посадочными. Вариант 2 (лид-форма) забирает часть бюджета только при выполненном условии — наличие сильного отдела продаж.</p>
+    </div>
+    <div class="box">
+      <div class="tag tag--soft">ДО СТАРТА</div>
+      <h3>Пиксель на сайт</h3>
+      <p style="margin:0">Ставим пиксель, чтобы отслеживать действия на сайте. Без него мы видим только клики и не видим, что происходит после них.</p>
+    </div>
+  </div>
+
+  <h3 class="am-section-title" style="margin-bottom:14px">Что меряем</h3>
+
+  <table class="mtable">
+    <tr><th>Показатель</th><th>Где видно</th><th>Целевое значение</th></tr>
+    <tr>
+      <td><b>Стоимость диалога</b><br>в Сообщениях</td>
+      <td>кабинет ВК Рекламы</td>
+      <td><span class="q">?</span> — ставим после первого месяца открутки</td>
+    </tr>
+    <tr>
+      <td><b>Стоимость лида</b><br>в лид-форме</td>
+      <td>кабинет ВК Рекламы</td>
+      <td><span class="q">?</span> — только если запускаем вариант 2</td>
+    </tr>
+    <tr>
+      <td><b>Доля квалифицированных</b><br>из диалогов</td>
+      <td>ответы бота + менеджер</td>
+      <td><span class="q">?</span> — нужна оценка ТАЙГАРТ, что считать целевым обращением</td>
+    </tr>
+    <tr>
+      <td><b>Действия на сайте</b></td>
+      <td>пиксель</td>
+      <td>считаем с первого дня</td>
+    </tr>
+    <tr>
+      <td><b>Доход с канала</b></td>
+      <td>источник не связан с оплатами</td>
+      <td>на старте недоступен</td>
+    </tr>
+  </table>
+
+  <div class="note">
+    <b>Почему цифры не проставлены заранее.</b> В частном домостроении цикл сделки длинный, а исторических данных по этому каналу у нас пока нет. Целевое значение, названное до открутки, — это обещание, а не план. После первого месяца мы ставим цифру и дальше отвечаем за неё.
+  </div>
+
+  <div class="note" style="background:var(--am-surface); border-left-color:var(--am-dark); color:var(--am-text)">
+    <b>Что нужно от ТАЙГАРТ, чтобы начать работать:</b> доступ к сообществу и рекламному кабинету, доступ к сайту для установки пикселя, фото- и видеоматериалы по готовым домам и стройке, решение по офферу и ответ, что считать целевым обращением.
+  </div>
+
+  <div class="foot">
+    <span class="am-brand"><span class="am-brand__accent">АНАНАС</span><span>МАРКЕТИНГ</span></span>
+    <span>ТАЙГАРТ · Стратегия ВКонтакте · 7</span>
+  </div>
+</div>
+
+</body>
+</html>
