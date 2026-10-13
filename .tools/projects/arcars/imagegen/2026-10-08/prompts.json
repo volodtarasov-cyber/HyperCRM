@@ -1,0 +1,47 @@
+[
+  {
+    "name": "hero.jpg",
+    "path": "C:\\Users\\User\\.codex\\generated_images\\01a11a67-1153-7181-8b5f-f4b7f42ac194\\exec-5a37ccd3-c072-4379-96f7-6248aec15c4a.png",
+    "size": [
+      1920,
+      1080
+    ],
+    "prompt": "Use case: photorealistic-natural. Asset type: Arcars automobile import website photograph, hero.jpg. Generate a single standalone image, not a collage. 1920x1080 pixels, 16:9 horizontal. Dark evening automotive import terminal. One pristine graphite premium crossover parked on terminal pavement, front three-quarter view, whole car visible positioned between 42% and 72% of image width, center at 58%, never far right. Left third very dark calm low-detail negative space for white headline. Rightmost quarter quiet dark terminal background will be hidden under a website form. Warm amber-orange terminal lights outlining car, cool charcoal dusk, believable reflections and subtle wet ground. No text or overlays. Shared style: premium restrained editorial automotive photography, real-world proportions, accurate wheels and bodywork, natural photographic textures, neutral charcoal and silver tones, no excessive saturation, no CGI aesthetic. No people, no added typography, no watermarks, no promotional badges, no legible license plate text. Requested exact output dimensions as specified."
+  },
+  {
+    "name": "dir-china.jpg",
+    "path": "C:\\Users\\User\\.codex\\generated_images\\01a11a67-1153-7181-8b5f-f4b7f42ac194\\exec-47fce102-fef6-42a8-b7fe-44a4d4d113e6.png",
+    "size": [
+      1200,
+      900
+    ],
+    "prompt": "Use case: photorealistic-natural. Asset type: Arcars automobile import website photograph, dir-china.jpg. Generate a single standalone image, not a collage. 1200x900 pixels, 4:3 horizontal. One brand new Chinese-built premium crossover, contemporary Geely-style design, pearl silver, front three-quarter view, entire car comfortably framed in the foreground at a clean Chinese dealership or factory delivery courtyard. Modern factory buildings and a few new cars softly visible behind it. Natural late afternoon light with subtle warm highlights, realistic automotive export photography. Shared style: premium restrained editorial automotive photography, real-world proportions, accurate wheels and bodywork, natural photographic textures, neutral charcoal and silver tones, no excessive saturation, no CGI aesthetic. No people, no added typography, no watermarks, no promotional badges, no legible license plate text. Requested exact output dimensions as specified."
+  },
+  {
+    "name": "dir-korea.jpg",
+    "path": "C:\\Users\\User\\.codex\\generated_images\\01a11a67-1153-7181-8b5f-f4b7f42ac194\\exec-0bf277c7-3809-4f24-b585-f45cf5505087.png",
+    "size": [
+      1200,
+      900
+    ],
+    "prompt": "Use case: photorealistic-natural. Asset type: Arcars automobile import website photograph, dir-korea.jpg. Generate a single standalone image, not a collage. 1200x900 pixels, 4:3 horizontal. A pristine dark silver Kia Sorento Korean SUV, front three-quarter view, entire car comfortably framed, at a South Korean automotive export staging yard. Ordered parked export vehicles, distant industrial shipping infrastructure, subtle port cranes behind it. Soft natural late afternoon light with warm highlights, realistic photographic Korean automotive identity. Shared style: premium restrained editorial automotive photography, real-world proportions, accurate wheels and bodywork, natural photographic textures, neutral charcoal and silver tones, no excessive saturation, no CGI aesthetic. No people, no added typography, no watermarks, no promotional badges, no legible license plate text. Requested exact output dimensions as specified."
+  },
+  {
+    "name": "dir-japan.jpg",
+    "path": "C:\\Users\\User\\.codex\\generated_images\\01a11a67-1153-7181-8b5f-f4b7f42ac194\\exec-ce6af36a-3f77-4eab-913a-919db64ceaf6.png",
+    "size": [
+      1200,
+      900
+    ],
+    "prompt": "Use case: photorealistic-natural. Asset type: Arcars automobile import website photograph, dir-japan.jpg. Generate a single standalone image, not a collage. 1200x900 pixels, 4:3 horizontal. Pristine pearl white Japanese minivan Toyota Alphard type, complete vehicle in front three-quarter view in the foreground of a Japanese port. Japanese maritime setting, distant cargo ship, containers and cranes, realistic quiet export apron. Soft natural late afternoon light with subtle warm highlights. Minivan should be the clear subject. Shared style: premium restrained editorial automotive photography, real-world proportions, accurate wheels and bodywork, natural photographic textures, neutral charcoal and silver tones, no excessive saturation, no CGI aesthetic. No people, no added typography, no watermarks, no promotional badges, no legible license plate text. Requested exact output dimensions as specified."
+  },
+  {
+    "name": "dir-auction.jpg",
+    "path": "C:\\Users\\User\\.codex\\generated_images\\01a11a67-1153-7181-8b5f-f4b7f42ac194\\exec-cfb51579-d687-4e8b-9fe0-0eee5a588117.png",
+    "size": [
+      1200,
+      900
+    ],
+    "prompt": "Use case: photorealistic-natural. Asset type: Arcars automobile import website photograph, dir-auction.jpg. Generate a single standalone image, not a collage. 1200x900 pixels, 4:3 horizontal. Japanese vehicle auction staging yard with long orderly rows of diverse Japanese cars, minivans and compact kei cars, view from slightly elevated standing height along the lanes, depth and realistic perspective. Foreground vehicles crisp, distant auction warehouse soft, natural late afternoon light with subtle warm highlights. No hero single car, clearly many vehicles ready for auction. Shared style: premium restrained editorial automotive photography, real-world proportions, accurate wheels and bodywork, natural photographic textures, neutral charcoal and silver tones, no excessive saturation, no CGI aesthetic. No people, no added typography, no watermarks, no promotional badges, no legible license plate text. Requested exact output dimensions as specified."
+  }
+]

@@ -22,6 +22,8 @@ system/secrets/
 
 # Окружения и зависимости — пересобираются, не версионируются
 .tools/venv/
+.tools/venv-whisper/
+.tools/.pip-cache/
 node_modules/
 .pnpm-store/
 __pycache__/
@@ -50,6 +52,10 @@ tmp/
 # Скриншоты пересоздаёт snapshot.py. Снимок, оставляемый как датированное
 # доказательство, добавляется явно: git add -f; уже закреплённые остаются в git
 .tools/snapshots/*
+# Рабочие данные и диагностические отчёты контента карт; конечные клиентские
+# материалы и выбранные фото остаются в clients/*/reports/.
+.tools/projects/geo-content/20*/
+.tools/projects/arcars/geo-content/20*/
 # Картинки Unisec для Яндекс Карт собирает build-images-from-sources.py из source/;
 # v9 собрана вручную, исходника нет — остаётся в git
 clients/unisec-novosibirsk/assets/yandex-maps-services/*

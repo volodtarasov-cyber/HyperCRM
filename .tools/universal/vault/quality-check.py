@@ -44,6 +44,7 @@ SKIP_DIRS = {
     ".obsidian",
     "node_modules",
     "venv",
+    "venv-whisper",
     ".venv",
     "__pycache__",
     "outputs",

@@ -14,14 +14,14 @@ The owner runs an agency with a client portfolio. There is a core team and speci
 
 ## Projects
 
-> **Target model (decision 2026-09-01):** build a delegatable marketing agency to **1M RUB+ net profit per month**. The agency owns the path from traffic and landing pages to qualified leads and, when client data permits, attributed revenue and gross profit. Consulting is allowed only as the sale of spare founder time. Do not propose an online school, club, course, or any business that requires Volodya to be a recurring speaker. Full version → `life/decisions.md`.
+> **Target model (decision updated 2026-10-08):** build a delegatable marketing agency, first to **1M RUB monthly agency revenue**, then to **1M RUB+ monthly net profit**. The portfolio corridor, whole-portfolio average monthly fee ladder and compact team with AI assistants are defined in `life/decisions.md`; the team budget and milestone calculations belong to `agency/finmodel.md`. The agency owns the path from traffic and landing pages to qualified leads and, when client data permits, attributed revenue and gross profit. Current agency consulting is allowed only as the sale of spare founder time; the subsequent private-practice direction and specialists’ take-home profit metric are defined in `life/decisions.md`. Do not propose an online school, club, course, or any business that requires Volodya to be a recurring speaker. Full version → `life/decisions.md`.
 
 This repository **is the agency**. Its three layers: `agency/` — the business, `clients/` — who we serve, `marketing-os/` — how we do the work.
 
 ### Priorities
-1. **Agency and its client portfolio** — the main business under development. Grow through productized acquisition, landing pages, measurement, a core team and specialized contractors. The test is delegability: daily delivery must continue without Volodya as the sole operator.
+1. **Agency and its client portfolio** — the main business under development. Current acquisition and content focus: auto businesses and clothing dry cleaners → `agency/market.md`. Target staffing for the first revenue milestone → `team/_agency.md`; salary budget → `agency/finmodel.md`. Grow through productized acquisition, landing pages, measurement, a core team and specialized contractors. The test is delegability: daily delivery must continue without Volodya as the sole operator.
 2. **Levsha (detailing)** — a client like any other, and the deepest data access in the portfolio. Reduce dependence on 5/2 physical presence; use measured applications to improve the agency method.
-3. **Consulting** — only in spare capacity and at a price that justifies founder time; not a separate scalable leg.
+3. **Current agency consulting** — only in spare capacity and at a price that justifies founder time; excluded from the agency's target delegated profit. The next personal direction is private practice helping online specialists grow their take-home profit; its metric, ladder and unresolved launch gate belong to `life/decisions.md` (section «Следующее направление: частная практика для онлайн-специалистов»). Do not treat the spare-capacity rule as cancellation of that next direction.
 
 ### Repository rule: where a client lives
 
@@ -276,10 +276,12 @@ Frameworks, with their real addresses (`knowledge/frameworks/` holds imported ou
 
 ## Technical tools
 
+- **Storage — everything on D:** (decision 2026-10-06). C: is the system disk and is nearly full; D: holds the work. Projects, tool environments, model and package caches, downloads, course material and generated data go to D:. Tools that write to the user profile by default are pointed at `D:\.cache\` through user environment variables before first use. If a program cannot live outside C:, say so instead of installing it there silently.
 - **Tool layout:** reusable scripts live in `.tools/universal/`; scripts tied to data, URLs, or branding live in `.tools/projects/<project>/`. Full index: `.tools/README.md`.
+- **Outside the vault** (keys, generated data; arcars-site has a private GitHub remote, the factory has local git only and a manual cloud copy — see the passport): SEO-завод `D:\SecondBrain\seo-factory` (one install serves one site, now Arcars; a second site needs a second copy of the package), `arcars-site`, `agency-site` (agency hub prototype, frozen: no own SEO site while clients come from direct sales). Single passport → `.tools/README.md#вне-волта`.
 - **Playwright** (`.tools/venv/Scripts/python.exe <script>`, Python 3.14, Windows): `.tools/universal/web/snapshot.py <url> <prefix>` (desktop+mobile of any site), `.tools/universal/web/snapshot.py` covers desktop+mobile of any URL. Output → `.tools/snapshots/*.png`, read via Read. For: layout control after edits, competitor analysis.
 - **Carousel (optional agency content)** `.tools/projects/ai-infobiz/content/carousel.py <input.md> [out_dir]`: md со слайдами через `---` → PNG 1080×1350 в фирменном стиле (@lazyhim, тёмный+жёлтый). Авто-стиль: 1-й = обложка, последний = CTA, средние = контент; переопределяется тегом `[cover]/[cta]/[dark]/[light]`. Вывод → `.tools/carousel-out/<имя>/`. Использовать только для контента, который поддерживает агентские продажи или доказательства; отдельного контентного ритма нет.
-- **Analytics:** new calculations — a separate py-script in `.tools/projects/<project>/analytics/` (not in Bash). Template — `.tools/projects/bingo-samara/analytics/zayavki-analysis.py` (parse → aggregate → conclusions). Local call transcription — `.tools/universal/media/transcribe-calls.py` (macOS only, no cloud: client recordings never leave the machine).
+- **Analytics:** new calculations — a separate py-script in `.tools/projects/<project>/analytics/` (not in Bash). Template — `.tools/projects/bingo-samara/analytics/zayavki-analysis.py` (parse → aggregate → conclusions). Local call transcription — `.tools/universal/media/transcribe-calls.py` (macOS only, no cloud: client recordings never leave the machine); on Windows — `.tools/universal/media/transcribe-video.py` (faster-whisper on the GPU, own env `.tools/venv-whisper`).
 - **MCP (unstable):** Google Drive (`mcp__claude_ai_Google_Drive__*`, reading Sheets/Docs) + Google Calendar. Always keep a fallback to manual export.
 - **claude-seo** (`~/.claude/plugins/local/plugins/claude-seo/`, requires a restart): 25 SEO skills (`/seo-audit`, `/seo-local`…) for auditing the landing / levsha-group.ru. See `memory/reference_claude_seo.md`.
 
@@ -289,6 +291,7 @@ Frameworks, with their real addresses (`knowledge/frameworks/` holds imported ou
 |---|---|
 | «напиши пост / лонгрид / лендинг / черновик» in first person | `/copywriter` |
 | «очеловечь / отредактируй / убери ИИ-шность / сделай живее» готовый текст | `/humanize-text` |
+| **Without a trigger:** any model-written text (SEO factory article, page copy, `/copywriter` draft) before it goes to a client for approval or onto a site | `/humanize-text` — mandatory last pass, facts untouched |
 | «собери VSL / сценарий видеопродавца / продающее видео» | `/vsl-script` (экспериментальный, не проверен) |
 | «собери воронку / стратегию привлечения / разложи на этапы» | `/aarrr-funnel` |
 | «коробка шока / что отправить лиду / как прогреть» | `/shock-awe-box` |

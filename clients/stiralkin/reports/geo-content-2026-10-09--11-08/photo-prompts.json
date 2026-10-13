@@ -1,0 +1,42 @@
+[
+  {
+    "name": "01-pukhovik",
+    "prompt": "Use case: photorealistic-natural. Asset type: service illustration photograph for Stiralkin dry-cleaner, website business-map post and 2GIS story. One standalone photograph. A graphite down puffer winter jacket on a simple wooden hanger, whole jacket visible, angled slightly to show the collar and sleeves. Neutral softly lit background, quiet warm ivory and muted gray. Premium but ordinary natural editorial product photography, believable fabric texture, no overprocessed glossy render. Vertical 3:4 composition 1200x1600, key subject centered in middle 55% width and middle 65% height so can crop to 4:3 and 9:16. No people or hands, no brand names, no added text, no watermarks, no collage, no fake customer success story, no before-after, no invented staff or workshop. Image represents an item for a service, not a claimed result.",
+    "tool": "built-in imagegen"
+  },
+  {
+    "name": "02-pled",
+    "prompt": "Use case: photorealistic-natural. Asset type: service illustration photograph for Stiralkin dry-cleaner, website business-map post and 2GIS story. One standalone photograph. A thick oatmeal knitted blanket draped over the arm of a neutral fabric chair, detailed knit texture and folds. No surrounding clutter. Premium but ordinary natural editorial product photography, believable fabric texture, no overprocessed glossy render. Vertical 3:4 composition 1200x1600, key subject centered in middle 55% width and middle 65% height so can crop to 4:3 and 9:16. No people or hands, no brand names, no added text, no watermarks, no collage, no fake customer success story, no before-after, no invented staff or workshop. Image represents an item for a service, not a claimed result.",
+    "tool": "built-in imagegen"
+  },
+  {
+    "name": "03-kover",
+    "prompt": "Use case: photorealistic-natural. Asset type: service illustration photograph for Stiralkin dry-cleaner, website business-map post and 2GIS story. One standalone photograph. A rolled clean beige and muted brown domestic rug with one section unrolled showing realistic woven pile, against a neutral household background. Do not depict a cleaning machine or fake cleaning operation. Premium but ordinary natural editorial product photography, believable fabric texture, no overprocessed glossy render. Vertical 3:4 composition 1200x1600, key subject centered in middle 55% width and middle 65% height so can crop to 4:3 and 9:16. No people or hands, no brand names, no added text, no watermarks, no collage, no fake customer success story, no before-after, no invented staff or workshop. Image represents an item for a service, not a claimed result.",
+    "tool": "built-in imagegen"
+  },
+  {
+    "name": "04-pyatno",
+    "prompt": "Use case: photorealistic-natural. Asset type: service illustration photograph for Stiralkin dry-cleaner, website business-map post and 2GIS story. One standalone photograph. Close detailed view of the cuff and sleeve of a light taupe garment with a subtle ordinary small dark stain visible on the fabric, a nearby care label with no legible text. No claimed before and after, no cleaning products. Premium but ordinary natural editorial product photography, believable fabric texture, no overprocessed glossy render. Vertical 3:4 composition 1200x1600, key subject centered in middle 55% width and middle 65% height so can crop to 4:3 and 9:16. No people or hands, no brand names, no added text, no watermarks, no collage, no fake customer success story, no before-after, no invented staff or workshop. Image represents an item for a service, not a claimed result.",
+    "tool": "built-in imagegen"
+  },
+  {
+    "name": "05-obuv",
+    "prompt": "Use case: photorealistic-natural. Asset type: service illustration photograph for Stiralkin dry-cleaner, website business-map post and 2GIS story. One standalone photograph. One pair of dark brown leather autumn ankle boots with light natural signs of everyday wear, neatly placed side by side, realistic leather textures and construction, no brand logos. Premium but ordinary natural editorial product photography, believable fabric texture, no overprocessed glossy render. Vertical 3:4 composition 1200x1600, key subject centered in middle 55% width and middle 65% height so can crop to 4:3 and 9:16. No people or hands, no brand names, no added text, no watermarks, no collage, no fake customer success story, no before-after, no invented staff or workshop. Image represents an item for a service, not a claimed result.",
+    "tool": "built-in imagegen"
+  },
+  {
+    "name": "06-odeyalo",
+    "prompt": "Use case: photorealistic-natural. Asset type: service illustration photograph for Stiralkin dry-cleaner, website business-map post and 2GIS story. One standalone photograph. A bulky cream quilted duvet neatly folded with one corner open, a natural linen bedroom background softly out of focus. Show bulk and soft quilting clearly. Premium but ordinary natural editorial product photography, believable fabric texture, no overprocessed glossy render. Vertical 3:4 composition 1200x1600, key subject centered in middle 55% width and middle 65% height so can crop to 4:3 and 9:16. No people or hands, no brand names, no added text, no watermarks, no collage, no fake customer success story, no before-after, no invented staff or workshop. Image represents an item for a service, not a claimed result.",
+    "tool": "built-in imagegen"
+  },
+  {
+    "name": "07-bele",
+    "prompt": "Use case: photorealistic-natural. Asset type: service illustration photograph for Stiralkin dry-cleaner, website business-map post and 2GIS story. One standalone photograph. A neat stack of white cotton bed linen, folded bedsheet and pillowcases, on a neutral wooden tabletop. Real texture and restrained lighting. Premium but ordinary natural editorial product photography, believable fabric texture, no overprocessed glossy render. Vertical 3:4 composition 1200x1600, key subject centered in middle 55% width and middle 65% height so can crop to 4:3 and 9:16. No people or hands, no brand names, no added text, no watermarks, no collage, no fake customer success story, no before-after, no invented staff or workshop. Image represents an item for a service, not a claimed result.",
+    "tool": "built-in imagegen"
+  },
+  {
+    "name": "08-plate",
+    "prompt": "Use case: photorealistic-natural. Asset type: service illustration photograph for Stiralkin dry-cleaner, website business-map post and 2GIS story. One standalone photograph. An ivory wedding dress on a plain hanger, detailed lace and flowing skirt, entire dress visible against a neutral softly lit domestic wardrobe backdrop, no bridal shop or invented business location. Premium but ordinary natural editorial product photography, believable fabric texture, no overprocessed glossy render. Vertical 3:4 composition 1200x1600, key subject centered in middle 55% width and middle 65% height so can crop to 4:3 and 9:16. No people or hands, no brand names, no added text, no watermarks, no collage, no fake customer success story, no before-after, no invented staff or workshop. Image represents an item for a service, not a claimed result.",
+    "tool": "built-in imagegen"
+  }
+]

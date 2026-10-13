@@ -1,0 +1,42 @@
+[
+  {
+    "name": "a01-china",
+    "prompt": "Use case: photorealistic-natural. Asset type: illustrative photograph for Arcars automotive import map news, not an actual company vehicle or completed client delivery. A pristine silver Chinese-built modern crossover, Geely-style design, front three-quarter view at an ordinary unbranded dealership delivery yard, no storefront brand. One standalone premium natural editorial automotive photograph, warm late afternoon light, charcoal and neutral silver palette, realistic wheels, correct proportions and textures, no CGI look. Vertical 3:4 1200x1600 composition. Keep main car or main detail wholly inside central 55% width and central 65% height so both 4:3 horizontal and 9:16 vertical crops remain useful. No people, no invented company office or staff, no added lettering, logos or watermark, no legible documents or license plates, no collage, no promotional badges.",
+    "tool": "built-in imagegen"
+  },
+  {
+    "name": "a02-budget",
+    "prompt": "Use case: photorealistic-natural. Asset type: illustrative photograph for Arcars automotive import map news, not an actual company vehicle or completed client delivery. A pristine modern graphite crossover in a neutral automotive yard with quiet evening reflections, an ordinary automobile representing a purchase under consideration, no price tag or currency. One standalone premium natural editorial automotive photograph, warm late afternoon light, charcoal and neutral silver palette, realistic wheels, correct proportions and textures, no CGI look. Vertical 3:4 1200x1600 composition. Keep main car or main detail wholly inside central 55% width and central 65% height so both 4:3 horizontal and 9:16 vertical crops remain useful. No people, no invented company office or staff, no added lettering, logos or watermark, no legible documents or license plates, no collage, no promotional badges.",
+    "tool": "built-in imagegen"
+  },
+  {
+    "name": "a03-korea",
+    "prompt": "Use case: photorealistic-natural. Asset type: illustrative photograph for Arcars automotive import map news, not an actual company vehicle or completed client delivery. A silver Korean Kia Sorento SUV in front three-quarter view in an export staging area, softly blurred industrial background, no staff. One standalone premium natural editorial automotive photograph, warm late afternoon light, charcoal and neutral silver palette, realistic wheels, correct proportions and textures, no CGI look. Vertical 3:4 1200x1600 composition. Keep main car or main detail wholly inside central 55% width and central 65% height so both 4:3 horizontal and 9:16 vertical crops remain useful. No people, no invented company office or staff, no added lettering, logos or watermark, no legible documents or license plates, no collage, no promotional badges.",
+    "tool": "built-in imagegen"
+  },
+  {
+    "name": "a04-specs",
+    "prompt": "Use case: photorealistic-natural. Asset type: illustrative photograph for Arcars automotive import map news, not an actual company vehicle or completed client delivery. Detailed photographic close view of the clean dashboard and front seats of a contemporary Chinese crossover, showing steering wheel and physical controls, infotainment screen dark with no logos or legible text. One standalone premium natural editorial automotive photograph, warm late afternoon light, charcoal and neutral silver palette, realistic wheels, correct proportions and textures, no CGI look. Vertical 3:4 1200x1600 composition. Keep main car or main detail wholly inside central 55% width and central 65% height so both 4:3 horizontal and 9:16 vertical crops remain useful. No people, no invented company office or staff, no added lettering, logos or watermark, no legible documents or license plates, no collage, no promotional badges.",
+    "tool": "built-in imagegen"
+  },
+  {
+    "name": "a05-japan",
+    "prompt": "Use case: photorealistic-natural. Asset type: illustrative photograph for Arcars automotive import map news, not an actual company vehicle or completed client delivery. A pearl white Japanese Toyota Alphard-type minivan, complete front three-quarter view at a quiet shipping port, no number plate text. One standalone premium natural editorial automotive photograph, warm late afternoon light, charcoal and neutral silver palette, realistic wheels, correct proportions and textures, no CGI look. Vertical 3:4 1200x1600 composition. Keep main car or main detail wholly inside central 55% width and central 65% height so both 4:3 horizontal and 9:16 vertical crops remain useful. No people, no invented company office or staff, no added lettering, logos or watermark, no legible documents or license plates, no collage, no promotional badges.",
+    "tool": "built-in imagegen"
+  },
+  {
+    "name": "a06-auction",
+    "prompt": "Use case: photorealistic-natural. Asset type: illustrative photograph for Arcars automotive import map news, not an actual company vehicle or completed client delivery. Long orderly rows of Japanese cars, compact kei cars and minivans at an automotive auction staging yard, slightly elevated viewpoint along the lanes, realistic perspective. One standalone premium natural editorial automotive photograph, warm late afternoon light, charcoal and neutral silver palette, realistic wheels, correct proportions and textures, no CGI look. Vertical 3:4 1200x1600 composition. Keep main car or main detail wholly inside central 55% width and central 65% height so both 4:3 horizontal and 9:16 vertical crops remain useful. No people, no invented company office or staff, no added lettering, logos or watermark, no legible documents or license plates, no collage, no promotional badges.",
+    "tool": "built-in imagegen"
+  },
+  {
+    "name": "a07-check",
+    "prompt": "Use case: photorealistic-natural. Asset type: illustrative photograph for Arcars automotive import map news, not an actual company vehicle or completed client delivery. Close photographic view of an ordinary clean automobile engine bay with bonnet raised, visible real mechanical components and neutral unbranded yard behind, no people, no instruments or fake inspection paperwork. One standalone premium natural editorial automotive photograph, warm late afternoon light, charcoal and neutral silver palette, realistic wheels, correct proportions and textures, no CGI look. Vertical 3:4 1200x1600 composition. Keep main car or main detail wholly inside central 55% width and central 65% height so both 4:3 horizontal and 9:16 vertical crops remain useful. No people, no invented company office or staff, no added lettering, logos or watermark, no legible documents or license plates, no collage, no promotional badges.",
+    "tool": "built-in imagegen"
+  },
+  {
+    "name": "a08-delivery",
+    "prompt": "Use case: photorealistic-natural. Asset type: illustrative photograph for Arcars automotive import map news, not an actual company vehicle or completed client delivery. A modern unbranded crossover standing near a cargo terminal with a distant transporter truck and ship cranes, quiet believable logistics scene, no workers. One standalone premium natural editorial automotive photograph, warm late afternoon light, charcoal and neutral silver palette, realistic wheels, correct proportions and textures, no CGI look. Vertical 3:4 1200x1600 composition. Keep main car or main detail wholly inside central 55% width and central 65% height so both 4:3 horizontal and 9:16 vertical crops remain useful. No people, no invented company office or staff, no added lettering, logos or watermark, no legible documents or license plates, no collage, no promotional badges.",
+    "tool": "built-in imagegen"
+  }
+]

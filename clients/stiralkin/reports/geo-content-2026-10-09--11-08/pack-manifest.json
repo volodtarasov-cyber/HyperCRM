@@ -1,0 +1,338 @@
+{
+  "schema_version": 1,
+  "client_id": "stiralkin",
+  "period_start": "2026-10-09",
+  "period_end": "2026-11-08",
+  "expected_posts": 8,
+  "texts_file": "texts.json",
+  "facts": {
+    "services": {
+      "source": "../../_index.md",
+      "level": "client_confirmed",
+      "verified_on": "2026-10-08",
+      "valid_until": "2026-11-08"
+    },
+    "process": {
+      "source": "../../meetings/2026-09-03-novyy-sayt-b2c.md",
+      "level": "client_confirmed",
+      "verified_on": "2026-10-08",
+      "valid_until": "2026-11-08"
+    }
+  },
+  "assets": {
+    "photos/2026-10-12-s01-yandex.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#01-pukhovik",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-12-s01-2gis.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#01-pukhovik",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-15-s02-yandex.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#02-pled",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-15-s02-2gis.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#02-pled",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-19-s03-yandex.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#03-kover",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-19-s03-2gis.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#03-kover",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-22-s04-yandex.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#04-pyatno",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-22-s04-2gis.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#04-pyatno",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-26-s05-yandex.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#05-obuv",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-26-s05-2gis.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#05-obuv",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-29-s06-yandex.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#06-odeyalo",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-29-s06-2gis.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#06-odeyalo",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-11-02-s07-yandex.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#07-bele",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-11-02-s07-2gis.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#07-bele",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-11-05-s08-yandex.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#08-plate",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-11-05-s08-2gis.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#08-plate",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    }
+  },
+  "reviews": {
+    "editorial": {
+      "result": "pass",
+      "evidence": "editorial-review.md",
+      "reviewed_by": "assistant_repeat_review_not_independent",
+      "reviewed_on": "2026-10-08",
+      "valid_until": "2026-11-08",
+      "bundle_sha256": "5f8cdef6c9c0cded9b9d12cf779ae9b0ba0f512e8072f0d331e8a61e728b53f0"
+    },
+    "visual": {
+      "result": "pass",
+      "evidence": "editorial-review.md",
+      "reviewed_by": "assistant_repeat_review_not_independent",
+      "reviewed_on": "2026-10-08",
+      "valid_until": "2026-11-08",
+      "bundle_sha256": "5f8cdef6c9c0cded9b9d12cf779ae9b0ba0f512e8072f0d331e8a61e728b53f0"
+    },
+    "facts": {
+      "result": "pass",
+      "evidence": "editorial-review.md",
+      "reviewed_by": "assistant_repeat_review_not_independent",
+      "reviewed_on": "2026-10-08",
+      "valid_until": "2026-11-08",
+      "bundle_sha256": "5f8cdef6c9c0cded9b9d12cf779ae9b0ba0f512e8072f0d331e8a61e728b53f0"
+    }
+  },
+  "publication_scope": {
+    "authorized": false,
+    "evidence": "Пользователь поручил подготовить пакет и процесс; размещение не поручено"
+  },
+  "branches": [
+    {
+      "id": "S-LIZ",
+      "address": "Генерала Лизюкова, 27",
+      "yandex": {
+        "card_id": null,
+        "card_url": null,
+        "post_ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08"
+        ],
+        "identity": {
+          "result": "unknown"
+        },
+        "service_scope": {
+          "result": "unknown"
+        },
+        "access": {
+          "result": "unknown"
+        },
+        "format": {
+          "result": "unknown"
+        },
+        "contact": {
+          "result": "unknown"
+        }
+      },
+      "2gis": {
+        "card_id": null,
+        "card_url": null,
+        "post_ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08"
+        ],
+        "identity": {
+          "result": "unknown"
+        },
+        "service_scope": {
+          "result": "unknown"
+        },
+        "access": {
+          "result": "unknown"
+        },
+        "format": {
+          "result": "unknown"
+        },
+        "contact": {
+          "result": "unknown"
+        }
+      }
+    },
+    {
+      "id": "S-SB",
+      "address": "Старых Большевиков, 53Е",
+      "yandex": {
+        "card_id": null,
+        "card_url": null,
+        "post_ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08"
+        ],
+        "identity": {
+          "result": "unknown"
+        },
+        "service_scope": {
+          "result": "unknown"
+        },
+        "access": {
+          "result": "unknown"
+        },
+        "format": {
+          "result": "unknown"
+        },
+        "contact": {
+          "result": "unknown"
+        }
+      },
+      "2gis": {
+        "card_id": null,
+        "card_url": null,
+        "post_ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08"
+        ],
+        "identity": {
+          "result": "unknown"
+        },
+        "service_scope": {
+          "result": "unknown"
+        },
+        "access": {
+          "result": "unknown"
+        },
+        "format": {
+          "result": "unknown"
+        },
+        "contact": {
+          "result": "unknown"
+        }
+      }
+    },
+    {
+      "id": "S-LEN",
+      "address": "Ленинградская, 55А",
+      "yandex": {
+        "card_id": null,
+        "card_url": null,
+        "post_ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08"
+        ],
+        "identity": {
+          "result": "unknown"
+        },
+        "service_scope": {
+          "result": "unknown"
+        },
+        "access": {
+          "result": "unknown"
+        },
+        "format": {
+          "result": "unknown"
+        },
+        "contact": {
+          "result": "unknown"
+        }
+      },
+      "2gis": {
+        "card_id": null,
+        "card_url": null,
+        "post_ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08"
+        ],
+        "identity": {
+          "result": "unknown"
+        },
+        "service_scope": {
+          "result": "unknown"
+        },
+        "access": {
+          "result": "unknown"
+        },
+        "format": {
+          "result": "unknown"
+        },
+        "contact": {
+          "result": "unknown"
+        }
+      }
+    }
+  ]
+}

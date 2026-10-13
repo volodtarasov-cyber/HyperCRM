@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "client_id": "?",
+  "period_start": "YYYY-MM-DD",
+  "period_end": "YYYY-MM-DD",
+  "expected_posts": 8,
+  "texts_file": "texts.json",
+  "facts": {
+    "service": {
+      "source": "?",
+      "level": "unknown",
+      "verified_on": "YYYY-MM-DD",
+      "valid_until": "YYYY-MM-DD"
+    }
+  },
+  "assets": {},
+  "reviews": {
+    "editorial": {"result": "unknown", "evidence": "?", "reviewed_by": "?", "reviewed_on": "YYYY-MM-DD", "valid_until": "YYYY-MM-DD"},
+    "visual": {"result": "unknown", "evidence": "?", "reviewed_by": "?", "reviewed_on": "YYYY-MM-DD", "valid_until": "YYYY-MM-DD"},
+    "facts": {"result": "unknown", "evidence": "?", "reviewed_by": "?", "reviewed_on": "YYYY-MM-DD", "valid_until": "YYYY-MM-DD"}
+  },
+  "publication_scope": {"authorized": false, "evidence": "Поручение на публикацию пока не зафиксировано", "client_id": "?", "branch_ids": [], "platforms": [], "post_ids": []},
+  "branches": [{
+    "id": "?",
+    "address": "?",
+    "yandex": {"card_id": null, "card_url": null, "post_ids": [], "identity": {"result": "unknown"}, "service_scope": {"result": "unknown"}, "access": {"result": "unknown"}, "format": {"result": "unknown"}, "contact": {"result": "unknown"}},
+    "2gis": {"card_id": null, "card_url": null, "post_ids": [], "identity": {"result": "unknown"}, "service_scope": {"result": "unknown"}, "access": {"result": "unknown"}, "format": {"result": "unknown"}, "contact": {"result": "unknown"}}
+  }],
+  "contract_notes": [
+    "В texts.json каждый пост содержит client, id, date, keyword, reader_need, title, yandex, story_title, story_text, button, button_url, photo_yandex, photo_2gis, fact_keys.",
+    "В assets ключ — относительный путь фото; обязательны kind real_photo/ai_illustration, source, rights_basis и not_documentary=true для AI-иллюстрации.",
+    "Каждый пройденный review требует result=pass, evidence, reviewed_by, reviewed_on, valid_until и bundle_sha256 из отчёта проверяемой версии. Допуск пары точка/площадка тоже содержит bundle_sha256. Не заполнять pass вместо реальной проверки.",
+    "Этот шаблон намеренно не допущен; это не текущий трекер задач. Результаты прогонов хранить рядом с инструментом вне git."
+  ]
+}

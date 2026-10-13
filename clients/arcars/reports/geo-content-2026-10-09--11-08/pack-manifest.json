@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "client_id": "arcars",
+  "period_start": "2026-10-09",
+  "period_end": "2026-11-08",
+  "expected_posts": 8,
+  "texts_file": "texts.json",
+  "facts": {
+    "services": {
+      "source": "../../_index.md",
+      "level": "public_source",
+      "verified_on": "2026-10-08",
+      "valid_until": "2026-11-08"
+    },
+    "phone": {
+      "source": "../../_index.md#паспорт",
+      "level": "client_confirmed",
+      "verified_on": "2026-10-08",
+      "valid_until": "2026-11-08"
+    }
+  },
+  "assets": {
+    "photos/2026-10-12-a01-yandex.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#a01-china",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-12-a01-2gis.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#a01-china",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-15-a02-yandex.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#a02-budget",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-15-a02-2gis.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#a02-budget",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-19-a03-yandex.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#a03-korea",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-19-a03-2gis.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#a03-korea",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-22-a04-yandex.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#a04-specs",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-22-a04-2gis.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#a04-specs",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-26-a05-yandex.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#a05-japan",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-26-a05-2gis.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#a05-japan",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-29-a06-yandex.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#a06-auction",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-29-a06-2gis.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#a06-auction",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-11-02-a07-yandex.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#a07-check",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-11-02-a07-2gis.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#a07-check",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-11-05-a08-yandex.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#a08-delivery",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-11-05-a08-2gis.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#a08-delivery",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    }
+  },
+  "reviews": {
+    "editorial": {
+      "result": "pass",
+      "evidence": "editorial-review.md",
+      "reviewed_by": "assistant_repeat_review_not_independent",
+      "reviewed_on": "2026-10-08",
+      "valid_until": "2026-11-08",
+      "bundle_sha256": "4349926a17a2804b7d2aedb08a7b87446f2000db76dea8d5e079d09a8fc46139"
+    },
+    "visual": {
+      "result": "pass",
+      "evidence": "editorial-review.md",
+      "reviewed_by": "assistant_repeat_review_not_independent",
+      "reviewed_on": "2026-10-08",
+      "valid_until": "2026-11-08",
+      "bundle_sha256": "4349926a17a2804b7d2aedb08a7b87446f2000db76dea8d5e079d09a8fc46139"
+    },
+    "facts": {
+      "result": "pass",
+      "evidence": "editorial-review.md",
+      "reviewed_by": "assistant_repeat_review_not_independent",
+      "reviewed_on": "2026-10-08",
+      "valid_until": "2026-11-08",
+      "bundle_sha256": "4349926a17a2804b7d2aedb08a7b87446f2000db76dea8d5e079d09a8fc46139"
+    }
+  },
+  "publication_scope": {
+    "authorized": false,
+    "evidence": "Пользователь поручил подготовить пакет и процесс; размещение не поручено"
+  },
+  "branches": [
+    {
+      "id": "A-SAMARA",
+      "address": "Съездовская, 9, стр. 1; адрес карточек неизвестен",
+      "yandex": {
+        "card_id": null,
+        "card_url": null,
+        "post_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "A04",
+          "A05",
+          "A06",
+          "A07",
+          "A08"
+        ],
+        "identity": {
+          "result": "unknown"
+        },
+        "service_scope": {
+          "result": "unknown"
+        },
+        "access": {
+          "result": "unknown"
+        },
+        "format": {
+          "result": "unknown"
+        },
+        "contact": {
+          "result": "unknown"
+        }
+      },
+      "2gis": {
+        "card_id": null,
+        "card_url": null,
+        "post_ids": [
+          "A01",
+          "A02",
+          "A03",
+          "A04",
+          "A05",
+          "A06",
+          "A07",
+          "A08"
+        ],
+        "identity": {
+          "result": "unknown"
+        },
+        "service_scope": {
+          "result": "unknown"
+        },
+        "access": {
+          "result": "unknown"
+        },
+        "format": {
+          "result": "unknown"
+        },
+        "contact": {
+          "result": "unknown"
+        }
+      }
+    }
+  ]
+}

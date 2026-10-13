@@ -1,0 +1,42 @@
+[
+  {
+    "name": "01-pukhovik",
+    "prompt": "Use case: photorealistic-natural. Asset type: service illustration photograph for Stiralkin dry-cleaner, website business-map post and 2GIS story. One standalone photograph. A graphite down puffer winter jacket on a simple wooden hanger, whole jacket visible, angled slightly to show the collar and sleeves. Neutral softly lit background, quiet warm ivory and muted gray. Premium but ordinary natural editorial product photography, believable fabric texture, no overprocessed glossy render. Vertical 3:4 composition 1200x1600, key subject centered in middle 55% width and middle 65% height so can crop to 4:3 and 9:16. No people or hands, no brand names, no added text, no watermarks, no collage, no fake customer success story, no before-after, no invented staff or workshop. Image represents an item for a service, not a claimed result.",
+    "tool": "built-in imagegen"
+  },
+  {
+    "name": "09-palto",
+    "prompt": "Use case: photorealistic-natural. Asset type: neutral service illustration photograph for UNISEC dry-cleaner business-map posts and stories, not an actual client case. A camel wool autumn coat on a plain wooden hanger, complete coat visible with collar and pockets, realistic fabric fibers, simple neutral background. One standalone photograph, natural premium editorial product photography, restrained warm ivory and charcoal palette. Vertical 3:4 composition 1200x1600, main subject kept in central 55% width and central 65% height, usable crops 4:3 and 9:16. No people, no hands, no company premises, no workshop, no logo, no lettering or watermark, no before-after, no collage.",
+    "tool": "built-in imagegen"
+  },
+  {
+    "name": "05-obuv",
+    "prompt": "Use case: photorealistic-natural. Asset type: service illustration photograph for Stiralkin dry-cleaner, website business-map post and 2GIS story. One standalone photograph. One pair of dark brown leather autumn ankle boots with light natural signs of everyday wear, neatly placed side by side, realistic leather textures and construction, no brand logos. Premium but ordinary natural editorial product photography, believable fabric texture, no overprocessed glossy render. Vertical 3:4 composition 1200x1600, key subject centered in middle 55% width and middle 65% height so can crop to 4:3 and 9:16. No people or hands, no brand names, no added text, no watermarks, no collage, no fake customer success story, no before-after, no invented staff or workshop. Image represents an item for a service, not a claimed result.",
+    "tool": "built-in imagegen"
+  },
+  {
+    "name": "02-pled",
+    "prompt": "Use case: photorealistic-natural. Asset type: service illustration photograph for Stiralkin dry-cleaner, website business-map post and 2GIS story. One standalone photograph. A thick oatmeal knitted blanket draped over the arm of a neutral fabric chair, detailed knit texture and folds. No surrounding clutter. Premium but ordinary natural editorial product photography, believable fabric texture, no overprocessed glossy render. Vertical 3:4 composition 1200x1600, key subject centered in middle 55% width and middle 65% height so can crop to 4:3 and 9:16. No people or hands, no brand names, no added text, no watermarks, no collage, no fake customer success story, no before-after, no invented staff or workshop. Image represents an item for a service, not a claimed result.",
+    "tool": "built-in imagegen"
+  },
+  {
+    "name": "10-molniya",
+    "prompt": "Use case: photorealistic-natural. Asset type: neutral service illustration photograph for UNISEC dry-cleaner business-map posts and stories, not an actual client case. Close photographic detail of a black outdoor jacket zipper with slider clearly visible, jacket folded neatly on a neutral tabletop. No sewing machine, no worker hands, no implied completed repair. One standalone photograph, natural premium editorial product photography, restrained warm ivory and charcoal palette. Vertical 3:4 composition 1200x1600, main subject kept in central 55% width and central 65% height, usable crops 4:3 and 9:16. No people, no hands, no company premises, no workshop, no logo, no lettering or watermark, no before-after, no collage.",
+    "tool": "built-in imagegen"
+  },
+  {
+    "name": "06-odeyalo",
+    "prompt": "Use case: photorealistic-natural. Asset type: service illustration photograph for Stiralkin dry-cleaner, website business-map post and 2GIS story. One standalone photograph. A bulky cream quilted duvet neatly folded with one corner open, a natural linen bedroom background softly out of focus. Show bulk and soft quilting clearly. Premium but ordinary natural editorial product photography, believable fabric texture, no overprocessed glossy render. Vertical 3:4 composition 1200x1600, key subject centered in middle 55% width and middle 65% height so can crop to 4:3 and 9:16. No people or hands, no brand names, no added text, no watermarks, no collage, no fake customer success story, no before-after, no invented staff or workshop. Image represents an item for a service, not a claimed result.",
+    "tool": "built-in imagegen"
+  },
+  {
+    "name": "11-kostyum",
+    "prompt": "Use case: photorealistic-natural. Asset type: neutral service illustration photograph for UNISEC dry-cleaner business-map posts and stories, not an actual client case. A charcoal business suit on a plain hanger, jacket and trousers clearly visible together, realistic wool fabric and crisp garment construction, simple domestic wardrobe backdrop. One standalone photograph, natural premium editorial product photography, restrained warm ivory and charcoal palette. Vertical 3:4 composition 1200x1600, main subject kept in central 55% width and central 65% height, usable crops 4:3 and 9:16. No people, no hands, no company premises, no workshop, no logo, no lettering or watermark, no before-after, no collage.",
+    "tool": "built-in imagegen"
+  },
+  {
+    "name": "12-shtory",
+    "prompt": "Use case: photorealistic-natural. Asset type: neutral service illustration photograph for UNISEC dry-cleaner business-map posts and stories, not an actual client case. Heavy pale gray curtains hanging beside a window in an ordinary neutral home, fabric folds clearly visible, natural soft daylight. No luxury staged fake client case. One standalone photograph, natural premium editorial product photography, restrained warm ivory and charcoal palette. Vertical 3:4 composition 1200x1600, main subject kept in central 55% width and central 65% height, usable crops 4:3 and 9:16. No people, no hands, no company premises, no workshop, no logo, no lettering or watermark, no before-after, no collage.",
+    "tool": "built-in imagegen"
+  }
+]

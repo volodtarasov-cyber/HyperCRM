@@ -1,0 +1,518 @@
+{
+  "schema_version": 1,
+  "client_id": "unisec-novosibirsk",
+  "period_start": "2026-10-09",
+  "period_end": "2026-11-08",
+  "expected_posts": 8,
+  "texts_file": "texts.json",
+  "facts": {
+    "services": {
+      "source": "../../yandex-maps.md",
+      "level": "public_source",
+      "verified_on": "2026-10-08",
+      "valid_until": "2026-11-08"
+    }
+  },
+  "assets": {
+    "photos/2026-10-12-u01-yandex.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#01-pukhovik",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-12-u01-2gis.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#01-pukhovik",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-15-u02-yandex.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#09-palto",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-15-u02-2gis.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#09-palto",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-19-u03-yandex.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#05-obuv",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-19-u03-2gis.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#05-obuv",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-22-u04-yandex.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#02-pled",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-22-u04-2gis.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#02-pled",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-26-u05-yandex.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#10-molniya",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-26-u05-2gis.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#10-molniya",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-29-u06-yandex.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#06-odeyalo",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-10-29-u06-2gis.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#06-odeyalo",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-11-02-u07-yandex.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#11-kostyum",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-11-02-u07-2gis.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#11-kostyum",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-11-05-u08-yandex.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#12-shtory",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    },
+    "photos/2026-11-05-u08-2gis.jpg": {
+      "kind": "ai_illustration",
+      "source": "photo-prompts.json#12-shtory",
+      "rights_basis": "Создано встроенным imagegen для клиентского материала",
+      "not_documentary": true
+    }
+  },
+  "reviews": {
+    "editorial": {
+      "result": "pass",
+      "evidence": "editorial-review.md",
+      "reviewed_by": "assistant_repeat_review_not_independent",
+      "reviewed_on": "2026-10-08",
+      "valid_until": "2026-11-08",
+      "bundle_sha256": "7d6b3e2e1d5fe0f91fced50ea740cb9a862fc9ba2232d6bd47c1dcc8a821f5fd"
+    },
+    "visual": {
+      "result": "pass",
+      "evidence": "editorial-review.md",
+      "reviewed_by": "assistant_repeat_review_not_independent",
+      "reviewed_on": "2026-10-08",
+      "valid_until": "2026-11-08",
+      "bundle_sha256": "7d6b3e2e1d5fe0f91fced50ea740cb9a862fc9ba2232d6bd47c1dcc8a821f5fd"
+    },
+    "facts": {
+      "result": "pass",
+      "evidence": "editorial-review.md",
+      "reviewed_by": "assistant_repeat_review_not_independent",
+      "reviewed_on": "2026-10-08",
+      "valid_until": "2026-11-08",
+      "bundle_sha256": "7d6b3e2e1d5fe0f91fced50ea740cb9a862fc9ba2232d6bd47c1dcc8a821f5fd"
+    }
+  },
+  "publication_scope": {
+    "authorized": false,
+    "evidence": "Пользователь поручил подготовить пакет и процесс; размещение не поручено"
+  },
+  "branches": [
+    {
+      "id": "U-LEN",
+      "address": "Ленина, 12",
+      "yandex": {
+        "card_id": null,
+        "card_url": null,
+        "post_ids": [
+          "U01",
+          "U02",
+          "U03",
+          "U04",
+          "U05",
+          "U06",
+          "U07",
+          "U08"
+        ],
+        "identity": {
+          "result": "unknown"
+        },
+        "service_scope": {
+          "result": "unknown"
+        },
+        "access": {
+          "result": "unknown"
+        },
+        "format": {
+          "result": "unknown"
+        },
+        "contact": {
+          "result": "unknown"
+        }
+      },
+      "2gis": {
+        "card_id": null,
+        "card_url": null,
+        "post_ids": [
+          "U01",
+          "U02",
+          "U03",
+          "U04",
+          "U05",
+          "U06",
+          "U07",
+          "U08"
+        ],
+        "identity": {
+          "result": "unknown"
+        },
+        "service_scope": {
+          "result": "unknown"
+        },
+        "access": {
+          "result": "unknown"
+        },
+        "format": {
+          "result": "unknown"
+        },
+        "contact": {
+          "result": "unknown"
+        }
+      }
+    },
+    {
+      "id": "U-TROL",
+      "address": "Троллейная, 130а",
+      "yandex": {
+        "card_id": null,
+        "card_url": null,
+        "post_ids": [
+          "U01",
+          "U02",
+          "U03",
+          "U04",
+          "U05",
+          "U06",
+          "U07",
+          "U08"
+        ],
+        "identity": {
+          "result": "unknown"
+        },
+        "service_scope": {
+          "result": "unknown"
+        },
+        "access": {
+          "result": "unknown"
+        },
+        "format": {
+          "result": "unknown"
+        },
+        "contact": {
+          "result": "unknown"
+        }
+      },
+      "2gis": {
+        "card_id": null,
+        "card_url": null,
+        "post_ids": [
+          "U01",
+          "U02",
+          "U03",
+          "U04",
+          "U05",
+          "U06",
+          "U07",
+          "U08"
+        ],
+        "identity": {
+          "result": "unknown"
+        },
+        "service_scope": {
+          "result": "unknown"
+        },
+        "access": {
+          "result": "unknown"
+        },
+        "format": {
+          "result": "unknown"
+        },
+        "contact": {
+          "result": "unknown"
+        }
+      }
+    },
+    {
+      "id": "U-DK",
+      "address": "Дуси Ковальчук, 1/1",
+      "yandex": {
+        "card_id": null,
+        "card_url": null,
+        "post_ids": [
+          "U01",
+          "U02",
+          "U03",
+          "U04",
+          "U05",
+          "U06",
+          "U07",
+          "U08"
+        ],
+        "identity": {
+          "result": "unknown"
+        },
+        "service_scope": {
+          "result": "unknown"
+        },
+        "access": {
+          "result": "unknown"
+        },
+        "format": {
+          "result": "unknown"
+        },
+        "contact": {
+          "result": "unknown"
+        }
+      },
+      "2gis": {
+        "card_id": null,
+        "card_url": null,
+        "post_ids": [
+          "U01",
+          "U02",
+          "U03",
+          "U04",
+          "U05",
+          "U06",
+          "U07",
+          "U08"
+        ],
+        "identity": {
+          "result": "unknown"
+        },
+        "service_scope": {
+          "result": "unknown"
+        },
+        "access": {
+          "result": "unknown"
+        },
+        "format": {
+          "result": "unknown"
+        },
+        "contact": {
+          "result": "unknown"
+        }
+      }
+    },
+    {
+      "id": "U-MARKS",
+      "address": "пл. Карла Маркса, 7",
+      "yandex": {
+        "card_id": null,
+        "card_url": null,
+        "post_ids": [
+          "U01",
+          "U02",
+          "U03",
+          "U04",
+          "U05",
+          "U06",
+          "U07",
+          "U08"
+        ],
+        "identity": {
+          "result": "unknown"
+        },
+        "service_scope": {
+          "result": "unknown"
+        },
+        "access": {
+          "result": "unknown"
+        },
+        "format": {
+          "result": "unknown"
+        },
+        "contact": {
+          "result": "unknown"
+        }
+      },
+      "2gis": {
+        "card_id": null,
+        "card_url": null,
+        "post_ids": [
+          "U01",
+          "U02",
+          "U03",
+          "U04",
+          "U05",
+          "U06",
+          "U07",
+          "U08"
+        ],
+        "identity": {
+          "result": "unknown"
+        },
+        "service_scope": {
+          "result": "unknown"
+        },
+        "access": {
+          "result": "unknown"
+        },
+        "format": {
+          "result": "unknown"
+        },
+        "contact": {
+          "result": "unknown"
+        }
+      }
+    },
+    {
+      "id": "U-IPP",
+      "address": "Ипподромская, 46",
+      "yandex": {
+        "card_id": null,
+        "card_url": null,
+        "post_ids": [
+          "U01",
+          "U02",
+          "U03",
+          "U04",
+          "U05",
+          "U06",
+          "U07",
+          "U08"
+        ],
+        "identity": {
+          "result": "unknown"
+        },
+        "service_scope": {
+          "result": "unknown"
+        },
+        "access": {
+          "result": "unknown"
+        },
+        "format": {
+          "result": "unknown"
+        },
+        "contact": {
+          "result": "unknown"
+        }
+      },
+      "2gis": {
+        "card_id": null,
+        "card_url": null,
+        "post_ids": [
+          "U01",
+          "U02",
+          "U03",
+          "U04",
+          "U05",
+          "U06",
+          "U07",
+          "U08"
+        ],
+        "identity": {
+          "result": "unknown"
+        },
+        "service_scope": {
+          "result": "unknown"
+        },
+        "access": {
+          "result": "unknown"
+        },
+        "format": {
+          "result": "unknown"
+        },
+        "contact": {
+          "result": "unknown"
+        }
+      }
+    },
+    {
+      "id": "U-KUT",
+      "address": "Кутателадзе, 4/4",
+      "yandex": {
+        "card_id": null,
+        "card_url": null,
+        "post_ids": [
+          "U01",
+          "U02",
+          "U03",
+          "U04",
+          "U05",
+          "U06",
+          "U07",
+          "U08"
+        ],
+        "identity": {
+          "result": "unknown"
+        },
+        "service_scope": {
+          "result": "unknown"
+        },
+        "access": {
+          "result": "unknown"
+        },
+        "format": {
+          "result": "unknown"
+        },
+        "contact": {
+          "result": "unknown"
+        }
+      },
+      "2gis": {
+        "card_id": null,
+        "card_url": null,
+        "post_ids": [
+          "U01",
+          "U02",
+          "U03",
+          "U04",
+          "U05",
+          "U06",
+          "U07",
+          "U08"
+        ],
+        "identity": {
+          "result": "unknown"
+        },
+        "service_scope": {
+          "result": "unknown"
+        },
+        "access": {
+          "result": "unknown"
+        },
+        "format": {
+          "result": "unknown"
+        },
+        "contact": {
+          "result": "unknown"
+        }
+      }
+    }
+  ]
+}
