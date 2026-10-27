@@ -23,6 +23,10 @@
     ... yougile.py mark --code VED-27 --claude "..." [--when "..."] [--chat ID]
         дописывает в описание пометку «🤖 Claude»: что делает ассистент, когда
         закинуть задачу ему и в каком чате она живёт. Больше ничего не меняет.
+    ... yougile.py done --code FIN-157        отметить выполненной (после «да» Володи)
+    ... yougile.py files --code VED-28 --path clients/arcars/reports/drafts-2026-10-27
+        дописывает кликабельные ссылки: папка на ПК и она же в GitHub.
+        В push — поле "files": "путь в волте".
 
 --where — «проект/доска/колонка» по названиям, без учёта регистра; хватает
 начала названия, если оно однозначно. Колонки по умолчанию нет: задача всегда
@@ -40,6 +44,7 @@ import re
 import sys
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
@@ -175,6 +180,17 @@ def claude_block(what: str, when: str | None = None, chat: str | None = None) ->
     return "<br>".join(lines)
 
 
+GITHUB = "https://github.com/volodtarasov-cyber/HyperCRM/tree/master"
+
+
+def files_block(rel: str) -> str:
+    """Кликабельные ссылки на файлы волта: папка на ПК и та же папка в GitHub (открывается и с телефона)."""
+    rel = rel.strip().strip("/").replace("\\", "/")
+    local = "file:///" + str(VAULT / rel).replace("\\", "/")
+    return (f'📁 Файлы: <a href="{local}">папка на ПК</a> · '
+            f'<a href="{GITHUB}/{urllib.parse.quote(rel)}">GitHub</a> — {rel}')
+
+
 def prepare(key: str, task: dict, projects: list[dict], users: list[dict] | None) -> tuple[dict, str]:
     """Тело запроса и подпись «проект / доска / колонка». Падает до любой записи."""
     parts = [x for x in str(task.get("where", "")).split("/") if x.strip()]
@@ -188,6 +204,9 @@ def prepare(key: str, task: dict, projects: list[dict], users: list[dict] | None
     body: dict = {"title": task["title"].strip(), "columnId": c["id"]}
     if task.get("description"):
         body["description"] = task["description"].replace("\n", "<br>")
+    if task.get("files"):
+        block = files_block(task["files"])
+        body["description"] = f"{body['description']}<br><br>{block}" if body.get("description") else block
     if task.get("claude"):
         block = claude_block(task["claude"], task.get("when"), task.get("chat"))
         body["description"] = f"{body['description']}<br><br>{block}" if body.get("description") else block
@@ -269,6 +288,26 @@ def cmd_mark(a: argparse.Namespace) -> None:
     print(f"✓ {a.code.upper()} «{t['title']}» — пометка добавлена")
 
 
+def cmd_files(a: argparse.Namespace) -> None:
+    key = load_key()
+    t = find_task(key, a.code)
+    old = t.get("description") or ""
+    if "📁 Файлы:" in old:
+        raise SystemExit(f"✗ {a.code}: ссылки на файлы уже есть — `show`, чтобы посмотреть")
+    block = files_block(a.path)
+    call("PUT", f"/tasks/{t['id']}", {"description": f"{old}<br><br>{block}" if old else block}, key=key)
+    print(f"✓ {a.code.upper()} «{t['title']}» — ссылки на {a.path} добавлены")
+
+
+def cmd_done(a: argparse.Namespace) -> None:
+    key = load_key()
+    t = find_task(key, a.code)
+    if t.get("completed"):
+        raise SystemExit(f"✗ {a.code}: уже выполнена")
+    call("PUT", f"/tasks/{t['id']}", {"completed": True}, key=key)
+    print(f"✓ {a.code.upper()} «{t['title']}» — выполнена")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="YouGile: задачи по проектам")
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -299,6 +338,13 @@ def main() -> int:
     mk.add_argument("--when", help="когда закинуть задачу ассистенту")
     mk.add_argument("--chat", help="id сессии Claude Code")
     mk.set_defaults(fn=cmd_mark)
+    fl = sub.add_parser("files")
+    fl.add_argument("--code", required=True)
+    fl.add_argument("--path", required=True, help="папка или файл волта, например clients/arcars/reports/drafts-2026-10-27")
+    fl.set_defaults(fn=cmd_files)
+    dn = sub.add_parser("done")
+    dn.add_argument("--code", required=True)
+    dn.set_defaults(fn=cmd_done)
     a = ap.parse_args()
     a.fn(a)
     return 0
