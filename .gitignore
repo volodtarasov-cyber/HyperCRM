@@ -36,6 +36,10 @@ tmp/
 .tools/review-state.json
 .tools/board.html
 
+# Local social publishing: browser sessions, account settings, screenshots, receipts
+.tools/local/social-publisher/
+.tools/local/flagman-vii/
+
 # Local analytics databases are generated on each device and exceed GitHub limits
 **/data/*.sqlite3
 **/data/*.sqlite
@@ -61,3 +65,15 @@ tmp/
 clients/unisec-novosibirsk/assets/yandex-maps-services/*
 !clients/unisec-novosibirsk/assets/yandex-maps-services/source/
 !clients/unisec-novosibirsk/assets/yandex-maps-services/khimchistka-pukhovika-novosibirsk-unisec-v9.jpg
+
+# Raw XMLRiver responses for Samara detailing semantics
+.tools/projects/samara-detailing/seo/data/
+# Списки дожима Левши — телефоны и имена клиентов
+.tools/projects/levsha/sales/inbox/
+.tools/projects/levsha/sales/out/
+
+# Выгрузка Telegram-канала Arcars и то, что из неё собирает parse_channel.py
+.tools/projects/arcars/telegram/export/
+.tools/projects/arcars/telegram/out/
+.tools/universal/seo-dashboard/out/
+.tools/local/yougile/

@@ -1,0 +1,28 @@
+# Сайты под SEO-заводами — реестр общего дашборда.
+#
+# Домен, репозиторий сайта и папку статей дашборд берёт из site.config.yml
+# самого завода: один факт — один владелец. Здесь только то, чего там нет.
+# Новый сайт = новая копия завода (.tools/README.md#вне-волта) + строка здесь.
+#
+#   id          — имя страницы дашборда (out/<id>.html)
+#   factory     — папка копии завода
+#   vault_card  — карточка в волте: её отметки [вне] попадают во «Внимание»,
+#                 Word на согласование ищется в соседней папке reports/
+#   live        — проверять живой сайт (false, пока сайт не выложен)
+#   dist        — сборка, которая сейчас на сервере, относительно сайта:
+#                 по ней считаются входящие внутренние ссылки
+#   rubrics     — файл сайта с названиями рубрик (необязательно)
+
+sites:
+  - id: arcars
+    factory: D:\SecondBrain\seo-factory
+    vault_card: clients/arcars/_index.md
+    live: true
+    dist: dist-deploy
+    rubrics: src/data/blog-rubrics.ts
+
+  - id: volodtarasov
+    factory: D:\SecondBrain\seo-factory-volodtarasov
+    vault_card: projects/ai-infobiz/product/site-lazyhim.md
+    live: false
+    dist: dist

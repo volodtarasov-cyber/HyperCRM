@@ -1,108 +1,49 @@
-# YouGile API-клиент
+# YouGile — задачи по проектам
 
-Заводит карточки в YouGile через REST API v2. **Запускать локально** —
-из песочницы Claude Code сеть до YouGile закрыта (их хостинг режет облачный egress),
-а твоя машина до YouGile доходит (раз десктоп-приложение работает).
+Клиент REST API v2 (`yougile.py`, только стандартная библиотека Python). Ассистент
+предлагает задачи, создаёт их **только после явного «да»** Володи на конкретный
+список — правило в `CLAUDE.md`, раздел «Tasks in YouGile». Колонки по умолчанию нет:
+каждая задача сразу идёт в доску и колонку своего проекта.
 
----
+## Подключение — один раз
 
-## ⚡ Авто-режим: «сказал ассистенту → появилось в YouGile»
+Двойной щелчок по `Подключить YouGile.bat`: логин и пароль вводятся в окне, в чат и
+в файлы не попадают; выбирается компания; ключ сохраняется в
+`.tools/local/yougile/key.env` (вне git). Ключ не истекает; удалить — в YouGile
+или запросом `DELETE /auth/keys/{key}`. После подключения окно покажет дерево
+«проект → доска → колонка».
 
-Ассистент дописывает задачи в `queue.jsonl`, фоновый launchd-агент на маке сам
-их заливает (по изменению файла + раз в 5 мин). Идемпотентно — дубли не плодит.
+## Команды
 
-**Настройка один раз:**
-```bash
-cd "/Users/vladimirtarasov/Yandex.Disk.localized/HyperCRM/.tools/universal/yougile"
-
-# 1. получить ключ и id доски (см. раздел ниже «Разовая настройка» шаги 1-4)
-python3 yougile.py companies --login ПОЧТА --password ПАРОЛЬ
-python3 yougile.py make-key --login ПОЧТА --password ПАРОЛЬ --company-id <id>
-export YOUGILE_API_KEY=<ключ>
-python3 yougile.py boards          # покажет id всех досок
-
-# 2. карта досок: вписать id в boards.json (по проектам)
-nano boards.json                   # заменить ВСТАВЬ_ID_ДОСКИ у левша/инфобиз/трафик/default
-
-# 3. вписать YOUGILE_API_KEY в plist (id доски тут уже не нужен — он в boards.json)
-nano com.hypercrm.yougile-sync.plist     # заменить ВСТАВЬ_КЛЮЧ
-
-# 4. установить агент
-cp com.hypercrm.yougile-sync.plist ~/Library/LaunchAgents/
-launchctl load ~/Library/LaunchAgents/com.hypercrm.yougile-sync.plist
 ```
-Готово. Дальше ассистент пишет в очередь — карточки появляются сами.
-
-**Как выбирается доска:** ассистent в каждой задаче ставит `"project":"левша"` (или инфобиз/трафик),
-`sync.py` берёт id из `boards.json`. Нет проекта или не в карте → доска `default`.
-Можно жёстко задать `"board_id"` в задаче — тогда он в приоритете.
-Проверка работы: `cat pushed.log`. Снять: `launchctl unload ~/Library/LaunchAgents/com.hypercrm.yougile-sync.plist`.
-
-> Ключ лежит в plist в `~/Library/LaunchAgents/` (вне Yandex.Disk) — в облако не утекает.
-
----
-
-## Ручной режим (разовая массовая заливка)
-
-## Разовая настройка (5 минут)
-
-```bash
-cd "/Users/vladimirtarasov/Yandex.Disk.localized/HyperCRM/.tools/universal/yougile"
-
-# 1. узнать companyId
-python3 yougile.py companies --login ТВОЯ_ПОЧТА --password ПАРОЛЬ
-#   → строка вида:  <id>  Ананас Маркетинг
-
-# 2. создать API-ключ
-python3 yougile.py make-key --login ТВОЯ_ПОЧТА --password ПАРОЛЬ --company-id <id>
-#   → выведет ключ
-
-# 3. сохранить ключ в текущей сессии терминала
-export YOUGILE_API_KEY=<ключ>
+.tools/venv/Scripts/python.exe .tools/universal/yougile/yougile.py tree
+... yougile.py users
+... yougile.py tasks  --where "Arcars/Задачи/В работе"
+... yougile.py create --where "Arcars/Задачи/Новые" --title "…" [--description …] [--deadline ГГГГ-ММ-ДД] [--assign "Имя"]
+... yougile.py push   --file batch.json [--dry-run]
+... yougile.py show   --code VED-27
+... yougile.py mark   --code VED-27 --claude "что делает ассистент" [--when "когда закинуть"] [--chat <id сессии>]
 ```
 
-## Узнать, в какую доску лить
+**Пометка «🤖 Claude».** Если в задаче есть шаг ассистента, в конце описания
+стоит блок: что сделает ассистент, когда закинуть ему задачу и в каком чате она
+живёт (id сессии Claude Code, `claude --resume <id>`). Закинуть — назвать код
+задачи в любом чате волта; `show` прочитает её из YouGile. В `push` то же даётся
+полями `claude`, `when`, `chat`. `mark` только дописывает этот блок и ничего
+больше в задаче не меняет.
 
-```bash
-python3 yougile.py boards                 # список досок с id
-python3 yougile.py columns --board-id B   # колонки выбранной доски
-```
+`--where` — названия «проект/доска/колонка», без учёта регистра, достаточно
+однозначного начала. `push` берёт список `[{"where", "title", "description",
+"deadline", "assign"}]`, сначала проверяет все адреса и исполнителей и только потом
+создаёт — опечатка не оставит половину списка в YouGile. `--dry-run` показывает,
+куда что ляжет, ничего не создавая.
 
-## Залить задачи
+## Ограничения
 
-```bash
-python3 yougile.py push --file infobiz-tasks.json --board-id B --create-columns
-```
+- Не больше 50 запросов в минуту на компанию; при 429 скрипт ждёт и повторяет.
+- Создание, чтение и пометка «🤖 Claude». Перенос, закрытие и удаление задач скрипт
+  не умеет — и не должен без отдельного решения.
 
-`--create-columns` — создаст недостающие колонки из файла. Без флага задачи в
-несуществующие колонки пропускаются (чтобы не плодить лишнее).
-
-## Формат файла задач
-
-```json
-{
-  "board": "Инфобиз",
-  "columns": [
-    {
-      "title": "🔥 Сейчас",
-      "tasks": [
-        {"title": "Задача", "description": "пояснение", "checklist": ["шаг 1", "шаг 2"]}
-      ]
-    }
-  ]
-}
-```
-
-`description` и `checklist` — опциональны. Готовый набор по инфобизу →
-[infobiz-tasks.json](infobiz-tasks.json). Новые наборы генерит ассистент по запросу.
-
-## Безопасность
-
-- **Ключ не храним в файлах этой папки** — она в Yandex.Disk (синхронизируется в облако).
-  Держи ключ в `export YOUGILE_API_KEY=...` (на сессию) или в файле вне vault.
-- Логин/пароль нужны только разово для `companies` / `make-key`. Дальше — только ключ.
-
-## Ограничение
-
-Ассистент (Claude Code) **не может запускать это сам** — его bash-окружение не
-достучивается до YouGile. Генерит файлы задач, запускаешь ты.
+Прежняя версия (до 2026-10-27, macOS: очередь `queue.jsonl` и launchd-агент,
+заливавший задачи сам) так и не была настроена — в карте досок стояли заглушки.
+Автозаливка без подтверждения противоречит нынешнему правилу и не перенесена.
