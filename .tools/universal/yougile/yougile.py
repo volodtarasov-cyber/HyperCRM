@@ -25,7 +25,7 @@
         закинуть задачу ему и в каком чате она живёт. Больше ничего не меняет.
     ... yougile.py done --code FIN-157        отметить выполненной (после «да» Володи)
     ... yougile.py files --code VED-28 --path clients/arcars/reports/drafts-2026-10-27
-        дописывает кликабельные ссылки: папка на ПК и она же в GitHub.
+        дописывает кликабельную ссылку на папку в GitHub.
         В push — поле "files": "путь в волте".
 
 --where — «проект/доска/колонка» по названиям, без учёта регистра; хватает
@@ -184,11 +184,10 @@ GITHUB = "https://github.com/volodtarasov-cyber/HyperCRM/tree/master"
 
 
 def files_block(rel: str) -> str:
-    """Кликабельные ссылки на файлы волта: папка на ПК и та же папка в GitHub (открывается и с телефона)."""
+    """Кликабельная ссылка на файлы волта в GitHub (открывается и с телефона).
+    Ссылки file:// и vscode:// YouGile вырезает из описания — проверено 2026-10-27."""
     rel = rel.strip().strip("/").replace("\\", "/")
-    local = "file:///" + str(VAULT / rel).replace("\\", "/")
-    return (f'📁 Файлы: <a href="{local}">папка на ПК</a> · '
-            f'<a href="{GITHUB}/{urllib.parse.quote(rel)}">GitHub</a> — {rel}')
+    return f'📁 Файлы: <a href="{GITHUB}/{urllib.parse.quote(rel)}">{rel}</a>'
 
 
 def prepare(key: str, task: dict, projects: list[dict], users: list[dict] | None) -> tuple[dict, str]:
