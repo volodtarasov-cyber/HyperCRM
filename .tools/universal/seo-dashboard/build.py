@@ -216,6 +216,16 @@ def collect_site(conf: dict, live: bool) -> dict:
             elif m := re.match(r"### (\S+) \((\d+)\)", line):
                 audit_groups.append((level, m.group(1), int(m.group(2))))
 
+    # Позиции: последний снимок m3. Пусто в yandex_pos — «не замерено» или «нет в топ-30», не обвал
+    snaps = sorted((factory / "engine" / "seo-agent" / "data" / "rankings").glob("????-??-??.csv"))
+    ranks: list[tuple[str, float]] = []
+    if snaps:
+        with snaps[-1].open(encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                if r.get("yandex_pos"):
+                    ranks.append((r["keyword"], float(r["yandex_pos"])))
+        ranks.sort(key=lambda x: x[1])
+
     gsc = bool(keys.get("GSC_SERVICE_ACCOUNT_FILE") or keys.get("GSC_OAUTH_REFRESH_TOKEN"))
     return {
         "id": conf["id"], "name": cfg["site"].get("name", conf["id"]), "domain": domain, "live": live,
@@ -230,6 +240,9 @@ def collect_site(conf: dict, live: bool) -> dict:
         "errors_today": errors_today,
         "audit_date": audits[-1].parent.name if audits else None,
         "audit_groups": audit_groups,
+        "rank_date": snaps[-1].stem if snaps else None,
+        "rank_total": sum(1 for _ in snaps[-1].open(encoding="utf-8")) - 1 if snaps else 0,
+        "ranks": ranks,
     }
 
 
@@ -289,7 +302,7 @@ nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px}nav a{text-decoration
 h1{margin:0 0 4px;font-size:26px}h2{font-size:17px;margin:0 0 10px}.meta{color:var(--dim);margin:0 0 20px}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:20px}
 .tile{background:var(--card);border:1px solid var(--line);padding:14px 16px}.tile b{display:block;font-size:28px;line-height:1.1}.tile span{color:var(--dim)}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}.box{background:var(--card);border:1px solid var(--line);padding:16px 18px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}.box{background:var(--card);border:1px solid var(--line);padding:16px 18px}
 .box ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}.box li small{display:block;color:var(--dim)}
 .ok b{color:var(--ok)}.off b{color:var(--bad)}
 .att{list-style:none;margin:0;padding:0;display:grid;gap:6px}.att li{padding:8px 12px;border-left:4px solid var(--line);background:var(--card)}
@@ -336,6 +349,14 @@ def render_site(s: dict, sites: list[dict], built: str) -> str:
     audit = "".join(f'<li><b>{n}</b> · {e(AUDIT_RU.get(k, k))}<small>{e(lvl.lower())}</small></li>'
                     for lvl, k, n in s["audit_groups"])
     audit = audit or ("<li>замечаний нет</li>" if s["audit_date"] else "<li>не запускался</li>")
+    rk = s["ranks"]
+    if s["rank_date"]:
+        top10, top30 = sum(1 for _, p in rk if p <= 10), sum(1 for _, p in rk if p <= 30)
+        pos = (f'<li><b>{top10}</b> · в топ-10 Яндекса</li><li><b>{top30}</b> · в топ-30</li>'
+               f'<li><b>{s["rank_total"] - len(rk)}</b> · дальше 30-го места</li>'
+               + "".join(f'<li><b>{p:.0f}</b> · {e(k)}</li>' for k, p in rk[:8]))
+    else:
+        pos = "<li>не снимались</li>"
     trs = []
     for r in rows:
         st = r["status"]
@@ -363,7 +384,9 @@ def render_site(s: dict, sites: list[dict], built: str) -> str:
             f'<section><h2>Внимание</h2><ul class="att">{att_html(attention(s)) or "<li class=grey>всё спокойно</li>"}</ul></section>'
             f'<div class="tiles">{tiles(s["rows"])}</div>'
             f'<div class="grid"><div class="box"><h2>Подключения</h2><ul>{integ}</ul></div>'
-            f'<div class="box"><h2>Техаудит {e(s["audit_date"] or "")}</h2><ul>{audit}</ul></div></div>'
+            f'<div class="box"><h2>Техаудит {e(s["audit_date"] or "")}</h2><ul>{audit}</ul></div>'
+            f'<div class="box"><h2>Позиции в Яндексе {e(s["rank_date"] or "")}</h2><ul>{pos}</ul>'
+            f'<p class="meta">из {s["rank_total"]} запросов · раз в неделю</p></div></div>'
             f'<section><h2>Статьи и темы</h2>{table}</section>')
     return page(f'{s["name"]} — дашборд', nav_html(sites, s["id"]), body, built)
 

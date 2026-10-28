@@ -9,6 +9,9 @@
 
 Аудит — m2 завода без PageSpeed и без Telegram: бесплатно, около минуты на сайт. Сайты с
 live: false пропускаются. Ошибка одного завода не останавливает остальные и сборку.
+Раз в 7 дней (по дате последнего снимка — пропущенный догоняется) ещё и съём позиций:
+m3 завода, живая выдача Яндекса через XMLRiver, ≈0,075 ₽ за ключ (87 ключей ≈ 6,5 ₽).
+Только где в site.config.yml завода features.rankings: true.
 Лог — out/daily.log (последние 200 строк), out/ вне git.
 """
 from __future__ import annotations
@@ -22,6 +25,7 @@ from pathlib import Path
 import yaml
 
 HERE = Path(__file__).resolve().parent
+RANKINGS_EVERY = 7   # дней между платными съёмами позиций
 LOG = HERE / "out" / "daily.log"
 VENV_PY = HERE.parents[1] / "venv" / "Scripts" / "python.exe"
 
@@ -45,6 +49,11 @@ def run(cmd: list[str], cwd: Path, timeout: int) -> tuple[bool, str]:
     return p.returncode == 0, tail[0][:200]
 
 
+def rankings_on(factory: Path) -> bool:
+    cfg = yaml.safe_load((factory / "site.config.yml").read_text(encoding="utf-8")) or {}
+    return bool((cfg.get("features") or {}).get("rankings"))
+
+
 def main() -> int:
     sites = (yaml.safe_load((HERE / "sites.yml").read_text(encoding="utf-8")) or {}).get("sites", [])
     failed = 0
@@ -61,6 +70,13 @@ def main() -> int:
                        factory / "engine" / "seo-agent", timeout=900)
         log(f"{'✓' if ok else '✗'} {s['id']}: техаудит{'' if ok else ' — ' + tail}")
         failed += not ok
+        snaps = sorted((factory / "engine" / "seo-agent" / "data" / "rankings").glob("????-??-??.csv"))
+        last = dt.date.fromisoformat(snaps[-1].stem) if snaps else None
+        if rankings_on(factory) and (not last or (dt.date.today() - last).days >= RANKINGS_EVERY):
+            ok, tail = run([str(py), "orchestrator.py", "m3", "--refresh-seeds", "--dry-run"],
+                           factory / "engine" / "seo-agent", timeout=1800)
+            log(f"{'✓' if ok else '✗'} {s['id']}: позиции{'' if ok else ' — ' + tail}")
+            failed += not ok
     ok, tail = run([str(VENV_PY), "build.py"], HERE, timeout=300)
     log(f"{'✓' if ok else '✗'} дашборд собран{'' if ok else ' — ' + tail}")
     return 1 if failed or not ok else 0
