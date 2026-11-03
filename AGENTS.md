@@ -11,17 +11,17 @@
 
 ## Что нужно знать до первого действия
 
-| Вопрос | Где ответ в CLAUDE.md |
+| Вопрос | Где ответ |
 |---|---|
-| Приоритеты и целевая модель | «Projects» |
-| Где живёт клиент: здесь или в своём репозитории | «Repository rule: where a client lives» |
-| Как завести клиента и обновить реестр | «Onboard a client / update the registry» |
-| Куда класть решение / гипотезу / идею | «Where things live», «Scenarios» |
-| Что НЕ ведём в волте и что заморожено | «What we do NOT keep in the vault», «Frozen files» |
-| Какой скил вызвать под запрос | «Which user skill to call when» |
-| Тулсы и как их запускать | «Technical tools» |
-| Месячная гигиена системы | «System hygiene» |
-| Что приватно, что можно отдавать | «Privacy» |
+| Приоритеты и целевая модель | `CLAUDE.md` → «Projects» |
+| Где живёт клиент: здесь или в своём репозитории | `CLAUDE.md` → «Where a client lives» |
+| Как завести клиента и обновить реестр | `system/rules/scenarios.md` → «Onboard a client / update the registry» |
+| Куда класть решение / гипотезу / идею | `CLAUDE.md` → «Where things live», «Scenarios»; шаги — `system/rules/scenarios.md` |
+| Что НЕ ведём в волте и что заморожено | `CLAUDE.md` → «Where things live» |
+| Контракты состояния, чекбоксов, данных, терминологии | `system/rules/contracts.md` |
+| Какой скил вызвать под запрос, тулсы | `system/rules/skills-and-tools.md`, `.tools/README.md` |
+| Месячная гигиена системы, шаблон для передачи | `system/rules/hygiene.md` |
+| Что приватно, что можно отдавать | `CLAUDE.md` → «Privacy» |
 
 ## Инварианты
 

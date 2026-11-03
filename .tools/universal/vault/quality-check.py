@@ -722,7 +722,7 @@ def check_canonical_consistency(today: dt.date) -> list[Issue]:
 
 def exportable_files() -> list[Path]:
     paths = [ROOT / "CLAUDE.md", ROOT / "README.md"]
-    for base in (ROOT / "system" / "templates", ROOT / "knowledge"):
+    for base in (ROOT / "system" / "templates", ROOT / "system" / "rules", ROOT / "knowledge"):
         if base.exists():
             paths.extend(base.rglob("*.md"))
     marketing_os = ROOT / "marketing-os"
