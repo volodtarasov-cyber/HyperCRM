@@ -163,6 +163,7 @@ def numbers(s: dict, today: dt.date) -> dict:
         "issues": sum(n for _, _, n in s["audit_groups"]),
         "index": (kc.get("index") or {}).get("ring") or {},
         "sem": kc.get("semantics") or {},
+        "traffic": (kc.get("traffic") or {}).get("d30") if (kc.get("traffic") or {}).get("source") not in (None, "none") else None,
     }
 
 
@@ -200,7 +201,7 @@ def render_site(s: dict, att: list[tuple[str, str]], order: list[str], check_hin
     ix, sem = n["index"], n["sem"]
     go_of = ix.get("of") or 0
     index_kpi = kpi("Индекс Google", f'{ix.get("go")} из {go_of}' if ix.get("go") is not None else "—",
-                    "Яндекс: нет токена Вебмастера" if ix.get("ya") is None else f'Яндекс: {ix.get("ya")}',
+                    f'Яндекс: {ix.get("ya")}' if ix.get("ya") is not None else (ix.get("ya_note") or "Яндекс: нет данных"),
                     ring([((ix.get("go") or 0) / go_of if go_of else 0, "var(--blue)")]), dim=ix.get("go") is None)
     sem_total = sem.get("total") or 0
     pub_n = c.get("Опубликована", 0)
@@ -214,6 +215,9 @@ def render_site(s: dict, att: list[tuple[str, str]], order: list[str], check_hin
             + kpi("Яндекс · топ-10", str(n["top10"]) if s["rank_date"] else "—",
                   f'в топ-30: {n["top30"]} из {s["rank_total"]}' if s["rank_date"] else "позиции не снимались",
                   dim=not s["rank_date"])
+            + kpi("Из поиска · 30 дн.", str(n["traffic"]) if n["traffic"] is not None else "—",
+                  "визитов по Метрике" if n["traffic"] is not None else "Метрика не подключена",
+                  dim=n["traffic"] is None)
             + index_kpi
             + kpi("Техаудит", str(n["issues"]) if s["audit_date"] else "—",
                   f'замечаний · {s["audit_date"]}' if s["audit_date"] else "не запускался", dim=not s["audit_date"])
