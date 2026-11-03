@@ -31,6 +31,7 @@ import argparse
 import datetime as dt
 import json
 import os
+import subprocess
 import re
 import sys
 import urllib.parse
@@ -112,9 +113,22 @@ def is_frozen(path: Path) -> bool:
     )
 
 
+def git_ignored_dirs() -> set:
+    """Папки, закрытые .gitignore (локальные данные, не часть живого слоя)."""
+    try:
+        out = subprocess.run(
+            ["git", "ls-files", "--others", "--ignored", "--exclude-standard", "--directory", "-z"],
+            cwd=ROOT, capture_output=True, check=True,
+        ).stdout.decode("utf-8", "replace")
+    except (OSError, subprocess.CalledProcessError):
+        return set()
+    return {(ROOT / item.rstrip("/")).resolve() for item in out.split("\0") if item.endswith("/")}
+
+
 def iter_markdown():
+    ignored = git_ignored_dirs()
     for dirpath, dirnames, filenames in os.walk(ROOT):
-        dirnames[:] = [name for name in dirnames if name not in SKIP_DIRS]
+        dirnames[:] = [name for name in dirnames if name not in SKIP_DIRS and (Path(dirpath) / name).resolve() not in ignored]
         for name in filenames:
             if not name.endswith(".md"):
                 continue
