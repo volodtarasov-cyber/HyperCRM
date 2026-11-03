@@ -12,7 +12,8 @@
 
     .tools/venv/Scripts/python.exe .tools/universal/seo-dashboard/build.py [--no-live] [--only arcars]
 
-Результат — out/index.html и out/<id>.html рядом (не версионируются).
+Результат — один файл out/index.html: вкладка «Все сайты» и по вкладке на сайт,
+выбранная вкладка живёт в адресе (#arcars). out/ не версионируется.
 """
 from __future__ import annotations
 
@@ -86,7 +87,12 @@ def env_keys(factory: Path) -> dict[str, bool]:
 def rubric_labels(path: Path | None) -> dict[str, str]:
     if not path or not path.exists():
         return {}
-    return dict(re.findall(r"['\"]?([a-z]+)['\"]?\s*:\s*['\"]([^'\"]+)['\"]", path.read_text(encoding="utf-8")))
+    # Только «слово: 'подпись'» в начале строки: LABELS с ключом 'koreya-auktsiony' в кавычках
+    # иначе перетирал тему auktsiony у всех стран («Япония · Корея · Проверка авто»).
+    text = path.read_text(encoding="utf-8")
+    labels = dict(re.findall(r"^\s*([a-z]+)\s*:\s*['\"]([^'\"]+)['\"]", text, re.M))
+    labels.update(re.findall(r"^\s*'([a-z]+-[a-z]+)'\s*:\s*'([^']+)'", text, re.M))   # подписи целиком
+    return labels
 
 
 def inbound_links(dist: Path) -> Counter:
@@ -194,7 +200,7 @@ def collect_site(conf: dict, live: bool) -> dict:
 
     for r in rows:
         c = r.get("category", "")
-        r["rubric"] = " · ".join(labels.get(x, x) for x in c.split("-", 1)) if c else ""
+        r["rubric"] = labels.get(c) or (" · ".join(labels.get(x, x) for x in c.split("-", 1)) if c else "")
 
     keys = env_keys(factory)
     metrika = None
@@ -203,7 +209,11 @@ def collect_site(conf: dict, live: bool) -> dict:
             metrika = m.group(1)
     log = cf / "logs" / f"run-{TODAY:%Y-%m-%d}.log"
     # Только последний прогон: утренний сбой, уже починенный, не должен висеть красным весь день
-    last_run = log.read_text(encoding="utf-8").split("=== content-factory: запуск")[-1] if log.exists() else ""
+    # Самопроверка пакета (doctor, mechanics) гоняет тестовую статью во временной папке и пишет
+    # в тот же лог без маркера запуска — её ошибки не считаем.
+    text = log.read_text(encoding="utf-8") if log.exists() else ""
+    marker = "=== content-factory: запуск"
+    last_run = text.split(marker)[-1] if marker in text else ""
     errors_today = sum(1 for l in last_run.splitlines() if "[ERROR]" in l)
 
     audits = sorted((factory / "engine" / "seo-agent" / "data" / "audits").glob("*/report.md"))
@@ -240,6 +250,8 @@ def collect_site(conf: dict, live: bool) -> dict:
         "errors_today": errors_today,
         "audit_date": audits[-1].parent.name if audits else None,
         "audit_groups": audit_groups,
+        # Штатная панель завода (пакет ≥1.32): своя у каждой копии, открываем отсюда
+        "komcentr": (factory / "Командный-центр.html").as_uri() if (factory / "Командный-центр.html").exists() else "",
         "rank_date": snaps[-1].stem if snaps else None,
         "rank_total": sum(1 for _ in snaps[-1].open(encoding="utf-8")) - 1 if snaps else 0,
         "ranks": ranks,
@@ -316,21 +328,25 @@ td a{font-weight:600}.sub,td small{display:block;color:var(--dim);font-size:13px
 .s3 .st{color:var(--acc)}.s4{opacity:.6}
 .chk{display:inline-block;font-size:12px;padding:1px 6px;margin:0 4px 4px 0}.chk.y{background:var(--okb);color:var(--ok)}.chk.n{background:var(--badb);color:var(--bad);font-weight:700}
 .x{min-width:240px}section{margin-bottom:24px}
+.tab{display:none}.tab.on{display:block}.fc{font-size:14px;font-weight:600}
 @media (max-width:820px){.grid{grid-template-columns:1fr}table,thead,tbody,tr,td{display:block}thead{display:none}tr{border-bottom:1px solid var(--line)}td{border:0;padding:6px 12px}}
 """
 
 
-def page(title: str, nav: str, body: str, built: str) -> str:
+def page(tabs: list[tuple[str, str, str]], built: str) -> str:
+    """Один файл, вкладки: (id, подпись, тело). Без скрипта видны все подряд."""
+    nav = "".join(f'<a href="#{i}" data-tab="{i}">{e(label)}</a>' for i, label, _ in tabs)
+    panes = "".join(f'<div class="tab" id="{i}">{body}</div>' for i, _, body in tabs)
+    js = ("<script>function show(){var h=location.hash.slice(1),p=document.getElementById(h);"
+          "if(!p||!p.classList.contains('tab'))h='" + tabs[0][0] + "';"
+          "document.querySelectorAll('.tab').forEach(function(x){x.classList.toggle('on',x.id===h)});"
+          "document.querySelectorAll('nav a').forEach(function(a){a.classList.toggle('on',a.dataset.tab===h)});"
+          "scrollTo(0,0)}addEventListener('hashchange',show);show()</script>")
     return (f'<!doctype html><html lang="ru"><head><meta charset="utf-8">'
-            f'<meta name="viewport" content="width=device-width, initial-scale=1"><title>{e(title)}</title>'
-            f"<style>{CSS}</style></head><body><div class=\"wrap\">{nav}{body}"
-            f'<p class="meta">Собрано {e(built)}</p></div></body></html>')
-
-
-def nav_html(sites: list[dict], current: str) -> str:
-    links = [f'<a href="index.html" class="{"on" if current == "index" else ""}">Все сайты</a>']
-    links += [f'<a href="{s["id"]}.html" class="{"on" if current == s["id"] else ""}">{e(s["name"])}</a>' for s in sites]
-    return f"<nav>{''.join(links)}</nav>"
+            f'<meta name="viewport" content="width=device-width, initial-scale=1"><title>SEO-заводы — дашборд</title>'
+            f"<style>{CSS}</style><noscript><style>.tab{{display:block}}</style></noscript></head>"
+            f'<body><div class="wrap"><nav>{nav}</nav>{panes}'
+            f'<p class="meta">Собрано {e(built)}</p></div>{js}</body></html>')
 
 
 def tiles(rows: list[dict]) -> str:
@@ -343,7 +359,7 @@ def att_html(items: list[tuple[str, str]], site: str = "") -> str:
     return "".join(f'<li class="{lvl}">{tag}{e(t)}</li>' for lvl, t in items)
 
 
-def render_site(s: dict, sites: list[dict], built: str) -> str:
+def render_site(s: dict) -> str:
     rows = sorted(s["rows"], key=lambda r: (ORDER.index(r["status"]), r.get("date") or "", r["title"]))
     integ = "".join(f'<li class="{"ok" if ok else "off"}"><b>{e(n)}</b> — {e(st)}</li>' for n, st, ok in s["integrations"])
     audit = "".join(f'<li><b>{n}</b> · {e(AUDIT_RU.get(k, k))}<small>{e(lvl.lower())}</small></li>'
@@ -380,6 +396,8 @@ def render_site(s: dict, sites: list[dict], built: str) -> str:
     table = (f'<table><thead><tr><th>Статус</th><th>Статья / тема</th><th>Запрос · частота</th><th>Дата</th>'
              f'<th>Проверка</th></tr></thead><tbody>{"".join(trs)}</tbody></table>') if trs else '<p class="meta">Статей и тем пока нет.</p>'
     card = f' · карточка: {e(s["card"])}' if s["card"] else ""
+    if s.get("komcentr"):
+        card += f' · <a class="fc" href="{e(s["komcentr"])}" target="_blank">Командный центр завода</a>'
     body = (f'<h1>{e(s["name"])} — {e(s["domain"])}</h1><p class="meta">Блог и SEO-завод{card}</p>'
             f'<section><h2>Внимание</h2><ul class="att">{att_html(attention(s)) or "<li class=grey>всё спокойно</li>"}</ul></section>'
             f'<div class="tiles">{tiles(s["rows"])}</div>'
@@ -388,10 +406,10 @@ def render_site(s: dict, sites: list[dict], built: str) -> str:
             f'<div class="box"><h2>Позиции в Яндексе {e(s["rank_date"] or "")}</h2><ul>{pos}</ul>'
             f'<p class="meta">из {s["rank_total"]} запросов · раз в неделю</p></div></div>'
             f'<section><h2>Статьи и темы</h2>{table}</section>')
-    return page(f'{s["name"]} — дашборд', nav_html(sites, s["id"]), body, built)
+    return body
 
 
-def render_index(sites: list[dict], built: str) -> str:
+def render_index(sites: list[dict]) -> str:
     all_att = []
     for s in sites:
         all_att += [(lvl, t, s["name"]) for lvl, t in attention(s) if lvl != "grey"]
@@ -404,7 +422,7 @@ def render_index(sites: list[dict], built: str) -> str:
         a = attention(s)
         issues = sum(n for _, _, n in s["audit_groups"])
         trs.append(
-            f'<tr><td><a href="{s["id"]}.html">{e(s["name"])}</a><div class="sub">{e(s["domain"])}'
+            f'<tr><td><a href="#{s["id"]}">{e(s["name"])}</a><div class="sub">{e(s["domain"])}'
             f'{"" if s["configured_live"] else " · не выложен"}</div></td>'
             + "".join(f'<td>{c.get(st, 0)}</td>' for st in ORDER[:4])
             + f'<td>{issues if s["audit_date"] else "—"}</td>'
@@ -414,7 +432,7 @@ def render_index(sites: list[dict], built: str) -> str:
             '<section><h2>Сайты</h2><table><thead><tr><th>Сайт</th><th>Опубликовано</th><th>На согласовании</th>'
             '<th>В очереди завода</th><th>Свободных тем</th><th>Замечаний аудита</th><th>Сломано / ждёт</th></tr></thead>'
             f'<tbody>{"".join(trs)}</tbody></table></section>')
-    return page("SEO-заводы — дашборд", nav_html(sites, "index"), body, built)
+    return body
 
 
 def main() -> int:
@@ -433,11 +451,13 @@ def main() -> int:
             print(f"✗ {c['id']}: {err}")
     built = dt.datetime.now().strftime("%d.%m.%Y %H:%M")
     OUT.mkdir(parents=True, exist_ok=True)
+    tabs = [("all", "Все сайты", render_index(sites))]
+    tabs += [(s["id"], s["name"], render_site(s)) for s in sites]
     for s in sites:
-        (OUT / f"{s['id']}.html").write_text(render_site(s, sites, built), encoding="utf-8")
+        (OUT / f"{s['id']}.html").unlink(missing_ok=True)   # до 2026-11-03 сайт был отдельной страницей
         c = Counter(r["status"] for r in s["rows"])
         print(f"{s['id']}: " + " · ".join(f"{k}: {c.get(k, 0)}" for k in ORDER))
-    (OUT / "index.html").write_text(render_index(sites, built), encoding="utf-8")
+    (OUT / "index.html").write_text(page(tabs, built), encoding="utf-8")
     print(OUT / "index.html")
     return 0
 
