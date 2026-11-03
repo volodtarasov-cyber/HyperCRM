@@ -77,3 +77,8 @@ clients/unisec-novosibirsk/assets/yandex-maps-services/*
 .tools/projects/arcars/telegram/out/
 .tools/universal/seo-dashboard/out/
 .tools/local/yougile/
+
+# Рабочие папки сессий и скиллов: выводы переносятся в карточку клиента, сами папки не версионируются
+outputs/
+.taste-skill/
+debug.log

@@ -1,0 +1,172 @@
+{
+  "source": "D:\\SecondBrain\\HyperCRM\\agency\\cases\\prachechnaya-vk-carousel.html",
+  "errors": [],
+  "checks": {
+    "grid_scenarios": [
+      "3:4",
+      "1:1",
+      "3:4 zoom 20%"
+    ],
+    "thumbnail_width": 130,
+    "mobile_horizontal_overflow": false
+  },
+  "layout": [
+    {
+      "slide": 1,
+      "width": 1080,
+      "height": 1350,
+      "overlap": false,
+      "textOverflow": false
+    },
+    {
+      "slide": 2,
+      "width": 1080,
+      "height": 1350,
+      "overlap": false,
+      "textOverflow": false
+    },
+    {
+      "slide": 3,
+      "width": 1080,
+      "height": 1350,
+      "overlap": false,
+      "textOverflow": false
+    },
+    {
+      "slide": 4,
+      "width": 1080,
+      "height": 1350,
+      "overlap": false,
+      "textOverflow": false
+    },
+    {
+      "slide": 5,
+      "width": 1080,
+      "height": 1350,
+      "overlap": false,
+      "textOverflow": false
+    },
+    {
+      "slide": 6,
+      "width": 1080,
+      "height": 1350,
+      "overlap": false,
+      "textOverflow": false
+    },
+    {
+      "slide": 7,
+      "width": 1080,
+      "height": 1350,
+      "overlap": false,
+      "textOverflow": false
+    }
+  ],
+  "cover_keys": [
+    {
+      "text": "Прачечная",
+      "x": 258.0625,
+      "y": 244,
+      "width": 563.875,
+      "height": 115.5,
+      "font": 110
+    },
+    {
+      "text": "и уборка",
+      "x": 318.859375,
+      "y": 359.5,
+      "width": 442.265625,
+      "height": 115.5,
+      "font": 110
+    },
+    {
+      "text": "1 919",
+      "x": 160,
+      "y": 482,
+      "width": 760,
+      "height": 230.875,
+      "font": 222
+    },
+    {
+      "text": "обращений",
+      "x": 160,
+      "y": 714.875,
+      "width": 760,
+      "height": 103.390625,
+      "font": 94
+    },
+    {
+      "text": "по 163 ₽",
+      "x": 160,
+      "y": 843.265625,
+      "width": 760,
+      "height": 141.359375,
+      "font": 124
+    }
+  ],
+  "body_copy": [
+    {
+      "text": "Прачечная",
+      "font": 38
+    },
+    {
+      "text": "Стирка ковров",
+      "font": 38
+    },
+    {
+      "text": "Клининг",
+      "font": 38
+    },
+    {
+      "text": "Химчистка мебели",
+      "font": 38
+    },
+    {
+      "text": "Нужно было проверить рекламу и стоимость обращения по этим н",
+      "font": 35
+    },
+    {
+      "text": "мебель, ковры и клининг",
+      "font": 38
+    },
+    {
+      "text": "прачечная",
+      "font": 38
+    },
+    {
+      "text": "Трафик вели в сообщения сообществ. Дали рекомендации по груп",
+      "font": 35
+    },
+    {
+      "text": "В исходном кейсе видео процесса названы лучшими креативами. ",
+      "font": 32
+    },
+    {
+      "text": "обращений",
+      "font": 32
+    },
+    {
+      "text": "за обращение",
+      "font": 32
+    },
+    {
+      "text": "рекламные расходы",
+      "font": 31
+    },
+    {
+      "text": "Общий результат по всем услугам проекта. Оплата агентства в ",
+      "font": 32
+    },
+    {
+      "text": "«Ребята, у нас рекордная выручка за месяц за все время!»",
+      "font": 40
+    },
+    {
+      "text": "В отзыве нет суммы. Число оплат и прибыль в кейсе тоже не ук",
+      "font": 32
+    },
+    {
+      "text": "Обсудим привлечение обращений на твои услуги.",
+      "font": 35
+    }
+  ]
+}

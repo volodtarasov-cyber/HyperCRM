@@ -50,14 +50,14 @@ SKIP_DIRS = {
     "outputs",
     "tmp",
 }
-FROZEN_PREFIXES = ("daily/", "reviews/", "recurring/")
+FROZEN_PREFIXES = ("_archive/",)
 FROZEN_MARKERS = ("/_archive/", "/backlog.md")
-PRIVATE_ROOTS = {"life", "team", "daily", "reviews", "recurring"}
+PRIVATE_ROOTS = {"life", "team", "_archive"}
 MARKDOWN_LINK_RE = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
 WIKI_LINK_RE = re.compile(r"\[\[([^\]|#]+)(?:#[^\]|]+)?(?:\|[^\]]+)?\]\]")
 DATE_RE = re.compile(r"\b(20\d{2}-\d{2}-\d{2})\b")
 HYP_HEADING_RE = re.compile(r"(?m)^###\s+(HYP-[^|\n]+)\s*\|\s*(20\d{2}-\d{2}-\d{2})\s*\|\s*Статус:\s*([^\n]+)")
-FIELD_RE_TEMPLATE = r"(?mi)^\*\*{name}:\*\*\s*(.*)$"
+FIELD_RE_TEMPLATE = r"(?mi)^\*\*{name}:\*\*[ \t]*(.*)$"  # не \s*: пустое поле не должно съедать следующую строку
 EMPTY_MARKERS = ("заполнить", "позже", "—", "-", "нет данных", "ожидается")
 ACTIVE_STATUS_MARKERS = ("🧪", "тест", "провер", "pilot", "active")
 CLOSED_STATUS_MARKERS = ("✅", "❌", "сработ", "не сработ", "закрыт", "заверш")
@@ -260,6 +260,18 @@ def check_hypotheses(today: dt.date) -> list[Issue]:
                     "ERROR", "HYP_NO_EXACT_CHECKPOINT", rel(path), line,
                     f"{hyp_id.strip()}: активна без checkpoint в YYYY-MM-DD",
                 ))
+            # Метрика и дата без исполнителя не двигают замер: HYP-TRF-002 пропустила
+            # первый разбор именно так. Задача в YouGile — то, что приходит к человеку.
+            if active and not meaningful(field_value(block, "Ответственный")):
+                issues.append(Issue(
+                    "ERROR", "HYP_NO_OWNER", rel(path), line,
+                    f"{hyp_id.strip()}: активна без поля «Ответственный»",
+                ))
+            if active and not meaningful(field_value(block, "Задача")):
+                issues.append(Issue(
+                    "ERROR", "HYP_NO_TASK", rel(path), line,
+                    f"{hyp_id.strip()}: активна без кода задачи в YouGile — замер никому не придёт",
+                ))
     return issues
 
 
@@ -311,6 +323,34 @@ def check_governed_documents() -> list[Issue]:
                 issues.append(Issue(
                     "ERROR", f"DOC_NO_{'STATUS' if field == 'Статус' else 'OWNER'}",
                     rel(path), 1, f"управляемый документ без поля «{field}»",
+                ))
+    return issues
+
+
+CHECKBOX_RE = re.compile(r"(?m)^\s*[-*] \[([ xX])\]")
+
+
+def check_checkboxes() -> list[Issue]:
+    """Контракт галочек: отметка «выполнено» — история прогона, а в файлах состояния шагов нет вовсе."""
+
+    issues: list[Issue] = []
+    for path in iter_markdown():
+        value = rel(path)
+        state_file = (
+            (value.startswith("clients/") and path.name == "_index.md")
+            or path.name == "hypotheses.md"
+        )
+        text = mask_noncontent(read(path))
+        for match in CHECKBOX_RE.finditer(text):
+            if match.group(1) in "xX":
+                issues.append(Issue(
+                    "WARN", "CHECKBOX_DONE", value, line_of(text, match.start()),
+                    "отметка «выполнено»: волт не хранит историю прогона — перенести вывод в текст, галочку убрать",
+                ))
+            elif state_file:
+                issues.append(Issue(
+                    "WARN", "CHECKBOX_IN_STATE", value, line_of(text, match.start()),
+                    "галочка в файле состояния: задача — в YouGile, вопрос — простым пунктом",
                 ))
     return issues
 
@@ -712,6 +752,7 @@ def main() -> int:
     issues.extend(check_links())
     issues.extend(check_hypotheses(today))
     issues.extend(check_module_evidence())
+    issues.extend(check_checkboxes())
     issues.extend(check_terminology())
     issues.extend(check_project_indexes())
     issues.extend(check_governed_documents())

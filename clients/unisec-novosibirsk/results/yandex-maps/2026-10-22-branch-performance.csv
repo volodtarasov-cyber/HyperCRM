@@ -1,0 +1,7 @@
+captured_on,period_start,period_end,branch_id,address,photo_views,photo_views_change_pct,review_views,review_views_change_pct,phone_clicks,phone_clicks_change_pct,routes,routes_change_pct,website_clicks,website_clicks_change_pct,hours_views,hours_views_change_pct,entrance_views,entrance_views_change_pct,phone_and_route_actions,phone_route_and_website_actions,source_file
+2026-10-22,2026-07-22,2026-10-22,U-LEN,"Ленина, 12",105,42,62,148,44,26,30,?,38,217,21,110,?,?,74,112,2026-10-22-screenshots/2026-10-22-lenina-12-branch.jpg
+2026-10-22,2026-07-22,2026-10-22,U-IPP,"Ипподромская, 46",56,40,38,73,17,-15,18,50,15,36,7,100,2,100,35,50,2026-10-22-screenshots/2026-10-22-ippodromskaya-46-branch.jpg
+2026-10-22,2026-07-22,2026-10-22,U-TROL,"Троллейная, 130А",52,13,19,-32,14,-26,12,100,13,8,8,300,2,100,26,39,2026-10-22-screenshots/2026-10-22-trolleynaya-130a-branch.jpg
+2026-10-22,2026-07-22,2026-10-22,U-MARKS,"Карла Маркса, 7",62,48,41,37,15,-35,11,22,11,?,5,-17,2,100,26,37,2026-10-22-screenshots/2026-10-22-karla-marksa-7-branch.jpg
+2026-10-22,2026-07-22,2026-10-22,U-DK,"Дуси Ковальчук, 1/1",28,22,25,32,13,8,8,167,7,17,8,100,?,?,21,28,2026-10-22-screenshots/2026-10-22-dusi-kovalchuk-1-1-branch.jpg
+2026-10-22,2026-07-22,2026-10-22,U-KUT,"Кутателадзе, 4/4",17,-62,18,-55,11,-31,4,?,6,-60,3,-40,?,?,15,21,2026-10-22-screenshots/2026-10-22-kutateladze-4-4-branch.jpg

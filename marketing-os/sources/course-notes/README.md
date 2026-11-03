@@ -14,6 +14,7 @@
 | ПсихоМаркетинг (2020) | В. Смирнов | 17 записей, ~22 ч | ✅ конспекты готовы | [psychomarketing-2020/](psychomarketing-2020/README.md) |
 | Копирайтинг прямого отклика (2021) | В. Смирнов | осн. + бонус | ✅ конспекты готовы | [direct-response-copywriting-2021/](direct-response-copywriting-2021/README.md) |
 | Нейрошаманские коммуникации (2024) | В. Смирнов | 28 записей, ~35 ч | ⏳ в работе (6/28) | [neuroshamanic-communications-2024/](neuroshamanic-communications-2024/README.md) |
+| Продажи для химчистки мебели (2023) | Данил, канал «Ананас маркетинг» | 15 уроков | ✅ конспекты готовы, раздатка не получена | [sales-dialogs-furniture-cleaning/](sales-dialogs-furniture-cleaning/README.md) |
 
 ## Как читать слой
 

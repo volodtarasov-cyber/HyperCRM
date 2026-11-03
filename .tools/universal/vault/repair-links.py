@@ -23,7 +23,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
 SKIP_DIRS = {".git", ".obsidian", "node_modules", "venv", ".venv", "__pycache__", "outputs", "tmp"}
-FROZEN_PREFIXES = ("daily/", "reviews/", "recurring/")
+FROZEN_PREFIXES = ("_archive/",)
 MARKDOWN_RE = re.compile(r"(!?)\[([^\]]*)\]\(([^)]+)\)")
 WIKI_RE = re.compile(r"\[\[([^\]|#]+)(?:#[^\]|]+)?(?:\|([^\]]+))?\]\]")
 

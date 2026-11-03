@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -79,16 +80,65 @@ def external_block() -> None:
         print("  (`⟳ —` — если не сверялось ни разу). Метка живёт рядом с фактом,")
         print("  не в отдельном реестре: отдельный реестр протухнет первым.")
         return
+    # Группа = кому задавать вопрос: факт из папки клиента сверяется у клиента,
+    # остальное — у Володи. Одна группа — одно сообщение, а не обход файлов.
+    groups: dict[str, list] = {}
     for item in items:
-        if item.age is None:
-            mark, note = "‼", "не сверялось ни разу"
-        elif item.age >= EXTERNAL_STALE_DAYS:
-            mark, note = "!", f"{item.age} дн. назад"
-        else:
-            mark, note = " ", f"{item.age} дн. назад"
-        print(f"{mark} {item.text}")
-        print(f"      сверяли: {note} · {item.source}:{item.line}")
-    print("\n  Свёл — поставь сегодняшнюю дату после ⟳ в том же файле.")
+        parts = str(item.source).replace("\\", "/").split("/")
+        who = f"клиент {parts[1]}" if parts[0] == "clients" and len(parts) > 2 else "Володя / агентство"
+        groups.setdefault(who, []).append(item)
+    for who in sorted(groups, key=lambda name: (name.startswith("Володя"), name)):
+        group = sorted(groups[who], key=lambda item: -1 if item.age is None else -item.age)
+        never = sum(item.age is None for item in group)
+        print(f"### {who} — {len(group)}" + (f", ни разу не сверялось: {never}" if never else ""))
+        for item in group:
+            if item.age is None:
+                mark, note = "‼", "не сверялось ни разу"
+            elif item.age >= EXTERNAL_STALE_DAYS:
+                mark, note = "!", f"{item.age} дн. назад"
+            else:
+                mark, note = " ", f"{item.age} дн. назад"
+            print(f"{mark} {item.text}")
+            print(f"      сверяли: {note} · {item.source}:{item.line}")
+        print()
+    print("  Свёл — поставь сегодняшнюю дату после ⟳ в том же файле.")
+
+
+DATE_IN_NAME = re.compile(r"(\d{4}-\d{2}-\d{2})")
+
+
+def evidence_block() -> None:
+    """Обратный ход метода: измеренные результаты, не ставшие доказательством.
+
+    Механика поднимается по лестнице только записью в `evidence/applications/`.
+    Предложить её «после прогона» некому, если прогон не спросит сам: результаты
+    клиента, датированные позже его последнего доказательства, — кандидаты.
+    """
+    applications = ROOT / "marketing-os" / "evidence" / "applications"
+    latest: dict[str, str] = {}
+    for path in applications.glob("*.md"):
+        found = DATE_IN_NAME.search(path.name)
+        if found:
+            obj = path.name[:found.start()].rstrip("-").split("-")[0]
+            latest[obj] = max(latest.get(obj, ""), found.group(1))
+
+    lines = []
+    for client in sorted((ROOT / "clients").iterdir()):
+        results = client / "results"
+        if not results.is_dir() or client.name.startswith("_"):
+            continue
+        since = latest.get(client.name.split("-")[0], "")
+        fresh = []
+        for path in results.rglob("*.md"):
+            found = DATE_IN_NAME.search(path.name)
+            if found and found.group(1) > since and "_archive" not in path.parts:
+                fresh.append((found.group(1), path.relative_to(ROOT).as_posix()))
+        if fresh:
+            fresh.sort(reverse=True)
+            note = f"последнее доказательство {since}" if since else "доказательств нет"
+            lines.append(f"- {client.name}: {len(fresh)} результат(ов) после — {note}")
+            lines.extend(f"      {date} · {source}" for date, source in fresh[:3])
+    section("Результаты без доказательства метода — записать применение?", lines)
 
 
 def main() -> int:
@@ -152,6 +202,7 @@ def main() -> int:
                     print(f"  … ещё {len(stuck) - 8}")
 
     external_block()
+    evidence_block()
 
     attention = []
     for project in projects.values():

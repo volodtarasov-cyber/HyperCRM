@@ -1,0 +1,162 @@
+{
+  "SiteAnalyzer SEO Tools (расширение)": [
+    {
+      "source_id": "v-7c4edf724bc6",
+      "timestamp": "00:31:04",
+      "note_path": "lessons/v-7c4edf724bc6.md",
+      "role": "Расширение браузера для точечной проверки директив и метаданных; отличается от настольного спайдера."
+    }
+  ],
+  "Wordstater": [
+    {
+      "source_id": "v-1aa4ecd7b945",
+      "timestamp": "00:18:23",
+      "note_path": "lessons/v-1aa4ecd7b945.md",
+      "role": "Расширение Wordstat, в ASR название записано как «вот статор»; упомянуто при чистке списка, точный адрес не установлен."
+    }
+  ],
+  "FileZilla": [
+    {
+      "source_id": "v-460dae3673c1",
+      "timestamp": "00:02:02",
+      "note_path": "lessons/v-460dae3673c1.md",
+      "role": "В демонстрации файл подтверждения Search Console загружается в корень сайта через FileZilla."
+    }
+  ],
+  "Senler": [
+    {
+      "source_id": "v-151d3dd9740c",
+      "timestamp": "контекст конспекта",
+      "note_path": "lessons/v-151d3dd9740c.md",
+      "role": "Подключение подписки и рассылки в работе с аудиторией"
+    }
+  ],
+  "Звонок / ZvonokBot (?)": [
+    {
+      "source_id": "v-38b52a2b937a",
+      "timestamp": "контекст конспекта",
+      "note_path": "lessons/v-38b52a2b937a.md",
+      "role": "Название автоматического обзвона лектор вспоминает неуверенно"
+    }
+  ],
+  "Superlock AI (?)": [
+    {
+      "source_id": "v-f1fc63c56a07",
+      "timestamp": "контекст конспекта",
+      "note_path": "lessons/v-f1fc63c56a07.md",
+      "role": "Неуверенное имя ИИ-редактора одежды в кейсе упаковки резюме"
+    }
+  ],
+  "Drive2": [
+    {
+      "source_id": "v-01e93554190e",
+      "timestamp": "контекст конспекта",
+      "note_path": "lessons/v-01e93554190e.md",
+      "role": "Тематическая площадка в региональном присутствии"
+    }
+  ],
+  "Зарплата.ру": [
+    {
+      "source_id": "v-d1f2802666cb",
+      "timestamp": "контекст конспекта",
+      "note_path": "lessons/v-d1f2802666cb.md",
+      "role": "Дополнительная площадка вакансий"
+    }
+  ],
+  "SuperJob": [
+    {
+      "source_id": "v-d1f2802666cb",
+      "timestamp": "контекст конспекта",
+      "note_path": "lessons/v-d1f2802666cb.md",
+      "role": "Дополнительная площадка вакансий"
+    }
+  ],
+  "Работа.ру": [
+    {
+      "source_id": "v-d1f2802666cb",
+      "timestamp": "контекст конспекта",
+      "note_path": "lessons/v-d1f2802666cb.md",
+      "role": "Дополнительная площадка вакансий"
+    }
+  ],
+  "FL.ru": [
+    {
+      "source_id": "v-9dc1bb2eb59d",
+      "timestamp": "контекст конспекта",
+      "note_path": "lessons/v-9dc1bb2eb59d.md",
+      "role": "Биржа в опыте поиска клиентов"
+    }
+  ],
+  "Mailchimp": [
+    {
+      "source_id": "v-9dc1bb2eb59d",
+      "timestamp": "контекст конспекта",
+      "note_path": "lessons/v-9dc1bb2eb59d.md",
+      "role": "Опыт почтовой доставки"
+    }
+  ],
+  "SMTP.BZ": [
+    {
+      "source_id": "v-9dc1bb2eb59d",
+      "timestamp": "контекст конспекта",
+      "note_path": "lessons/v-9dc1bb2eb59d.md",
+      "role": "Опыт почтовой доставки"
+    }
+  ],
+  "Timeweb": [
+    {
+      "source_id": "v-9dc1bb2eb59d",
+      "timestamp": "контекст конспекта",
+      "note_path": "lessons/v-9dc1bb2eb59d.md",
+      "role": "Настройка хостинга и почты"
+    }
+  ],
+  "Яндекс Диск": [
+    {
+      "source_id": "v-793f5dc6c106",
+      "timestamp": "контекст конспекта",
+      "note_path": "lessons/v-793f5dc6c106.md",
+      "role": "Хранение материалов в режиме работы"
+    }
+  ],
+  "Wunderlist": [
+    {
+      "source_id": "v-793f5dc6c106",
+      "timestamp": "контекст конспекта",
+      "note_path": "lessons/v-793f5dc6c106.md",
+      "role": "Исторический планировщик в уроке режима работы"
+    }
+  ],
+  "Trello": [
+    {
+      "source_id": "v-793f5dc6c106",
+      "timestamp": "контекст конспекта",
+      "note_path": "lessons/v-793f5dc6c106.md",
+      "role": "Планирование в примере автора"
+    }
+  ],
+  "WhatsApp Business": [
+    {
+      "source_id": "v-d29928e65b95",
+      "timestamp": "контекст конспекта",
+      "note_path": "lessons/v-d29928e65b95.md",
+      "role": "Общение в поиске ассистента"
+    }
+  ],
+  "Яндекс Поиск": [
+    {
+      "source_id": "v-851c0808c39f",
+      "timestamp": "контекст конспекта",
+      "note_path": "lessons/v-851c0808c39f.md",
+      "role": "Региональная поисковая выдача"
+    }
+  ],
+  "Google Поиск": [
+    {
+      "source_id": "v-851c0808c39f",
+      "timestamp": "контекст конспекта",
+      "note_path": "lessons/v-851c0808c39f.md",
+      "role": "Региональная поисковая выдача"
+    }
+  ]
+}

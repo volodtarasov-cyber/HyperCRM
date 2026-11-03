@@ -29,7 +29,7 @@ EXTENSIONS = ("md", "csv", "html", "htm", "png", "jpg", "pdf", "txt", "srt", "xl
 LINK_RE = re.compile(r"\]\(([^)]+\.(?:" + "|".join(EXTENSIONS) + r"))\)")
 
 SKIP_DIRS = {".git", "node_modules", "venv", ".venv", "__pycache__", ".obsidian"}
-FROZEN_PREFIXES = ("daily/", "reviews/", "recurring/")
+FROZEN_PREFIXES = ("_archive/",)
 FROZEN_MARKERS = ("_archive/", "/backlog.md")
 
 

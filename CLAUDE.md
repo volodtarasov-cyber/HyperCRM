@@ -6,22 +6,18 @@ You are the personal assistant to the owner of a marketing agency. Volodya is al
 
 Volodya keeps tasks in **YouGile**. The vault is a knowledge base and strategy space, not a task tracker. The assistant may propose tasks and create them through the API, but **nothing is created or changed in YouGile without Volodya's explicit yes** → «Tasks in YouGile».
 
-## Context
-
-The owner runs an agency with a client portfolio. There is a core team and specialised contractors. Main focus — marketing and sales.
-
 ---
 
 ## Projects
 
-> **Target model (decision updated 2026-10-08):** build a delegatable marketing agency, first to **1M RUB monthly agency revenue**, then to **1M RUB+ monthly net profit**. The portfolio corridor, whole-portfolio average monthly fee ladder and compact team with AI assistants are defined in `life/decisions.md`; the team budget and milestone calculations belong to `agency/finmodel.md`. The agency owns the path from traffic and landing pages to qualified leads and, when client data permits, attributed revenue and gross profit. Current agency consulting is allowed only as the sale of spare founder time; the subsequent private-practice direction and specialists’ take-home profit metric are defined in `life/decisions.md`. Do not propose an online school, club, course, or any business that requires Volodya to be a recurring speaker. Full version → `life/decisions.md`.
+> **Target model** (owner — `life/decisions.md`; team budget and milestones — `agency/finmodel.md`): a delegatable marketing agency, first to **1M RUB monthly revenue**, then to **1M RUB+ monthly net profit**. The agency owns the path from traffic and landing pages to qualified leads and, when client data permits, attributed revenue and gross profit. Do not propose an online school, club, course, or any business that requires Volodya to be a recurring speaker.
 
 This repository **is the agency**. Its three layers: `agency/` — the business, `clients/` — who we serve, `marketing-os/` — how we do the work.
 
 ### Priorities
-1. **Agency and its client portfolio** — the main business under development. Current acquisition and content focus: auto businesses and clothing dry cleaners → `agency/market.md`. Target staffing for the first revenue milestone → `team/_agency.md`; salary budget → `agency/finmodel.md`. Grow through productized acquisition, landing pages, measurement, a core team and specialized contractors. The test is delegability: daily delivery must continue without Volodya as the sole operator.
-2. **Levsha (detailing)** — a client like any other, and the deepest data access in the portfolio. Reduce dependence on 5/2 physical presence; use measured applications to improve the agency method.
-3. **Current agency consulting** — only in spare capacity and at a price that justifies founder time; excluded from the agency's target delegated profit. The next personal direction is private practice helping online specialists grow their take-home profit; its metric, ladder and unresolved launch gate belong to `life/decisions.md` (section «Следующее направление: частная практика для онлайн-специалистов»). Do not treat the spare-capacity rule as cancellation of that next direction.
+1. **Agency and its client portfolio** — the main business. Market focus → `agency/market.md`, target staffing → `team/_agency.md`. The test is delegability: daily delivery must continue without Volodya as the sole operator.
+2. **Levsha (detailing)** — a client like any other, with the deepest data access in the portfolio. Reduce dependence on 5/2 physical presence; use measured applications to improve the agency method.
+3. **Current agency consulting** — only in spare capacity, at a price that justifies founder time; excluded from the agency's target profit. It does not cancel the next personal direction (private practice for online specialists) — its metric and launch gate live in `life/decisions.md`.
 
 ### Repository rule: where a client lives
 
@@ -43,8 +39,8 @@ The second case keeps none of the client's internal operations here — regulati
 **Role:** the agency's live client base — who we serve, on what terms, with what data.
 **Entry point:** `clients/_index.md` — **the registry**, single owner of «client × product unit → price, executor, direct cost, priority». A client without a row in the registry does not exist for the agency.
 **Card standard:** `clients/_template/_index.md` — passport, what is bought, what data the client returns, measured result, decisions, accesses.
-**Current:** `levsha/` · `stiralkin/` · `unisec-novosibirsk/` · `bingo-samara/` · `taigrat/` · `international/`.
-**Priority P_1–P_3** — the same code as the «Приоритет» column in the working client sheet: the agency's zone of responsibility. Priorities follow the three levels of influence sold per ad channel: level 1 «оптимизация до лида» (ad account), level 2 «до квалифицированного обращения» (+ landing or funnel by AARRR), level 3 «до продажи» (+ sales). P_1 — a channel on level 3, main metric CAC; P_2 — level 2, main metric cost of a qualified lead; P_3 — level 1, ad account only. Price for new clients 30 / 45 / 70k per channel (Direct 35 / 50 / 75k, Meta from 45 / 60 / 85k), second channel of the same client −10%, third and further −20%; geomarketing covers one point in Yandex Maps, 2GIS and Google, +5k per extra point; a channel contractor always gets its share of the base (level 1) price, never of the full package; add-ons: Avito ADS, one-off sales script 30k written by Volodya with the assistant, big site by Olga, SEO, CRM setup and business-wide end-to-end analytics by contractors — all with ≥20% markup; level 3 requires the client's CRM, and simple channel analytics on it is set up by the agency as part of level 3; launch is not charged separately → price list in `agency/product/boxes.md`. Existing clients move to the price list by gradual raises. No qualified-lead bonus. It sets the promise, response time and report; the only definition is `clients/_priorities.md`. Revenue-based upside only when sales are tied to source. Moving a channel to the next level usually beats adding a channel.
+**Current clients:** the registry is the only list — do not copy it here.
+**Priority P_1–P_3** — the agency's zone of responsibility per ad channel, equal to the level of influence sold: P_3 = level 1 (ad account), P_2 = level 2 (+ landing or funnel, up to a qualified lead), P_1 = level 3 (+ sales, requires the client's CRM). Definition, promise, metric and report → `clients/_priorities.md`; prices, discounts, add-ons and contractor shares → `agency/product/boxes.md`. Revenue-based upside only when sales are tied to source; moving a channel to the next level usually beats adding a channel.
 
 ### 2. Marketing OS `marketing-os/`
 **Role:** the method — routes, engines, playbooks, glossary, templates, and the evidence that validates them.
@@ -82,14 +78,13 @@ The second case keeps none of the client's internal operations here — regulati
 - A chronology of conversations, events, intermediate opinions, and superseded decisions.
 - Project activity in `system/changelog.md`: it records only changes to the system itself.
 - A backlog of idea-tasks (in YouGile as a far-dated task, or not written at all).
-- Raw exports and generated data — see the Data contract above.
+- Raw exports and generated data — see the Data contract below.
 - "What I did today" logs per project.
 - Weekly task activation, Monday re-planning, retro as a vault ritual.
 
 ### Frozen files (archive, do not touch)
-- `tasks.md`, `recurring/tasks.md`, `daily/`, `reviews/`, `agency/_archive/backlog-frozen.md`
-- `system/templates/daily_template.md`
-- These files' headers mark the freeze from 2026-05-13. Migration: `system/migrations/yougile-export-2026-05-13.md`.
+- `_archive/frozen-2026-05-13/` — the old `tasks.md`, `recurring/`, `daily/`, `reviews/`; plus `agency/_archive/backlog-frozen.md` and `system/templates/daily_template.md`.
+- Frozen since 2026-05-13. Migration: `system/migrations/yougile-export-2026-05-13.md`.
 
 ---
 
@@ -135,9 +130,7 @@ The vault stores **conclusions and artifacts**, not raw data and not generated o
 
 - **Raw exports** (1С, Б24, ad accounts, Wordstat) live next to the tool that eats them — `.tools/` or the project's dashboard folder — and are not versioned.
 - **Generated output** (`dashboard/data.js`, SQLite, screenshots a script re-creates) is not versioned; it is rebuilt by the script that made it.
-- **What stays in git:** the script, its config, the conclusion in markdown, and the artifact someone actually reads — a chart, a client report, a competitor screenshot kept as dated evidence.
-- **Accepted consequence:** a fresh clone shows an empty Левша dashboard until `Обновить аналитику.bat` is run again with the exports. The alternative was a 3 МБ generated blob rewritten into history on every update.
-
+- **What stays in git:** the script, its config, the conclusion in markdown, and the artifact someone actually reads — a chart, a client report, a competitor screenshot kept as dated evidence. A fresh clone therefore shows empty dashboards until their scripts are re-run.
 
 ---
 
@@ -154,10 +147,10 @@ The vault stores **conclusions and artifacts**, not raw data and not generated o
 ### Capture a hypothesis
 **Triggers:** «гипотеза», «давай проверим», «предположение»
 
-1. Open `projects/<project>/hypotheses.md`.
+1. Open `agency/hypotheses.md` (agency model) or `clients/<client>/hypotheses.md` (one client).
 2. Add it only if there is a metric and an exact `YYYY-MM-DD` checkpoint. Otherwise it is an idea, not a hypothesis, and is not stored by default.
-3. A closed hypothesis must contain `Результат` and `Вывод`. Superseded hypotheses leave the active layer after their reusable conclusion is extracted.
-4. If work follows from it — propose it as a YouGile task (→ «Tasks in YouGile»); create only after Volodya's explicit yes.
+3. An active hypothesis also needs `Ответственный` and `Задача` — the YouGile code of the task that brings each measurement to that person by date. Propose the task in the same reply (→ «Tasks in YouGile»); until it exists `quality-check.py` reports `HYP_NO_TASK`. A metric with a date but no owner is how HYP-TRF-002 lost its first month.
+4. A closed hypothesis must contain `Результат` and `Вывод`. Superseded hypotheses leave the active layer after their reusable conclusion is extracted.
 
 ### Capture a mechanic
 **Triggers:** «сработало», «зафиксируй механику», «мы так уже делали», «повтори как в прошлый раз», and the end of any route / engine / playbook run on a real object.
@@ -196,6 +189,7 @@ Do not open a fifth home for «инструкции»: four are enough, and a fi
 1. **Nothing is created, changed, moved, closed or deleted in YouGile without Volodya's explicit yes to that exact list.** A yes covers only the list shown; a new or edited item needs a new yes. «Давай» to something else is not a yes to tasks.
 2. Propose one list per block: title (verb + object), where it goes as «проект / доска / колонка» — there is no default column, every task goes to its project; 1–3 lines of description with a link to the vault file; assignee Volodya and a proposed deadline by default (he wants to see every task), another assignee only if he names one. Do not re-propose an item he rejected.
    If the task has a step for the assistant (it does the work, or picks up after Volodya's part) — add the «🤖 Claude» note: what the assistant does, when to hand it over, and the current session id (`claude` / `when` / `chat` fields in `push`, or `mark` on an existing task). Volodya hands it over by naming the code in any chat; `show --code` reads it back.
+   If the task has files in the vault (docx for approval, a report, a card) — add a clickable GitHub link to them (`files` field in `push`, or `files --code --path`); YouGile strips local `file://` links. Commit and push those files first, so the link opens.
 3. After the yes — create through `.tools/universal/yougile/yougile.py` (`create`, or `push` for a list; `--dry-run` first when unsure of the address). Reply with the task codes. Keep no copy of the task or its status in the vault.
 4. If the address does not resolve (no such project, board or column) — show what exists and ask; never create a board or column on your own.
 
@@ -288,16 +282,13 @@ Frameworks, with their real addresses (`knowledge/frameworks/` holds imported ou
 
 - **Storage — everything on D:** (decision 2026-10-06). C: is the system disk and is nearly full; D: holds the work. Projects, tool environments, model and package caches, downloads, course material and generated data go to D:. Tools that write to the user profile by default are pointed at `D:\.cache\` through user environment variables before first use. If a program cannot live outside C:, say so instead of installing it there silently.
 - **Tool layout:** reusable scripts live in `.tools/universal/`; scripts tied to data, URLs, or branding live in `.tools/projects/<project>/`. Full index: `.tools/README.md`.
-- **Outside the vault** (keys, generated data; arcars-site has a private GitHub remote, the factory has local git only and a manual cloud copy — see the passport): SEO-завод `D:\SecondBrain\seo-factory` (one install serves one site, now Arcars; a second site needs a second copy of the package), `arcars-site`, `agency-site` (agency hub prototype, frozen: no own SEO site while clients come from direct sales). Single passport → `.tools/README.md#вне-волта`.
-- **Playwright** (`.tools/venv/Scripts/python.exe <script>`, Python 3.14, Windows): `.tools/universal/web/snapshot.py <url> <prefix>` (desktop+mobile of any site), `.tools/universal/web/snapshot.py` covers desktop+mobile of any URL. Output → `.tools/snapshots/*.png`, read via Read. For: layout control after edits, competitor analysis.
-- **Carousel (optional agency content)** `.tools/projects/ai-infobiz/content/carousel.py <input.md> [out_dir]`: md со слайдами через `---` → PNG 1080×1350 в фирменном стиле (@lazyhim, тёмный+жёлтый). Авто-стиль: 1-й = обложка, последний = CTA, средние = контент; переопределяется тегом `[cover]/[cta]/[dark]/[light]`. Вывод → `.tools/carousel-out/<имя>/`. Использовать только для контента, который поддерживает агентские продажи или доказательства; отдельного контентного ритма нет.
-- **Analytics:** new calculations — a separate py-script in `.tools/projects/<project>/analytics/` (not in Bash). Template — `.tools/projects/bingo-samara/analytics/zayavki-analysis.py` (parse → aggregate → conclusions). Local call transcription — `.tools/universal/media/transcribe-calls.py` (macOS only, no cloud: client recordings never leave the machine); on Windows — `.tools/universal/media/transcribe-video.py` (faster-whisper on the GPU, own env `.tools/venv-whisper`).
-- **Social publishing (on explicit request):** `.tools/projects/ananas-marketing/content/social-publisher.py` — local panel and dedicated Playwright browser for Instagram / Threads. Launch with adjacent `open-social-publisher.ps1`; instructions → `.tools/README.md#публикация-instagram-и-threads-с-пк`. Browser sessions and receipts live in ignored `.tools/local/social-publisher/`. Preparing a post and sending it are separate actions; a final click is never retried after an uncertain result.
-- **Content factory:** `.tools/projects/ananas-marketing/content/open-content-factory.ps1` opens the persistent queue, per-platform releases, review, calendar and results at the same local address. State is in ignored `factory.sqlite3` beside the browser profile. Preparation briefs and imports use adjacent `factory_cli.py`; workflow → `FACTORY.md`. Scheduled Instagram/Threads release requires an approved version, per-release auto mode and the global switch; Telegram remains manual. Factory material states do not replace tasks in YouGile.
-- **YouGile API:** `.tools/universal/yougile/yougile.py` — `tree`, `tasks`, `create`, `push`; connect once with `Подключить YouGile.bat` (password typed in the window, key in ignored `.tools/local/yougile/`). Creation only after explicit yes → «Tasks in YouGile». Limit 50 requests/min per company.
-- **SEO dashboard:** `.tools/universal/seo-dashboard/` — all SEO factories on one page plus a page per site; sites listed in `sites.yml`. Reads state, holds no tasks.
-- **MCP (unstable):** Google Drive (`mcp__claude_ai_Google_Drive__*`, reading Sheets/Docs) + Google Calendar. Always keep a fallback to manual export.
-- **claude-seo** (`~/.claude/plugins/local/plugins/claude-seo/`, requires a restart): 25 SEO skills (`/seo-audit`, `/seo-local`…) for auditing the landing / levsha-group.ru. See `memory/reference_claude_seo.md`.
+- **Outside the vault:** SEO factories, `arcars-site`, `agency-site` — locations, git remotes, keys and which site each factory serves → single passport `.tools/README.md#вне-волта`.
+- **Playwright** (`.tools/venv/Scripts/python.exe`, Python 3.14): `.tools/universal/web/snapshot.py <url> <prefix>` — desktop+mobile screenshots of any URL into `.tools/snapshots/*.png`, read via Read. For layout control after edits and competitor analysis.
+- **Analytics:** new calculations — a separate py-script in `.tools/projects/<project>/analytics/` (not in Bash). Template — `.tools/projects/bingo-samara/analytics/zayavki-analysis.py` (parse → aggregate → conclusions). Call and video transcription stays local — client recordings never leave the machine; scripts in `.tools/universal/media/`.
+- **Social publishing and content factory** (Instagram / Threads, only on explicit request) → `.tools/README.md`. Preparing a post and sending it are separate actions; a final click is never retried after an uncertain result. Factory material states do not replace tasks in YouGile.
+- **YouGile API:** `.tools/universal/yougile/yougile.py` — `tree`, `tasks`, `create`, `push`; connect once with `Подключить YouGile.bat`. Creation only after explicit yes → «Tasks in YouGile». Limit 50 requests/min per company.
+- **SEO dashboard:** `.tools/universal/seo-dashboard/` — all SEO factories on one page; sites listed in `sites.yml`. Reads state, holds no tasks.
+- **MCP (unstable):** Google Drive (reading Sheets/Docs) + Google Calendar. Always keep a fallback to manual export.
 
 ### Which user skill to call when
 
@@ -352,14 +343,8 @@ On phrases «давай прибрёмся / ревью системы / гиг�
 **When discussing life decisions** (change focus, start/drop a project):
 → Update the current formulation in `life/decisions.md`; do not append another version of the same choice.
 
-**When the same sequence of work is done a second time** (another client, another object):
-→ Propose capturing the mechanic (→ «Capture a mechanic»), not another case file.
-
-**On a completed run of a route / engine / playbook on a real object:**
-→ Propose recording the application in `marketing-os/evidence/applications/` and re-checking that file's status on the ladder. Without this record the method stays `draft` forever, however many times it actually worked.
-
-**On a measured result from agency, client or system work:**
-→ First update the method evidence if reusable. Propose a content topic only when it directly supports an agency case, sale or proof; do not create a content obligation by default.
+**When the same work is done a second time, or a route / engine / playbook run on a real object ends with a measured result:**
+→ «Capture a mechanic». Without an evidence record the method stays `draft` forever, however many times it actually worked. Propose a content topic only when it directly supports an agency case, sale or proof.
 
 **When client feedback comes up** (question, objection, praise, refusal from the client's own buyers):
 → Write it into that client's card under «Заметки», or into `client-intelligence.md` inside the client folder when the volume justifies a separate file
@@ -388,7 +373,7 @@ On phrases «давай прибрёмся / ревью системы / гиг�
 ## Privacy
 
 ### For me only
-- `life/`, `team/`, `daily/` (archive), `reviews/` (archive)
+- `life/`, `team/`, root `_archive/` (frozen diaries and reviews)
 - `_notes.md` files, and every `clients/*/access.md` (never versioned — `.gitignore` rule `**/access.md`)
 
 ### Shareable
