@@ -70,6 +70,13 @@ def main() -> int:
                        factory / "engine" / "seo-agent", timeout=900)
         log(f"{'✓' if ok else '✗'} {s['id']}: техаудит{'' if ok else ' — ' + tail}")
         failed += not ok
+        # Командный центр завода (пакет ≥1.32): его данные рисуют выпуск, индекс и ядро
+        # на нашем дашборде, а своё расписание завода у нас выключено — пересобираем здесь.
+        if (factory / "engine" / "komcentr" / "build.py").exists():
+            ok, tail = run([str(py), "orchestrator.py", "komcentr", "--no-open"],
+                           factory / "engine" / "seo-agent", timeout=300)
+            log(f"{'✓' if ok else '✗'} {s['id']}: командный центр{'' if ok else ' — ' + tail}")
+            failed += not ok
         snaps = sorted((factory / "engine" / "seo-agent" / "data" / "rankings").glob("????-??-??.csv"))
         last = dt.date.fromisoformat(snaps[-1].stem) if snaps else None
         if rankings_on(factory) and (not last or (dt.date.today() - last).days >= RANKINGS_EVERY):
