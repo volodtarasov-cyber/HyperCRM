@@ -9,7 +9,7 @@ description: Полный диагностический прогон компа
 Прогоняешь компанию по **всей цепочке** диагностики и собираешь единый пакет. Не делаешь всё вручную — **оркеструешь отдельные скиллы-модули**, каждый из которых работает и сам по себе:
 
 ```text
-/screening  →  /company-profile  →  /jtbd-segments  →  /cjm  →  скоркард  →  рекомендации
+/growth-stage  →  /screening  →  /company-profile  →  /jtbd-segments  →  /cjm  →  скоркард  →  рекомендации
 ```
 
 Канонический метод — [screening-to-strategy-diagnostic](../../../marketing-os/routes/full-business-diagnostic/screening-to-strategy-diagnostic.md).
@@ -21,15 +21,16 @@ description: Полный диагностический прогон компа
 - Если нужен **только один** анализ — вызывать соответствующий скилл напрямую: `/screening`, `/company-profile`, `/jtbd-segments`, `/cjm`.
 
 ## Цепочка (что запускаю по шагам)
+0. **`/growth-stage`** — стадия роста компании (10 стадий) и главное ограничение на уровне компании. Задаёт рамку: какие рекомендации на этой стадии рано давать. Если вход ещё не собран — после шага 1.
 1. **`/company-profile`** — собрать вход (услуги, экономика, команда, каналы, репутация, цели). [Шаблон](../../../marketing-os/templates/company-profile-template.md).
 2. **`/screening`** — 58 факторов → главное ограничение. [Модуль](../../../marketing-os/engines/business-market-screening.md).
 3. **`/jtbd-segments`** — 5–7 сегментов по работам + приоритизация «с чего начать». [Модуль](../../../marketing-os/engines/niche-icp-jtbd-research.md).
 4. **`/cjm`** — карта пути по приоритетным сегментам (эмоции, барьеры, точка перелома). [Модуль](../../../marketing-os/engines/customer-journey-map.md).
 5. **Скоркард зрелости** — 7 осей + общий балл. [Шаблон](../../../marketing-os/templates/maturity-scorecard-template.md).
-6. **Узкие места, противоречия, рекомендации** — на наши модули (оффер, диагностич. продажа, удержание, измерение, контент), ранжир по урону/усилию.
+6. **Узкие места, противоречия, рекомендации** — на наши модули (оффер `/offer`, денежная модель `/money-model`, диагностич. продажа, удержание, измерение, контент), ранжир по урону/усилию; не рекомендовать то, что для стадии роста рано.
 
 ## Структура вывода (полный пакет)
-1. Ниша + ЦА.
+1. Ниша + ЦА + стадия роста (`/growth-stage`).
 2. Скрининг-вердикт (главное ограничение).
 3. JTBD-карта сегментов + «с чего начать».
 4. CJM по приоритетным сегментам (точки перелома).
@@ -47,7 +48,7 @@ description: Полный диагностический прогон компа
 5. Внешние ИИ-аудиты (Ребдеу) — рамка, не источник точных цифр; сверять.
 
 ## Связанные
-Скиллы-звенья: `/screening` · `/company-profile` · `/jtbd-segments` · `/cjm`.
+Скиллы-звенья: `/growth-stage` · `/screening` · `/company-profile` · `/jtbd-segments` · `/cjm`. Выход в действия: `/offer` · `/money-model` · `/sales-script`.
 Метод: [screening-to-strategy-diagnostic](../../../marketing-os/routes/full-business-diagnostic/screening-to-strategy-diagnostic.md).
 Модули: business-market-screening · niche-icp-jtbd-research · customer-journey-map · offer-packaging-design · marketing-system-design · diagnostic-sale.
 Шаблоны: [maturity-scorecard](../../../marketing-os/templates/maturity-scorecard-template.md), [company-profile](../../../marketing-os/templates/company-profile-template.md).

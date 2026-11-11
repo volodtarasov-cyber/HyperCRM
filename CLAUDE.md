@@ -12,14 +12,16 @@ Volodya keeps tasks in **YouGile**. The vault is a knowledge base and strategy s
 
 ## Projects
 
-> **Target model** (owner — `life/decisions.md`; team budget and milestones — `agency/finmodel.md`): a delegatable marketing agency, first to **1M RUB monthly revenue**, then to **1M RUB+ monthly net profit**. The agency owns the path from traffic and landing pages to qualified leads and, when client data permits, attributed revenue and gross profit. Do not propose an online school, club, course, or any business that requires Volodya to be a recurring speaker.
+> **Niche agency** (owner — `agency/market.md`): the brand is broad, marketing for local service business; services are sold only through niche showcases, each niche with its own page and offer. Abroad — the same niches.
+
+> **Target model** (owner — `life/decisions.md`; team budget and milestones — `agency/finmodel.md`): a delegatable marketing agency, first to **1M RUB monthly revenue**, then to **1M RUB+ monthly net profit**. The agency owns the path from traffic and landing pages to qualified leads and, when client data permits, attributed revenue and gross profit. Do not propose an online school, course, or any agency growth path that requires Volodya to be a recurring speaker. The one exception is the club in spring 2027 (`life/decisions.md#инфобиз-клуб-весной-2027`); until then, nothing is sold for it.
 
 This repository **is the agency**: `agency/` — the business, `clients/` — who we serve, `marketing-os/` — how we do the work.
 
 **Priorities**
 1. **Agency and its client portfolio** — the main business. Market focus → `agency/market.md`, target staffing → `team/_agency.md`. The test is delegability: daily delivery must continue without Volodya as the sole operator.
 2. **Levsha (detailing)** — a client like any other, with the deepest data access in the portfolio. Reduce dependence on 5/2 physical presence; use measured applications to improve the agency method.
-3. **Current agency consulting** — only in spare capacity, at a price that justifies founder time; excluded from the agency's target profit. The next personal direction (private practice for online specialists) — metric and launch gate in `life/decisions.md`.
+3. **Current agency consulting** — only in spare capacity, at a price that justifies founder time; excluded from the agency's target profit. All infobiz — the club and private practice for online specialists — is postponed to spring 2027, product decision then; until then only consulting on inbound requests → `life/decisions.md`.
 
 **Where a client lives**
 
@@ -28,13 +30,13 @@ This repository **is the agency**: `agency/` — the business, `clients/` — wh
 | We **sell services** — acquisition, landing, cards, measurement | **here**, as a card in `clients/` |
 | We **build the client's whole marketing and sales**, and the client's own staff work inside the system | in the **client's own repository**; here only the client-level card — what is bought, who executes, what data returns, what result was measured |
 
-Levsha is the first case of the second row: its marketing lives in a separate repo on macOS, its internals are archived at `D:\SecondBrain\_archive\levsha\`.
+Levsha is the first case of the second row: its marketing lives in a separate repo on macOS, its internals are archived at `D:\SecondBrain\_archive\levsha\`. Exception: its card here keeps `results/` as the proof base for the agency's detailing niche.
 
 **Directions**
 - **Agency** `agency/` — managed acquisition: demand source → landing → qualified lead → sale → attributed gross profit. Fixed fee is mandatory; result-based upside only where definitions, attribution and client data are reliable. Entry `agency/_index.md`; key files `model.md` · `market.md` · `plan.md` · `finmodel.md` · `hypotheses.md` · `product/boxes.md` · `cases/` · `leadgen/`.
-- **Clients** `clients/` — the operating object. `clients/_index.md` is **the registry**, the only list of clients and single owner of «client × unit → price, executor, direct cost, priority»; a client without a row does not exist. Card standard `clients/_template/_index.md`. Priority P_1–P_3 = level of influence sold per channel → `clients/_priorities.md`; prices and contractor shares → `agency/product/boxes.md`.
+- **Clients** `clients/` — the operating object. `clients/_index.md` is **the registry**, the only list of clients and single owner of «client × unit → price, executor, direct cost, path»; a client without a row does not exist. Card standard `clients/_template/_index.md`. Two sales paths — a niche product (a package or a simple niche product, plus services for a large task) or a service for a task outside the niches; paths, prices and contractor shares → `agency/product/boxes.md`; one service standard for all clients → `clients/_service-standard.md`.
 - **Marketing OS** `marketing-os/` — the method and its evidence → «Method» below.
-- `projects/seo-sites/` — own SEO sites, launch priority not chosen. `projects/ai-infobiz/` — closed: historical material and content assets only; content is produced only when it supports agency demand, proof or trust.
+- `projects/seo-sites/` — own SEO sites, launch priority not chosen. `projects/ai-infobiz/` — Volodya's personal brand: all infobiz (a club for business owners implementing AI, marketing and sales; private practice) is postponed to spring 2027, no tests before then. Until then, only content on the channel selling agency services and consultations.
 
 ---
 
@@ -44,7 +46,7 @@ Levsha is the first case of the second row: its marketing lives in a separate re
 |---------------|-------|
 | Tasks, backlog, statuses, deadlines, assignees | **YouGile** (outside the vault) |
 | Current strategic personal decisions | `life/decisions.md` |
-| **Client × unit → price, executor, direct cost, priority** | `clients/_index.md` — the only owner; mirrors the three working Google Sheets |
+| **Client × unit → price, executor, direct cost, path** | `clients/_index.md` — the only owner in the vault; mirrors the agency CRM (`.tools/README.md#вне-волта`), the working source for service lines and payments; Google Sheets are history through Nov 2026 |
 | Client context, decisions, results, accesses | `clients/<client>/_index.md`, `results/`, `access.md` |
 | Testable hypotheses: agency model / one client | `agency/hypotheses.md` / `clients/<client>/hypotheses.md` |
 | Current system changes (rules/structure/automation only) | `system/changelog.md` |
@@ -139,7 +141,7 @@ The only canonical source of definitions is `marketing-os/core/glossary.md`: rea
 - **Shareable:** `clients/<client>/reports/`, Google Sheets with client data.
 - **Handover template** (what ships, what never ships) → `system/rules/hygiene.md`.
 
-**Tags:** `@agency` — agency, clients, method · `@infobiz` — closed direction · `@system` — system and vault · `@life` `@health` `@finance` `@learning` — personal.
+**Tags:** `@agency` — agency, clients, method · `@infobiz` — personal brand, club in spring 2027 · `@system` — system and vault · `@life` `@health` `@finance` `@learning` — personal.
 
 ---
 

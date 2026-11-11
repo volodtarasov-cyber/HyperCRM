@@ -82,3 +82,7 @@ clients/unisec-novosibirsk/assets/yandex-maps-services/*
 outputs/
 .taste-skill/
 debug.log
+
+# Архивы-выгрузки (карусели, пачки картинок, месячные комплекты) собираются заново
+# из исходников рядом; клиенту отдаются вне git
+*.zip

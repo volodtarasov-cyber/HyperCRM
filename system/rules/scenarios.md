@@ -62,7 +62,7 @@ Do not open a fifth home for «инструкции»: four are enough, and a fi
 
 1. **Price, executor, direct cost and priority go into `clients/_index.md` and nowhere else.** If you catch yourself writing a price into a card, stop — that copy will rot.
 2. A new client: copy `clients/_template/` to `clients/<slug>/`, fill the passport, add the registry row. Check the admission rules in the registry before agreeing to anything.
-3. **Before the offer** set the zone of responsibility — priority by `clients/_priorities.md`: P_1 we work with leads, qual and landing pages, P_2 we own the ad account and the client supplies qual and money data. Without sales tied to source no revenue-based upside.
+3. **Before the offer** set the path — niche product or service for a task (`agency/product/boxes.md`); service standard for all → `clients/_service-standard.md`. Without sales tied to source no revenue-based upside.
 4. Nothing verified → write `?`, never a plausible number. A `?` row is honest; an invented row poisons the P&L.
 5. When a client's whole marketing starts being built and their staff enter the system → the repository rule applies: their internals move to their own repo, the card stays.
 

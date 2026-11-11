@@ -122,7 +122,7 @@ One Product Flow нужно доказывать не общими истори�
 - Трафик-портфель index
 - [Bingo Samara case](../../clients/bingo-samara/case.md)
 - [Bingo JTBD/Hormozi](../../clients/bingo-samara/jtbd-hormozi.md)
-- [Own leadgen commercial offer](../../agency/leadgen/commercial-offer.md)
+- [Own leadgen commercial offer](../../agency/leadgen/_archive/commercial-offer.md)
 - Own leadgen shock-awe box
 
 ## 5. Публичные доказательные углы

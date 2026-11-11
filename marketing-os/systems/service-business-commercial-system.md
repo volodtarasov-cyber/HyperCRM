@@ -1,6 +1,6 @@
 # Коммерческая система для сервисного бизнеса
 
-**Статус:** product blueprint v0.3, добавлен Growth Control Board  
+**Статус:** blueprint v0.3; цифровой прототип снят в архив 2026-11-11  
 **Тип:** система / внедрение / обучение  
 **Для кого:** локальные и региональные сервисные компании  
 **Основано на:** Marketing OS + практика проекта «Левша»  
@@ -570,7 +570,7 @@ Baseline фиксируется за сопоставимый период. У �
 ### Операционная Модель И Владение Данными
 
 Рекомендуемая схема подробно описана в
-[операционной модели работы с клиентом](../product/client-operating-model.md).
+[операционной модели работы с клиентом](../_archive/product/client-operating-model.md) (архив).
 
 Коротко:
 
@@ -805,24 +805,9 @@ client/
 9. `templates/client-project-structure.md` — стартовая структура файлов.
 10. `modules/measurement-crm-foundation.md` — модуль фундамента данных.
 
-### Пакет цифрового прототипа
+### Цифровой прототип
 
-1. Growth Control Board — логика главного
-   рабочего экрана, задач и результатов; `v0.1` готов.
-2. [HTML-прототип](../product/growth-control-board-prototype.html) — визуальная
-   модель кабинета; `v0.1` готов.
-3. `product/data-model.md` — сущности, события и связи.
-4. `product/metric-catalog.md` — версионируемые определения метрик.
-5. `product/weekly-review-wireframe.md` — подробный сценарий встречи.
-6. `product/import-mapping-spec.md` — правила загрузки CSV / Excel.
-7. `product/evidence-ledger-spec.md` — доказательства и уверенность.
-8. `product/roles-permissions.md` — права собственника, владельца системы,
-   первой линии и внедренца.
-9. `product/mvp-acceptance.md` — критерии Internal OS и Concierge MVP.
-10. [Операционная модель клиента](../product/client-operating-model.md) —
-    владение данными, обмен, handover и правила AI-агентов; `v0.1` готова.
-11. [Структура клиентского workspace](../templates/client-workspace-structure.md)
-    — файловый контур без raw-данных и секретов; `v0.1` готова.
+Не строим: Marketing OS — внутренний набор агентства, не отдельный бизнес. Прототип Growth Control Board и операционная модель клиента → [архив](../_archive/product/). [Структура клиентского workspace](../templates/client-workspace-structure.md) остаётся шаблоном.
 
 ### Первый тест универсальности
 
@@ -1090,10 +1075,7 @@ client/
 Внутреннее название — **Growth Control Board**. Это не сводка всех показателей,
 а рабочее место собственника и владельца коммерческой системы.
 
-Спецификация и визуальный прототип:
-
-- описание продукта;
-- [HTML-прототип](../product/growth-control-board-prototype.html).
+Прототип экрана → [архив](../_archive/product/growth-control-board-prototype.html); цифровой продукт не строится.
 
 Экран состоит из пяти строк.
 
