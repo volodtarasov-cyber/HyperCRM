@@ -282,7 +282,7 @@ COVER_TEMPLATE = """
   <div>
     <div class="cover-logo">
       <span class="accent">АНАНАС</span> МАРКЕТИНГ
-      <div class="cover-logo-sub">Системный маркетинг для сервисного бизнеса</div>
+      <div class="cover-logo-sub">Маркетинг для локального бизнеса</div>
     </div>
   </div>
 
