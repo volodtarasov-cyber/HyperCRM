@@ -24,6 +24,9 @@
         дописывает в описание пометку «🤖 Claude»: что делает ассистент, когда
         закинуть задачу ему и в каком чате она живёт. Больше ничего не меняет.
     ... yougile.py done --code FIN-157        отметить выполненной (после «да» Володи)
+    ... yougile.py board --project "Шаблоны Запуска" --title "Геомаркетинг" \
+            --columns "Регламенты,Запуск точки,Ведение точки,Выполненные"
+        новая доска с колонками — только по прямой просьбе Володи; дубль по названию не создаёт
     ... yougile.py files --code VED-28 --path clients/arcars/reports/drafts-2026-10-27
         дописывает кликабельную ссылку на папку в GitHub.
         В push — поле "files": "путь в волте".
@@ -298,6 +301,21 @@ def cmd_files(a: argparse.Namespace) -> None:
     print(f"✓ {a.code.upper()} «{t['title']}» — ссылки на {a.path} добавлены")
 
 
+def cmd_board(a: argparse.Namespace) -> None:
+    """Новая доска с колонками в существующем проекте — только по прямой просьбе Володи."""
+    key = load_key()
+    p = pick(tree(key), a.project, "Проект")
+    if any(b["title"].strip().lower() == a.title.strip().lower() for b in p["boards"]):
+        raise SystemExit(f"✗ В «{p['title']}» доска «{a.title}» уже есть")
+    cols = [x.strip() for x in a.columns.split(",") if x.strip()]
+    if not cols:
+        raise SystemExit("✗ --columns: нужна хотя бы одна колонка")
+    bid = call("POST", "/boards", {"title": a.title.strip(), "projectId": p["id"]}, key=key)["id"]
+    for title in cols:
+        call("POST", "/columns", {"title": title, "boardId": bid}, key=key)
+    print(f"✓ {p['title']} / {a.title.strip()}: {', '.join(cols)}")
+
+
 def cmd_done(a: argparse.Namespace) -> None:
     key = load_key()
     t = find_task(key, a.code)
@@ -341,6 +359,11 @@ def main() -> int:
     fl.add_argument("--code", required=True)
     fl.add_argument("--path", required=True, help="папка или файл волта, например clients/arcars/reports/drafts-2026-10-27")
     fl.set_defaults(fn=cmd_files)
+    bd = sub.add_parser("board")
+    bd.add_argument("--project", required=True)
+    bd.add_argument("--title", required=True)
+    bd.add_argument("--columns", required=True, help="названия колонок через запятую, по порядку")
+    bd.set_defaults(fn=cmd_board)
     dn = sub.add_parser("done")
     dn.add_argument("--code", required=True)
     dn.set_defaults(fn=cmd_done)
